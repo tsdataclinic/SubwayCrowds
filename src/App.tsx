@@ -1,25 +1,49 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import SentanceDropDown from './components/SentanceDropDown/SentanceDropDown'
+import {useStationLines} from './Hooks/useStations'
+import {useCrowdingData} from './Hooks/useCrowdingData'
+import {Line} from 'react-chartjs-2'
+
 import './App.css';
 
 function App() {
+
+  const {stations,lines} = useStationLines()
+  
+  const [selectedStation, setSelectedStation] = useState<any>(null)
+  const [selectedLine, setSelectedLine] = useState<any | null >(null)
+
+  const filteredStations = (selectedLine && stations) ? stations.filter(station => station.lines.includes("1") ) : stations
+  const filteredLines = (selectedStation && lines) ? lines.filter( (line) => stations.find(s=>s.name === selectedStation.text)?.lines.includes(line.name) ) : lines
+
+  const crowdingData = useCrowdingData(selectedStation, setSelectedLine)
+  const stationOptions: any = filteredStations.map( station => ({
+    text:station.name,
+    key: station.name,
+  }))
+
+   const lineOptions: any = filteredLines.map( line => ({
+    key: line.name,
+    icon: line.icon
+  }))
+
+  console.log('data ', crowdingData)
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div style={{display:"flex", alignItems:'center', justifyContent:'normal'}}>
+        <span>I take the </span>
+        <SentanceDropDown prompt={'select line'} options={lineOptions} selected={selectedLine} onSelected={setSelectedLine}/>
+        <span> line. I get on at  </span>
+        <SentanceDropDown prompt={'select station name'} options={stationOptions} selected={selectedStation} onSelected={setSelectedStation} />
+      </div>
+      { crowdingData &&  
+        <div className='graph'>
+          <Line data={ {datasets:[ {data: crowdingData.map(c =>c.y), label:'Number of People per Hour'}],labels:crowdingData.map(c=>c.x) }} />
+        </div>
+      }
+      
+      </div>
   );
 }
 
