@@ -13,6 +13,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "chart.js": "^2.9.3",
+    "gh-pages": "^2.2.0",
     "papaparse": "^5.2.0",
     "react": "^16.13.1",
     "react-chartjs-2": "^2.9.0",
@@ -21,11 +22,14 @@
     "styled-components": "^5.1.1",
     "typescript": "~3.7.2"
   },
-  "scripts": {
+  "homepage":"https://tsdataclinic.github.io/MTACrowdingInteractive",
+    "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+     "predeploy": "yarn  build",
+        "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
