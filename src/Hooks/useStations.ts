@@ -1,5 +1,5 @@
 import {useState,useEffect} from 'react'
-import Pappa from 'papaparse'
+import Papa from 'papaparse'
 
 type Line = {
     name: string,
@@ -14,10 +14,8 @@ type Station ={
 type RawStation={
     station_name: string,
     clean_lines: string,
-    station_lines: string,
-    el_station_name: string,
-    el_lines: string,
-    equipments:string
+    turnstile_station_name:string,
+    turnstile_lines: string
 }
 
 export const useStationLines = ()=>{    
@@ -55,7 +53,7 @@ export const useStationLines = ()=>{
         })))
     }
     useEffect( ()=>{
-        Pappa.parse('https://raw.githubusercontent.com/tsdataclinic/mta-accessibility/master/data/crosswalk/Master_crosswalk.csv?token=AABTHLQQ7DF4Y2VDZYJ62PK63EZFA',{
+        Papa.parse('https://raw.githubusercontent.com/tsdataclinic/mta/master/data/crosswalk/Master_crosswalk.csv',{
             download:true,
             complete: (data :any)=> standardizeData(data.data),
             header:true
