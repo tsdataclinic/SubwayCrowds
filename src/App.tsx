@@ -13,13 +13,14 @@ function App() {
   const [selectedStation, setSelectedStation] = useState<any>(null)
   const [selectedLine, setSelectedLine] = useState<any | null >(null)
 
-  const filteredStations = (selectedLine && stations) ? stations.filter(station => station.lines.includes("1") ) : stations
+  const filteredStations = (selectedLine && stations) ? stations.filter(station => station.lines.includes(selectedLine?.key) ) : stations
   const filteredLines = (selectedStation && lines) ? lines.filter( (line) => stations.find(s=>s.name === selectedStation.text)?.lines.includes(line.name) ) : lines
 
-  const crowdingData = useCrowdingData(selectedStation, setSelectedLine)
+  const crowdingData = useCrowdingData(selectedStation?.key, selectedLine?.key)
+
   const stationOptions: any = filteredStations.map( station => ({
     text:station.name,
-    key: station.name,
+    key: station.turnstile_name,
   }))
 
    const lineOptions: any = filteredLines.map( line => ({
@@ -27,7 +28,7 @@ function App() {
     icon: line.icon
   }))
 
-  console.log('data ', crowdingData)
+  console.log('data ', crowdingData, lineOptions)
  
   return (
     <div className="App">
@@ -37,10 +38,14 @@ function App() {
         <span> line. I get on at  </span>
         <SentanceDropDown prompt={'select station name'} options={stationOptions} selected={selectedStation} onSelected={setSelectedStation} />
       </div>
-      { crowdingData &&  
-        <div className='graph'>
-          <Line data={ {datasets:[ {data: crowdingData.map(c =>c.y), label:'Number of People per Hour'}],labels:crowdingData.map(c=>c.x) }} />
-        </div>
+      { crowdingData && (
+      crowdingData.length > 0 ?
+      <div className='graph'>
+        <Line data={ {datasets:[ {data: crowdingData.map(c =>c.y), label:'Number of People per Hour'}],labels:crowdingData.map(c=>c.x) }} />
+      </div>
+      : <h1>No data available</h1>
+      )
+        
       }
       
       </div>

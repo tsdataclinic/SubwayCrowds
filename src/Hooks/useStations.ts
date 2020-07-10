@@ -8,6 +8,7 @@ type Line = {
 
 type Station ={
     name: string,
+    turnstile_name: string,
     lines:string[]
 }
 
@@ -32,6 +33,7 @@ export const useStationLines = ()=>{
             if(station){
               return {
                  name: station?.station_name,
+                 turnstile_name: station?.turnstile_station_name,
                  lines: station?.clean_lines ? station.clean_lines.split("") : []
                 } as Station
             }
