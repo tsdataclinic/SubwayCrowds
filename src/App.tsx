@@ -9,7 +9,7 @@ import './App.css';
 function App() {
 
   const {stations,lines} = useStationLines()
-  
+
   const [selectedStation, setSelectedStation] = useState<any>(null)
   const [selectedLine, setSelectedLine] = useState<any | null >(null)
 
@@ -28,15 +28,23 @@ function App() {
     icon: line.icon
   }))
 
+  const reset = () => {
+    setSelectedStation(null)
+    setSelectedLine(null)
+  }
+
   console.log('data ', crowdingData, lineOptions)
- 
+
   return (
     <div className="App">
       <div style={{display:"flex", alignItems:'center', justifyContent:'normal'}}>
         <span>I take the </span>
         <SentanceDropDown prompt={'select line'} options={lineOptions} selected={selectedLine} onSelected={setSelectedLine}/>
-        <span> line. I get on at  </span>
-        <SentanceDropDown prompt={'select station name'} options={stationOptions} selected={selectedStation} onSelected={setSelectedStation} />
+        <span> line. I get on at </span>
+        <SentanceDropDown prompt={'select station name'} options={stationOptions} selected={selectedStation} onSelected={setSelectedStation}/>
+        <button onClick={reset}>
+          Reset
+        </button>
       </div>
       { crowdingData && (
       crowdingData.length > 0 ?
@@ -45,9 +53,9 @@ function App() {
       </div>
       : <h1>No data available</h1>
       )
-        
+
       }
-      
+
       </div>
   );
 }

@@ -13,13 +13,15 @@ interface Props {
     onSelected?: (option:DropDownOption)=>void;
     selected?: DropDownOption,
 
-}   
-export default function SentanceDropDown ({prompt, options,selected, onSelected} :Props){
+}
+export default function SentanceDropDown ({prompt, options,selected, onSelected}: Props){
     const [searchTerm, setSearchTerm] = useState<string>('')
 
     const [showDropDown, setShowDropDown] = useState(false);
 
-    const filteredOptions = searchTerm ? options.filter(option=> 
+    const [pendingHideDropDown, setPendingHideDropdown] = useState(false);
+
+    const filteredOptions = searchTerm ? options.filter(option=>
         option.text?.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
         || option.key?.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
         ) : options
@@ -35,25 +37,25 @@ export default function SentanceDropDown ({prompt, options,selected, onSelected}
 
     return(
         <Styles.Container>
-            {selected ? 
+            {selected ?
              <span style={{fontWeight:'bold'}}>{selected.icon ? <Styles.Icon src={selected.icon} /> : ''}{selected.text ? selected.text : ''}</span>
              :
              <Styles.Input onFocus={()=>setShowDropDown(true)} placeholder={prompt} onChange={updateSearch} value={searchTerm}></Styles.Input>
             }
-             {showDropDown &&
+            {showDropDown &&
                 <Styles.DropDownList>
                     {filteredOptions.map(option=>
                         <Styles.DropDownListEntry onClick={()=>setSelected(option)} key={option.key}>
-                            {option.icon && 
+                            {option.icon &&
                                 <Styles.Icon src={option.icon} />
                             }
                             {option.text &&
                                 <span>{option.text}</span>
                             }
-                        </Styles.DropDownListEntry>    
+                        </Styles.DropDownListEntry>
                     )}
                 </Styles.DropDownList>
             }
         </Styles.Container>
-    )   
+    )
 }
