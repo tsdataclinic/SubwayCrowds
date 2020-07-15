@@ -1,12 +1,23 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import SentanceDropDown from './components/SentanceDropDown/SentanceDropDown'
 import {useStationLines} from './Hooks/useStations'
 import {useCrowdingData} from './Hooks/useCrowdingData'
 import {Line} from 'react-chartjs-2'
+import  queryString from 'query-string';
+import {
+  EmailShareButton,
+  FacebookShareButton,
+  TwitterShareButton,
+  EmailIcon,
+  FacebookIcon,
+  TwitterIcon,
+} from 'react-share';
 
 import './App.css';
 
 function App() {
+
+  const [loadedParams, setLoadedParams] = useState(false)
 
   const {stations,lines} = useStationLines()
 
@@ -31,9 +42,39 @@ function App() {
   const reset = () => {
     setSelectedStation(null)
     setSelectedLine(null)
+    window.history.replaceState({}, '', `${window.location.origin}`)
   }
 
-  console.log('data ', crowdingData, lineOptions)
+  useEffect(()=>{
+    if(stations && stations.length > 0 && lines && lines.length > 0){
+      const parsed = queryString.parse(window.location.search)
+      const station:any = stations.find(s=> s.turnstile_name === parsed.station)
+      const line:any    = lines.find(l => l.name === parsed.line)
+      if(station && line){
+        setSelectedStation({
+          key: station.turnstile_name,
+          name: station.name,
+          text: station.name
+        })
+
+        setSelectedLine({
+          key: line.name,
+          icon: line.icon
+        })
+      }
+       setLoadedParams(true)
+    }
+  },[stations,lines])
+  
+  useEffect(()=>{
+    if(selectedStation && selectedLine && loadedParams){
+      const state = {line: selectedLine.key, station: selectedStation.key}
+      const params = queryString.stringify(state)
+      window.history.replaceState(state, '', `${window.location.origin}?${params}`)
+    }
+   
+  },[selectedStation, selectedLine])
+
 
   return (
     <div className="App">
@@ -42,16 +83,50 @@ function App() {
         <SentanceDropDown prompt={'select line'} options={lineOptions} selected={selectedLine} onSelected={setSelectedLine}/>
         <span> line. I get on at </span>
         <SentanceDropDown prompt={'select station name'} options={stationOptions} selected={selectedStation} onSelected={setSelectedStation}/>
-        <button onClick={reset}>
-          Reset
-        </button>
+      
       </div>
-      { crowdingData && (
-      crowdingData.length > 0 ?
+      { selectedLine && selectedStation &&(
+        (crowdingData && 
+      crowdingData.length > 0) ?
       <div className='graph'>
-        <Line data={ {datasets:[ {data: crowdingData.map(c =>c.y), label:'Number of People per Hour'}],labels:crowdingData.map(c=>c.x) }} />
+        <Line 
+            data={ 
+              {
+                datasets:[ {
+                  data: crowdingData.map(c =>c.y), 
+                  label:'Number of People per Hour',
+                  backgroundColor:'rgba(112,214,227,0.4)',
+                  borderColor: 'rgba(112,214,227,1)',
+                }]
+                ,
+                labels:crowdingData.map(c=>c.x) 
+                
+              }} />
+        <button onClick={reset}>
+          Find out about another trip.
+        </button>
+        <p>Share this graph</p>
+        <p className="share-icons">
+            <FacebookShareButton quote={`Checkout this graph of overcrowding on the ${selectedLine.name} line at ${selectedStation.text}`} url={window.location.href}>
+              <FacebookIcon size={36} />
+            </FacebookShareButton>{' '}
+            <TwitterShareButton title={`Checkout this graph of overcrowding on the ${selectedLine.key} line at ${selectedStation.text}`} url={window.location.href}>
+              <TwitterIcon size={36} />
+            </TwitterShareButton>
+            <EmailShareButton 
+              subject={`Checkout this graph of overcrowding on the ${selectedLine.key} line at ${selectedStation.text}`}
+              body={`Checkout this graph of overcrowding on the ${selectedLine.key} line at ${selectedStation.text}`}
+              url={window.location.href}>
+              <EmailIcon size={36} />
+            </EmailShareButton>
+          </p>
       </div>
-      : <h1>No data available</h1>
+      : <>
+        <h1>No data available</h1>
+          <button onClick={reset}>
+              Find out about another trip.
+            </button>
+        </>
       )
 
       }

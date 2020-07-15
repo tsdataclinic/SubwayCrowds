@@ -42,3 +42,20 @@
     transform: rotate(360deg);
   }
 }
+button{
+  color: #e27327;
+  background-color:white;
+  border: solid 2px #e27327;
+  font-weight:bold;
+  font-size:13px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  cursor:pointer;
+  margin-top:10px;
+}
+
+button:hover{
+  color: white;
+  background-color: #e27327;
+  
+}

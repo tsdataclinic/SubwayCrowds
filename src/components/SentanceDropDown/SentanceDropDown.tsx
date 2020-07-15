@@ -28,7 +28,6 @@ export default function SentanceDropDown ({prompt, options,selected, onSelected}
 
     const updateSearch = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)
     const setSelected = (option:DropDownOption)=>{
-        console.log('selecting option ', option)
         if(onSelected){
             onSelected(option)
             setShowDropDown(false)

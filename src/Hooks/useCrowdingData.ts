@@ -16,7 +16,6 @@ type RawCrowding={
 export const useCrowdingData = (station :any , line:any)=>{
     const [crowdingData,setCrowdingData] = useState<RawCrowding[] | null >(null)
     const [stationcrowd, setStationCrowd] = useState<CrowdingDatum[] | null | undefined >(null)
-    console.log(station, line)
     useEffect( ()=> {
         const data = crowdingData?.filter((row)=> row.STATION === station && row.route_id === line)
                                   .map((row) => ({x: row.hr, y: row.crowd} as CrowdingDatum))
