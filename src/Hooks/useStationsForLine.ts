@@ -1,16 +1,7 @@
-import {useState,useEffect} from 'react'
+import {useState,useEffect,useContext} from 'react'
 import Papa from 'papaparse'
-
-type Line = {
-    name: string,
-    icon: any
-}
-
-type Station ={
-    name: string,
-    turnstile_name: string,
-    lines:string[]
-}
+import {Station, Line} from '../types'
+import {DataContext} from '../Contexts/DataContext'
 
 type RawStation={
     station_name: string,
@@ -19,9 +10,13 @@ type RawStation={
     turnstile_lines: string
 }
 
+
+export const useStationsForLine = (line:string | null)=>{
+    const {stations} = useContext(DataContext);
+    return (stations && line)  ? stations.filter(station => station.lines.includes(line) ) : stations
+}
+
 export const useStationLines = ()=>{    
-
-
     const [stations,setStations] = useState<Station[]>([])
     const [lines,setLines] = useState<Line[]>([])
 
@@ -51,7 +46,8 @@ export const useStationLines = ()=>{
 
         setLines(lineList.map((line:string)=>({
             name:line,
-            icon:`https://raw.githubusercontent.com/louh/mta-subway-bullets/master/svg/${line.toLocaleLowerCase()}.svg`
+            icon:`https://raw.githubusercontent.com/louh/mta-subway-bullets/master/svg/${line.toLocaleLowerCase()}.svg`,
+            id: line
         })))
     }
     useEffect( ()=>{

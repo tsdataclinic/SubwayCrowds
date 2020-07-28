@@ -1,34 +1,63 @@
-import {useState,useEffect} from 'react'
-import Papa from 'papaparse'
+import {useState,useEffect, useContext} from 'react'
+import {CrowdingObservation,HourlyObservation, Stop} from '../types'
+import {DataContext} from '../Contexts/DataContext'
 
-type CrowdingDatum = {
-    x:Number,
-    y:Number
-}
-
-type RawCrowding={
-    STATION: string,
-    route_id: string,
-    hr: Number,
-    crowd: Number
-}
-
-export const useCrowdingData = (station :any , line:any)=>{
-    const [crowdingData,setCrowdingData] = useState<RawCrowding[] | null >(null)
-    const [stationcrowd, setStationCrowd] = useState<CrowdingDatum[] | null | undefined >(null)
+export const useCrowdingData = (stationID :string |null, lineID:string | null)=>{
+    const {crowdingData} = useContext(DataContext)
+    const [stationData, setStationData] = useState<CrowdingObservation[] | null | undefined >(null)
+    
     useEffect( ()=> {
-        const data = crowdingData?.filter((row)=> row.STATION === station && row.route_id === line)
-                                  .map((row) => ({x: row.hr, y: row.crowd} as CrowdingDatum))
-        setStationCrowd(data)
-    },[station, line, crowdingData])
+        if(crowdingData && lineID && stationID){
+            const data = crowdingData?.filter((observation)=> observation.stationID === stationID && observation.lineID === lineID)
+            setStationData(data)
+        }
+        else{
+            setStationData(null)
+        }
+    },[crowdingData, lineID, stationID])
 
-    useEffect( ()=>{
-        Papa.parse('/average_estimates_june.csv',{
-            download:true,
-            complete: (data :any)=> setCrowdingData(data.data),
-            header:true,
-            dynamicTyping: {hr: true, crowd: true}
-        })
-    },[])
-    return stationcrowd
+    return stationData
 }
+
+export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null)=>{
+    const {crowdingData} = useContext(DataContext)
+    const [data,setData] = useState<HourlyObservation[] | null>(null)
+    useEffect(()=>{
+        if(stops && crowdingData){
+            const lines = stops.map(s=>s.line)
+            const stations = stops.map(s=> s.id)
+
+            const hourlyStopData = crowdingData.filter(cd => lines.includes(cd.lineID) && stations.includes(cd.stationID))
+            // const hourlyStopData = stops?.map(stop=> crowdingData?.filter(obs=> obs.stationID === stop.id && obs.lineID===stop.line))
+            console.log("hourly stop data ", hourlyStopData)
+            let maxByHour: HourlyObservation[] = [];
+            for(let hour =0; hour< 24; hour++){
+                let counts = hourlyStopData?.filter(obs=>obs.hour===hour).filter(filerTruthy).map(obs=>obs.numPeople)
+                maxByHour.push({hour:hour, numPeople: counts.length > 0 ?  Math.max(...counts) : 0})
+            }
+            setData(maxByHour)
+        }
+    },[stops, crowdingData])
+
+    return data
+}
+
+function filerTruthy<T>(t: T | undefined): t is T {
+  return !!t;
+}
+
+export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null)=>{
+    const {crowdingData} = useContext(DataContext)
+    const [data,setData] = useState<CrowdingObservation[] | null | undefined>(null)
+
+    useEffect(()=>{
+        if(stops && hour && crowdingData ){
+            const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID))            
+            console.log('STOp counds ', stopCounts)
+            setData(stopCounts.filter(filerTruthy))
+        }
+    },[stops,hour, crowdingData])
+
+    return data
+}
+                                   
