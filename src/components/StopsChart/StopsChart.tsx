@@ -19,8 +19,8 @@ export const StopsChart = ({stops, stopCount}:Props)=>{
         <Styles.Container>
             {stops && stops.map(stop=>
                 <>
-                    <Styles.StopName>{stop.station}</Styles.StopName>
-                    <Styles.StopBar percent={scoreForStop(stop?.id)*100.0/maxStopCount}>
+                    <Styles.StopName key={`${stop.station}_name`}>{stop.station}</Styles.StopName>
+                    <Styles.StopBar key={`${stop.station}_bar`} percent={scoreForStop(stop?.id)*100.0/maxStopCount}>
                         {Math.floor(scoreForStop(stop?.id)).toLocaleString()}
                     </Styles.StopBar>
                 </>

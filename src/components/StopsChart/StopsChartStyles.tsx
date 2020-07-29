@@ -34,6 +34,7 @@ const StopBar = styled.li`
     display:flex;
     justify-content:flex-end;
     font-size:0.9rem;
+    transition: width 0.5s ease-in-out
     /* padding: 20px 10px; */
 `
 
