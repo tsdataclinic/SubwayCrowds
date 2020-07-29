@@ -15,7 +15,8 @@ export type Station ={
 export type Stop= {
     line:string,
     station:string,
-    id: string
+    id: string,
+    order: number
 }
 
 export type HourlyObservation={

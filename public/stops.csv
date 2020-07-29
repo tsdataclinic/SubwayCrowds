@@ -1,717 +1,713 @@
-line,station,id
-1,Van Cortlandt Park - 242 St,none
-1,238 St,238 ST
-1,231 St,231 ST
-1,Marble Hill - 225 St,MARBLE HILL-225
-1,215 St,215 ST
-1,207 St,207 ST
-1,Dyckman St,DYCKMAN ST
-A,Dyckman St,DYCKMAN ST
-1,191 St,191 ST
-1,181 St,181 ST
-A,181 St,181 ST
-1,168 St - Washington Hts,168 ST
-1,157 St,157 ST
-1,145 St,145 ST
-3,145 St,145 ST
-A,145 St,145 ST
-B,145 St,145 ST
-C,145 St,145 ST
-D,145 St,145 ST
-1,137 St - City College,137 ST CITY COL
-1,125 St,125 ST
-2,125 St,125 ST
-3,125 St,125 ST
-4,125 St,125 ST
-5,125 St,125 ST
-6,125 St,125 ST
-A,125 St,125 ST
-B,125 St,125 ST
-C,125 St,125 ST
-D,125 St,125 ST
-1,116 St - Columbia University,116 ST-COLUMBIA
-1,Cathedral Pkwy (110 St),CATHEDRAL PKWY
-B,Cathedral Pkwy (110 St),CATHEDRAL PKWY
-C,Cathedral Pkwy (110 St),CATHEDRAL PKWY
-1,103 St,103 ST
-6,103 St,103 ST
-B,103 St,103 ST
-C,103 St,103 ST
-1,96 St,96 ST
-2,96 St,96 ST
-3,96 St,96 ST
-6,96 St,96 ST
-B,96 St,96 ST
-C,96 St,96 ST
-Q,96 St,96 ST
-1,86 St,86 ST
-4,86 St,86 ST
-5,86 St,86 ST
-6,86 St,86 ST
-B,86 St,86 ST
-C,86 St,86 ST
-N,86 St,86 ST
-Q,86 St,86 ST
-R,86 St,86 ST
-1,79 St,79 ST
-D,79 St,79 ST
-1,72 St,72 ST
-2,72 St,72 ST
-3,72 St,72 ST
-B,72 St,72 ST
-C,72 St,72 ST
-Q,72 St,72 ST
-1,66 St - Lincoln Center,66 ST-LINCOLN
-1,59 St - Columbus Circle,59 ST COLUMBUS
-A,59 St - Columbus Circle,59 ST COLUMBUS
-B,59 St - Columbus Circle,59 ST COLUMBUS
-C,59 St - Columbus Circle,59 ST COLUMBUS
-D,59 St - Columbus Circle,59 ST COLUMBUS
-1,50 St,50 ST
-C,50 St,50 ST
-D,50 St,50 ST
-E,50 St,50 ST
-1,Times Sq - 42 St,TIMES SQ-42 ST
-2,Times Sq - 42 St,TIMES SQ-42 ST
-3,Times Sq - 42 St,TIMES SQ-42 ST
-7,Times Sq - 42 St,TIMES SQ-42 ST
-N,Times Sq - 42 St,TIMES SQ-42 ST
-Q,Times Sq - 42 St,TIMES SQ-42 ST
-R,Times Sq - 42 St,TIMES SQ-42 ST
-1,34 St - Penn Station,34 ST-PENN STA
-2,34 St - Penn Station,34 ST-PENN STA
-3,34 St - Penn Station,34 ST-PENN STA
-A,34 St - Penn Station,34 ST-PENN STA
-C,34 St - Penn Station,34 ST-PENN STA
-E,34 St - Penn Station,34 ST-PENN STA
-1,28 St,28 ST
-6,28 St,28 ST
-N,28 St,28 ST
-R,28 St,28 ST
-1,23 St,23 ST
-6,23 St,23 ST
-C,23 St,23 ST
-E,23 St,23 ST
-F,23 St,23 ST
-M,23 St,23 ST
-N,23 St,23 ST
-R,23 St,23 ST
-1,18 St,18 ST
-1,14 St,14 ST
-2,14 St,14 ST
-3,14 St,14 ST
-A,14 St,14 ST
-C,14 St,14 ST
-E,14 St,14 ST
-F,14 St,14 ST
-M,14 St,14 ST
-1,Christopher St - Sheridan Sq,CHRISTOPHER ST
-1,Houston St,HOUSTON ST
-1,Canal St,CANAL ST
-6,Canal St,CANAL ST
-A,Canal St,CANAL ST
-C,Canal St,CANAL ST
-E,Canal St,CANAL ST
-J,Canal St,CANAL ST
-N,Canal St,CANAL ST
-Q,Canal St,CANAL ST
-R,Canal St,CANAL ST
-1,Franklin St,FRANKLIN AV
-1,Chambers St,CHAMBERS ST
-2,Chambers St,CHAMBERS ST
-3,Chambers St,CHAMBERS ST
-A,Chambers St,CHAMBERS ST
-C,Chambers St,CHAMBERS ST
-J,Chambers St,CHAMBERS ST
-1,Cortlandt St,CORTLANDT ST
-N,Cortlandt St,CORTLANDT ST
-R,Cortlandt St,CORTLANDT ST
-1,Rector St,RECTOR ST
-N,Rector St,RECTOR ST
-R,Rector St,RECTOR ST
-1,South Ferry,SOUTH FERRY
-2,Wakefield - 241 St,WAKEFIELD/241
-2,Nereid Av,NEREID AV
-2,233 St,233 ST
-5,233 St,233 ST
-2,225 St,225 ST
-5,225 St,225 ST
-2,219 St,219 ST
-5,219 St,219 ST
-2,Gun Hill Rd,GUN HILL RD
-5,Gun Hill Rd,GUN HILL RD
-2,Burke Av,BURKE AV
-5,Burke Av,BURKE AV
-2,Allerton Av,ALLERTON AV
-5,Allerton Av,ALLERTON AV
-2,Pelham Pkwy,PELHAM PKWY
-5,Pelham Pkwy,PELHAM PKWY
-2,Bronx Park East,BRONX PARK EAST
-5,Bronx Park East,BRONX PARK EAST
-2,E 180 St,E 180 ST
-5,E 180 St,E 180 ST
-2,West Farms Sq - E Tremont Av,WEST FARMS SQ
-5,West Farms Sq - E Tremont Av,WEST FARMS SQ
-2,174 St,174 ST
-5,174 St,174 ST
-2,Freeman St,FREEMAN ST
-5,Freeman St,FREEMAN ST
-2,Simpson St,SIMPSON ST
-5,Simpson St,SIMPSON ST
-2,Intervale Av,INTERVALE AV
-5,Intervale Av,INTERVALE AV
-2,Prospect Av,PROSPECT AV
-5,Prospect Av,PROSPECT AV
-R,Prospect Av,PROSPECT AV
-2,Jackson Av,JACKSON AV
-5,Jackson Av,JACKSON AV
-2,3 Av - 149 St,3 AV-149 ST
-5,3 Av - 149 St,3 AV-149 ST
-2,149 St - Grand Concourse,149/GRAND CONC
-4,149 St - Grand Concourse,149/GRAND CONC
-5,149 St - Grand Concourse,149/GRAND CONC
-2,135 St,135 ST
-3,135 St,135 ST
-B,135 St,135 ST
-C,135 St,135 ST
-2,116 St,116 ST
-3,116 St,116 ST
-6,116 St,116 ST
-B,116 St,116 ST
-C,116 St,116 ST
-2,Central Park North (110 St),CENTRAL PK N110
-3,Central Park North (110 St),CENTRAL PK N110
-2,Park Pl,PARK PLACE
-3,Park Pl,PARK PLACE
-2,Fulton St,FULTON ST
-3,Fulton St,FULTON ST
-4,Fulton St,FULTON ST
-5,Fulton St,FULTON ST
-A,Fulton St,FULTON ST
-C,Fulton St,FULTON ST
-G,Fulton St,FULTON ST
-J,Fulton St,FULTON ST
-2,Wall St,WALL ST
-3,Wall St,WALL ST
-4,Wall St,WALL ST
-5,Wall St,WALL ST
-2,Clark St,CLARK ST
-3,Clark St,CLARK ST
-2,Borough Hall,BOROUGH HALL
-3,Borough Hall,BOROUGH HALL
-4,Borough Hall,BOROUGH HALL
-5,Borough Hall,BOROUGH HALL
-2,Hoyt St,HOYT ST
-3,Hoyt St,HOYT ST
-2,Nevins St,NEVINS ST
-3,Nevins St,NEVINS ST
-4,Nevins St,NEVINS ST
-5,Nevins St,NEVINS ST
-2,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-3,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-4,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-5,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-B,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-D,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-N,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-Q,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-R,Atlantic Av - Barclays Ctr,ATL AV-BARCLAY
-2,Bergen St,BERGEN ST
-3,Bergen St,BERGEN ST
-F,Bergen St,BERGEN ST
-G,Bergen St,BERGEN ST
-2,Grand Army Plaza,GRAND ARMY PLAZ
-3,Grand Army Plaza,GRAND ARMY PLAZ
-2,Eastern Pkwy - Brooklyn Museum,none
-3,Eastern Pkwy - Brooklyn Museum,none
-2,Franklin Av,FRANKLIN AV
-3,Franklin Av,FRANKLIN AV
-4,Franklin Av,FRANKLIN AV
-5,Franklin Av,FRANKLIN AV
-C,Franklin Av,FRANKLIN AV
-2,President St,PRESIDENT ST
-5,President St,PRESIDENT ST
-2,Sterling St,STERLING ST
-5,Sterling St,STERLING ST
-2,Winthrop St,WINTHROP ST
-5,Winthrop St,WINTHROP ST
-2,Church Av,CHURCH AV
-5,Church Av,CHURCH AV
-B,Church Av,CHURCH AV
-F,Church Av,CHURCH AV
-G,Church Av,CHURCH AV
-Q,Church Av,CHURCH AV
-2,Beverly Rd,BEVERLY RD
-5,Beverly Rd,BEVERLY RD
-2,Newkirk Av,NEWKIRK AV
-5,Newkirk Av,NEWKIRK AV
-2,Flatbush Av - Brooklyn College,FLATBUSH AV-B.C
-5,Flatbush Av - Brooklyn College,FLATBUSH AV-B.C
-3,Nostrand Av,NOSTRAND AV
-A,Nostrand Av,NOSTRAND AV
-C,Nostrand Av,NOSTRAND AV
-3,Kingston Av,KINGSTON AV
-3,Crown Hts - Utica Av,CROWN HTS-UTICA
-4,Crown Hts - Utica Av,CROWN HTS-UTICA
-5,Crown Hts - Utica Av,CROWN HTS-UTICA
-3,Sutter Av - Rutland Rd,SUTTER AV-RUTLD
-3,Saratoga Av,SARATOGA AV
-3,Rockaway Av,ROCKAWAY PARK B
-C,Rockaway Av,ROCKAWAY PARK B
-3,Junius St,JUNIUS ST
-3,Pennsylvania Av,PENNSYLVANIA AV
-3,Van Siclen Av,hasTwo
-C,Van Siclen Av,hasTwo
-J,Van Siclen Av,hasTwo
-3,New Lots Av,NEW LOTS AV
-L,New Lots Av,NEW LOTS AV
-3,Harlem - 148 St,HARLEM 148 ST
-4,Woodlawn,Woodlawn
-4,Mosholu Pkwy,MOSHOLU PKWY
-4,Bedford Park Blvd - Lehman College,BEDFORD PK BLVD
-4,Kingsbridge Rd,KINGSBRIDGE RD
-B,Kingsbridge Rd,KINGSBRIDGE RD
-D,Kingsbridge Rd,KINGSBRIDGE RD
-4,Fordham Rd,FORDHAM RD
-B,Fordham Rd,FORDHAM RD
-D,Fordham Rd,FORDHAM RD
-4,183 St,183 ST
-4,Burnside Av,BURNSIDE AV
-4,176 St,176 ST
-4,Mt Eden Av,MT EDEN AV
-4,170 St,170 ST
-B,170 St,170 ST
-D,170 St,170 ST
-4,167 St,167 ST
-B,167 St,167 ST
-D,167 St,167 ST
-4,161 St - Yankee Stadium,161/YANKEE STAD
-B,161 St - Yankee Stadium,161/YANKEE STAD
-D,161 St - Yankee Stadium,161/YANKEE STAD
-4,138 St - Grand Concourse,138/GRAND CONC
-5,138 St - Grand Concourse,138/GRAND CONC
-4,Bowling Green,BOWLING GREEN
-5,Bowling Green,BOWLING GREEN
-4,59 St,59 ST
-5,59 St,59 ST
-6,59 St,59 ST
-N,59 St,59 ST
-R,59 St,59 ST
-4,Grand Central - 42 St,GRD CNTRL-42 ST
-5,Grand Central - 42 St,GRD CNTRL-42 ST
-6,Grand Central - 42 St,GRD CNTRL-42 ST
-7,Grand Central - 42 St,GRD CNTRL-42 ST
-4,14 St - Union Sq,14 ST-UNION SQ
-5,14 St - Union Sq,14 ST-UNION SQ
-6,14 St - Union Sq,14 ST-UNION SQ
-N,14 St - Union Sq,14 ST-UNION SQ
-Q,14 St - Union Sq,14 ST-UNION SQ
-R,14 St - Union Sq,14 ST-UNION SQ
-4,Brooklyn Bridge - City Hall,BROOKLYN BRIDGE
-5,Brooklyn Bridge - City Hall,BROOKLYN BRIDGE
-6,Brooklyn Bridge - City Hall,BROOKLYN BRIDGE
-5,Eastchester - Dyre Av,EASTCHSTER/DYRE
-5,Baychester Av,BAYCHESTER AV
-5,Morris Park,MORRIS PARK
-6,Pelham Bay Park,PELHAM BAY PARK
-6,Buhre Av,BUHRE AV
-6,Middletown Rd,MIDDLETOWN RD
-6,Westchester Sq - E Tremont Av,WESTCHESTER SQ
-6,Zerega Av,ZEREGA AV
-6,Castle Hill Av,CASTLE HILL AV
-6,Parkchester,PARKCHESTER
-6,St Lawrence Av,ST LAWRENCE AV
-6,Morrison Av- Sound View,none
-6,Elder Av,ELDER AV
-6,Whitlock Av,WHITLOCK AV
-6,Hunts Point Av,HUNTS POINT AV
-6,Longwood Av,LONGWOOD AV
-6,E 149 St,E 149 ST
-6,E 143 St - St Mary's St,E 143/ST MARY'S
-6,Cypress Av,CYPRESS AV
-6,Brook Av,none
-6,3 Av - 138 St,3 AV 138 ST
-6,110 St,110 ST
-6,77 St,77 ST
-R,77 St,77 ST
-6,68 St - Hunter College,68ST-HUNTER CO
-6,51 St,51 ST
-6,33 St,33 ST-RAWSON ST
-6,Astor Pl,ASTOR PL
-6,Bleecker St,BLEECKER ST
-6,Spring St,SPRING ST
-C,Spring St,SPRING ST
-E,Spring St,SPRING ST
-7,Flushing - Main St,FLUSHING-MAIN
-7,Mets - Willets Point,METS-WILLETS PT
-7,111 St,111 ST
-A,111 St,111 ST
-J,111 St,111 ST
-7,103 St - Corona Plaza,103 ST-CORONA
-7,Junction Blvd,
-7,90 St - Elmhurst Av,ELMHURST AV
-7,82 St - Jackson Hts,82 ST-JACKSON H
-7,74 St - Broadway,74 ST-BROADWAY
-7,69 St,69 ST
-7,Woodside - 61 St,61 ST WOODSIDE
-7,52 St,52 ST
-7,46 St - Bliss St,46 ST
-7,33 St - Rawson St,33 ST-RAWSON ST
-7,Queensboro Plaza,QUEENSBORO PLZ
-N,Queensboro Plaza,QUEENSBORO PLZ
-7,Court Sq,COURT SQ
-E,Court Sq,COURT SQ
-M,Court Sq,COURT SQ
-7,Hunters Point Av,HUNTERS PT AV
-7,Vernon Blvd - Jackson Av,VERNON-JACKSON
-7,5 Av,5 AVE
-7,34 St - Hudson Yds,34 ST-HUDSON YD
-A,Inwood - 207 St,INWOOD-207 ST
-A,190 St,190 ST
-A,175 St,175 ST
-A,168 St,168 ST
-C,168 St,168 ST
-A,42 St - Port Authority Bus Terminal,42 ST-PORT AUTH
-C,42 St - Port Authority Bus Terminal,42 ST-PORT AUTH
-E,42 St - Port Authority Bus Terminal,42 ST-PORT AUTH
-A,W 4 St - Wash Sq,W 4 ST-WASH SQ
-B,W 4 St - Wash Sq,W 4 ST-WASH SQ
-C,W 4 St - Wash Sq,W 4 ST-WASH SQ
-D,W 4 St - Wash Sq,W 4 ST-WASH SQ
-E,W 4 St - Wash Sq,W 4 ST-WASH SQ
-F,W 4 St - Wash Sq,W 4 ST-WASH SQ
-M,W 4 St - Wash Sq,W 4 ST-WASH SQ
-A,High St,HIGH ST
-C,High St,HIGH ST
-A,Jay St - MetroTech,JAY ST-METROTEC
-C,Jay St - MetroTech,JAY ST-METROTEC
-F,Jay St - MetroTech,JAY ST-METROTEC
-R,Jay St - MetroTech,JAY ST-METROTEC
-A,Hoyt - Schermerhorn Sts,HOYT-SCHER
-C,Hoyt - Schermerhorn Sts,HOYT-SCHER
-G,Hoyt - Schermerhorn Sts,HOYT-SCHER
-A,Utica Av,UTICA AV
-C,Utica Av,UTICA AV
-A,Broadway Jct,BROADWAY
-C,Broadway Jct,BROADWAY
-J,Broadway Jct,BROADWAY
-L,Broadway Jct,BROADWAY
-A,Euclid Av,EUCLID AV
-C,Euclid Av,EUCLID AV
-A,Grant Av,GRANT AV
-A,80 St,80 ST
-A,88 St,88 ST
-A,Rockaway Blvd,ROCKAWAY AV
-A,104 St,104 ST
-J,104 St,104 ST
-A,Ozone Park - Lefferts Blvd,OZONE PK LEFFRT
-A,Aqueduct Racetrack,AQUEDUCT RACETR
-A,Aqueduct - N Conduit Av,AQUEDUCT N.COND
-A,Howard Beach - JFK Airport,HOWARD BCH JFK
-A,Broad Channel,BROAD CHANNEL
-H,Broad Channel,BROAD CHANNEL
-A,Beach 67 St,BEACH 67 ST
-A,Beach 60 St,BEACH 60 ST
-A,Beach 44 St,BEACH 44 ST
-A,Beach 36 St,BEACH 36 ST
-A,Beach 25 St,BEACH 25 ST
-A,Far Rockaway - Mott Av,FAR ROCKAWAY
-B,81 St - Museum of Natural History,81 ST-MUSEUM
-C,81 St - Museum of Natural History,81 ST-MUSEUM
-B,Bedford Park Blvd,BEDFORD PK BLVD
-D,Bedford Park Blvd,BEDFORD PK BLVD
-B,182-183 Sts,182-183 STS
-D,182-183 Sts,182-183 STS
-B,Tremont Av,TREMONT AV
-D,Tremont Av,TREMONT AV
-B,174-175 Sts,174-175 STS
-D,174-175 Sts,174-175 STS
-B,155 St,155 ST
-C,155 St,155 ST
-D,155 St,155 ST
-B,7 Av,7 AV
-D,7 Av,7 AV
-E,7 Av,7 AV
-F,7 Av,7 AV
-G,7 Av,7 AV
-Q,7 Av,7 AV
-B,47-50 Sts - Rockefeller Ctr,47-50 STS ROCK
-D,47-50 Sts - Rockefeller Ctr,47-50 STS ROCK
-F,47-50 Sts - Rockefeller Ctr,47-50 STS ROCK
-M,47-50 Sts - Rockefeller Ctr,47-50 STS ROCK
-B,42 St - Bryant Pk,42 ST-BRYANT PK
-D,42 St - Bryant Pk,42 ST-BRYANT PK
-F,42 St - Bryant Pk,42 ST-BRYANT PK
-M,42 St - Bryant Pk,42 ST-BRYANT PK
-B,34 St - Herald Sq,34 ST-HERALD SQ
-D,34 St - Herald Sq,34 ST-HERALD SQ
-F,34 St - Herald Sq,34 ST-HERALD SQ
-M,34 St - Herald Sq,34 ST-HERALD SQ
-N,34 St - Herald Sq,34 ST-HERALD SQ
-Q,34 St - Herald Sq,34 ST-HERALD SQ
-R,34 St - Herald Sq,34 ST-HERALD SQ
-B,Broadway-Lafayette St,B'WAY-LAFAYETTE
-D,Broadway-Lafayette St,B'WAY-LAFAYETTE
-F,Broadway-Lafayette St,B'WAY-LAFAYETTE
-M,Broadway-Lafayette St,B'WAY-LAFAYETTE
-B,Grand St,GRAND ST
-D,Grand St,GRAND ST
-L,Grand St,GRAND ST
-B,Prospect Park,PROSPECT PARK
-Q,Prospect Park,PROSPECT PARK
-B,Newkirk Plaza,NEWKIRK AV
-Q,Newkirk Plaza,NEWKIRK AV
-B,Kings Hwy,KINGS HWY
-F,Kings Hwy,KINGS HWY
-N,Kings Hwy,KINGS HWY
-Q,Kings Hwy,KINGS HWY
-B,Sheepshead Bay,SHEEPSHEAD BAY
-Q,Sheepshead Bay,SHEEPSHEAD BAY
-B,Brighton Beach,BRIGHTON BEACH
-Q,Brighton Beach,BRIGHTON BEACH
-B,DeKalb Av,DEKALB AV
-L,DeKalb Av,DEKALB AV
-Q,DeKalb Av,DEKALB AV
-R,DeKalb Av,DEKALB AV
-C,163 St - Amsterdam Av,163 ST-AMSTERDM
-C,Lafayette Av,LAFAYETTE AV
-C,Clinton - Washington Avs,CLINTON-WASH AV
-G,Clinton - Washington Avs,CLINTON-WASH AV
-C,Kingston - Throop Avs,KINGSTON AV
-C,Ralph Av,RALPH AV
-C,Liberty Av,LIBERTY AV
-C,Shepherd Av,SHEPHERD AV
-D,9 Av,9 AV
-D,Fort Hamilton Pkwy,FT HAMILTON PKY
-F,Fort Hamilton Pkwy,FT HAMILTON PKY
-G,Fort Hamilton Pkwy,FT HAMILTON PKY
-N,Fort Hamilton Pkwy,FT HAMILTON PKY
-D,55 St,55 ST
-D,62 St,62 ST
-D,71 St,71 ST
-D,18 Av,18 AV
-F,18 Av,18 AV
-N,18 Av,18 AV
-D,20 Av,20 AV
-N,20 Av,20 AV
-D,Bay Pkwy,BAY PKWY
-F,Bay Pkwy,BAY PKWY
-N,Bay Pkwy,BAY PKWY
-D,25 Av,25 AV
-D,Bay 50 St,BAY 50 ST
-D,Norwood - 205 St,NORWOOD 205 ST
-D,Coney Island - Stillwell Av,CONEY IS-STILLW
-F,Coney Island - Stillwell Av,CONEY IS-STILLW
-N,Coney Island - Stillwell Av,CONEY IS-STILLW
-Q,Coney Island - Stillwell Av,CONEY IS-STILLW
-D,36 St,36 ST
-M,36 St,36 ST
-N,36 St,36 ST
-R,36 St,36 ST
-E,World Trade Center,WORLD TRADE CTR
-E,Briarwood,BRIARWOOD
-F,Briarwood,BRIARWOOD
-E,Kew Gardens - Union Tpke,KEW GARDENS
-F,Kew Gardens - Union Tpke,KEW GARDENS
-E,75 Av,75 AV
-F,75 Av,75 AV
-E,Lexington Av/53 St,LEXINGTON AV/53
-M,Lexington Av/53 St,LEXINGTON AV/53
-E,5 Av/53 St,5 AV/59 ST
-M,5 Av/53 St,5 AV/59 ST
-E,Jamaica Center - Parsons/Archer,JAMAICA CENTER
-J,Jamaica Center - Parsons/Archer,JAMAICA CENTER
-E,Sutphin Blvd - Archer Av - JFK Airport,SUTPHIN-ARCHER
-J,Sutphin Blvd - Archer Av - JFK Airport,SUTPHIN-ARCHER
-E,Jamaica - Van Wyck,JAMAICA VAN WK
-E,Forest Hills - 71 Av,FOREST HILLS 71
-F,Forest Hills - 71 Av,FOREST HILLS 71
-M,Forest Hills - 71 Av,FOREST HILLS 71
-R,Forest Hills - 71 Av,FOREST HILLS 71
-E,Jackson Hts - Roosevelt Av,none
-F,Jackson Hts - Roosevelt Av,none
-M,Jackson Hts - Roosevelt Av,none
-R,Jackson Hts - Roosevelt Av,none
-E,Queens Plaza,QUEENS PLAZA
-M,Queens Plaza,QUEENS PLAZA
-R,Queens Plaza,QUEENS PLAZA
-F,21 St - Queensbridge,21 ST-QNSBRIDGE
-F,Roosevelt Island,ROOSEVELT ISLND
-F,Lexington Av/63 St,LEXINGTON AV/63
-Q,Lexington Av/63 St,LEXINGTON AV/63
-F,57 St,57 ST
-F,W 8 St - NY Aquarium,W 8 ST-AQUARIUM
-Q,W 8 St - NY Aquarium,W 8 ST-AQUARIUM
-F,Jamaica - 179 St,JAMAICA 179 ST
-F,169 St,169 ST
-F,Parsons Blvd,PARSONS BLVD
-F,Sutphin Blvd,SUTPHIN BLVD
-F,2 Av,2 AV
-F,Delancey St - Essex St,DELANCEY/ESSEX
-F,East Broadway,EAST BROADWAY
-F,York St,YORK ST
-F,Carroll St,CARROLL ST
-G,Carroll St,CARROLL ST
-F,Smith - 9 Sts,SMITH-9 ST
-G,Smith - 9 Sts,SMITH-9 ST
-F,4 Av - 9 St,4 AV-9 ST
-G,4 Av - 9 St,4 AV-9 ST
-R,4 Av - 9 St,4 AV-9 ST
-F,15 St - Prospect Park,15 ST-PROSPECT
-G,15 St - Prospect Park,15 ST-PROSPECT
-F,Ditmas Av,DITMAS AV
-F,Avenue I,Avenue I
-F,Avenue N,Avenue N
-F,Avenue P,Avenue P
-F,Avenue U,Avenue U
-N,Avenue U,Avenue U
-Q,Avenue U,Avenue U
-F,Avenue X,Avenue X
-F,Neptune Av,NEPTUNE AV
-G,Court Sq - 23 St,COURT SQ-23 ST
-G,21 St,21 ST
-G,Greenpoint Av,GREENPOINT AV
-G,Nassau Av,NASSAU AV
-G,Metropolitan Av,METROPOLITAN AV
-G,Broadway,BROADWAY
-N,Broadway,BROADWAY
-G,Flushing Av,FLUSHING AV
-J,Flushing Av,FLUSHING AV
-M,Flushing Av,FLUSHING AV
-G,Myrtle - Willoughby Avs,MYRTLE-WILLOUGH
-G,Bedford - Nostrand Avs,BEDFORD-NOSTRAN
-G,Classon Av,CLASSON AV
-H,Beach 90 St,BEACH 90 ST
-H,Beach 98 St,BEACH 98 ST
-H,Beach 105 St,BEACH 105 ST
-H,Rockaway Park - Beach 116 St,ROCKAWAY PARK B
-J,121 St,121 ST
-J,Woodhaven Blvd,WOODHAVEN BLVD
-M,Woodhaven Blvd,WOODHAVEN BLVD
-R,Woodhaven Blvd,WOODHAVEN BLVD
-J,85 St - Forest Pkwy,85 ST-FOREST PK
-J,75 St - Elder Ln,75 ST-ELDERTS
-J,Cypress Hills,CYPRESS HILLS
-J,Crescent St,CRESCENT ST
-J,Norwood Av,NORWOOD AV
-J,Cleveland St,CLEVELAND ST
-J,Alabama Av,ALABAMA AV
-J,Chauncey St,CHAUNCEY ST
-J,Halsey St,HALSEY ST
-L,Halsey St,HALSEY ST
-J,Gates Av,GATES AV
-J,Kosciuszko St,KOSCIUSZKO ST
-J,Myrtle Av,MYRTLE AV
-M,Myrtle Av,MYRTLE AV
-J,Lorimer St,LORIMER ST
-L,Lorimer St,LORIMER ST
-M,Lorimer St,LORIMER ST
-J,Hewes St,HEWES ST
-M,Hewes St,HEWES ST
-J,Marcy Av,MARCY AV
-M,Marcy Av,MARCY AV
-J,Delancy St - Essex St,DELANCEY/ESSEX
-M,Delancy St - Essex St,DELANCEY/ESSEX
-J,Bowery,BOWERY
-J,Broad St,BROAD ST
-L,8 Av,8 AV
-N,8 Av,8 AV
-L,6 Av,6 AV
-L,Union Sq - 14 St,14 ST-UNION SQ
-L,3 Av,multi
-L,1 Av,multi
-L,Bedford Av,none
-L,Graham Av,none
-L,Montrose Av,
-L,Morgan Av,none
-L,Jefferson St,none
-L,Myrtle - Wyckoff Avs,none
-M,Myrtle - Wyckoff Avs,none
-L,Wilson Av,none
-L,Bushwick Av - Aberdeen St,none
-L,Atlantic Av,none
-L,Sutter Av,SUTTER AV-RUTLD
-L,Livonia Av,none
-L,E 105 St,none
-L,Canarsie - Rockaway Pkwy,none
-M,67 Av,67 AV
-R,67 Av,67 AV
-M,63 Dr - Rego Park,63 DR-REGO PARK
-R,63 Dr - Rego Park,63 DR-REGO PARK
-M,Grand Av - Newtown,GRAND-NEWTOWN
-R,Grand Av - Newtown,GRAND-NEWTOWN
-M,Elmhurst Av,ELMHURST AV
-R,Elmhurst Av,ELMHURST AV
-M,65 St,65 ST
-R,65 St,65 ST
-M,Northern Blvd,NORTHERN BLVD
-R,Northern Blvd,NORTHERN BLVD
-M,46 St,46 ST
-R,46 St,46 ST
-M,Steinway St,STEINWAY ST
-R,Steinway St,STEINWAY ST
-M,Middle Village - Metropolitan Av,METROPOLITAN AV
-M,Fresh Pond Rd,FRESH POND RD
-M,Forest Av,FOREST AVE
-M,Seneca Av,SENECA AVE
-M,Knickerbocker Av,KNICKERBOCKER
-M,Central Av,CENTRAL AV
-N,New Utrecht Av,NEW UTRECHT AV
-N,Astoria - Ditmars Blvd,ASTORIA DITMARS
-N,Astoria Blvd,ASTORIA BLVD
-N,30 Av,30 AV
-N,36 Av,36 AV
-N,39 Av - Dutch Kills,39 AV
-N,Lexington Av/59 St,none
-R,Lexington Av/59 St,none
-N,5 Av/59 St,5 AV/59 ST
-R,5 Av/59 St,5 AV/59 ST
-N,57 St - 7 Av,57 ST-7 AV
-Q,57 St - 7 Av,57 ST-7 AV
-R,57 St - 7 Av,57 ST-7 AV
-N,49 St,49 ST
-R,49 St,49 ST
-N,8 St - NYU,8 ST-NYU
-R,8 St - NYU,8 ST-NYU
-N,Prince St,PRINCE ST
-R,Prince St,PRINCE ST
-N,City Hall,CITY HALL
-R,City Hall,CITY HALL
-N,Whitehall St - South Ferry,WHITEHALL S-FRY
-R,Whitehall St - South Ferry,WHITEHALL S-FRY
-Q,Parkside Av,PARKSIDE AV
-Q,Beverley Rd,BEVERLEY ROAD
-Q,Cortelyou Rd,CORTELYOU RD
-Q,Avenue H,AVENUE H
-Q,Avenue J,AVENUE J
-Q,Avenue M,AVENUE M
-Q,Neck Rd,NECK RD
-Q,Ocean Pkwy,OCEAN PKWY
-R,Court St,none
-R,Union St,UNION ST
-R,25 St,25 ST
-R,45 St,45 ST
-R,53 St,53 ST
-R,Bay Ridge Av,BAY RIDGE AV
-R,Bay Ridge - 95 St,BAY RIDGE-95 ST
-SI,Tottenville,none
-SI,Arthur Kill,none
-SI,Richmond Valley,none
-SI,Pleasant Plains,none
-SI,Prince's Bay,none
-SI,Huguenot,none
-SI,Annadale,none
-SI,Eltingville,none
-SI,Great Kills,none
-SI,Bay Terrace,none
-SI,Oakwood Heights,none
-SI,New Dorp,none
-SI,Grant City,none
-SI,Jefferson Av,none
-SI,Dongan Hills,none
-SI,Old Town,none
-SI,Grasmere,none
-SI,Clifton,none
-SI,Stapleton,none
-SI,Tompkinsville,none
-SI,St George,none
+stop_id,station,order,line,id
+101S,Van Cortlandt Park - 242 St,0,1,none
+103S,238 St,1,1,238 ST
+104S,231 St,2,1,231 ST
+106S,Marble Hill - 225 St,3,1,MARBLE HILL-225
+107S,215 St,4,1,215 ST
+108S,207 St,5,1,207 ST
+109S,Dyckman St,6,1,DYCKMAN ST
+A03S,Dyckman St,1,A,DYCKMAN ST
+110S,191 St,7,1,191 ST
+111S,181 St,8,1,181 ST
+A06S,181 St,3,A,181 ST
+112S,168 St - Washington Hts,9,1,168 ST
+113S,157 St,10,1,157 ST
+114S,145 St,11,1,145 ST
+302S,145 St,33,3,145 ST
+A12S,145 St,6,A,145 ST
+D13S,145 St,21,B,145 ST
+A12S,145 St,3,C,145 ST
+D13S,145 St,23,D,145 ST
+115S,137 St - City College,12,1,137 ST CITY COL
+116S,125 St,13,1,125 ST
+225S,125 St,28,2,125 ST
+225S,125 St,8,3,125 ST
+621S,125 St,18,4,125 ST
+621S,125 St,22,5,125 ST
+621S,125 St,18,6,125 ST
+A15S,125 St,7,A,125 ST
+A15S,125 St,1,B,125 ST
+A15S,125 St,5,C,125 ST
+A15S,125 St,0,D,125 ST
+117S,116 St - Columbia University,14,1,116 ST-COLUMBIA
+118S,Cathedral Pkwy (110 St),15,1,CATHEDRAL PKWY
+A17S,Cathedral Pkwy (110 St),3,B,CATHEDRAL PKWY
+A17S,Cathedral Pkwy (110 St),7,C,CATHEDRAL PKWY
+119S,103 St,16,1,103 ST
+624S,103 St,21,6,103 ST
+A18S,103 St,4,B,103 ST
+A18S,103 St,8,C,103 ST
+120S,96 St,17,1,96 ST
+120S,96 St,0,2,96 ST
+120S,96 St,0,3,96 ST
+625S,96 St,22,6,96 ST
+A19S,96 St,5,B,96 ST
+A19S,96 St,9,C,96 ST
+Q05S,96 St,25,Q,96 ST
+121S,86 St,18,1,86 ST
+626S,86 St,23,4,86 ST
+626S,86 St,32,5,86 ST
+626S,86 St,23,6,86 ST
+A20S,86 St,6,B,86 ST
+A20S,86 St,10,C,86 ST
+N10S,86 St,8,N,86 ST
+Q04S,86 St,24,Q,86 ST
+R44S,86 St,43,R,86 ST
+122S,79 St,19,1,79 ST
+B18S,79 St,9,D,79 ST
+123S,72 St,20,1,72 ST
+123S,72 St,1,2,72 ST
+123S,72 St,1,3,72 ST
+A22S,72 St,8,B,72 ST
+A22S,72 St,12,C,72 ST
+Q03S,72 St,23,Q,72 ST
+124S,66 St - Lincoln Center,21,1,66 ST-LINCOLN
+125S,59 St - Columbus Circle,22,1,59 ST COLUMBUS
+A24S,59 St - Columbus Circle,8,A,59 ST COLUMBUS
+A24S,59 St - Columbus Circle,9,B,59 ST COLUMBUS
+A24S,59 St - Columbus Circle,13,C,59 ST COLUMBUS
+A24S,59 St - Columbus Circle,1,D,59 ST COLUMBUS
+126S,50 St,23,1,50 ST
+A25S,50 St,14,C,50 ST
+B14S,50 St,5,D,50 ST
+A25S,50 St,0,E,50 ST
+127S,Times Sq - 42 St,24,1,TIMES SQ-42 ST
+127S,Times Sq - 42 St,2,2,TIMES SQ-42 ST
+127S,Times Sq - 42 St,2,3,TIMES SQ-42 ST
+725S,Times Sq - 42 St,20,7,TIMES SQ-42 ST
+R16S,Times Sq - 42 St,23,N,TIMES SQ-42 ST
+R16S,Times Sq - 42 St,26,Q,TIMES SQ-42 ST
+R16S,Times Sq - 42 St,17,R,TIMES SQ-42 ST
+128S,34 St - Penn Station,25,1,34 ST-PENN STA
+128S,34 St - Penn Station,3,2,34 ST-PENN STA
+128S,34 St - Penn Station,3,3,34 ST-PENN STA
+A28S,34 St - Penn Station,10,A,34 ST-PENN STA
+A28S,34 St - Penn Station,16,C,34 ST-PENN STA
+A28S,34 St - Penn Station,2,E,34 ST-PENN STA
+129S,28 St,26,1,28 ST
+633S,28 St,30,6,28 ST
+R18S,28 St,25,N,28 ST
+R18S,28 St,19,R,28 ST
+130S,23 St,27,1,23 ST
+634S,23 St,31,6,23 ST
+A30S,23 St,17,C,23 ST
+A30S,23 St,3,E,23 ST
+D18S,23 St,9,F,23 ST
+D18S,23 St,3,M,23 ST
+R19S,23 St,27,N,23 ST
+R19S,23 St,20,R,23 ST
+131S,18 St,28,1,18 ST
+132S,14 St,29,1,14 ST
+132S,14 St,4,2,14 ST
+132S,14 St,4,3,14 ST
+A31S,14 St,11,A,14 ST
+A31S,14 St,18,C,14 ST
+A31S,14 St,4,E,14 ST
+D19S,14 St,10,F,14 ST
+D19S,14 St,4,M,14 ST
+133S,Christopher St - Sheridan Sq,30,1,CHRISTOPHER ST
+134S,Houston St,31,1,HOUSTON ST
+135S,Canal St,32,1,CANAL ST
+639S,Canal St,36,6,CANAL ST
+A34S,Canal St,13,A,CANAL ST
+A34S,Canal St,21,C,CANAL ST
+A34S,Canal St,7,E,CANAL ST
+M20S,Canal St,26,J,CANAL ST
+Q01S,Canal St,10,N,CANAL ST
+R23S,Canal St,30,N,CANAL ST
+Q01S,Canal St,21,Q,CANAL ST
+R23S,Canal St,24,R,CANAL ST
+136S,Franklin St,33,1,FRANKLIN AV
+137S,Chambers St,34,1,CHAMBERS ST
+137S,Chambers St,5,2,CHAMBERS ST
+137S,Chambers St,5,3,CHAMBERS ST
+A36S,Chambers St,14,A,CHAMBERS ST
+A36S,Chambers St,22,C,CHAMBERS ST
+M21S,Chambers St,27,J,CHAMBERS ST
+138S,Cortlandt St,35,1,CORTLANDT ST
+R25S,Cortlandt St,32,N,CORTLANDT ST
+R25S,Cortlandt St,26,R,CORTLANDT ST
+139S,Rector St,36,1,RECTOR ST
+R26S,Rector St,33,N,RECTOR ST
+R26S,Rector St,27,R,RECTOR ST
+142S,South Ferry,37,1,SOUTH FERRY
+228S,Park Pl,6,2,PARK PLACE
+228S,Park Pl,6,3,PARK PLACE
+201S,Wakefield - 241 St,7,2,WAKEFIELD/241
+204S,Nereid Av,8,2,NEREID AV
+205S,233 St,9,2,233 ST
+206S,225 St,10,2,225 ST
+207S,219 St,11,2,219 ST
+208S,Gun Hill Rd,12,2,GUN HILL RD
+503S,Gun Hill Rd,29,5,GUN HILL RD
+209S,Burke Av,13,2,BURKE AV
+210S,Allerton Av,14,2,ALLERTON AV
+211S,Pelham Pkwy,15,2,PELHAM PKWY
+504S,Pelham Pkwy,30,5,PELHAM PKWY
+212S,Bronx Park East,16,2,BRONX PARK EAST
+213S,E 180 St,17,2,E 180 ST
+213S,E 180 St,0,5,E 180 ST
+214S,West Farms Sq - E Tremont Av,18,2,WEST FARMS SQ
+214S,West Farms Sq - E Tremont Av,1,5,WEST FARMS SQ
+215S,174 St,19,2,174 ST
+215S,174 St,3,5,174 ST
+216S,Freeman St,20,2,FREEMAN ST
+216S,Freeman St,4,5,FREEMAN ST
+217S,Simpson St,21,2,SIMPSON ST
+217S,Simpson St,5,5,SIMPSON ST
+218S,Intervale Av,22,2,INTERVALE AV
+218S,Intervale Av,6,5,INTERVALE AV
+219S,Prospect Av,23,2,PROSPECT AV
+219S,Prospect Av,7,5,PROSPECT AV
+R34S,Prospect Av,35,R,PROSPECT AV
+220S,Jackson Av,24,2,JACKSON AV
+220S,Jackson Av,8,5,JACKSON AV
+221S,3 Av - 149 St,25,2,3 AV-149 ST
+221S,3 Av - 149 St,2,5,3 AV-149 ST
+222S,149 St - Grand Concourse,26,2,149/GRAND CONC
+415S,149 St - Grand Concourse,16,4,149/GRAND CONC
+222S,149 St - Grand Concourse,9,5,149/GRAND CONC
+224S,135 St,27,2,135 ST
+224S,135 St,7,3,135 ST
+A14S,135 St,0,B,135 ST
+A14S,135 St,4,C,135 ST
+226S,116 St,29,2,116 ST
+226S,116 St,9,3,116 ST
+622S,116 St,19,6,116 ST
+A16S,116 St,2,B,116 ST
+A16S,116 St,6,C,116 ST
+227S,Central Park North (110 St),30,2,CENTRAL PK N110
+227S,Central Park North (110 St),10,3,CENTRAL PK N110
+229S,Fulton St,31,2,FULTON ST
+229S,Fulton St,11,3,FULTON ST
+418S,Fulton St,19,4,FULTON ST
+418S,Fulton St,23,5,FULTON ST
+A38S,Fulton St,15,A,FULTON ST
+A38S,Fulton St,23,C,FULTON ST
+G36S,Fulton St,20,G,FULTON ST
+M22S,Fulton St,28,J,FULTON ST
+230S,Wall St,32,2,WALL ST
+230S,Wall St,12,3,WALL ST
+419S,Wall St,20,4,WALL ST
+419S,Wall St,24,5,WALL ST
+231S,Clark St,33,2,CLARK ST
+231S,Clark St,13,3,CLARK ST
+232S,Borough Hall,34,2,BOROUGH HALL
+232S,Borough Hall,14,3,BOROUGH HALL
+423S,Borough Hall,22,4,BOROUGH HALL
+423S,Borough Hall,26,5,BOROUGH HALL
+233S,Hoyt St,35,2,HOYT ST
+233S,Hoyt St,15,3,HOYT ST
+234S,Nevins St,36,2,NEVINS ST
+234S,Nevins St,16,3,NEVINS ST
+234S,Nevins St,0,4,NEVINS ST
+234S,Nevins St,11,5,NEVINS ST
+235S,Atlantic Av - Barclays Ctr,37,2,ATL AV-BARCLAY
+235S,Atlantic Av - Barclays Ctr,17,3,ATL AV-BARCLAY
+235S,Atlantic Av - Barclays Ctr,1,4,ATL AV-BARCLAY
+235S,Atlantic Av - Barclays Ctr,12,5,ATL AV-BARCLAY
+D24S,Atlantic Av - Barclays Ctr,29,B,ATL AV-BARCLAY
+R31S,Atlantic Av - Barclays Ctr,34,D,ATL AV-BARCLAY
+R31S,Atlantic Av - Barclays Ctr,11,N,ATL AV-BARCLAY
+D24S,Atlantic Av - Barclays Ctr,2,Q,ATL AV-BARCLAY
+R31S,Atlantic Av - Barclays Ctr,32,R,ATL AV-BARCLAY
+236S,Bergen St,38,2,BERGEN ST
+236S,Bergen St,18,3,BERGEN ST
+F20S,Bergen St,1,F,BERGEN ST
+F20S,Bergen St,1,G,BERGEN ST
+237S,Grand Army Plaza,39,2,GRAND ARMY PLAZ
+237S,Grand Army Plaza,19,3,GRAND ARMY PLAZ
+238S,Eastern Pkwy - Brooklyn Museum,40,2,none
+238S,Eastern Pkwy - Brooklyn Museum,20,3,none
+239S,Franklin Av,41,2,FRANKLIN AV
+239S,Franklin Av,21,3,FRANKLIN AV
+239S,Franklin Av,2,4,FRANKLIN AV
+239S,Franklin Av,13,5,FRANKLIN AV
+A45S,Franklin Av,29,C,FRANKLIN AV
+241S,President St,42,2,PRESIDENT ST
+241S,President St,14,5,PRESIDENT ST
+242S,Sterling St,43,2,STERLING ST
+242S,Sterling St,16,5,STERLING ST
+243S,Winthrop St,44,2,WINTHROP ST
+243S,Winthrop St,17,5,WINTHROP ST
+244S,Church Av,45,2,CHURCH AV
+244S,Church Av,18,5,CHURCH AV
+D28S,Church Av,32,B,CHURCH AV
+F27S,Church Av,33,F,CHURCH AV
+F27S,Church Av,8,G,CHURCH AV
+D28S,Church Av,6,Q,CHURCH AV
+245S,Beverly Rd,46,2,BEVERLY RD
+245S,Beverly Rd,19,5,BEVERLY RD
+246S,Newkirk Av,47,2,NEWKIRK AV
+246S,Newkirk Av,20,5,NEWKIRK AV
+247S,Flatbush Av - Brooklyn College,48,2,FLATBUSH AV-B.C
+247S,Flatbush Av - Brooklyn College,21,5,FLATBUSH AV-B.C
+248S,Nostrand Av,22,3,NOSTRAND AV
+A46S,Nostrand Av,19,A,NOSTRAND AV
+A46S,Nostrand Av,30,C,NOSTRAND AV
+249S,Kingston Av,23,3,KINGSTON AV
+250S,Crown Hts - Utica Av,24,3,CROWN HTS-UTICA
+250S,Crown Hts - Utica Av,3,4,CROWN HTS-UTICA
+250S,Crown Hts - Utica Av,15,5,CROWN HTS-UTICA
+251S,Sutter Av - Rutland Rd,25,3,SUTTER AV-RUTLD
+252S,Saratoga Av,26,3,SARATOGA AV
+253S,Rockaway Av,27,3,ROCKAWAY PARK B
+A50S,Rockaway Av,34,C,ROCKAWAY PARK B
+254S,Junius St,28,3,JUNIUS ST
+255S,Pennsylvania Av,29,3,PENNSYLVANIA AV
+256S,Van Siclen Av,30,3,hasTwo
+A53S,Van Siclen Av,37,C,hasTwo
+J23S,Van Siclen Av,12,J,hasTwo
+257S,New Lots Av,31,3,NEW LOTS AV
+L27S,New Lots Av,21,L,NEW LOTS AV
+301S,Harlem - 148 St,32,3,HARLEM 148 ST
+401S,Woodlawn,4,4,Woodlawn
+402S,Mosholu Pkwy,5,4,MOSHOLU PKWY
+405S,Bedford Park Blvd - Lehman College,6,4,BEDFORD PK BLVD
+406S,Kingsbridge Rd,7,4,KINGSBRIDGE RD
+D04S,Kingsbridge Rd,12,B,KINGSBRIDGE RD
+D04S,Kingsbridge Rd,18,D,KINGSBRIDGE RD
+407S,Fordham Rd,8,4,FORDHAM RD
+D05S,Fordham Rd,13,B,FORDHAM RD
+D05S,Fordham Rd,19,D,FORDHAM RD
+408S,183 St,9,4,183 ST
+409S,Burnside Av,10,4,BURNSIDE AV
+410S,176 St,11,4,176 ST
+411S,Mt Eden Av,12,4,MT EDEN AV
+412S,170 St,13,4,170 ST
+D09S,170 St,17,B,170 ST
+D09S,170 St,24,D,170 ST
+413S,167 St,14,4,167 ST
+D10S,167 St,18,B,167 ST
+D10S,167 St,25,D,167 ST
+414S,161 St - Yankee Stadium,15,4,161/YANKEE STAD
+D11S,161 St - Yankee Stadium,19,B,161/YANKEE STAD
+D11S,161 St - Yankee Stadium,26,D,161/YANKEE STAD
+416S,138 St - Grand Concourse,17,4,138/GRAND CONC
+416S,138 St - Grand Concourse,10,5,138/GRAND CONC
+420S,Bowling Green,21,4,BOWLING GREEN
+420S,Bowling Green,25,5,BOWLING GREEN
+629S,59 St,24,4,59 ST
+629S,59 St,33,5,59 ST
+629S,59 St,26,6,59 ST
+R41S,59 St,36,N,59 ST
+R41S,59 St,40,R,59 ST
+631S,Grand Central - 42 St,25,4,GRD CNTRL-42 ST
+631S,Grand Central - 42 St,34,5,GRD CNTRL-42 ST
+631S,Grand Central - 42 St,28,6,GRD CNTRL-42 ST
+723S,Grand Central - 42 St,18,7,GRD CNTRL-42 ST
+635S,14 St - Union Sq,26,4,14 ST-UNION SQ
+635S,14 St - Union Sq,35,5,14 ST-UNION SQ
+635S,14 St - Union Sq,32,6,14 ST-UNION SQ
+R20S,14 St - Union Sq,26,N,14 ST-UNION SQ
+R20S,14 St - Union Sq,28,Q,14 ST-UNION SQ
+R20S,14 St - Union Sq,21,R,14 ST-UNION SQ
+640S,Brooklyn Bridge - City Hall,27,4,BROOKLYN BRIDGE
+640S,Brooklyn Bridge - City Hall,36,5,BROOKLYN BRIDGE
+640S,Brooklyn Bridge - City Hall,37,6,BROOKLYN BRIDGE
+501S,Eastchester - Dyre Av,27,5,EASTCHSTER/DYRE
+502S,Baychester Av,28,5,BAYCHESTER AV
+505S,Morris Park,31,5,MORRIS PARK
+601S,Pelham Bay Park,0,6,PELHAM BAY PARK
+602S,Buhre Av,1,6,BUHRE AV
+603S,Middletown Rd,2,6,MIDDLETOWN RD
+604S,Westchester Sq - E Tremont Av,3,6,WESTCHESTER SQ
+606S,Zerega Av,4,6,ZEREGA AV
+607S,Castle Hill Av,5,6,CASTLE HILL AV
+608S,Parkchester,6,6,PARKCHESTER
+609S,St Lawrence Av,7,6,ST LAWRENCE AV
+613S,Hunts Point Av,8,6,HUNTS POINT AV
+610S,Morrison Av- Sound View,9,6,none
+611S,Elder Av,10,6,ELDER AV
+612S,Whitlock Av,11,6,WHITLOCK AV
+614S,Longwood Av,12,6,LONGWOOD AV
+619S,3 Av - 138 St,13,6,3 AV 138 ST
+615S,E 149 St,14,6,E 149 ST
+616S,E 143 St - St Mary's St,15,6,E 143/ST MARY'S
+617S,Cypress Av,16,6,CYPRESS AV
+618S,Brook Av,17,6,none
+623S,110 St,20,6,110 ST
+627S,77 St,24,6,77 ST
+R43S,77 St,42,R,77 ST
+628S,68 St - Hunter College,25,6,68ST-HUNTER CO
+630S,51 St,27,6,51 ST
+632S,33 St,29,6,33 ST-RAWSON ST
+636S,Astor Pl,33,6,ASTOR PL
+637S,Bleecker St,34,6,BLEECKER ST
+638S,Spring St,35,6,SPRING ST
+A33S,Spring St,20,C,SPRING ST
+A33S,Spring St,6,E,SPRING ST
+701S,Flushing - Main St,0,7,FLUSHING-MAIN
+702S,Mets - Willets Point,1,7,METS-WILLETS PT
+705S,111 St,2,7,111 ST
+A64S,111 St,29,A,111 ST
+J13S,111 St,3,J,111 ST
+707S,Junction Blvd,3,7,
+706S,103 St - Corona Plaza,4,7,103 ST-CORONA
+708S,90 St - Elmhurst Av,5,7,ELMHURST AV
+712S,Woodside - 61 St,6,7,61 ST WOODSIDE
+709S,82 St - Jackson Hts,7,7,82 ST-JACKSON H
+710S,74 St - Broadway,8,7,74 ST-BROADWAY
+711S,69 St,9,7,69 ST
+713S,52 St,10,7,52 ST
+718S,Queensboro Plaza,11,7,QUEENSBORO PLZ
+R09S,Queensboro Plaza,18,N,QUEENSBORO PLZ
+714S,46 St - Bliss St,12,7,46 ST
+716S,33 St - Rawson St,14,7,33 ST-RAWSON ST
+719S,Court Sq,15,7,COURT SQ
+F09S,Court Sq,14,E,COURT SQ
+F09S,Court Sq,8,M,COURT SQ
+720S,Hunters Point Av,16,7,HUNTERS PT AV
+721S,Vernon Blvd - Jackson Av,17,7,VERNON-JACKSON
+724S,5 Av,19,7,5 AVE
+726S,34 St - Hudson Yds,21,7,34 ST-HUDSON YD
+A02S,Inwood - 207 St,0,A,INWOOD-207 ST
+A05S,190 St,2,A,190 ST
+A07S,175 St,4,A,175 ST
+A09S,168 St,5,A,168 ST
+A09S,168 St,0,C,168 ST
+A27S,42 St - Port Authority Bus Terminal,9,A,42 ST-PORT AUTH
+A27S,42 St - Port Authority Bus Terminal,15,C,42 ST-PORT AUTH
+A27S,42 St - Port Authority Bus Terminal,1,E,42 ST-PORT AUTH
+A32S,W 4 St - Wash Sq,12,A,W 4 ST-WASH SQ
+D20S,W 4 St - Wash Sq,25,B,W 4 ST-WASH SQ
+A32S,W 4 St - Wash Sq,19,C,W 4 ST-WASH SQ
+D20S,W 4 St - Wash Sq,31,D,W 4 ST-WASH SQ
+A32S,W 4 St - Wash Sq,5,E,W 4 ST-WASH SQ
+D20S,W 4 St - Wash Sq,11,F,W 4 ST-WASH SQ
+D20S,W 4 St - Wash Sq,5,M,W 4 ST-WASH SQ
+A40S,High St,16,A,HIGH ST
+A40S,High St,24,C,HIGH ST
+A41S,Jay St - MetroTech,17,A,JAY ST-METROTEC
+A41S,Jay St - MetroTech,25,C,JAY ST-METROTEC
+A41S,Jay St - MetroTech,0,F,JAY ST-METROTEC
+R29S,Jay St - MetroTech,30,R,JAY ST-METROTEC
+A42S,Hoyt - Schermerhorn Sts,18,A,HOYT-SCHER
+A42S,Hoyt - Schermerhorn Sts,26,C,HOYT-SCHER
+A42S,Hoyt - Schermerhorn Sts,0,G,HOYT-SCHER
+A48S,Utica Av,20,A,UTICA AV
+A48S,Utica Av,32,C,UTICA AV
+A51S,Broadway Jct,21,A,BROADWAY
+A51S,Broadway Jct,35,C,BROADWAY
+J27S,Broadway Jct,14,J,BROADWAY
+L22S,Broadway Jct,17,L,BROADWAY
+A55S,Euclid Av,22,A,EUCLID AV
+A55S,Euclid Av,39,C,EUCLID AV
+A57S,Grant Av,23,A,GRANT AV
+A59S,80 St,24,A,80 ST
+A60S,88 St,25,A,88 ST
+A61S,Rockaway Blvd,26,A,ROCKAWAY AV
+A63S,104 St,27,A,104 ST
+J14S,104 St,4,J,104 ST
+H02S,Aqueduct - N Conduit Av,28,A,AQUEDUCT N.COND
+A65S,Ozone Park - Lefferts Blvd,30,A,OZONE PK LEFFRT
+H03S,Howard Beach - JFK Airport,31,A,HOWARD BCH JFK
+H04S,Broad Channel,32,A,BROAD CHANNEL
+H04S,Broad Channel,0,H,BROAD CHANNEL
+H06S,Beach 67 St,33,A,BEACH 67 ST
+H07S,Beach 60 St,34,A,BEACH 60 ST
+H08S,Beach 44 St,35,A,BEACH 44 ST
+H09S,Beach 36 St,36,A,BEACH 36 ST
+H10S,Beach 25 St,37,A,BEACH 25 ST
+H11S,Far Rockaway - Mott Av,38,A,FAR ROCKAWAY
+A21S,81 St - Museum of Natural History,7,B,81 ST-MUSEUM
+A21S,81 St - Museum of Natural History,11,C,81 ST-MUSEUM
+D14S,7 Av,10,B,7 AV
+D25S,7 Av,30,B,7 AV
+D14S,7 Av,2,D,7 AV
+D14S,7 Av,9,E,7 AV
+F24S,7 Av,30,F,7 AV
+F24S,7 Av,5,G,7 AV
+D25S,7 Av,3,Q,7 AV
+D03S,Bedford Park Blvd,11,B,BEDFORD PK BLVD
+D03S,Bedford Park Blvd,17,D,BEDFORD PK BLVD
+D06S,182-183 Sts,14,B,182-183 STS
+D06S,182-183 Sts,20,D,182-183 STS
+D07S,Tremont Av,15,B,TREMONT AV
+D07S,Tremont Av,21,D,TREMONT AV
+D08S,174-175 Sts,16,B,174-175 STS
+D08S,174-175 Sts,22,D,174-175 STS
+D12S,155 St,20,B,155 ST
+A11S,155 St,2,C,155 ST
+D12S,155 St,27,D,155 ST
+D15S,47-50 Sts - Rockefeller Ctr,22,B,47-50 STS ROCK
+D15S,47-50 Sts - Rockefeller Ctr,28,D,47-50 STS ROCK
+D15S,47-50 Sts - Rockefeller Ctr,6,F,47-50 STS ROCK
+D15S,47-50 Sts - Rockefeller Ctr,0,M,47-50 STS ROCK
+D16S,42 St - Bryant Pk,23,B,42 ST-BRYANT PK
+D16S,42 St - Bryant Pk,29,D,42 ST-BRYANT PK
+D16S,42 St - Bryant Pk,7,F,42 ST-BRYANT PK
+D16S,42 St - Bryant Pk,1,M,42 ST-BRYANT PK
+D17S,34 St - Herald Sq,24,B,34 ST-HERALD SQ
+D17S,34 St - Herald Sq,30,D,34 ST-HERALD SQ
+D17S,34 St - Herald Sq,8,F,34 ST-HERALD SQ
+D17S,34 St - Herald Sq,2,M,34 ST-HERALD SQ
+R17S,34 St - Herald Sq,24,N,34 ST-HERALD SQ
+R17S,34 St - Herald Sq,27,Q,34 ST-HERALD SQ
+R17S,34 St - Herald Sq,18,R,34 ST-HERALD SQ
+D21S,Broadway-Lafayette St,26,B,B'WAY-LAFAYETTE
+D21S,Broadway-Lafayette St,32,D,B'WAY-LAFAYETTE
+D21S,Broadway-Lafayette St,12,F,B'WAY-LAFAYETTE
+D21S,Broadway-Lafayette St,6,M,B'WAY-LAFAYETTE
+D22S,Grand St,27,B,GRAND ST
+D22S,Grand St,33,D,GRAND ST
+L12S,Grand St,8,L,GRAND ST
+R30S,DeKalb Av,28,B,DEKALB AV
+L16S,DeKalb Av,12,L,DEKALB AV
+R30S,DeKalb Av,22,Q,DEKALB AV
+R30S,DeKalb Av,31,R,DEKALB AV
+D26S,Prospect Park,31,B,PROSPECT PARK
+D26S,Prospect Park,4,Q,PROSPECT PARK
+D31S,Newkirk Plaza,33,B,NEWKIRK AV
+D31S,Newkirk Plaza,9,Q,NEWKIRK AV
+D35S,Kings Hwy,34,B,KINGS HWY
+F35S,Kings Hwy,40,F,KINGS HWY
+N08S,Kings Hwy,6,N,KINGS HWY
+D35S,Kings Hwy,13,Q,KINGS HWY
+D39S,Sheepshead Bay,35,B,SHEEPSHEAD BAY
+D39S,Sheepshead Bay,16,Q,SHEEPSHEAD BAY
+D40S,Brighton Beach,36,B,BRIGHTON BEACH
+D40S,Brighton Beach,17,Q,BRIGHTON BEACH
+A10S,163 St - Amsterdam Av,1,C,163 ST-AMSTERDM
+A43S,Lafayette Av,27,C,LAFAYETTE AV
+A44S,Clinton - Washington Avs,28,C,CLINTON-WASH AV
+G35S,Clinton - Washington Avs,19,G,CLINTON-WASH AV
+A47S,Kingston - Throop Avs,31,C,KINGSTON AV
+A49S,Ralph Av,33,C,RALPH AV
+A52S,Liberty Av,36,C,LIBERTY AV
+A54S,Shepherd Av,38,C,SHEPHERD AV
+B12S,9 Av,3,D,9 AV
+B13S,Fort Hamilton Pkwy,4,D,FT HAMILTON PKY
+F26S,Fort Hamilton Pkwy,32,F,FT HAMILTON PKY
+F26S,Fort Hamilton Pkwy,7,G,FT HAMILTON PKY
+N03S,Fort Hamilton Pkwy,1,N,FT HAMILTON PKY
+B15S,55 St,6,D,55 ST
+B16S,62 St,7,D,62 ST
+B17S,71 St,8,D,71 ST
+B19S,18 Av,10,D,18 AV
+F30S,18 Av,35,F,18 AV
+N05S,18 Av,3,N,18 AV
+B20S,20 Av,11,D,20 AV
+N06S,20 Av,4,N,20 AV
+B21S,Bay Pkwy,12,D,BAY PKWY
+F32S,Bay Pkwy,37,F,BAY PKWY
+N07S,Bay Pkwy,5,N,BAY PKWY
+B22S,25 Av,13,D,25 AV
+B23S,Bay 50 St,14,D,BAY 50 ST
+D43S,Coney Island - Stillwell Av,15,D,CONEY IS-STILLW
+D43S,Coney Island - Stillwell Av,15,F,CONEY IS-STILLW
+D43S,Coney Island - Stillwell Av,9,N,CONEY IS-STILLW
+D43S,Coney Island - Stillwell Av,20,Q,CONEY IS-STILLW
+D01S,Norwood - 205 St,16,D,NORWOOD 205 ST
+R36S,36 St,35,D,36 ST
+G20S,36 St,22,M,36 ST
+R36S,36 St,35,N,36 ST
+G20S,36 St,11,R,36 ST
+R36S,36 St,37,R,36 ST
+E01S,World Trade Center,8,E,WORLD TRADE CTR
+F05S,Briarwood,10,E,BRIARWOOD
+F05S,Briarwood,20,F,BRIARWOOD
+F06S,Kew Gardens - Union Tpke,11,E,KEW GARDENS
+F06S,Kew Gardens - Union Tpke,21,F,KEW GARDENS
+F07S,75 Av,12,E,75 AV
+F07S,75 Av,22,F,75 AV
+G08S,Forest Hills - 71 Av,13,E,FOREST HILLS 71
+G08S,Forest Hills - 71 Av,23,F,FOREST HILLS 71
+G08S,Forest Hills - 71 Av,11,M,FOREST HILLS 71
+G08S,Forest Hills - 71 Av,0,R,FOREST HILLS 71
+F11S,Lexington Av/53 St,15,E,LEXINGTON AV/53
+F11S,Lexington Av/53 St,9,M,LEXINGTON AV/53
+F12S,5 Av/53 St,16,E,5 AV/59 ST
+F12S,5 Av/53 St,10,M,5 AV/59 ST
+G05S,Jamaica Center - Parsons/Archer,17,E,JAMAICA CENTER
+G05S,Jamaica Center - Parsons/Archer,0,J,JAMAICA CENTER
+G06S,Sutphin Blvd - Archer Av - JFK Airport,18,E,SUTPHIN-ARCHER
+G06S,Sutphin Blvd - Archer Av - JFK Airport,1,J,SUTPHIN-ARCHER
+G07S,Jamaica - Van Wyck,19,E,JAMAICA VAN WK
+G14S,Jackson Hts - Roosevelt Av,20,E,none
+G14S,Jackson Hts - Roosevelt Av,44,F,none
+G14S,Jackson Hts - Roosevelt Av,17,M,none
+G14S,Jackson Hts - Roosevelt Av,6,R,none
+G21S,Queens Plaza,21,E,QUEENS PLAZA
+G21S,Queens Plaza,23,M,QUEENS PLAZA
+G21S,Queens Plaza,12,R,QUEENS PLAZA
+B04S,21 St - Queensbridge,2,F,21 ST-QNSBRIDGE
+B06S,Roosevelt Island,3,F,ROOSEVELT ISLND
+B08S,Lexington Av/63 St,4,F,LEXINGTON AV/63
+B08S,Lexington Av/63 St,0,Q,LEXINGTON AV/63
+B10S,57 St,5,F,57 ST
+F14S,2 Av,13,F,2 AV
+D42S,W 8 St - NY Aquarium,14,F,W 8 ST-AQUARIUM
+D42S,W 8 St - NY Aquarium,19,Q,W 8 ST-AQUARIUM
+F01S,Jamaica - 179 St,16,F,JAMAICA 179 ST
+F02S,169 St,17,F,169 ST
+F03S,Parsons Blvd,18,F,PARSONS BLVD
+F04S,Sutphin Blvd,19,F,SUTPHIN BLVD
+F15S,Delancey St - Essex St,24,F,DELANCEY/ESSEX
+F16S,East Broadway,25,F,EAST BROADWAY
+F18S,York St,26,F,YORK ST
+F21S,Carroll St,27,F,CARROLL ST
+F21S,Carroll St,2,G,CARROLL ST
+F22S,Smith - 9 Sts,28,F,SMITH-9 ST
+F22S,Smith - 9 Sts,3,G,SMITH-9 ST
+F23S,4 Av - 9 St,29,F,4 AV-9 ST
+F23S,4 Av - 9 St,4,G,4 AV-9 ST
+R33S,4 Av - 9 St,34,R,4 AV-9 ST
+F25S,15 St - Prospect Park,31,F,15 ST-PROSPECT
+F25S,15 St - Prospect Park,6,G,15 ST-PROSPECT
+F29S,Ditmas Av,34,F,DITMAS AV
+F31S,Avenue I,36,F,Avenue I
+F33S,Avenue N,38,F,Avenue N
+F34S,Avenue P,39,F,Avenue P
+F36S,Avenue U,41,F,Avenue U
+N09S,Avenue U,7,N,Avenue U
+D37S,Avenue U,14,Q,Avenue U
+F38S,Avenue X,42,F,Avenue X
+F39S,Neptune Av,43,F,NEPTUNE AV
+G22S,Court Sq - 23 St,9,G,COURT SQ-23 ST
+G24S,21 St,10,G,21 ST
+G26S,Greenpoint Av,11,G,GREENPOINT AV
+G28S,Nassau Av,12,G,NASSAU AV
+G29S,Metropolitan Av,13,G,METROPOLITAN AV
+G30S,Broadway,14,G,BROADWAY
+R05S,Broadway,15,N,BROADWAY
+G31S,Flushing Av,15,G,FLUSHING AV
+M12S,Flushing Av,20,J,FLUSHING AV
+M12S,Flushing Av,32,M,FLUSHING AV
+G32S,Myrtle - Willoughby Avs,16,G,MYRTLE-WILLOUGH
+G33S,Bedford - Nostrand Avs,17,G,BEDFORD-NOSTRAN
+G34S,Classon Av,18,G,CLASSON AV
+H12S,Beach 90 St,1,H,BEACH 90 ST
+H13S,Beach 98 St,2,H,BEACH 98 ST
+H14S,Beach 105 St,3,H,BEACH 105 ST
+H15S,Rockaway Park - Beach 116 St,4,H,ROCKAWAY PARK B
+J12S,121 St,2,J,121 ST
+J15S,Woodhaven Blvd,5,J,WOODHAVEN BLVD
+G11S,Woodhaven Blvd,14,M,WOODHAVEN BLVD
+G11S,Woodhaven Blvd,3,R,WOODHAVEN BLVD
+J16S,85 St - Forest Pkwy,6,J,85 ST-FOREST PK
+J17S,75 St - Elder Ln,7,J,75 ST-ELDERTS
+J19S,Cypress Hills,8,J,CYPRESS HILLS
+J20S,Crescent St,9,J,CRESCENT ST
+J21S,Norwood Av,10,J,NORWOOD AV
+J22S,Cleveland St,11,J,CLEVELAND ST
+J24S,Alabama Av,13,J,ALABAMA AV
+J28S,Chauncey St,15,J,CHAUNCEY ST
+J29S,Halsey St,16,J,HALSEY ST
+L19S,Halsey St,14,L,HALSEY ST
+J30S,Gates Av,17,J,GATES AV
+J31S,Kosciuszko St,18,J,KOSCIUSZKO ST
+M11S,Myrtle Av,19,J,MYRTLE AV
+M11S,Myrtle Av,31,M,MYRTLE AV
+M16S,Marcy Av,21,J,MARCY AV
+M16S,Marcy Av,35,M,MARCY AV
+M13S,Lorimer St,22,J,LORIMER ST
+L10S,Lorimer St,6,L,LORIMER ST
+M13S,Lorimer St,33,M,LORIMER ST
+M14S,Hewes St,23,J,HEWES ST
+M14S,Hewes St,34,M,HEWES ST
+M18S,Delancy St - Essex St,24,J,DELANCEY/ESSEX
+M18S,Delancy St - Essex St,7,M,DELANCEY/ESSEX
+M19S,Bowery,25,J,BOWERY
+M23S,Broad St,29,J,BROAD ST
+L01S,8 Av,0,L,8 AV
+N02S,8 Av,0,N,8 AV
+L02S,6 Av,1,L,6 AV
+L03S,Union Sq - 14 St,2,L,14 ST-UNION SQ
+L05S,3 Av,3,L,multi
+L06S,1 Av,4,L,multi
+L08S,Bedford Av,5,L,none
+L11S,Graham Av,7,L,none
+L13S,Montrose Av,9,L,
+L14S,Morgan Av,10,L,none
+L15S,Jefferson St,11,L,none
+L17S,Myrtle - Wyckoff Avs,13,L,none
+M08S,Myrtle - Wyckoff Avs,28,M,none
+L20S,Wilson Av,15,L,none
+L21S,Bushwick Av - Aberdeen St,16,L,none
+L24S,Atlantic Av,18,L,none
+L25S,Sutter Av,19,L,SUTTER AV-RUTLD
+L26S,Livonia Av,20,L,none
+L28S,E 105 St,22,L,none
+L29S,Canarsie - Rockaway Pkwy,23,L,none
+G09S,67 Av,12,M,67 AV
+G09S,67 Av,1,R,67 AV
+G10S,63 Dr - Rego Park,13,M,63 DR-REGO PARK
+G10S,63 Dr - Rego Park,2,R,63 DR-REGO PARK
+G12S,Grand Av - Newtown,15,M,GRAND-NEWTOWN
+G12S,Grand Av - Newtown,4,R,GRAND-NEWTOWN
+G13S,Elmhurst Av,16,M,ELMHURST AV
+G13S,Elmhurst Av,5,R,ELMHURST AV
+G15S,65 St,18,M,65 ST
+G15S,65 St,7,R,65 ST
+G16S,Northern Blvd,19,M,NORTHERN BLVD
+G16S,Northern Blvd,8,R,NORTHERN BLVD
+G18S,46 St,20,M,46 ST
+G18S,46 St,9,R,46 ST
+G19S,Steinway St,21,M,STEINWAY ST
+G19S,Steinway St,10,R,STEINWAY ST
+M04S,Fresh Pond Rd,24,M,FRESH POND RD
+M01S,Middle Village - Metropolitan Av,25,M,METROPOLITAN AV
+M05S,Forest Av,26,M,FOREST AVE
+M06S,Seneca Av,27,M,SENECA AVE
+M09S,Knickerbocker Av,29,M,KNICKERBOCKER
+M10S,Central Av,30,M,CENTRAL AV
+N04S,New Utrecht Av,2,N,NEW UTRECHT AV
+R01S,Astoria - Ditmars Blvd,12,N,ASTORIA DITMARS
+R03S,Astoria Blvd,13,N,ASTORIA BLVD
+R04S,30 Av,14,N,30 AV
+R06S,36 Av,16,N,36 AV
+R08S,39 Av - Dutch Kills,17,N,39 AV
+R11S,Lexington Av/59 St,19,N,none
+R11S,Lexington Av/59 St,13,R,none
+R13S,5 Av/59 St,20,N,5 AV/59 ST
+R13S,5 Av/59 St,14,R,5 AV/59 ST
+R14S,57 St - 7 Av,21,N,57 ST-7 AV
+R14S,57 St - 7 Av,1,Q,57 ST-7 AV
+R14S,57 St - 7 Av,15,R,57 ST-7 AV
+R15S,49 St,22,N,49 ST
+R15S,49 St,16,R,49 ST
+R21S,8 St - NYU,28,N,8 ST-NYU
+R21S,8 St - NYU,22,R,8 ST-NYU
+R22S,Prince St,29,N,PRINCE ST
+R22S,Prince St,23,R,PRINCE ST
+R24S,City Hall,31,N,CITY HALL
+R24S,City Hall,25,R,CITY HALL
+R27S,Whitehall St - South Ferry,34,N,WHITEHALL S-FRY
+R27S,Whitehall St - South Ferry,28,R,WHITEHALL S-FRY
+D27S,Parkside Av,5,Q,PARKSIDE AV
+D29S,Beverley Rd,7,Q,BEVERLEY ROAD
+D30S,Cortelyou Rd,8,Q,CORTELYOU RD
+D32S,Avenue H,10,Q,AVENUE H
+D33S,Avenue J,11,Q,AVENUE J
+D34S,Avenue M,12,Q,AVENUE M
+D38S,Neck Rd,15,Q,NECK RD
+D41S,Ocean Pkwy,18,Q,OCEAN PKWY
+R28S,Court St,29,R,none
+R32S,Union St,33,R,UNION ST
+R35S,25 St,36,R,25 ST
+R39S,45 St,38,R,45 ST
+R40S,53 St,39,R,53 ST
+R42S,Bay Ridge Av,41,R,BAY RIDGE AV
+R45S,Bay Ridge - 95 St,44,R,BAY RIDGE-95 ST
+S11S,Arthur Kill,0,SI,none
+S09S,Tottenville,1,SI,none
+S13S,Richmond Valley,2,SI,none
+S14S,Pleasant Plains,3,SI,none
+S15S,Prince's Bay,4,SI,none
+S16S,Huguenot,5,SI,none
+S17S,Annadale,6,SI,none
+S18S,Eltingville,7,SI,none
+S19S,Great Kills,8,SI,none
+S20S,Bay Terrace,9,SI,none
+S21S,Oakwood Heights,10,SI,none
+S22S,New Dorp,11,SI,none
+S23S,Grant City,12,SI,none
+S24S,Jefferson Av,13,SI,none
+S25S,Dongan Hills,14,SI,none
+S26S,Old Town,15,SI,none
+S27S,Grasmere,16,SI,none
+S28S,Clifton,17,SI,none
+S29S,Stapleton,18,SI,none
+S30S,Tompkinsville,19,SI,none
+S31S,St George,20,SI,none
