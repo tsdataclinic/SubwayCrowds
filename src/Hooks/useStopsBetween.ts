@@ -1,8 +1,6 @@
 import {useState,useEffect, useContext} from 'react'
 import {DataContext} from '../Contexts/DataContext'
-import Papa from 'papaparse'
 import {Stop} from '../types'
-import { start } from 'repl'
 
 export const useStopsBetween = (line :string | null , start_station : string | null ,end_station: string | null)=>{
     const [stopsBetween, setStopsBetween] = useState<Stop[] | null>(null)
@@ -10,7 +8,6 @@ export const useStopsBetween = (line :string | null , start_station : string | n
     
     useEffect(()=>{
         if(start_station && end_station && stops){
-            console.log("running")
             let stops_for_line = stops.filter((stop)=> stop.line===line);
             let start_index = stops_for_line.findIndex(stop=> stop.id === start_station)
             let end_index = stops_for_line.findIndex(stop=> stop.id === end_station)
