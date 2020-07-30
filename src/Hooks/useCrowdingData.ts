@@ -28,8 +28,6 @@ export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null)=>{
             const stations = stops.map(s=> s.id)
 
             const hourlyStopData = crowdingData.filter(cd => lines.includes(cd.lineID) && stations.includes(cd.stationID))
-            // const hourlyStopData = stops?.map(stop=> crowdingData?.filter(obs=> obs.stationID === stop.id && obs.lineID===stop.line))
-            console.log("hourly stop data ", hourlyStopData)
             let maxByHour: HourlyObservation[] = [];
             for(let hour =0; hour< 24; hour++){
                 let counts = hourlyStopData?.filter(obs=>obs.hour===hour).filter(filerTruthy).map(obs=>obs.numPeople)
@@ -53,7 +51,6 @@ export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null)=
     useEffect(()=>{
         if(stops && hour && crowdingData ){
             const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID))            
-            console.log('STOp counds ', stopCounts)
             setData(stopCounts.filter(filerTruthy))
         }
     },[stops,hour, crowdingData])

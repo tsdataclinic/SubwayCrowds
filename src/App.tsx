@@ -67,7 +67,7 @@ function App() {
   // is loaded in to prevent a race condition.
 
   useEffect(()=>{
-    if(dataLoaded && loadedParams==false){
+    if(dataLoaded && loadedParams === false){
       const parsed = queryString.parse(window.location.search)
       const startStation:Station | undefined = stations?.find(s=> s.id === parsed.start_station)
       const endStation:Station | undefined = stations?.find(s=> s.id === parsed.end_station)
@@ -91,7 +91,7 @@ function App() {
       const params = queryString.stringify(state)
       window.history.replaceState(state, '', `${window.location.origin}?${params}`)
     }
-  },[startStationID,endStationID, selectedLineID])
+  },[startStationID,endStationID, selectedLineID, loadedParams])
 
   return (
     <div className="App">
