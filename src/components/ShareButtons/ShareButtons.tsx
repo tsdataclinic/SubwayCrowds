@@ -17,12 +17,14 @@ type Props={
 }
 export const ShareButtons = ({startStation,endStation,line}: Props)=>{
     const prompt = `Checkout this graph of overcrowding on the ${line} line between ${startStation} and ${endStation}`
+    const hashtag = `#mtaaccessibility` // Facebook share only allows one hashtag
+    const hashtagList = ['newyorktough', 'covid19', 'mta', 'mtaaccessibility', 'accessibility', 'dataforgood', 'opendata']
     return(
         <p className="share-icons">
-            <FacebookShareButton quote={prompt} url={window.location.href}>
+            <FacebookShareButton quote={prompt} url={window.location.href} hashtag={hashtag} >
               <FacebookIcon size={36} />
             </FacebookShareButton>{' '}
-            <TwitterShareButton title={prompt} url={window.location.href}>
+            <TwitterShareButton title={prompt} url={window.location.href}  hashtags={hashtagList}>
               <TwitterIcon size={36} />
             </TwitterShareButton>
             <EmailShareButton 
