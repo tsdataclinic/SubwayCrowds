@@ -11,7 +11,7 @@ import {StopsChart} from './components/StopsChart/StopsChart'
 import {ShareButtons} from './components/ShareButtons/ShareButtons'
 import Slider from 'react-input-slider';
 import './App.css';
-
+import Giticon from './icons/giticon.png'
 
 function App() {
 
@@ -145,6 +145,11 @@ function App() {
         <button onClick={reset}>
             Find out about another trip.
         </button>
+
+        <p>More about us</p>
+          <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+            <img src={Giticon} height={36} width={36}/>
+          </a>
       </div>
   )}
   </div>
