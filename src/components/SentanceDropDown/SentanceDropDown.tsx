@@ -10,16 +10,18 @@ interface DropDownOption{
 interface Props {
     prompt: string;
     options: DropDownOption[];
-    onSelected?: (option:DropDownOption)=>void;
-    selected?: DropDownOption,
+    onSelected?: (option:string)=>void;
+    selectedID?: string | null,
 
 }
-export default function SentanceDropDown ({prompt, options,selected, onSelected}: Props){
+export default function SentanceDropDown ({prompt, options,selectedID, onSelected}: Props){
     const [searchTerm, setSearchTerm] = useState<string>('')
 
     const [showDropDown, setShowDropDown] = useState(false);
 
     const [pendingHideDropDown, setPendingHideDropdown] = useState(false);
+
+    const selected = options?.find(option => option.key === selectedID)
 
     const filteredOptions = searchTerm ? options.filter(option=>
         option.text?.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
@@ -29,7 +31,7 @@ export default function SentanceDropDown ({prompt, options,selected, onSelected}
     const updateSearch = (e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)
     const setSelected = (option:DropDownOption)=>{
         if(onSelected){
-            onSelected(option)
+            onSelected(option.key)
             setShowDropDown(false)
         }
     }
