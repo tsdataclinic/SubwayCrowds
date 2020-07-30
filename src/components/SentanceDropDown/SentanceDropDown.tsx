@@ -1,5 +1,4 @@
-import React, {useState, useEffect} from 'react'
-import {Body} from '@dataclinic/typography'
+import React, {useState} from 'react'
 import Styles from './SentanceDropDownStyles'
 
 interface DropDownOption{
@@ -18,9 +17,6 @@ export default function SentanceDropDown ({prompt, options,selectedID, onSelecte
     const [searchTerm, setSearchTerm] = useState<string>('')
 
     const [showDropDown, setShowDropDown] = useState(false);
-
-    const [pendingHideDropDown, setPendingHideDropdown] = useState(false);
-
     const selected = options?.find(option => option.key === selectedID)
 
     const filteredOptions = searchTerm ? options.filter(option=>

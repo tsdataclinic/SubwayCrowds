@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Papa from 'papaparse'
 import {Station,Line, Stop, CrowdingObservation, RawCrowding} from '../types'
-import { exception } from 'console';
 
 type Data={
     stations: Station[] | null,

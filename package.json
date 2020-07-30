@@ -25,6 +25,17 @@
     "styled-components": "^5.1.1",
     "typescript": "~3.7.2"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,ts,tsx}": [
+      "npx prettier --write",
+      "eslint src/*.js --fix-dry-run"
+    ]
+  },
   "homepage": "https://mtacrowding.tsdataclinic.com",
   "scripts": {
     "start": "react-scripts start",
@@ -50,6 +61,11 @@
     ]
   },
   "devDependencies": {
-    "@types/papaparse": "^5.0.3"
+    "@types/papaparse": "^5.0.3",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5"
   }
 }
