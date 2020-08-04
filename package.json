@@ -33,7 +33,7 @@
   "lint-staged": {
     "./src/*.{js,jsx,ts,tsx}": [
       "npx prettier --write",
-      "eslint src/*.js --fix-dry-run"
+      "eslint . --ext .ts"
     ]
   },
   "homepage": "https://mtacrowding.tsdataclinic.com",
@@ -44,9 +44,6 @@
     "eject": "react-scripts eject",
     "predeploy": "yarn  build",
     "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
   },
   "browserslist": {
     "production": [
@@ -62,8 +59,11 @@
   },
   "devDependencies": {
     "@types/papaparse": "^5.0.3",
-    "eslint": "^7.5.0",
+    "@typescript-eslint/eslint-plugin": "^3.8.0",
+    "@typescript-eslint/parser": "^3.8.0",
+    "eslint": "^7.6.0",
     "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-react": "^7.20.5",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5"
