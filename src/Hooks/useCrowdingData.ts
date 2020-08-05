@@ -27,7 +27,6 @@ export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction
             const lines = stops.map(s=>s.line)
             const stations = stops.map(s=> s.id)
             const hourlyStopData = crowdingData.filter(cd => lines.includes(cd.lineID) && stations.includes(cd.stationID) &&  (cd.direction===order) && (cd.weekday === weekday ))
-            console.log('order ', order)
             const maxByHour: HourlyObservation[] = [];
             for(let hour =0; hour< 24; hour++){
                 const counts = hourlyStopData?.filter(obs=>(obs.hour===hour)).filter(filerTruthy).map(obs=>obs.numPeople)
