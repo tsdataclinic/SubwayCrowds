@@ -8,11 +8,11 @@ export const useStopsBetween = (line :string | null , start_station : string | n
     
     useEffect(()=>{
         if(start_station && end_station && stops){
-            let stops_for_line = stops.filter((stop)=> stop.line===line);
-            let start_index = stops_for_line.findIndex(stop=> stop.id === start_station)
-            let end_index = stops_for_line.findIndex(stop=> stop.id === end_station)
+            const stops_for_line = stops.filter((stop)=> stop.line===line);
+            const start_index = stops_for_line.findIndex(stop=> stop.id === start_station)
+            const end_index = stops_for_line.findIndex(stop=> stop.id === end_station)
 
-            let unordered_stops = stops_for_line.slice(Math.min(start_index,end_index), Math.max(start_index,end_index)+1)
+            const unordered_stops = stops_for_line.slice(Math.min(start_index,end_index), Math.max(start_index,end_index)+1)
             if(start_index > end_index){
                 unordered_stops.reverse()
             }
