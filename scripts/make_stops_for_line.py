@@ -26,11 +26,11 @@ for line, data in south_bound.groupby('line'):
     all_ordered = all_ordered.append(ordered)
 
 
-name_id_lookup = pd.read_csv('./cross_walks.csv')
+name_id_lookup = pd.read_csv('./cleaned_crosswalk.csv')
 
 
 
-final_ordered_stations = pd.merge(all_ordered,name_id_lookup, left_on= 'stop_name', right_on='name').drop('name',axis=1)
+final_ordered_stations = pd.merge(all_ordered,name_id_lookup, left_on= ['stop_name','line'], right_on=['name','route_id']).drop('name',axis=1)
 final_ordered_stations.rename(columns={'stop_name':'station'}).to_csv('../public/stops.csv', index=False)
 # station_to_station.to_csv('../public/stops.csv', index=False)
 
