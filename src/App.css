@@ -6,6 +6,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: lato;
+  box-sizing: border-box;
+  padding:20px;
 }
 
 .App-logo {
@@ -79,4 +82,15 @@ button:hover{
 	100% {
 		opacity: 1;
 	}
+}
+
+.graph{
+  flex:1;
+  width:100%;
+  overflow-y:auto;
+  box-sizing: border-box;
+  padding:0px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }

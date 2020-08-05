@@ -20,7 +20,7 @@ export const ShareButtons = ({startStation,endStation,line}: Props)=>{
     const hashtag = `#mtaaccessibility` // Facebook share only allows one hashtag
     const hashtagList = ['newyorktough', 'covid19', 'mta', 'mtaaccessibility', 'accessibility', 'dataforgood', 'opendata']
     return(
-        <p className="share-icons">
+        <div className="share-icons">
             <FacebookShareButton quote={prompt} url={window.location.href} hashtag={hashtag} >
               <FacebookIcon size={36} />
             </FacebookShareButton>{' '}
@@ -33,6 +33,6 @@ export const ShareButtons = ({startStation,endStation,line}: Props)=>{
               url={window.location.href}>
               <EmailIcon size={36} />
             </EmailShareButton>
-        </p>
+        </div>
     )
 }

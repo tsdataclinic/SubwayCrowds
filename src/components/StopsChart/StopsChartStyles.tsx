@@ -10,7 +10,7 @@ const Container = styled.ul`
     max-height: 50vh;
     overflow-y:auto;
     list-style:none;
-    padding:0px;
+    padding:15px 0px;
 `
 const StopName = styled.li`
     box-sizing:border-box;
@@ -26,7 +26,7 @@ const StopBar = styled.li`
     box-sizing:border-box;
     align-self:start;
     width:${({percent}:BarProps)=> `${percent}%`};
-    background-color:red;
+    background-color:#ffbb31;
     height:100%;
     box-sizing:border-box;
     padding:3px 3px 3px 0px;
@@ -36,6 +36,7 @@ const StopBar = styled.li`
     font-size:0.9rem;
     transition: width 0.5s ease-in-out;
     span{
+        font-weight:bold;
         min-width:12px;
         transform: ${({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'translate(140%,0%)' : '' }};
         color:${ ({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'black' : 'white' };

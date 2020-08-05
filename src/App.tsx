@@ -7,7 +7,6 @@ import {
 } from "./Hooks/useCrowdingData";
 import { useStationsForLine } from "./Hooks/useStationsForLine";
 import { Station } from "./types";
-import { Line } from "react-chartjs-2";
 import queryString from "query-string";
 import { useStopsBetween } from "./Hooks/useStopsBetween";
 import { StopsChart } from "./components/StopsChart/StopsChart";
@@ -20,6 +19,10 @@ import "./App.css";
 import Giticon from "./icons/giticon.png";
 import Mediumicon from "./icons/mediumicon.png"
 import { am_pm_from_24 } from "./utils";
+
+import "typeface-lato";
+import { start } from "repl";
+import { HourlyChart } from "./components/HourlyChart/HourlyChart";
 
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
@@ -133,152 +136,129 @@ function App() {
   return (
     <div className="App">
       <div
-        className="fade-in"
         style={{
           display: "flex",
-          alignItems: "center",
-          justifyContent: "normal",
-          flexDirection: "row",
+          flexDirection: "column",
         }}
       >
-        <span>I take the </span>
-        <SentanceDropDown
-          prompt={"select line"}
-          options={lineOptions}
-          selectedID={selectedLineID}
-          onSelected={setSelectedLineID}
-        />
-        <span style={{ marginRight: "0.25rem" }}> line. </span>
-        {selectedLineID && (
-          <div className="line_select fade-in">
-            <span>I get on at </span>
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            className="fade-in"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "normal",
+              flexDirection: "row",
+            }}
+          >
+            <span>I take the </span>
             <SentanceDropDown
-              key="start"
-              prompt={"select start station name"}
-              options={stationOptions}
-              selectedID={startStationID}
-              onSelected={setStartStationID}
+              prompt={"select line"}
+              options={lineOptions}
+              selectedID={selectedLineID}
+              onSelected={setSelectedLineID}
             />
-            <span>I get off at </span>
-            <SentanceDropDown
-              key="end"
-              prompt={"select end station name"}
-              options={stationOptions}
-              selectedID={endStationID}
-              onSelected={setEndStationID}
-            />
-            {line && startStation && endStation && (
-              <FontAwesomeIcon
-                style={{ cursor: "pointer" }}
-                icon={faExchangeAlt}
-                aria-label="Reverse Trip"
-                onClick={reverseTrip}
-              />
+            <span style={{ marginRight: "0.25rem" }}> line. </span>
+            {selectedLineID && (
+              <div className="line_select fade-in">
+                <span>I get on at </span>
+                <SentanceDropDown
+                  key="start"
+                  prompt={"select start station name"}
+                  options={stationOptions}
+                  selectedID={startStationID}
+                  onSelected={setStartStationID}
+                />
+                <span>I get off at </span>
+                <SentanceDropDown
+                  key="end"
+                  prompt={"select end station name"}
+                  options={stationOptions}
+                  selectedID={endStationID}
+                  onSelected={setEndStationID}
+                />
+                {line && startStation && endStation && (
+                  <FontAwesomeIcon
+                    style={{ cursor: "pointer" }}
+                    icon={faExchangeAlt}
+                    aria-label="Reverse Trip"
+                    onClick={reverseTrip}
+                    color="#ffbb31"
+                  />
+                )}
+              </div>
             )}
           </div>
-        )}
+
+          {line && startStation && endStation && (
+            <>
+              <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
+            </>
+          )}
+        </div>
       </div>
 
       {line && startStation && endStation && (
         <div className="graph">
-          {maxHourlyCrowdingData ? (
-            <>
-              <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-              <h2>
-                Maximum number of people you are likley to encounter on this
-                trip each hour.
-              </h2>
+          <HourlyChart
+            hourlyData={maxHourlyCrowdingData}
+            hour={hour}
+          ></HourlyChart>
+          <div
+            className="stops-chart-container"
+            style={{ height: "50%", display: "flex", flexDirection: "column" }}
+          >
+            {crowdingDataByStop && (
+              <>
+                <h2>
+                  Estimated average number of people on the train after each
+                  stop for a trip starting at{" "}
+                  <span style={{ fontWeight: "bold" }}>
+                    {am_pm_from_24(hour)}
+                  </span>
+                  .
+                </h2>
 
-              <Line
-                data={{
-                  datasets: [
-                    {
-                      data: maxHourlyCrowdingData.map((c) => ({
-                        x: c.hour,
-                        y: c.numPeople,
-                      })),
-                      label: "Number of people per hour",
-                      backgroundColor: "rgba(112,214,227,0.4)",
-                      borderColor: "rgba(112,214,227,1)",
+                <Slider
+                  axis="x"
+                  x={hour}
+                  onChange={({ x }) => setSelectedHour(x)}
+                  xmax={23}
+                  xmin={0}
+                  xstep={1}
+                  styles={{
+                    track: {
+                      width: "100%",
                     },
-                  ],
-                  labels: maxHourlyCrowdingData.map((c) => c.hour),
-                }}
-                options={{
-                  legend: {
-                    display: false,
-                  },
-                  scales: {
-                    yAxes: [
-                      {
-                        scaleLabel: {
-                          display: true,
-                          labelString: "Number of people",
-                        },
-                      },
-                    ],
-                    xAxes: [
-                      {
-                        scaleLabel: {
-                          display: true,
-                          labelString: "Hour of Day",
-                        },
-                        ticks: {
-                          callback: (hour: number) => am_pm_from_24(hour),
-                        },
-                      },
-                    ],
-                  },
-                }}
-              />
-            </>
-          ) : (
-            <h1>No data available</h1>
-          )}
+                  }}
+                />
 
-          <Slider
-            axis="x"
-            x={hour}
-            onChange={({ x }) => setSelectedHour(x)}
-            xmax={23}
-            xmin={0}
-            xstep={1}
-            styles={{
-              track: {
-                width: "100%",
-              },
-            }}
-          />
-
-          {crowdingDataByStop && (
-            <>
-              <h2>
-                Average number of people on the train after each stop for a trip
-                starting at{" "}
-                <span style={{ fontWeight: "bold" }}>
-                  {am_pm_from_24(hour)}
+                <span style={{ fontWeight: 300 }}>
+                  Use slider to change the start time of the trip
                 </span>
-                .
-              </h2>
-              <StopsChart
-                stops={stops}
-                stopCount={crowdingDataByStop}
-                maxCount={absoluteMax}
-              />
-            </>
-          )}
+                <StopsChart
+                  stops={stops}
+                  stopCount={crowdingDataByStop}
+                  maxCount={absoluteMax}
+                />
+              </>
+            )}
+          </div>
+        </div>
+      )}
+      <footer style={{ display: "flex", flexDirection: "column" }}>
+        {startStation && endStation && line && (
+          <div className="share-buttons">
+            <p style={{ margin: "0px", padding: "0px" }}>Share this trip.</p>
 
-          <h2>Share this trip.</h2>
-          <ShareButtons
-            startStation={startStation.id}
-            endStation={endStation.id}
-            line={line.id}
-          />
+            <ShareButtons
+              startStation={startStation.id}
+              endStation={endStation.id}
+              line={line.id}
+            />
 
-          <button onClick={reset}>Find out about another trip.</button>
-
-          <p>More about us</p>
-          <div> 
+            <button onClick={reset}>Find out about another trip.</button>
+            <p>More about us</p>
             <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
               <img src={Giticon} height={36} width={36} />
             </a>
@@ -286,8 +266,8 @@ function App() {
               <img src={Mediumicon} height={38} width={38} />
             </a>
           </div>
-        </div>
-      )}
+        )}
+      </footer>
     </div>
   );
 }
