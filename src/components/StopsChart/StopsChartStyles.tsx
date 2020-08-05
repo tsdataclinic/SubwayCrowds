@@ -1,5 +1,6 @@
-import styled from 'styled-components'
+import styled, {css} from 'styled-components'
 
+const MIN_PC_INSIDE = 5
 
 const Container = styled.ul`
     display:grid;
@@ -33,7 +34,12 @@ const StopBar = styled.li`
     display:flex;
     justify-content:flex-end;
     font-size:0.9rem;
-    transition: width 0.5s ease-in-out
+    transition: width 0.5s ease-in-out;
+    span{
+        min-width:12px;
+        transform: ${({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'translate(140%,0%)' : '' }};
+        color:${ ({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'black' : 'white' };
+    }
     /* padding: 20px 10px; */
 `
 
