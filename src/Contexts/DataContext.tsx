@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Papa from 'papaparse'
-import {Station,Line, Stop, CrowdingObservation, RawCrowding} from '../types'
+import {Station,Line, Stop, CrowdingObservation, RawCrowding, Direction} from '../types'
 
 type Data={
     stations: Station[] | null,
@@ -73,10 +73,13 @@ function parseCrowding(rawObservations: RawCrowding[]) : CrowdingObservation[]{
     return rawObservations.map((observation: RawCrowding)=>({
         stationID: observation.STATION,
         lineID: observation.route_id,
-        hour:observation.hr,
-        numPeople:observation.crowd
+        hour:observation.hour,
+        numPeople:observation.crowd,
+        direction: observation.direction_id === 0 ? Direction.NORTHBOUND : Direction.SOUTHBOUND,
+        weekday: observation.weekday === 1,
     }))
 }
+
 function loadStops (){
     return new Promise((resolve,reject)=>{
         Papa.parse('/stops.csv',{
@@ -89,11 +92,11 @@ function loadStops (){
 
 function loadCrowdingData(){
     return new Promise((resolve,reject)=>{
-        Papa.parse('Apr_crowd_estimates.txt',{
+        Papa.parse('crowding_by_weekday_direction_june.csv',{
             download:true,
             complete: (data :any)=> resolve(parseCrowding(data.data)),
             header:true,
-            dynamicTyping: {hr: true, crowd: true}
+            dynamicTyping: {hour: true, crowd: true,weekday:true, direction_id:true}
         })
     })
 }

@@ -1,5 +1,5 @@
 import {useState,useEffect, useContext} from 'react'
-import {CrowdingObservation,HourlyObservation, Stop} from '../types'
+import {CrowdingObservation,HourlyObservation, Stop, Direction} from '../types'
 import {DataContext} from '../Contexts/DataContext'
 
 export const useCrowdingData = (stationID :string |null, lineID:string | null)=>{
@@ -19,23 +19,23 @@ export const useCrowdingData = (stationID :string |null, lineID:string | null)=>
     return stationData
 }
 
-export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null)=>{
+export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction|null , weekday:boolean)=>{
     const {crowdingData} = useContext(DataContext)
     const [data,setData] = useState<HourlyObservation[] | null>(null)
     useEffect(()=>{
-        if(stops && crowdingData){
+        if(stops && crowdingData && (order!==null)){
             const lines = stops.map(s=>s.line)
             const stations = stops.map(s=> s.id)
-
-            const hourlyStopData = crowdingData.filter(cd => lines.includes(cd.lineID) && stations.includes(cd.stationID))
+            const hourlyStopData = crowdingData.filter(cd => lines.includes(cd.lineID) && stations.includes(cd.stationID) &&  (cd.direction===order) && (cd.weekday === weekday ))
+            console.log('order ', order)
             const maxByHour: HourlyObservation[] = [];
             for(let hour =0; hour< 24; hour++){
-                const counts = hourlyStopData?.filter(obs=>obs.hour===hour).filter(filerTruthy).map(obs=>obs.numPeople)
+                const counts = hourlyStopData?.filter(obs=>(obs.hour===hour)).filter(filerTruthy).map(obs=>obs.numPeople)
                 maxByHour.push({hour:hour, numPeople: counts.length > 0 ?  Math.max(...counts) : 0})
             }
             setData(maxByHour)
         }
-    },[stops, crowdingData])
+    },[stops, crowdingData,weekday,order])
 
     return data
 }
@@ -44,16 +44,16 @@ function filerTruthy<T>(t: T | undefined): t is T {
   return !!t;
 }
 
-export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null)=>{
+export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null,order: Direction|null , weekday:boolean)=>{
     const {crowdingData} = useContext(DataContext)
     const [data,setData] = useState<CrowdingObservation[] | null | undefined>(null)
 
     useEffect(()=>{
         if(stops && hour && crowdingData ){
-            const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID))            
+            const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID && s.direction===order && s.weekday===weekday))            
             setData(stopCounts.filter(filerTruthy))
         }
-    },[stops,hour, crowdingData])
+    },[stops,hour, crowdingData, weekday,order])
 
     return data
 }
