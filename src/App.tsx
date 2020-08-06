@@ -12,6 +12,9 @@ import queryString from "query-string";
 import { useStopsBetween } from "./Hooks/useStopsBetween";
 import { StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
+import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-input-slider";
 import "./App.css";
 import Giticon from "./icons/giticon.png";
@@ -28,6 +31,7 @@ function App() {
   const [endStationID, setEndStationID] = useState<any>(null);
   const [selectedLineID, setSelectedLineID] = useState<string | null>(null);
   const [hour, setSelectedHour] = useState(12);
+  const [weekday, setWeekday] = useState(true);
 
   // Find the instances of the data that we need from the Data Context
   const startStation = stations?.find((s) => s.id === startStationID);
@@ -38,9 +42,22 @@ function App() {
   const filteredStations = useStationsForLine(selectedLineID);
 
   // Fetches the stops between a start and end station for a particular line
-  const stops = useStopsBetween(selectedLineID, startStationID, endStationID);
-  const maxHourlyCrowdingData = useMaxCrowdingByHourForTrip(stops);
-  const crowdingDataByStop = useCrowdingDataByStops(stops, hour);
+  const { stops, order } = useStopsBetween(
+    selectedLineID,
+    startStationID,
+    endStationID
+  );
+  const maxHourlyCrowdingData = useMaxCrowdingByHourForTrip(
+    stops,
+    order,
+    weekday
+  );
+  const crowdingDataByStop = useCrowdingDataByStops(
+    stops,
+    hour,
+    order,
+    weekday
+  );
 
   const counts = maxHourlyCrowdingData?.map((a) => a.numPeople);
   const absoluteMax = counts ? Math.max(...counts) : null;
@@ -63,6 +80,11 @@ function App() {
     setEndStationID(null);
     setSelectedLineID(null);
     window.history.replaceState({}, "", `${window.location.origin}`);
+  };
+
+  const reverseTrip = () => {
+    setStartStationID(endStationID);
+    setEndStationID(startStationID);
   };
 
   // Parses the url params to get the start and end station ids and the line.
@@ -144,7 +166,14 @@ function App() {
               selectedID={endStationID}
               onSelected={setEndStationID}
             />
-            <span>.</span>
+            {line && startStation && endStation && (
+              <FontAwesomeIcon
+                style={{ cursor: "pointer" }}
+                icon={faExchangeAlt}
+                aria-label="Reverse Trip"
+                onClick={reverseTrip}
+              />
+            )}
           </div>
         )}
       </div>
@@ -153,6 +182,7 @@ function App() {
         <div className="graph">
           {maxHourlyCrowdingData ? (
             <>
+              <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
               <h2>
                 Maximum number of people you are likley to encounter on this
                 trip each hour.
