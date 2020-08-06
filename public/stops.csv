@@ -28,7 +28,6 @@ stop_id,station,order,line,id,route_id
 130S,23 St,27,1,23 ST,1
 131S,18 St,28,1,18 ST,1
 132S,14 St,29,1,14 ST,1
-132S,14 St,29,1,14TH STREET,1
 133S,Christopher St - Sheridan Sq,30,1,CHRISTOPHER ST,1
 134S,Houston St,31,1,HOUSTON ST,1
 135S,Canal St,32,1,CANAL ST,1
@@ -42,7 +41,6 @@ stop_id,station,order,line,id,route_id
 127S,Times Sq - 42 St,2,2,TIMES SQ-42 ST,2
 128S,34 St - Penn Station,3,2,34 ST-PENN STA,2
 132S,14 St,4,2,14 ST,2
-132S,14 St,4,2,14TH STREET,2
 137S,Chambers St,5,2,CHAMBERS ST,2
 228S,Park Pl,6,2,PARK PLACE,2
 201S,Wakefield - 241 St,7,2,WAKEFIELD/241,2
@@ -91,7 +89,6 @@ stop_id,station,order,line,id,route_id
 127S,Times Sq - 42 St,2,3,TIMES SQ-42 ST,3
 128S,34 St - Penn Station,3,3,34 ST-PENN STA,3
 132S,14 St,4,3,14 ST,3
-132S,14 St,4,3,14TH STREET,3
 137S,Chambers St,5,3,CHAMBERS ST,3
 228S,Park Pl,6,3,PARK PLACE,3
 224S,135 St,7,3,135 ST,3
