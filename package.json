@@ -25,7 +25,9 @@
     "react-input-slider": "^6.0.0",
     "react-scripts": "3.4.1",
     "react-share": "^4.2.1",
+    "react-use-dimensions": "^1.2.1",
     "styled-components": "^5.1.1",
+    "typeface-lato": "^0.0.75",
     "typescript": "~3.7.2"
   },
   "husky": {
@@ -68,6 +70,7 @@
     "eslint-plugin-react": "^7.20.5",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
+    "node-sass": "^4.14.1",
     "prettier": "^2.0.5"
   }
 }
