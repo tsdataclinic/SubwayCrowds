@@ -264,7 +264,9 @@ function App() {
               </div>
             )}
           </div>
-          <div className="explainer-text"></div>
+          <div className="explainer-text">
+          This website and its contents, including all data, figures and analysis (“Website”), is provided strictly for informational purposes. The Website relies upon publicly available data from the MTA and on the results of mathematical models designed by the Two Sigma Investments, LP acting through the Two Sigma Data Clinic (“Data Clinic”). Data Clinic disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, reliability, and non-infringement. 
+          </div>
           <div className="disclaimer">
             <a href="https://www.twosigma.com/legal-disclosure/">
               Legal Disclosure
