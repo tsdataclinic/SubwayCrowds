@@ -28,4 +28,4 @@ export const StopsChart = ({stops, stopCount, maxCount}:Props)=>{
             )}
         </Styles.Container>
     )
-}
+}   

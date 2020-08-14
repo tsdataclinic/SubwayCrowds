@@ -7,19 +7,21 @@ import {
 } from "./Hooks/useCrowdingData";
 import { useStationsForLine } from "./Hooks/useStationsForLine";
 import { Station } from "./types";
-import { Line } from "react-chartjs-2";
-import queryString from "query-string";
 import { useStopsBetween } from "./Hooks/useStopsBetween";
 import { StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
 import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
-import Slider from "react-input-slider";
-import "./App.css";
-import Giticon from "./icons/giticon.png";
-import Mediumicon from "./icons/mediumicon.png"
+import { faExchangeAlt, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { HourlyChart } from "./components/HourlyChart/HourlyChart";
 import { am_pm_from_24 } from "./utils";
+import Slider from "react-input-slider";
+import Giticon from "./icons/giticon.png";
+import queryString from "query-string";
+import Mediumicon from "./icons/mediumicon.png";
+import "./App.scss";
+
+import "typeface-lato";
 
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
@@ -38,6 +40,8 @@ function App() {
   const startStation = stations?.find((s) => s.id === startStationID);
   const endStation = stations?.find((s) => s.id === endStationID);
   const line = lines?.find((l) => l.id === selectedLineID);
+
+  const promptComplete = startStation && endStation && line;
 
   // This filters down the stations we have by line id. Use for narowing the options for the drop downs
   const filteredStations = useStationsForLine(selectedLineID);
@@ -115,7 +119,7 @@ function App() {
 
   // Updates the URL params when a user has selected a start / end / line combo
   useEffect(() => {
-    if (startStationID && endStationID && selectedLineID && loadedParams) {
+    if (promptComplete && loadedParams) {
       const state = {
         line: selectedLineID,
         start_station: startStationID,
@@ -132,162 +136,148 @@ function App() {
 
   return (
     <div className="App">
-      <div
-        className="fade-in"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "normal",
-          flexDirection: "row",
-        }}
-      >
-        <span>I take the </span>
-        <SentanceDropDown
-          prompt={"select line"}
-          options={lineOptions}
-          selectedID={selectedLineID}
-          onSelected={setSelectedLineID}
-        />
-        <span style={{ marginRight: "0.25rem" }}> line. </span>
-        {selectedLineID && (
-          <div className="line_select fade-in">
-            <span>I get on at </span>
-            <SentanceDropDown
-              key="start"
-              prompt={"select start station name"}
-              options={stationOptions}
-              selectedID={startStationID}
-              onSelected={setStartStationID}
-            />
-            <span>I get off at </span>
-            <SentanceDropDown
-              key="end"
-              prompt={"select end station name"}
-              options={stationOptions}
-              selectedID={endStationID}
-              onSelected={setEndStationID}
-            />
-            {line && startStation && endStation && (
-              <FontAwesomeIcon
-                style={{ cursor: "pointer" }}
-                icon={faExchangeAlt}
-                aria-label="Reverse Trip"
-                onClick={reverseTrip}
+      <div className="app-inner">
+        <div className={`header ${promptComplete && "header-prompt-complete"}`}>
+          <div
+            className={`fade-in prompt ${
+              promptComplete ? "prompt-complete" : "prompt-incomplete"
+            } `}
+          >
+            <div className="line-specification">
+              <span className="hide-small">I take the </span>
+              <SentanceDropDown
+                prompt={"select line"}
+                options={lineOptions}
+                selectedID={selectedLineID}
+                onSelected={setSelectedLineID}
               />
+              <span style={{ marginRight: "0.25rem" }}> line. </span>
+            </div>
+            {selectedLineID && (
+              <>
+                <div className="line-select fade-in">
+                  <span className="hide-small">I get on at </span>
+                  <SentanceDropDown
+                    key="start"
+                    prompt={"select start station name"}
+                    options={stationOptions}
+                    selectedID={startStationID}
+                    onSelected={setStartStationID}
+                  />
+                </div>
+                <div className="line-select fade-in">
+                  <span className="hide-small">I get off at </span>
+                  <FontAwesomeIcon icon={faArrowRight} className="show-small" />
+                  <SentanceDropDown
+                    key="end"
+                    prompt={"select end station name"}
+                    options={stationOptions}
+                    selectedID={endStationID}
+                    onSelected={setEndStationID}
+                  />
+                  {promptComplete && (
+                    <FontAwesomeIcon
+                      style={{ cursor: "pointer" }}
+                      icon={faExchangeAlt}
+                      aria-label="Reverse Trip"
+                      onClick={reverseTrip}
+                      color="#ffbb31"
+                    />
+                  )}
+                </div>
+              </>
             )}
           </div>
-        )}
-      </div>
 
-      {line && startStation && endStation && (
-        <div className="graph">
-          {maxHourlyCrowdingData ? (
+          {promptComplete && (
             <>
               <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-              <h2>
-                Maximum number of people you are likley to encounter on this
-                trip each hour.
-              </h2>
-
-              <Line
-                data={{
-                  datasets: [
-                    {
-                      data: maxHourlyCrowdingData.map((c) => ({
-                        x: c.hour,
-                        y: c.numPeople,
-                      })),
-                      label: "Number of people per hour",
-                      backgroundColor: "rgba(112,214,227,0.4)",
-                      borderColor: "rgba(112,214,227,1)",
-                    },
-                  ],
-                  labels: maxHourlyCrowdingData.map((c) => c.hour),
-                }}
-                options={{
-                  legend: {
-                    display: false,
-                  },
-                  scales: {
-                    yAxes: [
-                      {
-                        scaleLabel: {
-                          display: true,
-                          labelString: "Number of people",
-                        },
-                      },
-                    ],
-                    xAxes: [
-                      {
-                        scaleLabel: {
-                          display: true,
-                          labelString: "Hour of Day",
-                        },
-                        ticks: {
-                          callback: (hour: number) => am_pm_from_24(hour),
-                        },
-                      },
-                    ],
-                  },
-                }}
-              />
-            </>
-          ) : (
-            <h1>No data available</h1>
-          )}
-
-          <Slider
-            axis="x"
-            x={hour}
-            onChange={({ x }) => setSelectedHour(x)}
-            xmax={23}
-            xmin={0}
-            xstep={1}
-            styles={{
-              track: {
-                width: "100%",
-              },
-            }}
-          />
-
-          {crowdingDataByStop && (
-            <>
-              <h2>
-                Average number of people on the train after each stop for a trip
-                starting at{" "}
-                <span style={{ fontWeight: "bold" }}>
-                  {am_pm_from_24(hour)}
-                </span>
-                .
-              </h2>
-              <StopsChart
-                stops={stops}
-                stopCount={crowdingDataByStop}
-                maxCount={absoluteMax}
-              />
+              <button onClick={reset}>Find out about another trip.</button>
             </>
           )}
+        </div>
 
-          <h2>Share this trip.</h2>
-          <ShareButtons
-            startStation={startStation.id}
-            endStation={endStation.id}
-            line={line.id}
-          />
+        {promptComplete && (
+          <div className="graph">
+            <HourlyChart
+              hourlyData={maxHourlyCrowdingData}
+              hour={hour}
+            ></HourlyChart>
+            <div className="stops-chart-container">
+              {crowdingDataByStop && (
+                <>
+                  <h2>
+                    Estimated average number of people on the train after each
+                    stop for a trip starting at{" "}
+                    <span style={{ fontWeight: "bold" }}>
+                      {am_pm_from_24(hour)}
+                    </span>
+                    .
+                  </h2>
 
-          <button onClick={reset}>Find out about another trip.</button>
+                  <Slider
+                    axis="x"
+                    x={hour}
+                    onChange={({ x }) => setSelectedHour(x)}
+                    xmax={23}
+                    xmin={0}
+                    xstep={1}
+                    styles={{
+                      track: {
+                        width: "100%",
+                      },
+                    }}
+                  />
 
-          <p>More about us</p>
-          <div> 
-            <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
-              <img src={Giticon} height={36} width={36} />
+                  <span style={{ fontWeight: 300 }}>
+                    Use slider to change the start time of the trip
+                  </span>
+                  <StopsChart
+                    stops={stops}
+                    stopCount={crowdingDataByStop}
+                    maxCount={absoluteMax}
+                  />
+                </>
+              )}
+            </div>
+          </div>
+        )}
+        <footer>
+          <div className="info-share">
+            <div className="info">
+              <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                <img src={Giticon} height={36} width={36} />
+              </a>
+              <a href="https://medium.com/dataclinic">
+                <img src={Mediumicon} height={38} width={38} />
+              </a>
+            </div>
+
+            {promptComplete && (
+              <div className="share-buttons">
+                <p className="hide-small">Share this trip</p>
+                <ShareButtons
+                  startStation={startStation?.id}
+                  endStation={endStation?.id}
+                  line={line?.id}
+                />
+              </div>
+            )}
+          </div>
+          <div className="explainer-text">
+          This website and its contents, including all data, figures and analysis (“Website”), is provided strictly for informational purposes. The Website relies upon publicly available data from the MTA and on the results of mathematical models designed by the Two Sigma Investments, LP acting through the Two Sigma Data Clinic (“Data Clinic”). Data Clinic disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, reliability, and non-infringement. 
+          </div>
+          <div className="disclaimer">
+            <a href="https://www.twosigma.com/legal-disclosure/">
+              Legal Disclosure
             </a>
-            <a href="https://medium.com/dataclinic">
-              <img src={Mediumicon} height={38} width={38} />
+            <span>@ 2020 Two Sigma Investments, LP. All rights reserved</span>
+            <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
+              Privacy Policy
             </a>
           </div>
-        </div>
-      )}
+        </footer>
+      </div>
     </div>
   );
 }

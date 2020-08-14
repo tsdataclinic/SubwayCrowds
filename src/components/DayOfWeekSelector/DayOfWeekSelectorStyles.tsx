@@ -4,7 +4,10 @@ const Container =styled.div`
     display:flex;
     flex-direction:row;
     justify-content:space-around;
-    margin: 20px 0px 20px 0px;
+    margin:5px 0px;
+    @media only screen and (min-width:900px){
+        margin: 20px 10px;
+    }
 `
 
 const Option = styled.div`
@@ -13,7 +16,6 @@ const Option = styled.div`
     border: 1px solid grey;
     cursor:pointer;
 `
-
 
 export const Styles={
     Container,
