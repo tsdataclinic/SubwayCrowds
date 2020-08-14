@@ -9,13 +9,31 @@
   font-family: lato;
   box-sizing: border-box;
   padding:20px 20px 0px 20px;
+  display:flex;
+}
+
+.app-inner{
+  display:flex;
+  flex-direction:column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
 
   @media only screen and (min-width:900px){
     max-width: 1024px;
     max-height: 800px;
   }
 }
-
+.header{
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  flex:1;
+  &.header-prompt-complete{
+    flex:none ;
+  }
+}
 .hide-small{
   display:none
 }
@@ -161,7 +179,7 @@ footer{
     justify-content: center;
     box-sizing: border-box;
     padding: 5px;
-    >a{
+    >a,span{
       margin-right:20px;
       color: grey;
       font-size: 15px;
@@ -234,6 +252,9 @@ footer{
   flex-direction: column;
   overflow: hidden;
   flex:1;
+  @media only screen and (min-width: 900px) {
+    padding:20px;
+  }
 }
 
 #root{

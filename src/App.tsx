@@ -136,143 +136,146 @@ function App() {
 
   return (
     <div className="App">
-      <div style={{ display: "flex", flexDirection: "column" }}>
-        <div
-          className={`fade-in prompt ${
-            promptComplete ? "prompt-complete" : "prompt-incomplete"
-          } `}
-        >
-          <div className="line-specification">
-            <span className="hide-small">I take the </span>
-            <SentanceDropDown
-              prompt={"select line"}
-              options={lineOptions}
-              selectedID={selectedLineID}
-              onSelected={setSelectedLineID}
-            />
-            <span style={{ marginRight: "0.25rem" }}> line. </span>
-          </div>
-          {selectedLineID && (
-            <>
-              <div className="line-select fade-in">
-                <span className="hide-small">I get on at </span>
-                <SentanceDropDown
-                  key="start"
-                  prompt={"select start station name"}
-                  options={stationOptions}
-                  selectedID={startStationID}
-                  onSelected={setStartStationID}
-                />
-              </div>
-              <div className="line-select fade-in">
-                <span className="hide-small">I get off at </span>
-                <FontAwesomeIcon icon={faArrowRight} className="show-small" />
-                <SentanceDropDown
-                  key="end"
-                  prompt={"select end station name"}
-                  options={stationOptions}
-                  selectedID={endStationID}
-                  onSelected={setEndStationID}
-                />
-                {promptComplete && (
-                  <FontAwesomeIcon
-                    style={{ cursor: "pointer" }}
-                    icon={faExchangeAlt}
-                    aria-label="Reverse Trip"
-                    onClick={reverseTrip}
-                    color="#ffbb31"
+      <div className="app-inner">
+        <div className={`header ${promptComplete && "header-prompt-complete"}`}>
+          <div
+            className={`fade-in prompt ${
+              promptComplete ? "prompt-complete" : "prompt-incomplete"
+            } `}
+          >
+            <div className="line-specification">
+              <span className="hide-small">I take the </span>
+              <SentanceDropDown
+                prompt={"select line"}
+                options={lineOptions}
+                selectedID={selectedLineID}
+                onSelected={setSelectedLineID}
+              />
+              <span style={{ marginRight: "0.25rem" }}> line. </span>
+            </div>
+            {selectedLineID && (
+              <>
+                <div className="line-select fade-in">
+                  <span className="hide-small">I get on at </span>
+                  <SentanceDropDown
+                    key="start"
+                    prompt={"select start station name"}
+                    options={stationOptions}
+                    selectedID={startStationID}
+                    onSelected={setStartStationID}
                   />
-                )}
-              </div>
+                </div>
+                <div className="line-select fade-in">
+                  <span className="hide-small">I get off at </span>
+                  <FontAwesomeIcon icon={faArrowRight} className="show-small" />
+                  <SentanceDropDown
+                    key="end"
+                    prompt={"select end station name"}
+                    options={stationOptions}
+                    selectedID={endStationID}
+                    onSelected={setEndStationID}
+                  />
+                  {promptComplete && (
+                    <FontAwesomeIcon
+                      style={{ cursor: "pointer" }}
+                      icon={faExchangeAlt}
+                      aria-label="Reverse Trip"
+                      onClick={reverseTrip}
+                      color="#ffbb31"
+                    />
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+
+          {promptComplete && (
+            <>
+              <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
+              <button onClick={reset}>Find out about another trip.</button>
             </>
           )}
         </div>
 
         {promptComplete && (
-          <>
-            <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-            <button onClick={reset}>Find out about another trip.</button>
-          </>
-        )}
-      </div>
+          <div className="graph">
+            <HourlyChart
+              hourlyData={maxHourlyCrowdingData}
+              hour={hour}
+            ></HourlyChart>
+            <div className="stops-chart-container">
+              {crowdingDataByStop && (
+                <>
+                  <h2>
+                    Estimated average number of people on the train after each
+                    stop for a trip starting at{" "}
+                    <span style={{ fontWeight: "bold" }}>
+                      {am_pm_from_24(hour)}
+                    </span>
+                    .
+                  </h2>
 
-      {promptComplete && (
-        <div className="graph">
-          <HourlyChart
-            hourlyData={maxHourlyCrowdingData}
-            hour={hour}
-          ></HourlyChart>
-          <div className="stops-chart-container">
-            {crowdingDataByStop && (
-              <>
-                <h2>
-                  Estimated average number of people on the train after each
-                  stop for a trip starting at{" "}
-                  <span style={{ fontWeight: "bold" }}>
-                    {am_pm_from_24(hour)}
+                  <Slider
+                    axis="x"
+                    x={hour}
+                    onChange={({ x }) => setSelectedHour(x)}
+                    xmax={23}
+                    xmin={0}
+                    xstep={1}
+                    styles={{
+                      track: {
+                        width: "100%",
+                      },
+                    }}
+                  />
+
+                  <span style={{ fontWeight: 300 }}>
+                    Use slider to change the start time of the trip
                   </span>
-                  .
-                </h2>
+                  <StopsChart
+                    stops={stops}
+                    stopCount={crowdingDataByStop}
+                    maxCount={absoluteMax}
+                  />
+                </>
+              )}
+            </div>
+          </div>
+        )}
+        <footer>
+          <div className="info-share">
+            <div className="info">
+              <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                <img src={Giticon} height={36} width={36} />
+              </a>
+              <a href="https://medium.com/dataclinic">
+                <img src={Mediumicon} height={38} width={38} />
+              </a>
+            </div>
 
-                <Slider
-                  axis="x"
-                  x={hour}
-                  onChange={({ x }) => setSelectedHour(x)}
-                  xmax={23}
-                  xmin={0}
-                  xstep={1}
-                  styles={{
-                    track: {
-                      width: "100%",
-                    },
-                  }}
+            {promptComplete && (
+              <div className="share-buttons">
+                <p className="hide-small">Share this trip</p>
+                <ShareButtons
+                  startStation={startStation?.id}
+                  endStation={endStation?.id}
+                  line={line?.id}
                 />
-
-                <span style={{ fontWeight: 300 }}>
-                  Use slider to change the start time of the trip
-                </span>
-                <StopsChart
-                  stops={stops}
-                  stopCount={crowdingDataByStop}
-                  maxCount={absoluteMax}
-                />
-              </>
+              </div>
             )}
           </div>
-        </div>
-      )}
-      <footer>
-        <div className="info-share">
-          <div className="info">
-            <p className="hide-small">More about us</p>
-            <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
-              <img src={Giticon} height={36} width={36} />
+          <div className="explainer-text"></div>
+          <div className="disclaimer">
+            <a href="https://www.twosigma.com/legal-disclosure/">
+              Legal Disclosure
             </a>
-            <a href="https://medium.com/dataclinic">
-              <img src={Mediumicon} height={38} width={38} />
+            <span>@ 2020 Two Sigma Investments, LP. All rights reserved</span>
+            <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
+              Privacy Policy
             </a>
           </div>
-
-          {promptComplete && (
-            <div className="share-buttons">
-              <p className="hide-small">Share this trip</p>
-              <ShareButtons
-                startStation={startStation?.id}
-                endStation={endStation?.id}
-                line={line?.id}
-              />
-            </div>
-          )}
-        </div>
-        <div className="disclaimer">
-          <a href="https://www.twosigma.com/legal-disclosure/">
-            Legal Disclosure
-          </a>
-          <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
-            Privacy Policy
-          </a>
-        </div>
-      </footer>
+        </footer>
+      </div>
     </div>
   );
 }
