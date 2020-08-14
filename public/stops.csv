@@ -222,35 +222,6 @@ stop_id,station,order,line,id,route_id
 638S,Spring St,36,6,SPRING ST,6
 639S,Canal St,37,6,CANAL ST,6
 640S,Brooklyn Bridge - City Hall,38,6,BROOKLYN BRIDGE,6
-601S,Pelham Bay Park,1,6X,,6X
-602S,Buhre Av,2,6X,,6X
-603S,Middletown Rd,3,6X,,6X
-604S,Westchester Sq - E Tremont Av,4,6X,,6X
-606S,Zerega Av,5,6X,,6X
-607S,Castle Hill Av,6,6X,,6X
-608S,Parkchester,7,6X,,6X
-613S,Hunts Point Av,8,6X,,6X
-619S,3 Av - 138 St,9,6X,,6X
-621S,125 St,10,6X,,6X
-622S,116 St,11,6X,,6X
-623S,110 St,12,6X,,6X
-624S,103 St,13,6X,,6X
-625S,96 St,14,6X,,6X
-626S,86 St,15,6X,,6X
-627S,77 St,16,6X,,6X
-628S,68 St - Hunter College,17,6X,,6X
-629S,59 St,18,6X,,6X
-630S,51 St,19,6X,,6X
-631S,Grand Central - 42 St,20,6X,,6X
-632S,33 St,21,6X,,6X
-633S,28 St,22,6X,,6X
-634S,23 St,23,6X,,6X
-635S,14 St - Union Sq,24,6X,,6X
-636S,Astor Pl,25,6X,,6X
-637S,Bleecker St,26,6X,,6X
-638S,Spring St,27,6X,,6X
-639S,Canal St,28,6X,,6X
-640S,Brooklyn Bridge - City Hall,29,6X,,6X
 701S,Flushing - Main St,1,7,FLUSHING-MAIN,7
 702S,Mets - Willets Point,2,7,METS-WILLETS PT,7
 705S,111 St,3,7,111 ST,7
@@ -273,18 +244,6 @@ stop_id,station,order,line,id,route_id
 724S,5 Av,20,7,5 AVE,7
 725S,Times Sq - 42 St,21,7,TIMES SQ-42 ST,7
 726S,34 St - Hudson Yds,22,7,34 ST-HUDSON YD,7
-701S,Flushing - Main St,1,7X,,7X
-702S,Mets - Willets Point,2,7X,,7X
-707S,Junction Blvd,3,7X,,7X
-712S,Woodside - 61 St,4,7X,,7X
-718S,Queensboro Plaza,5,7X,,7X
-719S,Court Sq,6,7X,,7X
-720S,Hunters Point Av,7,7X,,7X
-721S,Vernon Blvd - Jackson Av,8,7X,,7X
-723S,Grand Central - 42 St,9,7X,,7X
-724S,5 Av,10,7X,,7X
-725S,Times Sq - 42 St,11,7X,,7X
-726S,34 St - Hudson Yds,12,7X,,7X
 A02S,Inwood - 207 St,1,A,INWOOD-207 ST,A
 A03S,Dyckman St,2,A,DYCKMAN ST,A
 A05S,190 St,3,A,190 ST,A
@@ -495,13 +454,6 @@ F38S,Avenue X,42,F,AVENUE X,F
 F39S,Neptune Av,43,F,NEPTUNE AV,F
 D42S,W 8 St - NY Aquarium,44,F,W 8 ST-AQUARIUM,F
 D43S,Coney Island - Stillwell Av,45,F,CONEY IS-STILLW,F
-S01S,Franklin Av,1,FS,,FS
-S03S,Park Pl,2,FS,,FS
-S04N,Botanic Garden,2,FS,,FS
-S03N,Park Pl,3,FS,,FS
-S04S,Botanic Garden,3,FS,,FS
-D26S,Prospect Park,4,FS,,FS
-S01N,Franklin Av,4,FS,,FS
 G22S,Court Sq - 23 St,1,G,COURT SQ,G
 G24S,21 St,2,G,21 ST,G
 G26S,Greenpoint Av,3,G,GREENPOINT AV,G
@@ -524,13 +476,6 @@ F24S,7 Av,18,G,7 AV,G
 F25S,15 St - Prospect Park,19,G,15 ST-PROSPECT,G
 F26S,Fort Hamilton Pkwy,20,G,FT HAMILTON PKY,G
 F27S,Church Av,21,G,CHURCH AV,G
-902S,Times Sq - 42 St,1,GS,,GS
-901S,Grand Central - 42 St,2,GS,,GS
-H04S,Broad Channel,1,H,,H
-H12S,Beach 90 St,2,H,,H
-H13S,Beach 98 St,3,H,,H
-H14S,Beach 105 St,4,H,,H
-H15S,Rockaway Park - Beach 116 St,5,H,,H
 G05S,Jamaica Center - Parsons/Archer,1,J,JAMAICA CENTER,J
 G06S,Sutphin Blvd - Archer Av - JFK Airport,2,J,SUTPHIN-ARCHER,J
 J12S,121 St,3,J,121 ST,J
