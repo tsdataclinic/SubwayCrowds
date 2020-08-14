@@ -11,9 +11,9 @@ import {
 
 
 type Props={
-    startStation: string,
-    endStation: string,
-    line: string
+    startStation: string | undefined,
+    endStation: string | undefined,
+    line: string | undefined
 }
 export const ShareButtons = ({startStation,endStation,line}: Props)=>{
     const prompt = `Checkout this graph of overcrowding on the ${line} line between ${startStation} and ${endStation}`

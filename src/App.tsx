@@ -7,21 +7,21 @@ import {
 } from "./Hooks/useCrowdingData";
 import { useStationsForLine } from "./Hooks/useStationsForLine";
 import { Station } from "./types";
-import queryString from "query-string";
 import { useStopsBetween } from "./Hooks/useStopsBetween";
 import { StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
 import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
+import { faExchangeAlt, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { HourlyChart } from "./components/HourlyChart/HourlyChart";
+import { am_pm_from_24 } from "./utils";
 import Slider from "react-input-slider";
-import "./App.css";
 import Giticon from "./icons/giticon.png";
+import queryString from "query-string";
+import Mediumicon from "./icons/mediumicon.png";
 import "./App.scss";
 
 import "typeface-lato";
-import { start } from "repl";
-import { HourlyChart } from "./components/HourlyChart/HourlyChart";
 
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
@@ -40,6 +40,8 @@ function App() {
   const startStation = stations?.find((s) => s.id === startStationID);
   const endStation = stations?.find((s) => s.id === endStationID);
   const line = lines?.find((l) => l.id === selectedLineID);
+
+  const promptComplete = startStation && endStation && line;
 
   // This filters down the stations we have by line id. Use for narowing the options for the drop downs
   const filteredStations = useStationsForLine(selectedLineID);
@@ -117,7 +119,7 @@ function App() {
 
   // Updates the URL params when a user has selected a start / end / line combo
   useEffect(() => {
-    if (startStationID && endStationID && selectedLineID && loadedParams) {
+    if (promptComplete && loadedParams) {
       const state = {
         line: selectedLineID,
         start_station: startStationID,
@@ -142,54 +144,57 @@ function App() {
       >
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
-            className="fade-in"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "normal",
-              flexDirection: "row",
-            }}
+            className={`fade-in prompt ${
+              promptComplete ? "prompt-complete" : "prompt-incomplete"
+            } `}
           >
-            <span>I take the </span>
-            <SentanceDropDown
-              prompt={"select line"}
-              options={lineOptions}
-              selectedID={selectedLineID}
-              onSelected={setSelectedLineID}
-            />
-            <span style={{ marginRight: "0.25rem" }}> line. </span>
+            <div className="line-specification">
+              <span className="hide-small">I take the </span>
+              <SentanceDropDown
+                prompt={"select line"}
+                options={lineOptions}
+                selectedID={selectedLineID}
+                onSelected={setSelectedLineID}
+              />
+              <span style={{ marginRight: "0.25rem" }}> line. </span>
+            </div>
             {selectedLineID && (
-              <div className="line_select fade-in">
-                <span>I get on at </span>
-                <SentanceDropDown
-                  key="start"
-                  prompt={"select start station name"}
-                  options={stationOptions}
-                  selectedID={startStationID}
-                  onSelected={setStartStationID}
-                />
-                <span>I get off at </span>
-                <SentanceDropDown
-                  key="end"
-                  prompt={"select end station name"}
-                  options={stationOptions}
-                  selectedID={endStationID}
-                  onSelected={setEndStationID}
-                />
-                {line && startStation && endStation && (
-                  <FontAwesomeIcon
-                    style={{ cursor: "pointer" }}
-                    icon={faExchangeAlt}
-                    aria-label="Reverse Trip"
-                    onClick={reverseTrip}
-                    color="#ffbb31"
+              <>
+                <div className="line-select fade-in">
+                  <span className="hide-small">I get on at </span>
+                  <SentanceDropDown
+                    key="start"
+                    prompt={"select start station name"}
+                    options={stationOptions}
+                    selectedID={startStationID}
+                    onSelected={setStartStationID}
                   />
-                )}
-              </div>
+                </div>
+                <div className="line-select fade-in">
+                  <span className="hide-small">I get off at </span>
+                  <FontAwesomeIcon icon={faArrowRight} className="show-small" />
+                  <SentanceDropDown
+                    key="end"
+                    prompt={"select end station name"}
+                    options={stationOptions}
+                    selectedID={endStationID}
+                    onSelected={setEndStationID}
+                  />
+                  {promptComplete && (
+                    <FontAwesomeIcon
+                      style={{ cursor: "pointer" }}
+                      icon={faExchangeAlt}
+                      aria-label="Reverse Trip"
+                      onClick={reverseTrip}
+                      color="#ffbb31"
+                    />
+                  )}
+                </div>
+              </>
             )}
           </div>
 
-          {line && startStation && endStation && (
+          {promptComplete && (
             <>
               <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
               <button onClick={reset}>Find out about another trip.</button>
@@ -198,7 +203,7 @@ function App() {
         </div>
       </div>
 
-      {line && startStation && endStation && (
+      {promptComplete && (
         <div className="graph">
           <HourlyChart
             hourlyData={maxHourlyCrowdingData}
@@ -244,7 +249,7 @@ function App() {
         </div>
       )}
       <footer>
-        {startStation && endStation && line && (
+        {promptComplete && (
           <>
             <div className="disclaimer">
               <a href="https://www.twosigma.com/legal-disclosure/">
@@ -257,9 +262,9 @@ function App() {
             <div className="share-buttons">
               <p style={{ margin: "0px", padding: "0px" }}>Share this trip.</p>
               <ShareButtons
-                startStation={startStation.id}
-                endStation={endStation.id}
-                line={line.id}
+                startStation={startStation?.id}
+                endStation={endStation?.id}
+                line={line?.id}
               />
             </div>
 
