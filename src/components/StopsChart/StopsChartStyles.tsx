@@ -4,7 +4,7 @@ const MIN_PC_INSIDE = 5
 
 const Container = styled.ul`
     display:grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 0.6fr 1fr ;
     grid-row-gap:10px;
     grid-column-gap:10px;
     max-height: 50vh;
@@ -16,7 +16,9 @@ const Container = styled.ul`
 const StopName = styled.li`
     box-sizing:border-box;
     text-align:right;
-    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     /* padding: 20px 10px; */
 `
 type BarProps = {

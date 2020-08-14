@@ -136,71 +136,64 @@ function App() {
 
   return (
     <div className="App">
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div
-            className={`fade-in prompt ${
-              promptComplete ? "prompt-complete" : "prompt-incomplete"
-            } `}
-          >
-            <div className="line-specification">
-              <span className="hide-small">I take the </span>
-              <SentanceDropDown
-                prompt={"select line"}
-                options={lineOptions}
-                selectedID={selectedLineID}
-                onSelected={setSelectedLineID}
-              />
-              <span style={{ marginRight: "0.25rem" }}> line. </span>
-            </div>
-            {selectedLineID && (
-              <>
-                <div className="line-select fade-in">
-                  <span className="hide-small">I get on at </span>
-                  <SentanceDropDown
-                    key="start"
-                    prompt={"select start station name"}
-                    options={stationOptions}
-                    selectedID={startStationID}
-                    onSelected={setStartStationID}
-                  />
-                </div>
-                <div className="line-select fade-in">
-                  <span className="hide-small">I get off at </span>
-                  <FontAwesomeIcon icon={faArrowRight} className="show-small" />
-                  <SentanceDropDown
-                    key="end"
-                    prompt={"select end station name"}
-                    options={stationOptions}
-                    selectedID={endStationID}
-                    onSelected={setEndStationID}
-                  />
-                  {promptComplete && (
-                    <FontAwesomeIcon
-                      style={{ cursor: "pointer" }}
-                      icon={faExchangeAlt}
-                      aria-label="Reverse Trip"
-                      onClick={reverseTrip}
-                      color="#ffbb31"
-                    />
-                  )}
-                </div>
-              </>
-            )}
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <div
+          className={`fade-in prompt ${
+            promptComplete ? "prompt-complete" : "prompt-incomplete"
+          } `}
+        >
+          <div className="line-specification">
+            <span className="hide-small">I take the </span>
+            <SentanceDropDown
+              prompt={"select line"}
+              options={lineOptions}
+              selectedID={selectedLineID}
+              onSelected={setSelectedLineID}
+            />
+            <span style={{ marginRight: "0.25rem" }}> line. </span>
           </div>
-
-          {promptComplete && (
+          {selectedLineID && (
             <>
-              <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-              <button onClick={reset}>Find out about another trip.</button>
+              <div className="line-select fade-in">
+                <span className="hide-small">I get on at </span>
+                <SentanceDropDown
+                  key="start"
+                  prompt={"select start station name"}
+                  options={stationOptions}
+                  selectedID={startStationID}
+                  onSelected={setStartStationID}
+                />
+              </div>
+              <div className="line-select fade-in">
+                <span className="hide-small">I get off at </span>
+                <FontAwesomeIcon icon={faArrowRight} className="show-small" />
+                <SentanceDropDown
+                  key="end"
+                  prompt={"select end station name"}
+                  options={stationOptions}
+                  selectedID={endStationID}
+                  onSelected={setEndStationID}
+                />
+                {promptComplete && (
+                  <FontAwesomeIcon
+                    style={{ cursor: "pointer" }}
+                    icon={faExchangeAlt}
+                    aria-label="Reverse Trip"
+                    onClick={reverseTrip}
+                    color="#ffbb31"
+                  />
+                )}
+              </div>
             </>
           )}
         </div>
+
+        {promptComplete && (
+          <>
+            <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
+            <button onClick={reset}>Find out about another trip.</button>
+          </>
+        )}
       </div>
 
       {promptComplete && (
@@ -249,36 +242,36 @@ function App() {
         </div>
       )}
       <footer>
-        {promptComplete && (
-          <>
-            <div className="disclaimer">
-              <a href="https://www.twosigma.com/legal-disclosure/">
-                Legal Disclosure
-              </a>
-              <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
-                Privacy Policy
-              </a>
-            </div>
+        <div className="info-share">
+          <div className="info">
+            <p className="hide-small">More about us</p>
+            <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+              <img src={Giticon} height={36} width={36} />
+            </a>
+            <a href="https://medium.com/dataclinic">
+              <img src={Mediumicon} height={38} width={38} />
+            </a>
+          </div>
+
+          {promptComplete && (
             <div className="share-buttons">
-              <p style={{ margin: "0px", padding: "0px" }}>Share this trip.</p>
+              <p className="hide-small">Share this trip</p>
               <ShareButtons
                 startStation={startStation?.id}
                 endStation={endStation?.id}
                 line={line?.id}
               />
             </div>
-
-            <div className="info">
-              <p>More about us</p>
-              <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
-                <img src={Giticon} height={36} width={36} />
-              </a>
-              <a href="https://medium.com/dataclinic">
-                <img src={Mediumicon} height={38} width={38} />
-              </a>
-            </div>
-          </>
-        )}
+          )}
+        </div>
+        <div className="disclaimer">
+          <a href="https://www.twosigma.com/legal-disclosure/">
+            Legal Disclosure
+          </a>
+          <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
+            Privacy Policy
+          </a>
+        </div>
       </footer>
     </div>
   );

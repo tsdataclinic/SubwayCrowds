@@ -9,8 +9,11 @@
   font-family: lato;
   box-sizing: border-box;
   padding:20px 20px 0px 20px;
-  max-width: 1024px;
-  max-height: 800px;
+
+  @media only screen and (min-width:900px){
+    max-width: 1024px;
+    max-height: 800px;
+  }
 }
 
 .hide-small{
@@ -25,8 +28,6 @@
     display:block;
   }
 } 
-
-
 
 .prompt-incomplete{
   .show-small{
@@ -65,7 +66,12 @@
 
 h2{
   font-weight: normal;
-  font-size:1rem;
+  font-size:0.8rem;
+  padding:0px;
+  @media only screen and (min-width:900px){
+    padding:13px;
+    font-size:1rem;
+  }
 }
 
 .App-header {
@@ -134,10 +140,34 @@ button:hover{
 
 footer{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width:100%; 
+  .info-share, .disclaimer{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+  }
+  .info, .share-buttons{
+    > *{
+      margin-right:10px;
+    }
+  }
+
+  .disclaimer{
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 5px;
+    >a{
+      margin-right:20px;
+      color: grey;
+      font-size: 15px;
+      text-decoration: none;
+    }
+  }
 }
 
 .graph{
@@ -146,23 +176,29 @@ footer{
   width:100%;
   overflow-y:auto;
   box-sizing: border-box;
-  padding:0px 20px 20px 20px;
+  padding:0px 20px 0px 20px;
   display: flex;
- flex-direction: column;
- flex:1;
+  flex-direction: column;
+  flex:1;
 }
 
 .graph > div{
   width:100%;
   height:50%;
   box-sizing:border-box;
-  padding:20px;
 }
 
 .hourly-chart{
   position:relative;
   display:flex;
   flex-direction:column;
+  padding:0px;
+  margin:0px;
+  max-height:20vh;
+  @media only screen and (min-width: 900px) {
+    padding:20px;
+    max-height: none;
+  }
 }
 
 @media only screen and (min-width: 900px) {
@@ -197,6 +233,7 @@ footer{
   display:flex;
   flex-direction: column;
   overflow: hidden;
+  flex:1;
 }
 
 #root{
