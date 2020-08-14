@@ -24,10 +24,8 @@ export  function HourlyChart({hourlyData, hour}:Props){
         return ()=> window.removeEventListener('resize',onResize)
     },[])
 
-    console.log('width ', width, ' height ', height)
-
     return(
-        <div className='hour-chart' style={{height:'50%', position:'relative', display:'flex', flexDirection:'column'}} >
+        <div className='hourly-chart'>
              {hourlyData ? (
             <>
              

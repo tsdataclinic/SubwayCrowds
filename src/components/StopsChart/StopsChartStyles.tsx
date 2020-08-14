@@ -11,6 +11,7 @@ const Container = styled.ul`
     overflow-y:auto;
     list-style:none;
     padding:15px 0px;
+    flex:1;
 `
 const StopName = styled.li`
     box-sizing:border-box;
@@ -35,14 +36,14 @@ const StopBar = styled.li`
     justify-content:flex-end;
     font-size:0.9rem;
     transition: width 0.5s ease-in-out;
+    align-items:center;
     span{
         font-weight:bold;
         min-width:12px;
         transform: ${({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'translate(140%,0%)' : '' }};
         color:${ ({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'black' : 'white' };
     }
-    /* padding: 20px 10px; */
-`
+s`
 
 const StopCount = styled.li`
     align-self:end;

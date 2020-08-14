@@ -193,6 +193,7 @@ function App() {
           {line && startStation && endStation && (
             <>
               <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
+              <button onClick={reset}>Find out about another trip.</button>
             </>
           )}
         </div>
@@ -204,10 +205,7 @@ function App() {
             hourlyData={maxHourlyCrowdingData}
             hour={hour}
           ></HourlyChart>
-          <div
-            className="stops-chart-container"
-            style={{ height: "50%", display: "flex", flexDirection: "column" }}
-          >
+          <div className="stops-chart-container">
             {crowdingDataByStop && (
               <>
                 <h2>
@@ -246,11 +244,27 @@ function App() {
           </div>
         </div>
       )}
-      <footer style={{ display: "flex", flexDirection: "column" }}>
+      <footer>
         {startStation && endStation && line && (
-          <div className="share-buttons">
-            <p style={{ margin: "0px", padding: "0px" }}>Share this trip.</p>
+          <>
+            <div className="disclaimer">
+              <a href="https://www.twosigma.com/legal-disclosure/">
+                Legal Disclosure
+              </a>
+              <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
+                Privacy Policy
+              </a>
+            </div>
+            <div className="share-buttons">
+              <p style={{ margin: "0px", padding: "0px" }}>Share this trip.</p>
+              <ShareButtons
+                startStation={startStation.id}
+                endStation={endStation.id}
+                line={line.id}
+              />
+            </div>
 
+<<<<<<< HEAD
             <ShareButtons
               startStation={startStation.id}
               endStation={endStation.id}
@@ -266,6 +280,15 @@ function App() {
               <img src={Mediumicon} height={38} width={38} />
             </a>
           </div>
+=======
+            <div className="info">
+              <p>More about us</p>
+              <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                <img src={Giticon} height={36} width={36} />
+              </a>
+            </div>
+          </>
+>>>>>>> 244b0ee... Graphs reorient between horizontal and vertical with screen size
         )}
       </footer>
     </div>

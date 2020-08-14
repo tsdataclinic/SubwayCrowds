@@ -8,7 +8,7 @@
   align-items: center;
   font-family: lato;
   box-sizing: border-box;
-  padding:20px;
+  padding:20px 20px 0px 20px;
 }
 
 .App-logo {
@@ -24,6 +24,7 @@
 
 h2{
   font-weight: normal;
+  font-size:1rem;
 }
 
 .App-header {
@@ -84,13 +85,67 @@ button:hover{
 	}
 }
 
+
+footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width:100%; 
+}
+
+
 .graph{
-  flex:1;
+  display: flex;
+  flex-direction: column;
   width:100%;
   overflow-y:auto;
   box-sizing: border-box;
   padding:0px 20px 20px 20px;
   display: flex;
-  flex-direction: column;
+ flex-direction: column;
+ flex:1;
+}
+
+.graph > div{
+  width:100%;
+  height:50%;
+  box-sizing:border-box;
+  padding:20px;
+}
+
+.hourly-chart{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+}
+
+@media only screen and (min-width: 900px) {
+  .graph{  
+    flex-direction:row;
+  }
+  .graph > div{
+    height:100%;
+    width:50%;
+  }
+}
+
+.info{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
+}
+
+
+.share-buttons{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.stops-chart-container{
+  display:flex;
+  flex-direction: column;
+  overflow: hidden;
 }
