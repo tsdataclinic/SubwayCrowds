@@ -24,6 +24,12 @@
     max-height: 800px;
   }
 }
+
+.explainer-text{
+  font-size:0.5em;
+  color: grey;
+}
+
 .header{
   display: flex;
   flex-direction: column; 
@@ -182,7 +188,7 @@ footer{
     >a,span{
       margin-right:20px;
       color: grey;
-      font-size: 15px;
+      font-size: 0.5em;
       text-decoration: none;
     }
   }
