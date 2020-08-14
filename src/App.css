@@ -9,6 +9,8 @@
   font-family: lato;
   box-sizing: border-box;
   padding:20px 20px 0px 20px;
+  max-width: 1024px;
+  max-height: 800px;
 }
 
 .App-logo {
@@ -85,7 +87,6 @@ button:hover{
 	}
 }
 
-
 footer{
   display: flex;
   flex-direction: row;
@@ -93,7 +94,6 @@ footer{
   align-items: center;
   width:100%; 
 }
-
 
 .graph{
   display: flex;
@@ -148,4 +148,13 @@ footer{
   display:flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+#root{
+  width:100%;
+  height:100%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

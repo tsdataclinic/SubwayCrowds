@@ -17,7 +17,7 @@ import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-input-slider";
 import "./App.css";
 import Giticon from "./icons/giticon.png";
-import Mediumicon from "./icons/mediumicon.png"
+import Mediumicon from "./icons/mediumicon.png";
 import { am_pm_from_24 } from "./utils";
 
 import "typeface-lato";
@@ -264,31 +264,16 @@ function App() {
               />
             </div>
 
-<<<<<<< HEAD
-            <ShareButtons
-              startStation={startStation.id}
-              endStation={endStation.id}
-              line={line.id}
-            />
-
-            <button onClick={reset}>Find out about another trip.</button>
-            <p>More about us</p>
-            <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
-              <img src={Giticon} height={36} width={36} />
-            </a>
-            <a href="https://medium.com/dataclinic">
-              <img src={Mediumicon} height={38} width={38} />
-            </a>
-          </div>
-=======
             <div className="info">
               <p>More about us</p>
               <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
                 <img src={Giticon} height={36} width={36} />
               </a>
+              <a href="https://medium.com/dataclinic">
+                <img src={Mediumicon} height={38} width={38} />
+              </a>
             </div>
           </>
->>>>>>> 244b0ee... Graphs reorient between horizontal and vertical with screen size
         )}
       </footer>
     </div>
