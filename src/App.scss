@@ -13,15 +13,54 @@
   max-height: 800px;
 }
 
+.hide-small{
+  display:none
+}
+
+@media only screen and (min-width: 900px) {
+  .show-small{
+    display:none;
+  }
+  .hide-small{
+    display:block;
+  }
+} 
+
+
+
+.prompt-incomplete{
+  .show-small{
+    display:none;
+  }
+  .hide-small{
+    display:block;
+  }
+}
+
+.prompt-incomplete > div{
+  margin-bottom: 20px;
+}
+
+
+.line-select{
+  flex-direction: row;
+  display:flex
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.prompt{
+   display: flex;
+   align-items: center;
+   justify-content: normal;
+   flex-direction: column;
+}
+
+.prompt-complete{
+  flex-direction:row;
 }
 
 h2{
@@ -38,6 +77,12 @@ h2{
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.line-specification{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .App-link {
@@ -127,6 +172,10 @@ footer{
   .graph > div{
     height:100%;
     width:50%;
+  }
+
+  .prompt{
+    flex-direction: row;
   }
 }
 

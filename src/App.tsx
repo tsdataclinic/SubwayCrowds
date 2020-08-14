@@ -17,8 +17,7 @@ import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-input-slider";
 import "./App.css";
 import Giticon from "./icons/giticon.png";
-import Mediumicon from "./icons/mediumicon.png";
-import { am_pm_from_24 } from "./utils";
+import "./App.scss";
 
 import "typeface-lato";
 import { start } from "repl";
