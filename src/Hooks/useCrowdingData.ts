@@ -29,8 +29,17 @@ export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction
             const hourlyStopData = crowdingData.filter(cd => lines.includes(cd.lineID) && stations.includes(cd.stationID) &&  (cd.direction===order) && (cd.weekday === weekday ))
             const maxByHour: HourlyObservation[] = [];
             for(let hour =0; hour< 24; hour++){
-                const counts = hourlyStopData?.filter(obs=>(obs.hour===hour)).filter(filerTruthy).map(obs=>obs.numPeople)
-                maxByHour.push({hour:hour, numPeople: counts.length > 0 ?  Math.max(...counts) : 0})
+                const counts = hourlyStopData?.filter(obs=>(obs.hour===hour)).filter(filerTruthy)
+                const countsCurrent = counts.map(obs=>obs.numPeople)
+                const countsLastMonth = counts.map(obs=>obs.numPeopleLastMonth)
+                const countsLastYear = counts.map(obs=>obs.numPeopleLastYear)
+
+                maxByHour.push({
+                    hour:hour, 
+                    numPeople: countsCurrent.length > 0 ?  Math.max(...countsCurrent) : 0,
+                    numPeopleLastMonth: countsLastMonth.length > 0 ?  Math.max(...countsLastMonth) : 0,
+                    numPeopleLastYear: countsLastYear.length > 0 ?  Math.max(...countsLastYear) : 0
+                })
             }
             setData(maxByHour)
         }

@@ -1,6 +1,8 @@
 import styled, {css} from 'styled-components'
+import {DataTypeColor} from '../../utils'
 
-const MIN_PC_INSIDE = 5
+
+const MIN_PC_INSIDE = 10
 
 const Container = styled.ul`
     display:grid;
@@ -12,6 +14,7 @@ const Container = styled.ul`
     list-style:none;
     padding:15px 0px;
     flex:1;
+    align-items:center;
 `
 const StopName = styled.li`
     box-sizing:border-box;
@@ -22,15 +25,33 @@ const StopName = styled.li`
     /* padding: 20px 10px; */
 `
 type BarProps = {
-    percent : number
+    percent : number,
+    type: 'current' | 'month' | 'year',
 }
 
-const StopBar = styled.li`
+const StopBars = styled.li`
+    display:flex;
+    flex-direction:column;
+
+`
+
+const typeSizes={
+    'current': '20px',
+    'month': '2px',
+    'year' : '2px'
+}
+
+const typeColors={
+    'current': 'rgba(112,214,227,1)',
+    'month': 'rgba(255,0,0,1)',
+    'year' : 'rgba(0,255,0,1)'
+}
+const StopBar = styled.span`
     box-sizing:border-box;
     align-self:start;
     width:${({percent}:BarProps)=> `${percent}%`};
-    background-color:#ffbb31;
-    height:100%;
+    background-color:${({type}:BarProps)=> DataTypeColor(type,1)};
+    height: ${({type}:BarProps)=> `${typeSizes[type]}`};
     box-sizing:border-box;
     padding:3px 3px 3px 0px;
     color:white;
@@ -52,4 +73,4 @@ const StopCount = styled.li`
     text-align:left;
 `
 
-export const Styles = {Container, StopName,StopBar, StopCount}
+export const Styles = {Container, StopName,StopBar, StopCount, StopBars}

@@ -64,7 +64,9 @@ function App() {
     weekday
   );
 
-  const counts = maxHourlyCrowdingData?.map((a) => a.numPeople);
+  const counts = maxHourlyCrowdingData?.map((a) =>
+    Math.max(a.numPeople, a.numPeopleLastMonth, a.numPeopleLastYear)
+  );
   const absoluteMax = counts ? Math.max(...counts) : null;
 
   // This is used to populate our drop down menu for stations
@@ -265,7 +267,14 @@ function App() {
             )}
           </div>
           <div className="explainer-text">
-          This website and its contents, including all data, figures and analysis (“Website”), is provided strictly for informational purposes. The Website relies upon publicly available data from the MTA and on the results of mathematical models designed by the Two Sigma Investments, LP acting through the Two Sigma Data Clinic (“Data Clinic”). Data Clinic disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, reliability, and non-infringement. 
+            This website and its contents, including all data, figures and
+            analysis (“Website”), is provided strictly for informational
+            purposes. The Website relies upon publicly available data from the
+            MTA and on the results of mathematical models designed by the Two
+            Sigma Investments, LP acting through the Two Sigma Data Clinic
+            (“Data Clinic”). Data Clinic disclaims any and all representations
+            and warranties with respect to the Website, including accuracy,
+            fitness for use, reliability, and non-infringement.
           </div>
           <div className="disclaimer">
             <a href="https://www.twosigma.com/legal-disclosure/">
