@@ -26,7 +26,7 @@ export const ShareButtons = ({startStation,endStation,line}: Props)=>{
             </FacebookShareButton>{' '}
             <TwitterShareButton title={prompt} url={window.location.href}  hashtags={hashtagList}>
               <TwitterIcon size={36} />
-            </TwitterShareButton>
+            </TwitterShareButton>{' '}
             <EmailShareButton 
               subject={prompt}
               body={prompt}

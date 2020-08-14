@@ -74,7 +74,7 @@ function parseCrowding(rawObservations: RawCrowding[]) : CrowdingObservation[]{
         stationID: observation.STATION,
         lineID: observation.route_id,
         hour:observation.hour,
-        numPeople:observation.crowd,
+        numPeople:observation.current_crowd,
         direction: observation.direction_id === 0 ? Direction.NORTHBOUND : Direction.SOUTHBOUND,
         weekday: observation.weekday === 1,
     }))

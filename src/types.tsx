@@ -41,7 +41,7 @@ export type RawCrowding = {
   STATION: string;
   route_id: string;
   hour: number;
-  crowd: number;
+  current_crowd: number;
   direction_id: number;
   weekday: number;
 };

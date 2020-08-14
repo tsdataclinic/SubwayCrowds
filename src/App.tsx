@@ -18,6 +18,7 @@ import { faExchangeAlt } from "@fortawesome/free-solid-svg-icons";
 import Slider from "react-input-slider";
 import "./App.css";
 import Giticon from "./icons/giticon.png";
+import Mediumicon from "./icons/mediumicon.png"
 import { am_pm_from_24 } from "./utils";
 
 function App() {
@@ -277,9 +278,14 @@ function App() {
           <button onClick={reset}>Find out about another trip.</button>
 
           <p>More about us</p>
-          <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
-            <img src={Giticon} height={36} width={36} />
-          </a>
+          <div> 
+            <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+              <img src={Giticon} height={36} width={36} />
+            </a>
+            <a href="https://medium.com/dataclinic">
+              <img src={Mediumicon} height={38} width={38} />
+            </a>
+          </div>
         </div>
       )}
     </div>
