@@ -201,10 +201,29 @@ function App() {
 
         {promptComplete && (
           <div className="graph">
-            <HourlyChart
-              hourlyData={maxHourlyCrowdingData}
-              hour={hour}
-            ></HourlyChart>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <HourlyChart
+                hourlyData={maxHourlyCrowdingData}
+                hour={hour}
+              ></HourlyChart>
+              <Slider
+                axis="x"
+                x={hour}
+                onChange={({ x }) => setSelectedHour(x)}
+                xmax={23}
+                xmin={0}
+                xstep={1}
+                styles={{
+                  track: {
+                    width: "100%",
+                  },
+                }}
+              />
+
+              <span style={{ fontWeight: 300 }}>
+                Use slider to change the start time of the trip
+              </span>
+            </div>
             <div className="stops-chart-container">
               {crowdingDataByStop && (
                 <>
@@ -217,23 +236,6 @@ function App() {
                     .
                   </h2>
 
-                  <Slider
-                    axis="x"
-                    x={hour}
-                    onChange={({ x }) => setSelectedHour(x)}
-                    xmax={23}
-                    xmin={0}
-                    xstep={1}
-                    styles={{
-                      track: {
-                        width: "100%",
-                      },
-                    }}
-                  />
-
-                  <span style={{ fontWeight: 300 }}>
-                    Use slider to change the start time of the trip
-                  </span>
                   <StopsChart
                     stops={stops}
                     stopCount={crowdingDataByStop}

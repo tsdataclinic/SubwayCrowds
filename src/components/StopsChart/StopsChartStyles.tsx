@@ -4,25 +4,56 @@ import {DataTypeColor} from '../../utils'
 
 const MIN_PC_INSIDE = 10
 
-const Container = styled.ul`
+const Container = styled.div`
+    display:flex;
+    flex-direction:column;
+    flex:1;
+`
+const BarsContainer = styled.ul`
     display:grid;
     grid-template-columns: 0.6fr 1fr ;
-    grid-row-gap:10px;
-    grid-column-gap:10px;
+    grid-column-gap:20px;
     max-height: 50vh;
     overflow-y:auto;
     list-style:none;
     padding:15px 0px;
+    box-sizing:border-box;
     flex:1;
+    height:100%;
     align-items:center;
+`
+type MetricToggleProps={
+    set:boolean
+}
+
+
+const MetricToggle = styled.button`
+    color:${({set} : MetricToggleProps) => set ? 'red' : 'blue'};
 `
 const StopName = styled.li`
     box-sizing:border-box;
     text-align:right;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    /* padding: 20px 10px; */
+    
+    /* margin-bottom: 10px; */
+    border-right : 2px solid black;
+    padding: 20px 10px;
+    span{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    ::after{
+        content: '';
+        background-color:white;
+        width:10px;
+        height:10px;
+        border-radius: 10px;
+        border:2px solid black;
+        display: inline-block;
+        transform:translate3d(130%,5%,0px);
+        z-index:100;
+    }
+    :first-child
 `
 type BarProps = {
     percent : number,
@@ -34,7 +65,20 @@ const StopBars = styled.li`
     flex-direction:column;
 
 `
+const Metric = styled.div`
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+   
+`
 
+const MetricButton = styled.button`
+    button{
+        border:none;
+        background-color:transparent;
+    }
+`
 const typeSizes={
     'current': '20px',
     'month': '2px',
@@ -73,4 +117,14 @@ const StopCount = styled.li`
     text-align:left;
 `
 
-export const Styles = {Container, StopName,StopBar, StopCount, StopBars}
+export const Styles = {
+    Container, 
+    BarsContainer, 
+    StopName,
+    StopBar, 
+    StopCount, 
+    StopBars, 
+    Metric,
+    MetricButton,
+    MetricToggle
+}

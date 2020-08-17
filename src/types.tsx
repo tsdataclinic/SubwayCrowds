@@ -41,6 +41,12 @@ export type CrowdingObservation = {
   weekday: boolean;
 };
 
+export enum MetricType {
+  CURRENT,
+  MONTH,
+  YEAR,
+}
+
 export type RawCrowding = {
   STATION: string;
   route_id: string;

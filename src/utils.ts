@@ -16,3 +16,7 @@ export function DataTypeColor(
       return `rgba(253,191,17,${opacity})`;
   }
 }
+
+export function filerTruthy<T>(t: T | undefined): t is T {
+  return !!t;
+}

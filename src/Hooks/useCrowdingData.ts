@@ -1,5 +1,6 @@
 import {useState,useEffect, useContext} from 'react'
 import {CrowdingObservation,HourlyObservation, Stop, Direction} from '../types'
+import {filerTruthy} from '../utils'
 import {DataContext} from '../Contexts/DataContext'
 
 export const useCrowdingData = (stationID :string |null, lineID:string | null)=>{
@@ -46,10 +47,6 @@ export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction
     },[stops, crowdingData,weekday,order])
 
     return data
-}
-
-function filerTruthy<T>(t: T | undefined): t is T {
-  return !!t;
 }
 
 export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null,order: Direction|null , weekday:boolean)=>{

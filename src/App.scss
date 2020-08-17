@@ -222,11 +222,12 @@ footer{
   position:relative;
   display:flex;
   flex-direction:column;
+  flex:1;
   padding:0px;
   margin:0px;
   max-height:20vh;
   @media only screen and (min-width: 900px) {
-    padding:20px;
+    padding:20px 20px 0px 20px;
     max-height: none;
   }
 }
