@@ -130,7 +130,8 @@ h2{
     transform: rotate(360deg);
   }
 }
-button{
+
+.reset-button{
   color: #e27327;
   background-color:white;
   border: solid 2px #e27327;
@@ -139,14 +140,13 @@ button{
   text-transform: uppercase;
   padding: 6px 12px;
   cursor:pointer;
-  margin-top:10px;
+  margin-top:0px;
+  :hover{
+    color: white;
+    background-color: #e27327;
+  }
 }
 
-button:hover{
-  color: white;
-  background-color: #e27327;
-  
-}
 
 .fade-in {
 	opacity: 1;
@@ -171,6 +171,7 @@ footer{
   justify-content: space-between;
   align-items: center;
   width:100%; 
+  margin-top:10px;
   .info-share, .disclaimer{
     display:flex;
     flex-direction: row;
@@ -227,7 +228,7 @@ footer{
   margin:0px;
   max-height:20vh;
   @media only screen and (min-width: 900px) {
-    padding:20px 20px 0px 20px;
+    padding:0px 20px 0px 20px;
     max-height: none;
   }
 }
@@ -266,7 +267,7 @@ footer{
   overflow: hidden;
   flex:1;
   @media only screen and (min-width: 900px) {
-    padding:20px;
+    padding:0px 20px ;
   }
 }
 

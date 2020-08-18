@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {CrowdingObservation, Stop, MetricType} from '../../types'
 import {Styles} from './StopsChartStyles'
+import {ToggleButton} from '../ToggleButton/ToggleButton'
 
 type Props={
     stops: Stop[] | null,
@@ -45,22 +46,22 @@ export const StopsChart = ({stops, stopCount, maxCount}:Props)=>{
         <Styles.Container>
             <Styles.Metric>
                 <span>Compare to: </span>
-                <Styles.MetricToggle set={showMonth} onClick={()=>setShowMonth(!showMonth)}>Last Month</Styles.MetricToggle>
-                <Styles.MetricToggle set={showYear} onClick={()=>setShowYear(!showYear)}>Last Year</Styles.MetricToggle> 
+                <ToggleButton set={showMonth} metric={MetricType.MONTH} onClick={()=>setShowMonth(!showMonth)}>1 month ago</ToggleButton>
+                <ToggleButton set={showYear} metric={MetricType.YEAR} onClick={()=>setShowYear(!showYear)}>1 year ago</ToggleButton> 
             </Styles.Metric>
 
             <Styles.BarsContainer>
                 {stops && stops.map(stop=>
                     <>
-                        <Styles.StopName key={`${stop.station}_name`}>{stop.station}</Styles.StopName>
+                        <Styles.StopName key={`${stop.station}_name`}><span>{stop.station}</span></Styles.StopName>
                         <Styles.StopBars  key={`${stop.station}_bar`}>
-                            <Styles.StopBar key='current' type={'current'} percent={scoreForStop(stop?.id, MetricType.CURRENT)*100.0/maxStopCount}>
+                            <Styles.StopBar key='current' metric={MetricType.CURRENT} percent={scoreForStop(stop?.id, MetricType.CURRENT)*100.0/maxStopCount}>
                                 <span>{Math.floor(scoreForStop(stop?.id, MetricType.CURRENT)).toLocaleString()}</span>
                             </Styles.StopBar>
                             {showMonth && 
                                 <Styles.StopBar 
                                     key='month' 
-                                    type={'month'} 
+                                    metric={MetricType.MONTH} 
                                     percent={scoreForStop(stop?.id, MetricType.MONTH)*100.0/maxStopCount}
                                 />
                             }
@@ -68,7 +69,7 @@ export const StopsChart = ({stops, stopCount, maxCount}:Props)=>{
                             {showYear &&
                                 <Styles.StopBar 
                                     key='year' 
-                                    type={'year'} 
+                                    metric={MetricType.YEAR} 
                                     percent={scoreForStop(stop?.id, MetricType.YEAR)*100.0/maxStopCount}
                                 />
                             }

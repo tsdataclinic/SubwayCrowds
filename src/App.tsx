@@ -194,7 +194,9 @@ function App() {
           {promptComplete && (
             <>
               <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-              <button onClick={reset}>Find out about another trip.</button>
+              <button className="reset-button" onClick={reset}>
+                Find out about another trip.
+              </button>
             </>
           )}
         </div>
@@ -206,23 +208,36 @@ function App() {
                 hourlyData={maxHourlyCrowdingData}
                 hour={hour}
               ></HourlyChart>
-              <Slider
-                axis="x"
-                x={hour}
-                onChange={({ x }) => setSelectedHour(x)}
-                xmax={23}
-                xmin={0}
-                xstep={1}
-                styles={{
-                  track: {
-                    width: "100%",
-                  },
+              <div
+                style={{
+                  marginTop: "5px",
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "95%",
+                  paddingLeft: "70px",
+                  boxSizing: "border-box",
                 }}
-              />
+              >
+                <Slider
+                  axis="x"
+                  x={hour}
+                  onChange={({ x }) => setSelectedHour(x)}
+                  xmax={23}
+                  xmin={0}
+                  xstep={1}
+                  styles={{
+                    track: {
+                      width: "100%",
+                    },
+                  }}
+                />
 
-              <span style={{ fontWeight: 300 }}>
-                Use slider to change the start time of the trip
-              </span>
+                <span
+                  style={{ marginTop: "5px", color: "grey", fontSize: "12px" }}
+                >
+                  Use slider to change the start time of the trip
+                </span>
+              </div>
             </div>
             <div className="stops-chart-container">
               {crowdingDataByStop && (

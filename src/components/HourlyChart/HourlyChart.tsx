@@ -1,6 +1,6 @@
 import React, {useState,useLayoutEffect, useRef, useEffect} from 'react'
 import { Line } from "react-chartjs-2";
-import {HourlyObservation} from '../../types'
+import {HourlyObservation, MetricType} from '../../types'
 import { am_pm_from_24, DataTypeColor } from "../../utils";
 
 type Props ={
@@ -43,8 +43,8 @@ export  function HourlyChart({hourlyData, hour}:Props){
                             y: c.numPeople,
                         })),
                         label: "Current",
-                        backgroundColor:  DataTypeColor('current', 0.4) ,
-                        borderColor: DataTypeColor('current', 1) ,
+                        backgroundColor:  DataTypeColor(MetricType.CURRENT, 0.4) ,
+                        borderColor: DataTypeColor(MetricType.CURRENT, 1) ,
                         },
                          {
                         data: hourlyData.map((c) => ({
@@ -53,7 +53,7 @@ export  function HourlyChart({hourlyData, hour}:Props){
                         })),
                         label: "1 month ago",
                         backgroundColor:'rgba(0,0,0,0)',
-                        borderColor: DataTypeColor('month', 1.0),
+                        borderColor: DataTypeColor(MetricType.MONTH, 1.0),
                         },
                          {
                         data: hourlyData.map((c) => ({
@@ -62,7 +62,7 @@ export  function HourlyChart({hourlyData, hour}:Props){
                         })),
                         label: "1 year ago",
                         backgroundColor:'rgba(0,0,0,0)',
-                        borderColor: DataTypeColor('year',1.0),
+                        borderColor: DataTypeColor(MetricType.YEAR,1.0),
                         },
                     ],
                     redraw:true,
