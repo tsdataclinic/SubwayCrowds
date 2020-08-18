@@ -9,7 +9,7 @@ export const useStopsBetween = (line :string | null , start_station : string | n
     
     useEffect(()=>{
         if(start_station && end_station && stops){
-            const stops_for_line = stops.filter((stop)=> stop.line===line);
+            const stops_for_line = stops.filter((stop)=> stop.line===line).sort((a,b)=> a.order > b.order ? 1: -1);
             const start_index = stops_for_line.findIndex(stop=> stop.id === start_station)
             const end_index = stops_for_line.findIndex(stop=> stop.id === end_station)
 

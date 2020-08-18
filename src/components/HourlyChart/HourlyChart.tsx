@@ -1,7 +1,7 @@
 import React, {useState,useLayoutEffect, useRef, useEffect} from 'react'
 import { Line } from "react-chartjs-2";
-import {HourlyObservation} from '../../types'
-import { am_pm_from_24 } from "../../utils";
+import {HourlyObservation, MetricType} from '../../types'
+import { am_pm_from_24, DataTypeColor } from "../../utils";
 
 type Props ={
     hourlyData : HourlyObservation[] | null,
@@ -42,9 +42,27 @@ export  function HourlyChart({hourlyData, hour}:Props){
                             x: c.hour,
                             y: c.numPeople,
                         })),
-                        label: "Number of people per hour",
-                        backgroundColor: "rgba(112,214,227,0.4)",
-                        borderColor: "rgba(112,214,227,1)",
+                        label: "Current",
+                        backgroundColor:  DataTypeColor(MetricType.CURRENT, 0.4) ,
+                        borderColor: DataTypeColor(MetricType.CURRENT, 1) ,
+                        },
+                         {
+                        data: hourlyData.map((c) => ({
+                            x: c.hour,
+                            y: c.numPeopleLastMonth,
+                        })),
+                        label: "1 month ago",
+                        backgroundColor:'rgba(0,0,0,0)',
+                        borderColor: DataTypeColor(MetricType.MONTH, 1.0),
+                        },
+                         {
+                        data: hourlyData.map((c) => ({
+                            x: c.hour,
+                            y: c.numPeopleLastYear,
+                        })),
+                        label: "1 year ago",
+                        backgroundColor:'rgba(0,0,0,0)',
+                        borderColor: DataTypeColor(MetricType.YEAR,1.0),
                         },
                     ],
                     redraw:true,
@@ -59,7 +77,7 @@ export  function HourlyChart({hourlyData, hour}:Props){
                     
                     responsive:true,
                     legend: {
-                        display: false,
+                        display: true,
                     },
                     scales: {
                         yAxes: [

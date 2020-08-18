@@ -1,6 +1,6 @@
 import {useContext} from 'react'
 import {DataContext} from '../Contexts/DataContext'
-
+import {filerTruthy} from '../utils'
 type RawStation={
     station_name: string,
     clean_lines: string,
@@ -8,8 +8,8 @@ type RawStation={
     turnstile_lines: string
 }
 
-
 export const useStationsForLine = (line:string | null)=>{
-    const {stations} = useContext(DataContext);
-    return (stations && line)  ? stations.filter(station => station.lines.includes(line) ) : stations
+    const {stations, stops} = useContext(DataContext);
+    const stationsInLine =   stops?.filter(stop => stop.line==line ).sort((a,b)=> a.order > b.order ? 1 : -1)
+    return stationsInLine?.map(stop => stations?.find(station => station.name === stop.station)).filter(filerTruthy)
 }

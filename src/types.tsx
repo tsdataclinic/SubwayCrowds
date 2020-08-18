@@ -21,6 +21,8 @@ export type Stop = {
 export type HourlyObservation = {
   hour: number;
   numPeople: number;
+  numPeopleLastYear: number;
+  numPeopleLastMonth: number;
 };
 
 export enum Direction {
@@ -33,15 +35,25 @@ export type CrowdingObservation = {
   lineID: string;
   hour: number;
   numPeople: number;
+  numPeopleLastMonth: number;
+  numPeopleLastYear: number;
   direction: Direction;
   weekday: boolean;
 };
+
+export enum MetricType {
+  CURRENT,
+  MONTH,
+  YEAR,
+}
 
 export type RawCrowding = {
   STATION: string;
   route_id: string;
   hour: number;
   current_crowd: number;
+  last_month_crowd: number;
+  last_year_crowd: number;
   direction_id: number;
   weekday: number;
 };
