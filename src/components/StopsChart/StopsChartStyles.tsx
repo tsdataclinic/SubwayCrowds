@@ -23,7 +23,6 @@ const BarsContainer = styled.ul`
     height:100%;
     align-items:center;
     margin-top:10px;
-
 `
 
 const StopName = styled.li`
