@@ -14,6 +14,7 @@ import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelec
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExchangeAlt, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { HourlyChart } from "./components/HourlyChart/HourlyChart";
+
 import { am_pm_from_24 } from "./utils";
 import Slider from "react-input-slider";
 import Giticon from "./icons/giticon.png";
@@ -22,9 +23,11 @@ import Mediumicon from "./icons/mediumicon.png";
 import "./App.scss";
 
 import "typeface-lato";
+import { SimplePassword } from "./components/SimplePassword/SimplePassword";
 
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
+  const [passwordPassed, setPasswordPassed] = useState(false);
 
   // Grab the required data from the data context
   const { stations, lines, dataLoaded } = useContext(DataContext);
@@ -137,6 +140,13 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
+  if (passwordPassed === false) {
+    return (
+      <div className="App">
+        <SimplePassword onPassed={() => setPasswordPassed(true)} />
+      </div>
+    );
+  }
   return (
     <div className="App">
       <div className="app-inner">
