@@ -79,6 +79,7 @@ function App() {
   const lineOptions: any = lines?.map((line) => ({
     key: line.name,
     icon: line.icon,
+    text: line.name,
   }));
 
   // Call to reset the application to the inital state and replace the url params
@@ -152,6 +153,7 @@ function App() {
                 options={lineOptions}
                 selectedID={selectedLineID}
                 onSelected={setSelectedLineID}
+                useIcon={false}
               />
               <span style={{ marginRight: "0.25rem" }}> line. </span>
             </div>
