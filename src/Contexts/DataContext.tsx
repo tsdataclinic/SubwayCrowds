@@ -65,7 +65,7 @@ function parseStops(stops : Stop[]){
             lines: stops.filter(stop=>stop.station === stationName).map(stop => stop.line)
         }
     })
-
+    
     return {stations,lines, stops}
 }
 
@@ -87,7 +87,9 @@ function loadStops (){
         Papa.parse('/stops.csv',{
             download:true,
             complete: (result :any)=> resolve(parseStops(result.data)),
-            header:true
+            header:true,
+            dynamicTyping: {order: true}
+
         })
     })
 }
