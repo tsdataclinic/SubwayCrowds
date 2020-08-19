@@ -1,36 +1,101 @@
 import styled, {css} from 'styled-components'
+import {DataTypeColor} from '../../utils'
+import {MetricType} from '../../types'
 
-const MIN_PC_INSIDE = 5
+const MIN_PC_INSIDE = 10
 
-const Container = styled.ul`
+const Container = styled.div`
+    display:flex;
+    flex-direction:column;
+    flex:1;
+    @media only screen and (min-width:900px){
+      
+      max-height: 400px;
+    }
+`
+const BarsContainer = styled.ul`
     display:grid;
     grid-template-columns: 0.6fr 1fr ;
-    grid-row-gap:10px;
-    grid-column-gap:10px;
+    grid-template-rows: repeat(auto-fill, 30px);
+    grid-column-gap:20px;
     max-height: 50vh;
     overflow-y:auto;
     list-style:none;
-    padding:15px 0px;
+    padding:0px 0px;
+    box-sizing:border-box;
     flex:1;
+    height:100%;
+    align-items:center;
+    margin-top:10px;
 `
+
 const StopName = styled.li`
     box-sizing:border-box;
     text-align:right;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    /* padding: 20px 10px; */
+    display:flex;
+    flex-direction:column;
+    height:30px;
+    /* margin-bottom: 10px; */
+    border-right : 2px solid black;
+    padding: 0px 10px 0px 10px;
+    position:relative;
+    justify-content:center;
+    color: grey;
+    font-weight:bold;
+    span{
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    ::after{
+        content: '';
+        background-color:white;
+        width:10px;
+        height:10px;
+        border-radius: 10px;
+        border:2px solid black;
+        display: inline-block;
+        position:absolute;
+        top:9px;
+        right:-8px;
+        z-index:100;
+    }
 `
+
 type BarProps = {
-    percent : number
+    percent : number,
+    metric: MetricType,
 }
 
-const StopBar = styled.li`
+const StopBars = styled.li`
+    display:flex;
+    flex-direction:column;
+
+`
+const Metric = styled.div`
+    display:flex;
+    flex-direction:row;
+    /* justify-content:space-between; */
+    align-items:center;
+    font-size:13px;
+    color: grey;
+    box-sizing: border-box;
+    padding: 8px 0px;
+
+`
+
+const typeSizes={
+    [MetricType.CURRENT] : '20px',
+    [MetricType.MONTH] : '2px',
+    [MetricType.YEAR] : '2px'
+}
+
+const StopBar = styled.span`
     box-sizing:border-box;
     align-self:start;
     width:${({percent}:BarProps)=> `${percent}%`};
-    background-color:#ffbb31;
-    height:100%;
+    background-color:${({metric}:BarProps)=> DataTypeColor(metric,1)};
+    height: ${({metric}:BarProps)=> `${typeSizes[metric]}`};
     box-sizing:border-box;
     padding:3px 3px 3px 0px;
     color:white;
@@ -52,4 +117,12 @@ const StopCount = styled.li`
     text-align:left;
 `
 
-export const Styles = {Container, StopName,StopBar, StopCount}
+export const Styles = {
+    Container, 
+    BarsContainer, 
+    StopName,
+    StopBar, 
+    StopCount, 
+    StopBars,
+    Metric
+}

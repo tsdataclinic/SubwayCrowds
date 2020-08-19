@@ -5,15 +5,16 @@ interface DropDownOption{
     text?: string;
     key:  string;
     icon?: string;
+    
 }
 interface Props {
     prompt: string;
     options: DropDownOption[];
     onSelected?: (option:string)=>void;
     selectedID?: string | null,
-
+    useIcon?:boolean
 }
-export default function SentanceDropDown ({prompt, options,selectedID, onSelected}: Props){
+export default function SentanceDropDown ({prompt, options,selectedID, onSelected, useIcon=false}: Props){
     const [searchTerm, setSearchTerm] = useState<string>('')
 
     const [showDropDown, setShowDropDown] = useState(false);
@@ -35,7 +36,7 @@ export default function SentanceDropDown ({prompt, options,selectedID, onSelecte
     return(
         <Styles.Container>
             {selected ?
-             <span style={{fontWeight:'bold'}}>{selected.icon ? <Styles.Icon src={selected.icon} /> : ''}{selected.text ? selected.text : ''}</span>
+             <span style={{fontWeight:'bold'}}>{ (selected.icon && useIcon) ? <Styles.Icon src={selected.icon} /> : ''}{selected.text ? selected.text : ''}</span>
              :
              <Styles.Input onFocus={()=>setShowDropDown(true)} placeholder={prompt} onChange={updateSearch} value={searchTerm}></Styles.Input>
             }
@@ -43,7 +44,7 @@ export default function SentanceDropDown ({prompt, options,selectedID, onSelecte
                 <Styles.DropDownList>
                     {filteredOptions.map(option=>
                         <Styles.DropDownListEntry onClick={()=>setSelected(option)} key={option.key}>
-                            {option.icon &&
+                            {(option.icon && useIcon) &&
                                 <Styles.Icon src={option.icon} />
                             }
                             {option.text &&

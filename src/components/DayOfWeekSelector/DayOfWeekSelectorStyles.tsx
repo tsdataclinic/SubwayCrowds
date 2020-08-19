@@ -14,6 +14,9 @@ const Option = styled.div`
     box-sizing:border-box;
     padding:10px 20px;
     border: 1px solid grey;
+    :first-child{
+        margin-right:20px;
+    }
     cursor:pointer;
 `
 

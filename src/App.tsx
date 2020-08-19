@@ -14,6 +14,7 @@ import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelec
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExchangeAlt, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { HourlyChart } from "./components/HourlyChart/HourlyChart";
+
 import { am_pm_from_24 } from "./utils";
 import Slider from "react-input-slider";
 import Giticon from "./icons/giticon.png";
@@ -22,9 +23,11 @@ import Mediumicon from "./icons/mediumicon.png";
 import "./App.scss";
 
 import "typeface-lato";
+import { SimplePassword } from "./components/SimplePassword/SimplePassword";
 
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
+  const [passwordPassed, setPasswordPassed] = useState(false);
 
   // Grab the required data from the data context
   const { stations, lines, dataLoaded } = useContext(DataContext);
@@ -64,7 +67,9 @@ function App() {
     weekday
   );
 
-  const counts = maxHourlyCrowdingData?.map((a) => a.numPeople);
+  const counts = maxHourlyCrowdingData?.map((a) =>
+    Math.max(a.numPeople, a.numPeopleLastMonth, a.numPeopleLastYear)
+  );
   const absoluteMax = counts ? Math.max(...counts) : null;
 
   // This is used to populate our drop down menu for stations
@@ -77,6 +82,7 @@ function App() {
   const lineOptions: any = lines?.map((line) => ({
     key: line.name,
     icon: line.icon,
+    text: line.name,
   }));
 
   // Call to reset the application to the inital state and replace the url params
@@ -134,6 +140,13 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
+  if (passwordPassed === false) {
+    return (
+      <div className="App">
+        <SimplePassword onPassed={() => setPasswordPassed(true)} />
+      </div>
+    );
+  }
   return (
     <div className="App">
       <div className="app-inner">
@@ -150,6 +163,7 @@ function App() {
                 options={lineOptions}
                 selectedID={selectedLineID}
                 onSelected={setSelectedLineID}
+                useIcon={false}
               />
               <span style={{ marginRight: "0.25rem" }}> line. </span>
             </div>
@@ -192,17 +206,51 @@ function App() {
           {promptComplete && (
             <>
               <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-              <button onClick={reset}>Find out about another trip.</button>
+              <button className="reset-button" onClick={reset}>
+                Find out about another trip.
+              </button>
             </>
           )}
         </div>
 
         {promptComplete && (
           <div className="graph">
-            <HourlyChart
-              hourlyData={maxHourlyCrowdingData}
-              hour={hour}
-            ></HourlyChart>
+            <div style={{ display: "flex", flexDirection: "column" }}>
+              <HourlyChart
+                hourlyData={maxHourlyCrowdingData}
+                hour={hour}
+              ></HourlyChart>
+              <div
+                style={{
+                  marginTop: "5px",
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "95%",
+                  paddingLeft: "70px",
+                  boxSizing: "border-box",
+                }}
+              >
+                <Slider
+                  axis="x"
+                  x={hour}
+                  onChange={({ x }) => setSelectedHour(x)}
+                  xmax={23}
+                  xmin={0}
+                  xstep={1}
+                  styles={{
+                    track: {
+                      width: "100%",
+                    },
+                  }}
+                />
+
+                <span
+                  style={{ marginTop: "5px", color: "grey", fontSize: "12px" }}
+                >
+                  Use slider to change the start time of the trip
+                </span>
+              </div>
+            </div>
             <div className="stops-chart-container">
               {crowdingDataByStop && (
                 <>
@@ -215,23 +263,6 @@ function App() {
                     .
                   </h2>
 
-                  <Slider
-                    axis="x"
-                    x={hour}
-                    onChange={({ x }) => setSelectedHour(x)}
-                    xmax={23}
-                    xmin={0}
-                    xstep={1}
-                    styles={{
-                      track: {
-                        width: "100%",
-                      },
-                    }}
-                  />
-
-                  <span style={{ fontWeight: 300 }}>
-                    Use slider to change the start time of the trip
-                  </span>
                   <StopsChart
                     stops={stops}
                     stopCount={crowdingDataByStop}
@@ -265,7 +296,14 @@ function App() {
             )}
           </div>
           <div className="explainer-text">
-          This website and its contents, including all data, figures and analysis (“Website”), is provided strictly for informational purposes. The Website relies upon publicly available data from the MTA and on the results of mathematical models designed by the Two Sigma Investments, LP acting through the Two Sigma Data Clinic (“Data Clinic”). Data Clinic disclaims any and all representations and warranties with respect to the Website, including accuracy, fitness for use, reliability, and non-infringement. 
+            This website and its contents, including all data, figures and
+            analysis (“Website”), is provided strictly for informational
+            purposes. The Website relies upon publicly available data from the
+            MTA and on the results of mathematical models designed by the Two
+            Sigma Investments, LP acting through the Two Sigma Data Clinic
+            (“Data Clinic”). Data Clinic disclaims any and all representations
+            and warranties with respect to the Website, including accuracy,
+            fitness for use, reliability, and non-infringement.
           </div>
           <div className="disclaimer">
             <a href="https://www.twosigma.com/legal-disclosure/">
