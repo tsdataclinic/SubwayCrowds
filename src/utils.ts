@@ -10,11 +10,11 @@ export function DataTypeColor(type: MetricType, opacity: number | undefined) {
 
   switch (type) {
     case MetricType.CURRENT:
-      return `rgba(22,150,210,${o})`;
+      return `rgba(255,187,49,${o})`;
     case MetricType.MONTH:
-      return `rgba(236,0,139,${o})`;
+      return `rgba(28,76,93,${o})`;
     case MetricType.YEAR:
-      return `rgba(253,191,17,${o})`;
+      return `rgba(112,214,227,${o})`;
   }
 }
 

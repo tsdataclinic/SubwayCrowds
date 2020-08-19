@@ -17,7 +17,6 @@ const Option = styled.div`
     :first-child{
         margin-right:20px;
     }
-    
     cursor:pointer;
 `
 

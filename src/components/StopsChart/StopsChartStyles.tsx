@@ -56,8 +56,8 @@ const StopName = styled.li`
         right:-8px;
         z-index:100;
     }
-    :first-child
 `
+
 type BarProps = {
     percent : number,
     metric: MetricType,
