@@ -22,7 +22,6 @@ export const SimplePassword: React.FC<SimplePasswordProps> = ({onPassed})=>{
 
     return(
         <Styles.SimplePasswordContainer>
-            
             <Styles.PasswordInput type='password' placeholder="Enter the password." onChange={e=> setEntredPassword(e.target.value)} value={enteredPassword}/>
             <Styles.PasswordSubmit onClick={e=> checkPassword(enteredPassword)}>Submit</Styles.PasswordSubmit>
             {attemptFailed && 

@@ -211,6 +211,9 @@ footer{
   display: flex;
   flex-direction: column;
   flex:1;
+  h2{
+    margin-bottom:0px;
+  }
 }
 
 .graph > div{
@@ -269,6 +272,7 @@ footer{
   @media only screen and (min-width: 900px) {
     padding:0px 20px ;
   }
+  
 }
 
 #root{

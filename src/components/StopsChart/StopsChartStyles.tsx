@@ -8,6 +8,10 @@ const Container = styled.div`
     display:flex;
     flex-direction:column;
     flex:1;
+    @media only screen and (min-width:900px){
+      
+      max-height: 400px;
+    }
 `
 const BarsContainer = styled.ul`
     display:grid;
