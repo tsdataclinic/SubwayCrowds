@@ -9,7 +9,7 @@ type Props ={
     hour: Number | null
 }
 
-export function HourlyChart({hourlyData}:Props){
+export function HourlyChart({hourlyData, hour}:Props){
     const [width,setWidth] = useState<number>(0)
     const [height,setHeight] = useState<number>(0)
     const graphDiv = useRef<HTMLDivElement>(null)
@@ -76,7 +76,6 @@ export function HourlyChart({hourlyData}:Props){
 
                     options={{
                         maintainAspectRatio: false,
-                        
                         responsive:true,
                         legend: {
                             display: true,
@@ -103,6 +102,31 @@ export function HourlyChart({hourlyData}:Props){
                             ],
                         },
                     }}
+
+                    plugins={[{
+                            annotation: {
+                                // Defines when the annotations are drawn.
+                                // This allows positioning of the annotation relative to the other
+                                // elements of the graph.
+                                //
+                                // Should be one of: afterDraw, afterDatasetsDraw, beforeDatasetsDraw
+                                // See http://www.chartjs.org/docs/#advanced-usage-creating-plugins
+                                drawTime: 'afterDatasetsDraw', // (default)
+
+                                // Array of annotation configuration objects
+                                // See below for detailed descriptions of the annotation options
+                                annotations: [{
+                                    drawTime: 'afterDraw', // overrides annotation.drawTime if set
+                                    id: 'a-line-1', // optional
+                                    type: 'line',
+                                    mode: 'vertical',
+                                    scaleID: 'x-axis-0',
+                                    value: hour ,
+                                    borderColor: 'red',
+                                    borderWidth: 2,
+                                }]
+                            }
+	                    }]}
                 />
               </div>
             </>
