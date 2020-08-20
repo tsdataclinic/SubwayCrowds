@@ -3,19 +3,24 @@ import {CrowdingObservation, Stop, MetricType} from '../../types'
 import {Styles} from './StopsChartStyles'
 import {ToggleButton} from '../ToggleButton/ToggleButton'
 
+
+type MaxCounts={
+    current:number,
+    month: number,
+    year: number
+}
+
 type Props={
     stops: Stop[] | null,
     stopCount: CrowdingObservation[] | null,
-    maxCount: number | null
+    maxCounts?: MaxCounts | null
 }
 
-export const StopsChart = ({stops, stopCount, maxCount}:Props)=>{
+export const StopsChart = ({stops, stopCount, maxCounts}:Props)=>{
     const [showMonth, setShowMonth] = useState<boolean>(false)
     const [showYear, setShowYear] = useState<boolean>(false)
-    const maxStopCount = Math.max(...stopCount?.map(sc=>(
-        Math.max(sc.numPeople, showMonth ? sc.numPeopleLastMonth : 0, showYear ? sc.numPeopleLastYear : 0)
-    )).filter(a=>a)
-    )
+
+    const maxStopCount = maxCounts ? Math.max(maxCounts.current, showMonth ? maxCounts.month : 0, showYear ? maxCounts.year : 0) : 0
 
     const scoreForStop = (stationID:string, metric: MetricType) => {
         const stop = stopCount?.find(sc=>sc.stationID === stationID)
