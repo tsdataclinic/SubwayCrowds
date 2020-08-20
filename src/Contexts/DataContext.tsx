@@ -100,7 +100,7 @@ function loadCrowdingData(){
             download:true,
             complete: (data :any)=> resolve(parseCrowding(data.data)),
             header:true,
-            dynamicTyping: {hour: true, crowd: true,weekday:true, direction_id:true}
+            dynamicTyping: {hour: true, current_crowd: true,last_month_crowd:true, last_year_crowd:true, weekday:true, direction_id:true, }
         })
     })
 }
