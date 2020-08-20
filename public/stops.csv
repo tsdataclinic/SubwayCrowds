@@ -55,7 +55,7 @@ stop_id,station,order,line,id,route_id
 218S,Intervale Av,16,2,INTERVALE AV,2
 219S,Prospect Av,17,2,PROSPECT AV,2
 220S,Jackson Av,18,2,JACKSON AV,2
-221S,3 Av - 149 St,19,2,,2
+221S,3 Av - 149 St,19,2,3 AV-149 ST,2
 222S,149 St - Grand Concourse,20,2,149/GRAND CONC,2
 224S,135 St,21,2,135 ST,2
 225S,125 St,22,2,125 ST,2
@@ -161,7 +161,7 @@ stop_id,station,order,line,id,route_id
 218S,Intervale Av,11,5,INTERVALE AV,5
 219S,Prospect Av,12,5,PROSPECT AV,5
 220S,Jackson Av,13,5,JACKSON AV,5
-221S,3 Av - 149 St,14,5,,5
+221S,3 Av - 149 St,14,5,3 AV-149 ST,5
 222S,149 St - Grand Concourse,15,5,149/GRAND CONC,5
 416S,138 St - Grand Concourse,16,5,138/GRAND CONC,5
 621S,125 St,17,5,125 ST,5
@@ -506,30 +506,6 @@ M20S,Canal St,27,J,CANAL ST,J
 M21S,Chambers St,28,J,CHAMBERS ST,J
 M22S,Fulton St,29,J,FULTON ST,J
 M23S,Broad St,30,J,BROAD ST,J
-L01S,8 Av,1,L,,L
-L02S,6 Av,2,L,,L
-L03S,Union Sq - 14 St,3,L,,L
-L05S,3 Av,4,L,,L
-L06S,1 Av,5,L,,L
-L08S,Bedford Av,6,L,,L
-L10S,Lorimer St,7,L,,L
-L11S,Graham Av,8,L,,L
-L12S,Grand St,9,L,,L
-L13S,Montrose Av,10,L,,L
-L14S,Morgan Av,11,L,,L
-L15S,Jefferson St,12,L,,L
-L16S,DeKalb Av,13,L,,L
-L17S,Myrtle - Wyckoff Avs,14,L,,L
-L19S,Halsey St,15,L,,L
-L20S,Wilson Av,16,L,,L
-L21S,Bushwick Av - Aberdeen St,17,L,,L
-L22S,Broadway Jct,18,L,,L
-L24S,Atlantic Av,19,L,,L
-L25S,Sutter Av,20,L,,L
-L26S,Livonia Av,21,L,,L
-L27S,New Lots Av,22,L,,L
-L28S,E 105 St,23,L,,L
-L29S,Canarsie - Rockaway Pkwy,24,L,,L
 G08S,Forest Hills - 71 Av,1,M,FOREST HILLS 71,M
 G09S,67 Av,2,M,67 AV,M
 G10S,63 Dr - Rego Park,3,M,63 DR-REGO PARK,M
