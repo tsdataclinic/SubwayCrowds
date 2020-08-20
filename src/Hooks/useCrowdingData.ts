@@ -20,6 +20,31 @@ export const useCrowdingData = (stationID :string |null, lineID:string | null)=>
     return stationData
 }
 
+
+export const useAbsoluteMaxForStops = (stops:Stop[] | null)=>{
+    const {crowdingData} = useContext(DataContext)
+    if(stops && crowdingData ){
+
+        const stationIDS = stops.map(s=>s.id)
+        const lines = stops.map(s=>s.line)
+
+        const stopCounts  = crowdingData.filter(cd=> stationIDS.includes(cd.stationID) && lines.includes(cd.lineID))
+        // const stopCounts = stops.map(stop=> crowdingData.find(s=> stop.id === s.stationID && stop.line === s.lineID))
+
+        const absoluteMaxCurent = stopCounts ? Math.max(...stopCounts.map(cd=> cd ? cd.numPeople : 0  )) : 0;
+        const absoluteMaxMonth = stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastMonth : 0)) : 0;
+        const absoluteMaxYear = stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastYear :0 )) : 0;
+        return {
+            current: absoluteMaxCurent,
+            month: absoluteMaxMonth,
+            year: absoluteMaxYear
+        }
+    }
+    else{
+        return null
+    }
+}
+
 export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction|null , weekday:boolean)=>{
     const {crowdingData} = useContext(DataContext)
     const [data,setData] = useState<HourlyObservation[] | null>(null)

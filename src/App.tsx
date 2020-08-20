@@ -4,6 +4,7 @@ import { DataContext } from "./Contexts/DataContext";
 import {
   useMaxCrowdingByHourForTrip,
   useCrowdingDataByStops,
+  useAbsoluteMaxForStops,
 } from "./Hooks/useCrowdingData";
 import { useStationsForLine } from "./Hooks/useStationsForLine";
 import { Station } from "./types";
@@ -67,11 +68,7 @@ function App() {
     weekday
   );
 
-  const counts = maxHourlyCrowdingData?.map((a) =>
-    Math.max(a.numPeople, a.numPeopleLastMonth, a.numPeopleLastYear)
-  );
-  const absoluteMax = counts ? Math.max(...counts) : null;
-
+  const maxCounts = useAbsoluteMaxForStops(stops);
   // This is used to populate our drop down menu for stations
   const stationOptions: any = filteredStations?.map((station) => ({
     text: station.name,
@@ -266,7 +263,7 @@ function App() {
                   <StopsChart
                     stops={stops}
                     stopCount={crowdingDataByStop}
-                    maxCount={absoluteMax}
+                    maxCounts={maxCounts}
                   />
                 </>
               )}
