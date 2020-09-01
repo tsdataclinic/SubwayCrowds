@@ -44,10 +44,9 @@
       "eslint . --ext .ts"
     ]
   },
-  "homepage": "https://mtacrowding.tsdataclinic.com",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=\"\" react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "yarn  build",
