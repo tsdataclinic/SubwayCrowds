@@ -21,6 +21,7 @@ Submit PR's to the develop branch.
 
 Master and develop branches are automatically deployed
 
-Master: [https://howbusyismytrain.tsdataclinic.com/](https://howbusyismytrain.tsdataclinic.com/)
-Develop: [https://develop--howbusyismytrain.netlify.app/](https://develop--howbusyismytrain.netlify.app/)
-Pull requests will be available for preview at [https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/](https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/)
+- Master: [https://howbusyismytrain.tsdataclinic.com/](https://howbusyismytrain.tsdataclinic.com/)
+- Develop: [https://develop--howbusyismytrain.netlify.app/](https://develop--howbusyismytrain.netlify.app/)
+
+In addition, pull requests will be available for preview at URLS with the pattern [https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/](https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/)
