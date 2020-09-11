@@ -10,6 +10,10 @@ type RawStation={
 
 export const useStationsForLine = (line:string | null)=>{
     const {stations, stops} = useContext(DataContext);
+    console.log("stations")
+    console.table(stations)
+    console.log("stops")
+    console.table(stops)
     const stationsInLine =   stops?.filter(stop => stop.line==line ).sort((a,b)=> a.order > b.order ? 1 : -1)
-    return stationsInLine?.map(stop => stations?.find(station => station.name === stop.station)).filter(filerTruthy)
+    return stationsInLine?.map(stop => stations?.find(station => station.id === stop.id)).filter(filerTruthy)
 }

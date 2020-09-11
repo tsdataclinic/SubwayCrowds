@@ -32,7 +32,8 @@ export const DataProvider :React.FC = ({children})=>{
             setDataLoaded(true)
         })
     },[])
-
+    //console.log("stops in data context")
+    //console.table(stops)
     return(
         <DataContext.Provider value={{stations,lines,stops,crowdingData,dataLoaded}}>
             {children}
@@ -46,27 +47,27 @@ const  iconForLine = (line:string)=>(
 
 function parseStops(stops : Stop[]){
     const lineNames = Array.from(new Set(stops.map(stop=>stop.line))).filter(l=>l)
-    const stationNames = Array.from(new Set(stops.map(stop=>stop.station))).filter(l=>l)
+    const stationIds = Array.from(new Set(stops.map(stop=>stop.id))).filter(l=>l)
     const lines = lineNames.map(line=> ({
         name:line,
         id: line,
         icon:iconForLine(line)
     }))
 
-    const stations : Station[] =stationNames.map(stationName=>{
-        const station = stops.find(stop=>stop.station === stationName)
+    const stations : Station[] =stationIds.map(stationId=>{
+        const station = stops.find(stop=>stop.id === stationId)
         if(!station){
-            throw("Something weird happend")
+            throw("Something weird happened")
         }
         return {
-            name: stationName,
-            turnstile_name: stationName,
-            id: station.id,
-            lines: stops.filter(stop=>stop.station === stationName).map(stop => stop.line)
+            name: station.station,
+            turnstile_name: station.station,
+            id: stationId,
+            lines: stops.filter(stop=>stop.id === stationId).map(stop => stop.line)
         }
     })
     
-    return {stations,lines, stops}
+    return {stations, lines, stops}
 }
 
 function parseCrowding(rawObservations: RawCrowding[]) : CrowdingObservation[]{
