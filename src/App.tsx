@@ -69,6 +69,7 @@ function App() {
   );
 
   const maxCounts = useAbsoluteMaxForStops(stops);
+
   // This is used to populate our drop down menu for stations
   const stationOptions: any = filteredStations?.map((station) => ({
     text: station.name,
@@ -252,7 +253,7 @@ function App() {
               {crowdingDataByStop && (
                 <>
                   <h2>
-                    Estimated average number of people on the train after each
+                    Estimated average number of people per car on the train after each
                     stop for a trip starting at{" "}
                     <span style={{ fontWeight: "bold" }}>
                       {am_pm_from_24(hour)}

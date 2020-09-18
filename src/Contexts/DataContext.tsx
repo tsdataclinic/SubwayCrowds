@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import Papa from 'papaparse'
-import {Station,Line, Stop, CrowdingObservation, RawCrowding, Direction} from '../types'
+import {Station,Line, Stop, CrowdingObservation, RawCrowding, Direction, CarsByLine} from '../types'
 
 type Data={
     stations: Station[] | null,
     lines: Line[] | null,
     stops: Stop[] | null,
     crowdingData:CrowdingObservation[] | null,
-    dataLoaded : boolean
+    dataLoaded : boolean,
+    carsByLine: CarsByLine[] | null
 }
 export const DataContext = React.createContext<Data>({stations:null, lines:null,stops:null, crowdingData:null,dataLoaded:false});
 
@@ -17,6 +18,7 @@ export const DataProvider :React.FC = ({children})=>{
     const [stops, setStops] = useState<Stop[] | null>(null)
     const [dataLoaded,setDataLoaded] = useState<boolean>(false)
     const [crowdingData,setCrowdingData] = useState<CrowdingObservation[] | null>(null);
+    const [carsByLine, setCarsByLine] = useState<CarsByLine[] | null>(null);
 
     useEffect( ()=>{
         loadCrowdingData().then( (data:any)=>{
@@ -32,10 +34,15 @@ export const DataProvider :React.FC = ({children})=>{
             setDataLoaded(true)
         })
     },[])
-    //console.log("stops in data context")
-    //console.table(stops)
+
+    useEffect(() => {
+        loadCarsByLine().then((data:any) => {
+            setCarsByLine(data)
+        })
+    }, [])
+
     return(
-        <DataContext.Provider value={{stations,lines,stops,crowdingData,dataLoaded}}>
+        <DataContext.Provider value={{stations, lines, stops, crowdingData, dataLoaded, carsByLine}}>
             {children}
         </DataContext.Provider>
     )
@@ -102,6 +109,17 @@ function loadCrowdingData(){
             complete: (data :any)=> resolve(parseCrowding(data.data)),
             header:true,
             dynamicTyping: {hour: true, current_crowd: true,last_month_crowd:true, last_year_crowd:true, weekday:true, direction_id:true, }
+        })
+    })
+}
+
+function loadCarsByLine() {
+    return new Promise((resolve, reject) => {
+        Papa.parse('cars_by_line.csv', {
+            download: true,
+            complete: (result: any) => resolve(result.data),
+            header: true,
+            dynamicTyping: {num_cars: true}
         })
     })
 }
