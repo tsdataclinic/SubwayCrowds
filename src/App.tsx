@@ -252,7 +252,7 @@ function App() {
               {crowdingDataByStop && (
                 <>
                   <h2>
-                    Estimated average number of people on the train after each
+                    Estimated average number of people per car on the train after each
                     stop for a trip starting at{" "}
                     <span style={{ fontWeight: "bold" }}>
                       {am_pm_from_24(hour)}
