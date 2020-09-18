@@ -34,14 +34,15 @@ export const useAbsoluteMaxForStops = (stops:Stop[] | null)=>{
         }
 
         const stopCounts  = crowdingData.filter(cd => stationIDS.includes(cd.stationID) && lines.includes(cd.lineID))
+        // Use median number of cars instead of min or max to get the most reasonable absolute max per car
         const medianNumCars = median([...carsByLine.map(x => x ? x.num_cars : 1)])
-        const absoluteMaxCurent = (stopCounts ? Math.max(...stopCounts.map(cd=> cd ? cd.numPeople : 0)) : 0) / medianNumCars;
-        const absoluteMaxMonth = (stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastMonth : 0)) : 0) / medianNumCars;
-        const absoluteMaxYear = (stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastYear :0 )) : 0) / medianNumCars ;
+        const absoluteMaxCurentPerCar = (stopCounts ? Math.max(...stopCounts.map(cd=> cd ? cd.numPeople : 0)) : 0) / medianNumCars;
+        const absoluteMaxMonthPerCar = (stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastMonth : 0)) : 0) / medianNumCars;
+        const absoluteMaxYearPerCar = (stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastYear :0 )) : 0) / medianNumCars ;
         return {
-            current: absoluteMaxCurent,
-            month: absoluteMaxMonth,
-            year: absoluteMaxYear
+            current: absoluteMaxCurentPerCar,
+            month: absoluteMaxMonthPerCar,
+            year: absoluteMaxYearPerCar
         }
     }
     else{
