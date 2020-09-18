@@ -22,22 +22,18 @@ export const useCrowdingData = (stationID :string |null, lineID:string | null)=>
 
 
 export const useAbsoluteMaxForStops = (stops:Stop[] | null)=>{
-    const {crowdingData, carsByLine} = useContext(DataContext)
-    if(stops && crowdingData && carsByLine){
+    const {crowdingData} = useContext(DataContext)
+    if(stops && crowdingData ){
 
         const stationIDS = stops.map(s=>s.id)
         const lines = stops.map(s=>s.line)
 
-        const median = arr => {
-            const mid = Math.floor(arr.length / 2), nums = [...arr].sort((a, b) => a - b);
-            return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
-        }
+        const stopCounts  = crowdingData.filter(cd=> stationIDS.includes(cd.stationID) && lines.includes(cd.lineID))
+        // const stopCounts = stops.map(stop=> crowdingData.find(s=> stop.id === s.stationID && stop.line === s.lineID))
 
-        const stopCounts  = crowdingData.filter(cd => stationIDS.includes(cd.stationID) && lines.includes(cd.lineID))
-        const medianNumCars = median([...carsByLine.map(x => x ? x.num_cars : 1)])
-        const absoluteMaxCurent = (stopCounts ? Math.max(...stopCounts.map(cd=> cd ? cd.numPeople : 0)) : 0) / medianNumCars;
-        const absoluteMaxMonth = (stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastMonth : 0)) : 0) / medianNumCars;
-        const absoluteMaxYear = (stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastYear :0 )) : 0) / medianNumCars ;
+        const absoluteMaxCurent = stopCounts ? Math.max(...stopCounts.map(cd=> cd ? cd.numPeople : 0  )) : 0;
+        const absoluteMaxMonth = stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastMonth : 0)) : 0;
+        const absoluteMaxYear = stopCounts ? Math.max(...stopCounts.map(cd=>cd ? cd.numPeopleLastYear :0 )) : 0;
         return {
             current: absoluteMaxCurent,
             month: absoluteMaxMonth,
@@ -50,7 +46,7 @@ export const useAbsoluteMaxForStops = (stops:Stop[] | null)=>{
 }
 
 export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction|null , weekday:boolean)=>{
-    const {crowdingData, carsByLine} = useContext(DataContext)
+    const {crowdingData} = useContext(DataContext)
     const [data,setData] = useState<HourlyObservation[] | null>(null)
     useEffect(()=>{
         if(stops && crowdingData && (order!==null)){
@@ -58,11 +54,11 @@ export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction
             const stations = stops.map(s=> s.id)
             const hourlyStopData = crowdingData.filter(cd => lines.includes(cd.lineID) && stations.includes(cd.stationID) &&  (cd.direction===order) && (cd.weekday === weekday ))
             const maxByHour: HourlyObservation[] = [];
-            for(let hour = 0; hour < 24; hour++) {
+            for(let hour =0; hour< 24; hour++){
                 const counts = hourlyStopData?.filter(obs=>(obs.hour===hour)).filter(filerTruthy)
-                const countsCurrent = counts.map(obs => Math.round(obs.numPeople / carsByLine?.find(x => obs.lineID === x.line)?.num_cars))
-                const countsLastMonth = counts.map(obs => Math.round(obs.numPeopleLastMonth / carsByLine?.find(x => obs.lineID === x.line)?.num_cars))
-                const countsLastYear = counts.map(obs => Math.round(obs.numPeopleLastYear / carsByLine?.find(x => obs.lineID === x.line)?.num_cars))
+                const countsCurrent = counts.map(obs=>obs.numPeople)
+                const countsLastMonth = counts.map(obs=>obs.numPeopleLastMonth)
+                const countsLastYear = counts.map(obs=>obs.numPeopleLastYear)
 
                 maxByHour.push({
                     hour:hour, 
@@ -78,31 +74,17 @@ export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction
     return data
 }
 
-export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null, order: Direction|null, weekday:boolean)=>{
-    const {crowdingData, carsByLine} = useContext(DataContext)
-    const [data, setData] = useState<CrowdingObservation[] | null | undefined>(null)
+export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null,order: Direction|null , weekday:boolean)=>{
+    const {crowdingData} = useContext(DataContext)
+    const [data,setData] = useState<CrowdingObservation[] | null | undefined>(null)
 
     useEffect(()=>{
-        if(stops && hour && crowdingData && carsByLine){
-            const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID && s.direction===order && s.weekday===weekday))
-            const stopCountsPerCar = stopCounts.map(stop => {
-                const currentCountPerCar = Math.round(stop?.numPeople / carsByLine.find(x => stop?.lineID === x.line)?.num_cars)                
-                const lastMonthCountPerCar = Math.round(stop?.numPeopleLastMonth / carsByLine.find(x => stop?.lineID === x.line)?.num_cars)
-                const lastYearCountPerCar = Math.round(stop?.numPeopleLastYear / carsByLine.find(x => stop?.lineID === x.line)?.num_cars)
-                return {
-                    direction: stop?.direction,
-                    hour: stop?.hour,
-                    lineID: stop?.lineID,
-                    numPeople: currentCountPerCar,
-                    numPeopleLastMonth: lastMonthCountPerCar,
-                    numPeopleLastYear: lastYearCountPerCar,
-                    stationID: stop?.stationID,
-                    weekday: stop?.weekday
-                }
-            })         
-            setData(stopCountsPerCar.filter(filerTruthy))
+        if(stops && hour && crowdingData ){
+            const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID && s.direction===order && s.weekday===weekday))            
+            setData(stopCounts.filter(filerTruthy))
         }
-    }, [stops, hour, crowdingData, weekday, order])
+    },[stops,hour, crowdingData, weekday,order])
 
     return data
-}                                   
+}
+                                   

@@ -57,8 +57,3 @@ export type RawCrowding = {
   direction_id: number;
   weekday: number;
 };
-
-export type CarsByLine = {
-  line: string;
-  num_cars: number;
-};
