@@ -10,7 +10,7 @@ type Data={
     dataLoaded : boolean
     carsByLine: CarsByLine[] | null
 }
-export const DataContext = React.createContext<Data>({stations:null, lines:null,stops:null, crowdingData:null,dataLoaded:false});
+export const DataContext = React.createContext<Data>({stations:null, lines:null,stops:null, crowdingData:null,dataLoaded:false, carsByLine:null});
 
 export const DataProvider :React.FC = ({children})=>{
     const [stations, setStations] = useState<Station[] |null>(null)

@@ -1,5 +1,5 @@
 import {useState,useEffect, useContext} from 'react'
-import {CrowdingObservation,HourlyObservation, Stop, Direction} from '../types'
+import {CrowdingObservation,HourlyObservation, Stop, Direction, CarsByLine} from '../types'
 import {filerTruthy} from '../utils'
 import {DataContext} from '../Contexts/DataContext'
 
@@ -30,7 +30,7 @@ export const useAbsoluteMaxForStops = (stops:Stop[] | null)=>{
 
         // const stopCounts  = crowdingData.filter(cd=> stationIDS.includes(cd.stationID) && lines.includes(cd.lineID))
         // const stopCounts = stops.map(stop=> crowdingData.find(s=> stop.id === s.stationID && stop.line === s.lineID))
-        const median = arr => {
+        const median = (arr: number[]) => {
             const mid = Math.floor(arr.length / 2), nums = [...arr].sort((a, b) => a - b);
             return arr.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
         }
@@ -51,6 +51,21 @@ export const useAbsoluteMaxForStops = (stops:Stop[] | null)=>{
     }
 }
 
+    const getCarsForLine = (carsByLine : CarsByLine[] | null, lineID:string | null | undefined):number => {
+        if(carsByLine && lineID){
+            const val = carsByLine?.find(x => lineID === x.line)
+            if(val){
+                return val.num_cars
+            }
+            else{
+                return 0
+            }
+        } 
+        else{
+            return 0
+        }
+    }
+
 export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction|null , weekday:boolean)=>{
     const {crowdingData, carsByLine} = useContext(DataContext)
     const [data,setData] = useState<HourlyObservation[] | null>(null)
@@ -62,9 +77,9 @@ export const useMaxCrowdingByHourForTrip = (stops:Stop[] |null, order: Direction
             const maxByHour: HourlyObservation[] = [];
             for(let hour =0; hour< 24; hour++){
                 const counts = hourlyStopData?.filter(obs=>(obs.hour===hour)).filter(filerTruthy)
-                const countsCurrent = counts.map(obs => Math.round(obs.numPeople / carsByLine?.find(x => obs.lineID === x.line)?.num_cars))
-                const countsLastMonth = counts.map(obs => Math.round(obs.numPeopleLastMonth / carsByLine?.find(x => obs.lineID === x.line)?.num_cars))
-                const countsLastYear = counts.map(obs => Math.round(obs.numPeopleLastYear / carsByLine?.find(x => obs.lineID === x.line)?.num_cars))
+                const countsCurrent = counts.map(obs => Math.round(obs.numPeople / getCarsForLine(carsByLine, obs.lineID) ))
+                const countsLastMonth = counts.map(obs => Math.round(obs.numPeopleLastMonth / getCarsForLine(carsByLine, obs.lineID)))
+                const countsLastYear = counts.map(obs => Math.round(obs.numPeopleLastYear / getCarsForLine(carsByLine, obs.lineID)))
 
                 maxByHour.push({
                     hour:hour, 
@@ -86,11 +101,11 @@ export const useCrowdingDataByStops = (stops:Stop[] | null, hour:number | null, 
 
     useEffect(()=>{
                 if(stops && hour && crowdingData && carsByLine){
-            const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID && s.direction===order && s.weekday===weekday))
+            const stopCounts = stops.map(stop=> crowdingData.find(s=>s.hour=== hour && stop.id === s.stationID && stop.line === s.lineID && s.direction===order && s.weekday===weekday)).filter(filerTruthy)
             const stopCountsPerCar = stopCounts.map(stop => {
-                const currentCountPerCar = Math.round(stop?.numPeople / carsByLine.find(x => stop?.lineID === x.line)?.num_cars)                
-                const lastMonthCountPerCar = Math.round(stop?.numPeopleLastMonth / carsByLine.find(x => stop?.lineID === x.line)?.num_cars)
-                const lastYearCountPerCar = Math.round(stop?.numPeopleLastYear / carsByLine.find(x => stop?.lineID === x.line)?.num_cars)
+                const currentCountPerCar = Math.round( (stop?.numPeople ? stop.numPeople : 0 ) / getCarsForLine(carsByLine,stop?.lineID ))                
+                const lastMonthCountPerCar = Math.round( (stop?.numPeopleLastMonth ? stop.numPeopleLastMonth :0) / getCarsForLine(carsByLine,stop?.lineID ))
+                const lastYearCountPerCar = Math.round( ( stop?.numPeopleLastYear ? stop?.numPeopleLastYear : 0 ) / getCarsForLine(carsByLine,stop?.lineID ))
                 return {
                     direction: stop?.direction,
                     hour: stop?.hour,
