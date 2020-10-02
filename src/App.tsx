@@ -137,7 +137,7 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
-  const requirePassword = false;
+  const requirePassword = true;
   if (passwordPassed === false && requirePassword) {
     return (
       <div className="App">
