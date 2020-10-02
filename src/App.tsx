@@ -9,7 +9,7 @@ import {
 import { useStationsForLine } from "./Hooks/useStationsForLine";
 import { Station } from "./types";
 import { useStopsBetween } from "./Hooks/useStopsBetween";
-import { StopsChart } from "./components/StopsChart/StopsChart";
+import { StopChartType, StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
 import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -137,7 +137,8 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
-  if (passwordPassed === false) {
+  const requirePassword = false;
+  if (passwordPassed === false && requirePassword) {
     return (
       <div className="App">
         <SimplePassword onPassed={() => setPasswordPassed(true)} />
@@ -264,6 +265,7 @@ function App() {
                     stops={stops}
                     stopCount={crowdingDataByStop}
                     maxCounts={maxCounts}
+                    variant={StopChartType.Discrete}
                   />
                 </>
               )}
