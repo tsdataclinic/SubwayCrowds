@@ -3,7 +3,7 @@ import {Styles} from './SimplePasswordStyles'
 import md5 from 'md5'
 
 type SimplePasswordProps = {
-    onPassed: ()=>void 
+    onPassed: ()=>void
 }
 
 export const SimplePassword: React.FC<SimplePasswordProps> = ({onPassed})=>{
