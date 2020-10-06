@@ -161,7 +161,7 @@ function App() {
                 options={lineOptions}
                 selectedID={selectedLineID}
                 onSelected={setSelectedLineID}
-                useIcon={false}
+                useIcon={true}
               />
               <span style={{ marginRight: "0.25rem" }}> line. </span>
             </div>

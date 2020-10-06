@@ -36,7 +36,7 @@ export default function SentanceDropDown ({prompt, options,selectedID, onSelecte
     return(
         <Styles.Container>
             {selected ?
-             <span style={{fontWeight:'bold'}}>{ (selected.icon && useIcon) ? <Styles.Icon src={selected.icon} /> : ''}{selected.text ? selected.text : ''}</span>
+             <span style={{fontWeight:'bold'}}>{ (selected.icon && useIcon) ? <Styles.Icon src={selected.icon} /> : ''}{selected.text && !useIcon ? selected.text : ''}</span>
              :
              <Styles.Input onFocus={()=>setShowDropDown(true)} placeholder={prompt} onChange={updateSearch} value={searchTerm}></Styles.Input>
             }
@@ -47,7 +47,7 @@ export default function SentanceDropDown ({prompt, options,selectedID, onSelecte
                             {(option.icon && useIcon) &&
                                 <Styles.Icon src={option.icon} />
                             }
-                            {option.text &&
+                            {option.text && !useIcon &&
                                 <span>{option.text}</span>
                             }
                         </Styles.DropDownListEntry>
