@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import Papa from 'papaparse'
-import {Station,Line, Stop, CrowdingObservation, RawCrowding, Direction} from '../types'
+import {Station,Line, Stop, CrowdingObservation, RawCrowding, Direction, CarsByLine} from '../types'
 
 type Data={
     stations: Station[] | null,
@@ -8,8 +8,9 @@ type Data={
     stops: Stop[] | null,
     crowdingData:CrowdingObservation[] | null,
     dataLoaded : boolean
+    carsByLine: CarsByLine[] | null
 }
-export const DataContext = React.createContext<Data>({stations:null, lines:null,stops:null, crowdingData:null,dataLoaded:false});
+export const DataContext = React.createContext<Data>({stations:null, lines:null,stops:null, crowdingData:null,dataLoaded:false, carsByLine:null});
 
 export const DataProvider :React.FC = ({children})=>{
     const [stations, setStations] = useState<Station[] |null>(null)
@@ -17,13 +18,20 @@ export const DataProvider :React.FC = ({children})=>{
     const [stops, setStops] = useState<Stop[] | null>(null)
     const [dataLoaded,setDataLoaded] = useState<boolean>(false)
     const [crowdingData,setCrowdingData] = useState<CrowdingObservation[] | null>(null);
-
+    const [carsByLine, setCarsByLine] = useState<CarsByLine[] | null>(null);
+    
     useEffect( ()=>{
         loadCrowdingData().then( (data:any)=>{
             setCrowdingData(data)
         })
     },[])
-
+    
+    useEffect(() => {
+        loadCarsByLine().then((data:any) => {
+            setCarsByLine(data)
+        })
+    }, [])
+    
     useEffect(()=>{
         loadStops().then( (data : any) =>{
             setStations(data.stations)
@@ -32,9 +40,10 @@ export const DataProvider :React.FC = ({children})=>{
             setDataLoaded(true)
         })
     },[])
-
+    //console.log("stops in data context")
+    //console.table(stops)
     return(
-        <DataContext.Provider value={{stations,lines,stops,crowdingData,dataLoaded}}>
+        <DataContext.Provider value={{stations, lines, stops, crowdingData, dataLoaded, carsByLine}}>
             {children}
         </DataContext.Provider>
     )
@@ -46,27 +55,27 @@ const  iconForLine = (line:string)=>(
 
 function parseStops(stops : Stop[]){
     const lineNames = Array.from(new Set(stops.map(stop=>stop.line))).filter(l=>l)
-    const stationNames = Array.from(new Set(stops.map(stop=>stop.station))).filter(l=>l)
+    const stationIds = Array.from(new Set(stops.map(stop=>stop.id))).filter(l=>l)
     const lines = lineNames.map(line=> ({
         name:line,
         id: line,
         icon:iconForLine(line)
     }))
 
-    const stations : Station[] =stationNames.map(stationName=>{
-        const station = stops.find(stop=>stop.station === stationName)
+    const stations : Station[] =stationIds.map(stationId=>{
+        const station = stops.find(stop=>stop.id === stationId)
         if(!station){
-            throw("Something weird happend")
+            throw("Something weird happened")
         }
         return {
-            name: stationName,
-            turnstile_name: stationName,
-            id: station.id,
-            lines: stops.filter(stop=>stop.station === stationName).map(stop => stop.line)
+            name: station.station,
+            turnstile_name: station.station,
+            id: stationId,
+            lines: stops.filter(stop=>stop.id === stationId).map(stop => stop.line)
         }
     })
     
-    return {stations,lines, stops}
+    return {stations, lines, stops}
 }
 
 function parseCrowding(rawObservations: RawCrowding[]) : CrowdingObservation[]{
@@ -101,6 +110,17 @@ function loadCrowdingData(){
             complete: (data :any)=> resolve(parseCrowding(data.data)),
             header:true,
             dynamicTyping: {hour: true, current_crowd: true,last_month_crowd:true, last_year_crowd:true, weekday:true, direction_id:true, }
+        })
+    })
+}
+
+function loadCarsByLine() {
+    return new Promise((resolve, reject) => {
+        Papa.parse('cars_by_line.csv', {
+            download: true,
+            complete: (result: any) => resolve(result.data),
+            header: true,
+            dynamicTyping: {num_cars: true}
         })
     })
 }

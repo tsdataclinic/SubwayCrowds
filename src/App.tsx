@@ -7,9 +7,9 @@ import {
   useAbsoluteMaxForStops,
 } from "./Hooks/useCrowdingData";
 import { useStationsForLine } from "./Hooks/useStationsForLine";
-import { Station } from "./types";
+import { Station, Line } from "./types";
 import { useStopsBetween } from "./Hooks/useStopsBetween";
-import { StopsChart } from "./components/StopsChart/StopsChart";
+import { StopChartType, StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
 import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -41,9 +41,9 @@ function App() {
   const [weekday, setWeekday] = useState(true);
 
   // Find the instances of the data that we need from the Data Context
-  const startStation = stations?.find((s) => s.id === startStationID);
-  const endStation = stations?.find((s) => s.id === endStationID);
-  const line = lines?.find((l) => l.id === selectedLineID);
+  const startStation = stations?.find((s: Station) => s.id === startStationID);
+  const endStation = stations?.find((s: Station) => s.id === endStationID);
+  const line = lines?.find((l: Line) => l.id === selectedLineID);
 
   const promptComplete = startStation && endStation && line;
 
@@ -70,13 +70,13 @@ function App() {
 
   const maxCounts = useAbsoluteMaxForStops(stops);
   // This is used to populate our drop down menu for stations
-  const stationOptions: any = filteredStations?.map((station) => ({
+  const stationOptions: any = filteredStations?.map((station: Station) => ({
     text: station.name,
     key: station.id,
   }));
 
   // Used to populate the drop down menu for lines
-  const lineOptions: any = lines?.map((line) => ({
+  const lineOptions: any = lines?.map((line: Line) => ({
     key: line.name,
     icon: line.icon,
     text: line.name,
@@ -103,12 +103,12 @@ function App() {
     if (dataLoaded && loadedParams === false) {
       const parsed = queryString.parse(window.location.search);
       const startStation: Station | undefined = stations?.find(
-        (s) => s.id === parsed.start_station
+        (s: Station) => s.id === parsed.start_station
       );
       const endStation: Station | undefined = stations?.find(
-        (s) => s.id === parsed.end_station
+        (s: Station) => s.id === parsed.end_station
       );
-      const line: any = lines?.find((l) => l.name === parsed.line);
+      const line: any = lines?.find((l: Line) => l.name === parsed.line);
       if (startStation && line && endStation) {
         setStartStationID(startStation.id);
         setEndStationID(endStation.id);
@@ -137,7 +137,8 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
-  if (passwordPassed === false) {
+  const requirePassword = true;
+  if (passwordPassed === false && requirePassword) {
     return (
       <div className="App">
         <SimplePassword onPassed={() => setPasswordPassed(true)} />
@@ -252,8 +253,8 @@ function App() {
               {crowdingDataByStop && (
                 <>
                   <h2>
-                    Estimated average number of people on the train after each
-                    stop for a trip starting at{" "}
+                    Estimated average number of people per car on the train
+                    after each stop for a trip starting at{" "}
                     <span style={{ fontWeight: "bold" }}>
                       {am_pm_from_24(hour)}
                     </span>
@@ -264,6 +265,7 @@ function App() {
                     stops={stops}
                     stopCount={crowdingDataByStop}
                     maxCounts={maxCounts}
+                    variant={StopChartType.Discrete}
                   />
                 </>
               )}

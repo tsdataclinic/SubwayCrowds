@@ -1,4 +1,4 @@
-import styled, {css} from 'styled-components'
+import styled, {css, keyframes} from 'styled-components'
 import {DataTypeColor} from '../../utils'
 import {MetricType} from '../../types'
 
@@ -84,6 +84,7 @@ const Metric = styled.div`
 
 `
 
+
 const typeSizes={
     [MetricType.CURRENT] : '20px',
     [MetricType.MONTH] : '2px',
@@ -110,7 +111,44 @@ const StopBar = styled.span`
         transform: ${({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'translate(140%,0%)' : '' }};
         color:${ ({percent}:BarProps)=> percent < MIN_PC_INSIDE ? 'black' : 'white' };
     }
-s`
+`
+
+const StopSquares = styled.div`
+    display:flex;
+    flex-direction:row;
+    width:100%;
+    align-items:center;
+    span{
+        font-size: 10px;
+        margin-left:10px;
+    }
+
+`
+
+type SquareProps = {
+    color: string
+    order: number
+}
+
+const popIn = keyframes`
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+`
+
+const StopSquare = styled.div`
+    width: 10px;
+    height:10px;
+    background-color:${(props:SquareProps)=> {console.log("color is ",props); return props.color}};
+    border:1px solid grey; 
+    margin-right:2px;
+    animation : ${popIn} .2s;
+
+`
+
 
 const StopCount = styled.li`
     align-self:end;
@@ -123,6 +161,8 @@ export const Styles = {
     StopName,
     StopBar, 
     StopCount, 
+    StopSquare,
+    StopSquares,
     StopBars,
     Metric
 }

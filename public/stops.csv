@@ -3,7 +3,7 @@ stop_id,station,order,line,id,route_id
 103S,238 St,2,1,238 ST,1
 104S,231 St,3,1,231 ST,1
 106S,Marble Hill - 225 St,4,1,MARBLE HILL-225,1
-107S,215 St,5,1,,1
+107S,215 St,5,1,215 ST,1
 108S,207 St,6,1,207 ST,1
 109S,Dyckman St,7,1,DYCKMAN ST,1
 110S,191 St,8,1,191 ST,1
@@ -55,7 +55,7 @@ stop_id,station,order,line,id,route_id
 218S,Intervale Av,16,2,INTERVALE AV,2
 219S,Prospect Av,17,2,PROSPECT AV,2
 220S,Jackson Av,18,2,JACKSON AV,2
-221S,3 Av - 149 St,19,2,,2
+221S,3 Av - 149 St,19,2,3 AV-149 ST,2
 222S,149 St - Grand Concourse,20,2,149/GRAND CONC,2
 224S,135 St,21,2,135 ST,2
 225S,125 St,22,2,125 ST,2
@@ -161,7 +161,7 @@ stop_id,station,order,line,id,route_id
 218S,Intervale Av,11,5,INTERVALE AV,5
 219S,Prospect Av,12,5,PROSPECT AV,5
 220S,Jackson Av,13,5,JACKSON AV,5
-221S,3 Av - 149 St,14,5,,5
+221S,3 Av - 149 St,14,5,3 AV-149 ST,5
 222S,149 St - Grand Concourse,15,5,149/GRAND CONC,5
 416S,138 St - Grand Concourse,16,5,138/GRAND CONC,5
 621S,125 St,17,5,125 ST,5
@@ -209,7 +209,7 @@ stop_id,station,order,line,id,route_id
 625S,96 St,23,6,96 ST,6
 626S,86 St,24,6,86 ST,6
 627S,77 St,25,6,77 ST,6
-628S,68 St - Hunter College,26,6,,6
+628S,68 St - Hunter College,26,6,68ST-HUNTER CO,6
 629S,59 St,27,6,59 ST,6
 630S,51 St,28,6,51 ST,6
 631S,Grand Central - 42 St,29,6,GRD CNTRL-42 ST,6
@@ -255,7 +255,7 @@ A15S,125 St,8,A,125 ST,A
 A24S,59 St - Columbus Circle,9,A,59 ST COLUMBUS,A
 A27S,42 St - Port Authority Bus Terminal,10,A,42 ST-PORT AUTH,A
 A28S,34 St - Penn Station,11,A,34 ST-PENN STA,A
-A31S,14 St,12,A,,A
+A31S,14 St,12,A,14 ST,A
 A32S,W 4 St - Wash Sq,13,A,W 4 ST-WASH SQ,A
 A34S,Canal St,14,A,CANAL ST,A
 A36S,Chambers St,15,A,CHAMBERS ST,A
@@ -274,7 +274,7 @@ A61S,Rockaway Blvd,27,A,ROCKAWAY BLVD,A
 A63S,104 St,28,A,104 ST,A
 H02S,Aqueduct - N Conduit Av,28,A,AQUEDUCT N.COND,A
 A64S,111 St,29,A,111 ST,A
-H03S,Howard Beach - JFK Airport,29,A,,A
+H03S,Howard Beach - JFK Airport,29,A,HOWARD BCH JFK,A
 A65S,Ozone Park - Lefferts Blvd,30,A,OZONE PK LEFFRT,A
 H04S,Broad Channel,30,A,BROAD CHANNEL,A
 H06S,Beach 67 St,31,A,BEACH 67 ST,A
@@ -328,7 +328,7 @@ A25S,50 St,15,C,50 ST,C
 A27S,42 St - Port Authority Bus Terminal,16,C,42 ST-PORT AUTH,C
 A28S,34 St - Penn Station,17,C,34 ST-PENN STA,C
 A30S,23 St,18,C,23 ST,C
-A31S,14 St,19,C,,C
+A31S,14 St,19,C,14 ST,C
 A32S,W 4 St - Wash Sq,20,C,W 4 ST-WASH SQ,C
 A33S,Spring St,21,C,SPRING ST,C
 A34S,Canal St,22,C,CANAL ST,C
@@ -397,13 +397,13 @@ G14S,Jackson Hts - Roosevelt Av,8,E,JKSN HT-ROOSVLT,E
 G21S,Queens Plaza,9,E,QUEENS PLAZA,E
 F09S,Court Sq,10,E,COURT SQ-23 ST,E
 F11S,Lexington Av/53 St,11,E,LEXINGTON AV/53,E
-F12S,5 Av/53 St,12,E,,E
+F12S,5 Av/53 St,12,E,5 AV/53 ST,E
 D14S,7 Av,13,E,7 AV,E
 A25S,50 St,14,E,50 ST,E
 A27S,42 St - Port Authority Bus Terminal,15,E,42 ST-PORT AUTH,E
 A28S,34 St - Penn Station,16,E,34 ST-PENN STA,E
 A30S,23 St,17,E,23 ST,E
-A31S,14 St,18,E,,E
+A31S,14 St,18,E,14 ST,E
 A32S,W 4 St - Wash Sq,19,E,W 4 ST-WASH SQ,E
 A33S,Spring St,20,E,SPRING ST,E
 A34S,Canal St,21,E,CANAL ST,E
@@ -506,30 +506,6 @@ M20S,Canal St,27,J,CANAL ST,J
 M21S,Chambers St,28,J,CHAMBERS ST,J
 M22S,Fulton St,29,J,FULTON ST,J
 M23S,Broad St,30,J,BROAD ST,J
-L01S,8 Av,1,L,,L
-L02S,6 Av,2,L,,L
-L03S,Union Sq - 14 St,3,L,,L
-L05S,3 Av,4,L,,L
-L06S,1 Av,5,L,,L
-L08S,Bedford Av,6,L,,L
-L10S,Lorimer St,7,L,,L
-L11S,Graham Av,8,L,,L
-L12S,Grand St,9,L,,L
-L13S,Montrose Av,10,L,,L
-L14S,Morgan Av,11,L,,L
-L15S,Jefferson St,12,L,,L
-L16S,DeKalb Av,13,L,,L
-L17S,Myrtle - Wyckoff Avs,14,L,,L
-L19S,Halsey St,15,L,,L
-L20S,Wilson Av,16,L,,L
-L21S,Bushwick Av - Aberdeen St,17,L,,L
-L22S,Broadway Jct,18,L,,L
-L24S,Atlantic Av,19,L,,L
-L25S,Sutter Av,20,L,,L
-L26S,Livonia Av,21,L,,L
-L27S,New Lots Av,22,L,,L
-L28S,E 105 St,23,L,,L
-L29S,Canarsie - Rockaway Pkwy,24,L,,L
 G08S,Forest Hills - 71 Av,1,M,FOREST HILLS 71,M
 G09S,67 Av,2,M,67 AV,M
 G10S,63 Dr - Rego Park,3,M,63 DR-REGO PARK,M
@@ -545,7 +521,7 @@ G20S,36 St,12,M,36 ST,M
 G21S,Queens Plaza,13,M,QUEENS PLAZA,M
 F09S,Court Sq,14,M,COURT SQ-23 ST,M
 F11S,Lexington Av/53 St,15,M,LEXINGTON AV/53,M
-F12S,5 Av/53 St,16,M,,M
+F12S,5 Av/53 St,16,M,5 AV/53 ST,M
 D15S,47-50 Sts - Rockefeller Ctr,17,M,47-50 STS ROCK,M
 D16S,42 St - Bryant Pk,18,M,42 ST-BRYANT PK,M
 D17S,34 St - Herald Sq,19,M,34 ST-HERALD SQ,M
@@ -571,7 +547,7 @@ R03S,Astoria Blvd,2,N,ASTORIA BLVD,N
 R04S,30 Av,3,N,30 AV,N
 R05S,Broadway,4,N,BROADWAY,N
 R06S,36 Av,5,N,36 AV,N
-R08S,39 Av - Dutch Kills,6,N,,N
+R08S,39 Av - Dutch Kills,6,N,39 AV,N
 R09S,Queensboro Plaza,7,N,QUEENSBORO PLZ,N
 R11S,Lexington Av/59 St,8,N,59 ST,N
 R13S,5 Av/59 St,9,N,5 AV/59 ST,N
@@ -594,9 +570,9 @@ N08S,Kings Hwy,25,N,KINGS HWY,N
 N09S,Avenue U,26,N,AVENUE U,N
 N10S,86 St,27,N,86 ST,N
 D43S,Coney Island - Stillwell Av,28,N,CONEY IS-STILLW,N
-Q05S,96 St,1,Q,96 ST,Q
-Q04S,86 St,2,Q,86 ST,Q
-Q03S,72 St,3,Q,72 ST,Q
+Q05S,96 St,1,Q,96 ST-2 AVE,Q
+Q04S,86 St,2,Q,86 ST-2 AVE,Q
+Q03S,72 St,3,Q,72 ST-2 AVE,Q
 B08S,Lexington Av/63 St,4,Q,LEXINGTON AV/63,Q
 R14S,57 St - 7 Av,5,Q,57 ST-7 AV,Q
 R16S,Times Sq - 42 St,6,Q,TIMES SQ-42 ST,Q
@@ -673,7 +649,7 @@ R03S,Astoria Blvd,2,W,ASTORIA BLVD,W
 R04S,30 Av,3,W,30 AV,W
 R05S,Broadway,4,W,BROADWAY,W
 R06S,36 Av,5,W,36 AV,W
-R08S,39 Av - Dutch Kills,6,W,,W
+R08S,39 Av - Dutch Kills,6,W,39 AV,W
 R09S,Queensboro Plaza,7,W,QUEENSBORO PLZ,W
 R11S,Lexington Av/59 St,8,W,59 ST,W
 R13S,5 Av/59 St,9,W,5 AV/59 ST,W

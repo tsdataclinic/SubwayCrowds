@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/38c54fac-97f2-49d1-97c4-e0ffc687f779/deploy-status)](https://app.netlify.com/sites/ts-mta-crowding/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6abecf5a-8e9f-4b9e-818d-ed47c21ef863/deploy-status)](https://app.netlify.com/sites/howbusyismytrain/deploys)
 
 ## How busy is my train
 
@@ -21,6 +21,7 @@ Submit PR's to the develop branch.
 
 Master and develop branches are automatically deployed
 
-Master: [https://howbusyismytrain.tsdataclinic.com/](https://howbusyismytrain.tsdataclinic.com/)
-Develop: [https://develop--howbusyismytrain.netlify.app/](https://develop--howbusyismytrain.netlify.app/)
-Pull requests will be available for preview at [https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/](https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/)
+- Master: [https://howbusyismytrain.tsdataclinic.com/](https://howbusyismytrain.tsdataclinic.com/)
+- Develop: [https://develop--howbusyismytrain.netlify.app/](https://develop--howbusyismytrain.netlify.app/)
+
+In addition, pull requests will be available for preview at URLS with the pattern [https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/](https://deploy-preview-{PR_Number}--howbusyismytrain.netlify.app/)
