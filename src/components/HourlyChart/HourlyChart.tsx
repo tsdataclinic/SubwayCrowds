@@ -6,7 +6,7 @@ import * as ChartAnnotation from 'chartjs-plugin-annotation'
 
 type Props ={
     hourlyData : HourlyObservation[] | null,
-    hour: Number | null
+    hour: number 
 }
 
 export function HourlyChart({hourlyData, hour}:Props){
@@ -101,32 +101,21 @@ export function HourlyChart({hourlyData, hour}:Props){
                             },
                             ],
                         },
+                        annotation:{
+                            annotations:[
+                                {
+                                    type:'line',
+                                    mode:'vertical',
+                                    scaleID:'x-axis-0',
+                                    value: hour ,
+                                    borderColor:'black',
+                                    borderWidth: 1,
+                                }
+                            ]
+                        }
                     }}
 
-                    plugins={[{
-                            annotation: {
-                                // Defines when the annotations are drawn.
-                                // This allows positioning of the annotation relative to the other
-                                // elements of the graph.
-                                //
-                                // Should be one of: afterDraw, afterDatasetsDraw, beforeDatasetsDraw
-                                // See http://www.chartjs.org/docs/#advanced-usage-creating-plugins
-                                drawTime: 'afterDatasetsDraw', // (default)
-
-                                // Array of annotation configuration objects
-                                // See below for detailed descriptions of the annotation options
-                                annotations: [{
-                                    drawTime: 'afterDraw', // overrides annotation.drawTime if set
-                                    id: 'a-line-1', // optional
-                                    type: 'line',
-                                    mode: 'vertical',
-                                    scaleID: 'x-axis-0',
-                                    value: hour ,
-                                    borderColor: 'red',
-                                    borderWidth: 2,
-                                }]
-                            }
-	                    }]}
+                    plugins={[ChartAnnotation]}
                 />
               </div>
             </>
