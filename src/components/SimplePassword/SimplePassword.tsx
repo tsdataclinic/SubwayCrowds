@@ -11,7 +11,7 @@ export const SimplePassword: React.FC<SimplePasswordProps> = ({onPassed})=>{
     const [attemptFailed, setAttemptFailed] = useState(false)
 
     const checkPassword= (password: string)=>{
-        if (md5(password)==='63f25e0771c174dc872ec0c64fe9f05c'){
+        if (md5(password)==='7959b961846e0e1355e4440d6f0b344c'){
             onPassed()
         }
         else{
