@@ -13,7 +13,11 @@ import { StopChartType, StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
 import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExchangeAlt, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faExchangeAlt,
+  faArrowRight,
+  faUndo,
+} from "@fortawesome/free-solid-svg-icons";
 import { HourlyChart } from "./components/HourlyChart/HourlyChart";
 
 import { am_pm_from_24 } from "./utils";
@@ -199,6 +203,15 @@ function App() {
                 </div>
               </>
             )}
+            <div>
+              {!promptComplete && (
+                <FontAwesomeIcon
+                  icon={faUndo}
+                  onClick={reset}
+                  color="#ffbb31"
+                />
+              )}
+            </div>
           </div>
 
           {promptComplete && (
