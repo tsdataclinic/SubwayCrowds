@@ -7,10 +7,11 @@ type Data={
     lines: Line[] | null,
     stops: Stop[] | null,
     crowdingData:CrowdingObservation[] | null,
-    dataLoaded : boolean
-    carsByLine: CarsByLine[] | null
+    dataLoaded : boolean,
+    carsByLine: CarsByLine[] | null,
+    dateRange: string | null,
 }
-export const DataContext = React.createContext<Data>({stations:null, lines:null,stops:null, crowdingData:null,dataLoaded:false, carsByLine:null});
+export const DataContext = React.createContext<Data>({stations:null, lines:null,stops:null, crowdingData:null,dataLoaded:false, carsByLine:null, dateRange:null});
 
 export const DataProvider :React.FC = ({children})=>{
     const [stations, setStations] = useState<Station[] |null>(null)
@@ -19,6 +20,7 @@ export const DataProvider :React.FC = ({children})=>{
     const [dataLoaded,setDataLoaded] = useState<boolean>(false)
     const [crowdingData,setCrowdingData] = useState<CrowdingObservation[] | null>(null);
     const [carsByLine, setCarsByLine] = useState<CarsByLine[] | null>(null);
+    const [dateRange, setDateRange] = useState<string | null>(null);
     
     useEffect( ()=>{
         loadCrowdingData().then( (data:any)=>{
@@ -40,10 +42,23 @@ export const DataProvider :React.FC = ({children})=>{
             setDataLoaded(true)
         })
     },[])
-    //console.log("stops in data context")
-    //console.table(stops)
+    
+    useEffect(() => {
+        fetch("timestamp.txt")
+            .then(response => response.text())
+            .then(data => {
+                const dates = data.split("-", 2);
+                const beginDate = new Date(parseInt(dates[0].slice(0, 4)), parseInt(dates[0].slice(4, 6)), parseInt(dates[0].slice(6, 8)));
+                const beginDateString = `${beginDate.getMonth()}-${beginDate.getDate()}-${beginDate.getFullYear()}`;
+                const endDate = new Date(parseInt(dates[1].slice(0, 4)), parseInt(dates[1].slice(4, 6)), parseInt(dates[1].slice(6, 8)));
+                const endDateString = `${endDate.getMonth()}-${endDate.getDate()}-${endDate.getFullYear()}`;
+                const dateRangeString = `${beginDateString} - ${endDateString}`;
+                setDateRange(dateRangeString);
+        })
+    })
+
     return(
-        <DataContext.Provider value={{stations, lines, stops, crowdingData, dataLoaded, carsByLine}}>
+        <DataContext.Provider value={{stations, lines, stops, crowdingData, dataLoaded, carsByLine, dateRange}}>
             {children}
         </DataContext.Provider>
     )
