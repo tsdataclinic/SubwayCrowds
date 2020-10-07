@@ -166,6 +166,7 @@ function App() {
                 selectedID={selectedLineID}
                 onSelected={setSelectedLineID}
                 useIcon={true}
+                active={!promptComplete}
               />
               <span style={{ marginRight: "0.25rem" }}> line. </span>
             </div>
@@ -179,6 +180,7 @@ function App() {
                     options={stationOptions}
                     selectedID={startStationID}
                     onSelected={setStartStationID}
+                    active={!promptComplete}
                   />
                 </div>
                 <div className="line-select fade-in">
@@ -190,6 +192,7 @@ function App() {
                     options={stationOptions}
                     selectedID={endStationID}
                     onSelected={setEndStationID}
+                    active={!promptComplete}
                   />
                   {promptComplete && (
                     <FontAwesomeIcon
