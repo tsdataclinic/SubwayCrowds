@@ -31,7 +31,7 @@ function App() {
   const [passwordPassed, setPasswordPassed] = useState(false);
 
   // Grab the required data from the data context
-  const { stations, lines, dataLoaded } = useContext(DataContext);
+  const { stations, lines, dataLoaded, dateRange } = useContext(DataContext);
 
   // Selection variables from the user or populated from the url params
   const [startStationID, setStartStationID] = useState<any>(null);
@@ -281,6 +281,10 @@ function App() {
               <a href="https://medium.com/dataclinic">
                 <img src={Mediumicon} height={38} width={38} />
               </a>
+            </div>
+
+            <div className="date-range-text">
+              Current estimates are based on data from {dateRange}
             </div>
 
             {promptComplete && (
