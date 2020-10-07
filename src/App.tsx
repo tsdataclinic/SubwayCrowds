@@ -19,6 +19,7 @@ import {
   faUndo,
 } from "@fortawesome/free-solid-svg-icons";
 import { HourlyChart } from "./components/HourlyChart/HourlyChart";
+import { TopBar } from "./components/TopBar/TopBar";
 
 import { am_pm_from_24 } from "./utils";
 import Slider from "react-input-slider";
@@ -152,6 +153,7 @@ function App() {
   return (
     <div className="App">
       <div className="app-inner">
+        <TopBar />
         <div className={`header ${promptComplete && "header-prompt-complete"}`}>
           <div
             className={`fade-in prompt ${
