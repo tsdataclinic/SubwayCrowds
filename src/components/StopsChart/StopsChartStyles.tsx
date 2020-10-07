@@ -142,7 +142,7 @@ const popIn = keyframes`
 const StopSquare = styled.div`
     width: 10px;
     height:10px;
-    background-color:${(props:SquareProps)=> {console.log("color is ",props); return props.color}};
+    background-color:${(props:SquareProps)=> {return props.color}};
     border:1px solid grey; 
     margin-right:2px;
     animation : ${popIn} .2s;
