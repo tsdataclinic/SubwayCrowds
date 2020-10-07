@@ -13,8 +13,13 @@ import { StopChartType, StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
 import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faExchangeAlt, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faExchangeAlt,
+  faArrowRight,
+  faUndo,
+} from "@fortawesome/free-solid-svg-icons";
 import { HourlyChart } from "./components/HourlyChart/HourlyChart";
+import { TopBar } from "./components/TopBar/TopBar";
 
 import { am_pm_from_24 } from "./utils";
 import Slider from "react-input-slider";
@@ -31,7 +36,7 @@ function App() {
   const [passwordPassed, setPasswordPassed] = useState(false);
 
   // Grab the required data from the data context
-  const { stations, lines, dataLoaded } = useContext(DataContext);
+  const { stations, lines, dataLoaded, dateRange } = useContext(DataContext);
 
   // Selection variables from the user or populated from the url params
   const [startStationID, setStartStationID] = useState<any>(null);
@@ -148,6 +153,7 @@ function App() {
   return (
     <div className="App">
       <div className="app-inner">
+        <TopBar />
         <div className={`header ${promptComplete && "header-prompt-complete"}`}>
           <div
             className={`fade-in prompt ${
@@ -162,6 +168,7 @@ function App() {
                 selectedID={selectedLineID}
                 onSelected={setSelectedLineID}
                 useIcon={true}
+                active={!promptComplete}
               />
               <span style={{ marginRight: "0.25rem" }}> line. </span>
             </div>
@@ -175,6 +182,7 @@ function App() {
                     options={stationOptions}
                     selectedID={startStationID}
                     onSelected={setStartStationID}
+                    active={!promptComplete}
                   />
                 </div>
                 <div className="line-select fade-in">
@@ -186,6 +194,7 @@ function App() {
                     options={stationOptions}
                     selectedID={endStationID}
                     onSelected={setEndStationID}
+                    active={!promptComplete}
                   />
                   {promptComplete && (
                     <FontAwesomeIcon
@@ -199,6 +208,15 @@ function App() {
                 </div>
               </>
             )}
+            <div>
+              {!promptComplete && (
+                <FontAwesomeIcon
+                  icon={faUndo}
+                  onClick={reset}
+                  color="#ffbb31"
+                />
+              )}
+            </div>
           </div>
 
           {promptComplete && (
@@ -281,6 +299,10 @@ function App() {
               <a href="https://medium.com/dataclinic">
                 <img src={Mediumicon} height={38} width={38} />
               </a>
+            </div>
+
+            <div className="date-range-text">
+              Current estimates are based on data from {dateRange}
             </div>
 
             {promptComplete && (

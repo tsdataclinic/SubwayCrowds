@@ -30,8 +30,8 @@ export function HourlyChart({hourlyData, hour}:Props){
              {hourlyData ? (
             <>
               <h2>
-                Estimated maximum number of people you are likely to encounter on this
-                trip each hour.
+                Estimated maximum number of people per car you are likely to encounter along this
+                trip at each hour.
               </h2>
               <div ref={graphDiv} style={{flex:1, overflow:'hidden'}}>
                 <Line

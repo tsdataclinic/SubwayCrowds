@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Styles from './SentanceDropDownStyles'
+import { clear } from 'console';
 
 interface DropDownOption{
     text?: string;
@@ -7,14 +8,17 @@ interface DropDownOption{
     icon?: string;
     
 }
+
 interface Props {
     prompt: string;
     options: DropDownOption[];
-    onSelected?: (option:string)=>void;
+    onSelected?: (option:string | null)=>void;
     selectedID?: string | null,
-    useIcon?:boolean
+    useIcon?:boolean,
+    active:boolean
 }
-export default function SentanceDropDown ({prompt, options,selectedID, onSelected, useIcon=false}: Props){
+
+export default function SentanceDropDown ({prompt, options,selectedID, onSelected, active, useIcon=false}: Props){
     const [searchTerm, setSearchTerm] = useState<string>('')
 
     const [showDropDown, setShowDropDown] = useState(false);
@@ -33,10 +37,19 @@ export default function SentanceDropDown ({prompt, options,selectedID, onSelecte
         }
     }
 
+    const clear = ()=>{
+        if(active){
+            setShowDropDown(true)
+        }
+        if(onSelected && active){
+            onSelected(null)
+        }
+    }
+
     return(
         <Styles.Container>
             {selected ?
-             <span style={{fontWeight:'bold'}}>{ (selected.icon && useIcon) ? <Styles.Icon src={selected.icon} /> : ''}{selected.text && !useIcon ? selected.text : ''}</span>
+             <span onClick={clear} style={{fontWeight:'bold'}}>{ (selected.icon && useIcon) ? <Styles.Icon src={selected.icon} /> : ''}{selected.text && !useIcon ? selected.text : ''}</span>
              :
              <Styles.Input onFocus={()=>setShowDropDown(true)} placeholder={prompt} onChange={updateSearch} value={searchTerm}></Styles.Input>
             }
