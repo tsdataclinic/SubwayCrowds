@@ -292,10 +292,6 @@ function App() {
               </a>
             </div>
 
-         //   <div className="date-range-text">
-         //     Current estimates are based on data from {dateRange}
-         //   </div>
-
             {promptComplete && (
               <div className="share-buttons">
                 <p className="hide-small">Share this trip</p>
