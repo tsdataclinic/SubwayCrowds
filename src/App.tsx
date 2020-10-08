@@ -208,15 +208,6 @@ function App() {
                 </div>
               </>
             )}
-            <div>
-              {!promptComplete && (
-                <FontAwesomeIcon
-                  icon={faUndo}
-                  onClick={reset}
-                  color="#ffbb31"
-                />
-              )}
-            </div>
           </div>
 
           {promptComplete && (
@@ -301,9 +292,9 @@ function App() {
               </a>
             </div>
 
-            <div className="date-range-text">
-              Current estimates are based on data from {dateRange}
-            </div>
+         //   <div className="date-range-text">
+         //     Current estimates are based on data from {dateRange}
+         //   </div>
 
             {promptComplete && (
               <div className="share-buttons">
