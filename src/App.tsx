@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExchangeAlt,
   faArrowRight,
-  faUndo,
+  faTimesCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { HourlyChart } from "./components/HourlyChart/HourlyChart";
 import { TopBar } from "./components/TopBar/TopBar";
@@ -34,6 +34,7 @@ import { AboutModal } from "./components/AboutModal/AboutModal";
 import { FeedbackModal } from "./components/FeedbackModal/FeedbackModal";
 
 import { DCThemeProvider } from "@dataclinic/theme";
+import { Styles } from "./AppSyles";
 
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
@@ -173,6 +174,9 @@ function App() {
           <TopBar
             onShowAbout={() => setShowAboutModal(true)}
             onShowFeedback={() => setShowFeedbackModal(true)}
+            startStation={startStation}
+            endStation={endStation}
+            line={line}
           />
           <div
             className={`header ${promptComplete && "header-prompt-complete"}`}
@@ -221,30 +225,37 @@ function App() {
                       onSelected={setEndStationID}
                       active={!promptComplete}
                     />
-                    {promptComplete && (
-                      <FontAwesomeIcon
-                        style={{ cursor: "pointer" }}
-                        icon={faExchangeAlt}
-                        aria-label="Reverse Trip"
-                        onClick={reverseTrip}
-                        color="#ffbb31"
-                      />
-                    )}
                   </div>
                 </>
               )}
             </div>
 
             {promptComplete && (
-              <>
+              <Styles.ControlBar>
+                <Styles.ResetButton onClick={reset}>
+                  <FontAwesomeIcon
+                    style={{ cursor: "pointer", marginRight: "5px" }}
+                    icon={faTimesCircle}
+                    aria-label="Reset"
+                    color="#e27327"
+                  />
+                  reset
+                </Styles.ResetButton>
+                |
+                <Styles.ResetButton onClick={reverseTrip}>
+                  <FontAwesomeIcon
+                    style={{ cursor: "pointer", marginRight: "5px" }}
+                    icon={faExchangeAlt}
+                    aria-label="Reverse Trip"
+                    color="#e27327"
+                  />
+                  reverse
+                </Styles.ResetButton>
+                |
                 <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-                <button className="reset-button" onClick={reset}>
-                  Find out about another trip.
-                </button>
-              </>
+              </Styles.ControlBar>
             )}
           </div>
-
           {promptComplete && (
             <div className="graph">
               <div style={{ display: "flex", flexDirection: "column" }}>
@@ -259,6 +270,7 @@ function App() {
                     flexDirection: "column",
                     width: "95%",
                     paddingLeft: "70px",
+                    height: "50px",
                     boxSizing: "border-box",
                   }}
                 >
@@ -314,51 +326,38 @@ function App() {
             <div className="info-share">
               <div className="info">
                 <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
-                  <img src={Giticon} height={36} width={36} />
+                  <img src={Giticon} height={20} width={20} />
                 </a>
                 <a href="https://medium.com/dataclinic">
-                  <img src={Mediumicon} height={38} width={38} />
+                  <img src={Mediumicon} height={20} width={20} />
                 </a>
               </div>
 
-         {promptComplete && (
-	    <div className="date-range-text">
-              Current estimates are based on data from {dateRange}
-            </div>
-         )}
-
-            {promptComplete && (
-              <div className="share-buttons">
-                <p className="hide-small">Share this trip</p>
-                <ShareButtons
-                  startStation={startStation?.id}
-                  endStation={endStation?.id}
-                  line={line?.id}
-                />
+              <div className="date-range-text">
+                Estimates are based on data from {dateRange}
               </div>
-            )}
+            </div>
 
-          </div>
-          <div className="explainer-text">
-            This website and its contents, including all data, figures and
-            analysis (“Website”), is provided strictly for informational
-            purposes. The Website relies upon publicly available data from the
-            MTA and on the results of mathematical models designed by the Two
-            Sigma Investments, LP acting through the Two Sigma Data Clinic
-            (“Data Clinic”). Data Clinic disclaims any and all representations
-            and warranties with respect to the Website, including accuracy,
-            fitness for use, reliability, and non-infringement.
-          </div>
-          <div className="disclaimer">
-            <a href="https://www.twosigma.com/legal-disclosure/">
-              Legal Disclosure
-            </a>
-            <span>@ 2020 Two Sigma Investments, LP. All rights reserved</span>
-            <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
-              Privacy Policy
-            </a>
-          </div>
-        </footer>
+            <div className="explainer-text">
+              This website and its contents, including all data, figures and
+              analysis (“Website”), is provided strictly for informational
+              purposes. The Website relies upon publicly available data from the
+              MTA and on the results of mathematical models designed by the Two
+              Sigma Investments, LP acting through the Two Sigma Data Clinic
+              (“Data Clinic”). Data Clinic disclaims any and all representations
+              and warranties with respect to the Website, including accuracy,
+              fitness for use, reliability, and non-infringement.
+            </div>
+            <div className="disclaimer">
+              <a href="https://www.twosigma.com/legal-disclosure/">
+                Legal Disclosure
+              </a>
+              <span>@ 2020 Two Sigma Investments, LP. All rights reserved</span>
+              <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
+                Privacy Policy
+              </a>
+            </div>
+          </footer>
         </div>
       </div>
     </DCThemeProvider>
