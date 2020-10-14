@@ -10,7 +10,7 @@ const Container = styled.div`
     flex:1;
     @media only screen and (min-width:900px){
       
-      max-height: 400px;
+      /* max-height: 400px; */
     }
 `
 const BarsContainer = styled.ul`
