@@ -30,10 +30,18 @@ import "./App.scss";
 
 import "typeface-lato";
 import { SimplePassword } from "./components/SimplePassword/SimplePassword";
+import { AboutModal } from "./components/AboutModal/AboutModal";
+import { FeedbackModal } from "./components/FeedbackModal/FeedbackModal";
+
+import { DCThemeProvider } from "@dataclinic/theme";
 
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
   const [passwordPassed, setPasswordPassed] = useState(false);
+
+  // Modals
+  const [showAboutModal, setShowAboutModal] = useState(false);
+  const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
   // Grab the required data from the data context
   const { stations, lines, dataLoaded, dateRange } = useContext(DataContext);
@@ -142,7 +150,7 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
-  const requirePassword = true;
+  const requirePassword = false;
   if (passwordPassed === false && requirePassword) {
     return (
       <div className="App">
@@ -151,150 +159,171 @@ function App() {
     );
   }
   return (
-    <div className="App">
-      <div className="app-inner">
-        <TopBar />
-        <div className={`header ${promptComplete && "header-prompt-complete"}`}>
+    <DCThemeProvider>
+      <div className="App">
+        <AboutModal
+          isOpen={showAboutModal}
+          onClose={() => setShowAboutModal(false)}
+        />
+        <FeedbackModal
+          isOpen={showFeedbackModal}
+          onClose={() => setShowFeedbackModal(false)}
+        />
+        <div className="app-inner">
+          <TopBar
+            onShowAbout={() => setShowAboutModal(true)}
+            onShowFeedback={() => setShowFeedbackModal(true)}
+          />
           <div
-            className={`fade-in prompt ${
-              promptComplete ? "prompt-complete" : "prompt-incomplete"
-            } `}
+            className={`header ${promptComplete && "header-prompt-complete"}`}
           >
-            <div className="line-specification">
-              <span className="hide-small">I take the </span>
-              <SentanceDropDown
-                prompt={"select line"}
-                options={lineOptions}
-                selectedID={selectedLineID}
-                onSelected={setSelectedLineID}
-                useIcon={true}
-                active={!promptComplete}
-              />
-              <span style={{ marginRight: "0.25rem" }}> line. </span>
-            </div>
-            {selectedLineID && (
-              <>
-                <div className="line-select fade-in">
-                  <span className="hide-small">I get on at </span>
-                  <SentanceDropDown
-                    key="start"
-                    prompt={"select start station name"}
-                    options={stationOptions}
-                    selectedID={startStationID}
-                    onSelected={setStartStationID}
-                    active={!promptComplete}
-                  />
-                </div>
-                <div className="line-select fade-in">
-                  <span className="hide-small">I get off at </span>
-                  <FontAwesomeIcon icon={faArrowRight} className="show-small" />
-                  <SentanceDropDown
-                    key="end"
-                    prompt={"select end station name"}
-                    options={stationOptions}
-                    selectedID={endStationID}
-                    onSelected={setEndStationID}
-                    active={!promptComplete}
-                  />
-                  {promptComplete && (
-                    <FontAwesomeIcon
-                      style={{ cursor: "pointer" }}
-                      icon={faExchangeAlt}
-                      aria-label="Reverse Trip"
-                      onClick={reverseTrip}
-                      color="#ffbb31"
+            <div
+              className={`fade-in prompt ${
+                promptComplete ? "prompt-complete" : "prompt-incomplete"
+              } `}
+            >
+              <div className="line-specification">
+                <span className="hide-small">I take the </span>
+                <SentanceDropDown
+                  prompt={"select line"}
+                  options={lineOptions}
+                  selectedID={selectedLineID}
+                  onSelected={setSelectedLineID}
+                  useIcon={true}
+                  active={!promptComplete}
+                />
+                <span style={{ marginRight: "0.25rem" }}> line. </span>
+              </div>
+              {selectedLineID && (
+                <>
+                  <div className="line-select fade-in">
+                    <span className="hide-small">I get on at </span>
+                    <SentanceDropDown
+                      key="start"
+                      prompt={"select start station name"}
+                      options={stationOptions}
+                      selectedID={startStationID}
+                      onSelected={setStartStationID}
+                      active={!promptComplete}
                     />
-                  )}
-                </div>
+                  </div>
+                  <div className="line-select fade-in">
+                    <span className="hide-small">I get off at </span>
+                    <FontAwesomeIcon
+                      icon={faArrowRight}
+                      className="show-small"
+                    />
+                    <SentanceDropDown
+                      key="end"
+                      prompt={"select end station name"}
+                      options={stationOptions}
+                      selectedID={endStationID}
+                      onSelected={setEndStationID}
+                      active={!promptComplete}
+                    />
+                    {promptComplete && (
+                      <FontAwesomeIcon
+                        style={{ cursor: "pointer" }}
+                        icon={faExchangeAlt}
+                        aria-label="Reverse Trip"
+                        onClick={reverseTrip}
+                        color="#ffbb31"
+                      />
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
+
+            {promptComplete && (
+              <>
+                <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
+                <button className="reset-button" onClick={reset}>
+                  Find out about another trip.
+                </button>
               </>
             )}
           </div>
 
           {promptComplete && (
-            <>
-              <DayOfWeekSelector weekday={weekday} onChange={setWeekday} />
-              <button className="reset-button" onClick={reset}>
-                Find out about another trip.
-              </button>
-            </>
-          )}
-        </div>
-
-        {promptComplete && (
-          <div className="graph">
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <HourlyChart
-                hourlyData={maxHourlyCrowdingData}
-                hour={hour}
-              ></HourlyChart>
-              <div
-                style={{
-                  marginTop: "5px",
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "95%",
-                  paddingLeft: "70px",
-                  boxSizing: "border-box",
-                }}
-              >
-                <Slider
-                  axis="x"
-                  x={hour}
-                  onChange={({ x }) => setSelectedHour(x)}
-                  xmax={23}
-                  xmin={0}
-                  xstep={1}
-                  styles={{
-                    track: {
-                      width: "100%",
-                    },
+            <div className="graph">
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <HourlyChart
+                  hourlyData={maxHourlyCrowdingData}
+                  hour={hour}
+                ></HourlyChart>
+                <div
+                  style={{
+                    marginTop: "5px",
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "95%",
+                    paddingLeft: "70px",
+                    boxSizing: "border-box",
                   }}
-                />
-
-                <span
-                  style={{ marginTop: "5px", color: "grey", fontSize: "12px" }}
                 >
-                  Use slider to change the start time of the trip
-                </span>
+                  <Slider
+                    axis="x"
+                    x={hour}
+                    onChange={({ x }) => setSelectedHour(x)}
+                    xmax={23}
+                    xmin={0}
+                    xstep={1}
+                    styles={{
+                      track: {
+                        width: "100%",
+                      },
+                    }}
+                  />
+
+                  <span
+                    style={{
+                      marginTop: "5px",
+                      color: "grey",
+                      fontSize: "12px",
+                    }}
+                  >
+                    Use slider to change the start time of the trip
+                  </span>
+                </div>
+              </div>
+              <div className="stops-chart-container">
+                {crowdingDataByStop && (
+                  <>
+                    <h2>
+                      Estimated average number of people per car on the train
+                      after each stop for a trip starting at{" "}
+                      <span style={{ fontWeight: "bold" }}>
+                        {am_pm_from_24(hour)}
+                      </span>
+                      .
+                    </h2>
+
+                    <StopsChart
+                      stops={stops}
+                      stopCount={crowdingDataByStop}
+                      maxCounts={maxCounts}
+                      variant={StopChartType.Discrete}
+                    />
+                  </>
+                )}
               </div>
             </div>
-            <div className="stops-chart-container">
-              {crowdingDataByStop && (
-                <>
-                  <h2>
-                    Estimated average number of people per car on the train
-                    after each stop for a trip starting at{" "}
-                    <span style={{ fontWeight: "bold" }}>
-                      {am_pm_from_24(hour)}
-                    </span>
-                    .
-                  </h2>
+          )}
+          <footer>
+            <div className="info-share">
+              <div className="info">
+                <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                  <img src={Giticon} height={36} width={36} />
+                </a>
+                <a href="https://medium.com/dataclinic">
+                  <img src={Mediumicon} height={38} width={38} />
+                </a>
+              </div>
 
-                  <StopsChart
-                    stops={stops}
-                    stopCount={crowdingDataByStop}
-                    maxCounts={maxCounts}
-                    variant={StopChartType.Discrete}
-                  />
-                </>
-              )}
-            </div>
-          </div>
-        )}
-        <footer>
-          <div className="info-share">
-            <div className="info">
-              <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
-                <img src={Giticon} height={36} width={36} />
-              </a>
-              <a href="https://medium.com/dataclinic">
-                <img src={Mediumicon} height={38} width={38} />
-              </a>
-            </div>
-
-          <div className="date-range-text">
-             Current estimates are based on data from {dateRange}
-          </div>
+              <div className="date-range-text">
+                Current estimates are based on data from {dateRange}
+              </div>
 
             {promptComplete && (
               <div className="share-buttons">
@@ -306,6 +335,7 @@ function App() {
                 />
               </div>
             )}
+
           </div>
           <div className="explainer-text">
             This website and its contents, including all data, figures and
@@ -327,8 +357,9 @@ function App() {
             </a>
           </div>
         </footer>
+        </div>
       </div>
-    </div>
+    </DCThemeProvider>
   );
 }
 
