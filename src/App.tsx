@@ -208,15 +208,6 @@ function App() {
                 </div>
               </>
             )}
-            <div>
-              {!promptComplete && (
-                <FontAwesomeIcon
-                  icon={faUndo}
-                  onClick={reset}
-                  color="#ffbb31"
-                />
-              )}
-            </div>
           </div>
 
           {promptComplete && (
@@ -299,10 +290,6 @@ function App() {
               <a href="https://medium.com/dataclinic">
                 <img src={Mediumicon} height={38} width={38} />
               </a>
-            </div>
-
-            <div className="date-range-text">
-              Current estimates are based on data from {dateRange}
             </div>
 
             {promptComplete && (
