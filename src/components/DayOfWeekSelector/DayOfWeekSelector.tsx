@@ -14,15 +14,16 @@ export function DayOfWeekSelector({weekday,onChange}: Props){
                 name={'weekday'}
                 onChange={e => onChange(true)}
                 checked={weekday} />
-                Weekday
+                weekday
             </Styles.Option>
+            <Styles.Divider>/</Styles.Divider>
             <Styles.Option onClick={()=>onChange(false)}>
                 <input type="radio"
                 value={'weekend'}
                 name={'weekend'}
                 onChange={e => onChange(false)}
                 checked={!weekday} />
-                Weekend
+                weekend
             </Styles.Option>
         </Styles.Container>
     )
