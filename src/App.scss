@@ -21,7 +21,7 @@
 
   @media only screen and (min-width:900px){
     max-width: 1024px;
-    max-height: 800px;
+    max-height: 900px;
   }
 }
 
@@ -131,22 +131,6 @@ h2{
   }
 }
 
-.reset-button{
-  color: #e27327;
-  background-color:white;
-  border: solid 2px #e27327;
-  font-weight:bold;
-  font-size:13px;
-  text-transform: uppercase;
-  padding: 6px 12px;
-  cursor:pointer;
-  margin-top:0px;
-  :hover{
-    color: white;
-    background-color: #e27327;
-  }
-}
-
 
 .fade-in {
 	opacity: 1;
@@ -201,6 +185,10 @@ footer{
   }
 }
 
+.date-range-text{
+  font-size: 12px;
+}
+
 .graph{
   display: flex;
   flex-direction: column;
@@ -213,6 +201,7 @@ footer{
   flex:1;
   h2{
     margin-bottom:0px;
+    margin-top:0px;
   }
 }
 
