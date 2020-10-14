@@ -321,9 +321,11 @@ function App() {
                 </a>
               </div>
 
-              <div className="date-range-text">
-                Current estimates are based on data from {dateRange}
-              </div>
+         {promptComplete && (
+	    <div className="date-range-text">
+              Current estimates are based on data from {dateRange}
+            </div>
+         )}
 
             {promptComplete && (
               <div className="share-buttons">

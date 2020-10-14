@@ -53,8 +53,8 @@ export const StopsChart = ({stops, stopCount, maxCounts, variant=StopChartType.C
         const count = stopCount?.find(sc=>sc.stationID === stationID)?.numPeopleLastYear
         return count ? count : 0
     }
-    const squareBuckets = [15,30,45,60,75,90]
-    const bucketColors  = ['#eff5d9','#ddebb0', '#cce1Ba', '#b1c96d','#91a94f','#718a31', '#536c12']
+    const squareBuckets = [5,10,15,20,25,30,35,40,45,50]
+    const bucketColors  = ['#eff5d9', '#dde5c2', '#ccd5ab', '#bac595', '#a9b67f', '#97a76a', '#869755', '#758940', '#647a2a', '#536c12']
 
     const makeStopSquares = (occupancy:number)=>{
         let bin : number | null = null;
