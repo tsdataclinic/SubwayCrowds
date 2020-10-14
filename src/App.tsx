@@ -285,6 +285,9 @@ function App() {
                       track: {
                         width: "100%",
                       },
+                      active: {
+                        backgroundColor: "#e27327",
+                      },
                     }}
                   />
 
