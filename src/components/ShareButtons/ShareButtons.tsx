@@ -21,7 +21,7 @@ export const ShareButtons = ({startStation,endStation,line}: Props)=>{
     const hashtagList = ['newyorktough', 'covid19', 'mta', 'mtaaccessibility', 'accessibility', 'dataforgood', 'opendata']
     return(
       <>
-            <FacebookShareButton quote={prompt} url={window.location.href} hashtag={hashtag} >
+            <FacebookShareButton style={{marginBottom:"0px"}} quote={prompt} url={window.location.href} hashtag={hashtag} >
               <FacebookIcon size={20} />
             </FacebookShareButton>{' '}
             <TwitterShareButton title={prompt} url={window.location.href}  hashtags={hashtagList}>

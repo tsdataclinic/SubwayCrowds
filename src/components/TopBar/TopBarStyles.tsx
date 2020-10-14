@@ -9,8 +9,11 @@ const TopBar = styled.div`
    display:flex;
    flex-direction:row;
    justify-content:space-between;
+   align-items:center;
+   button{
+     margin-right: 5px;
+   }
 `
-
 const ModalButton = styled.button`
   background:none;
   border:none;
