@@ -54,7 +54,7 @@ export const StopsChart = ({stops, stopCount, maxCounts, variant=StopChartType.C
         return count ? count : 0
     }
     const squareBuckets = [5,10,15,20,25,30,35,40,45,50]
-    const bucketColors  = ['#ffee64', '#ffe95f', '#ffe45a', '#ffdf56', '#ffda51', '#ffd54c', '#ffd047', '#ffcb41', '#ffc63c', '#ffc037', '#ffbb31']
+    const bucketColors  = ['#fce5ab', '#fde1a0', '#fedc95', '#ffd889', '#ffd47f', '#ffd073', '#ffcc68', '#ffc85c', '#ffc44f', '#ffbf41', '#ffbb31']
 
     const makeStopSquares = (occupancy:number)=>{
         let bin : number | null = null;
