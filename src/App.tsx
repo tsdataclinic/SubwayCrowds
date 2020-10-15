@@ -335,7 +335,6 @@ function App() {
                   <img src={Mediumicon} height={20} width={20} />
                 </a>
               </div>
-            </div>
 
              {promptComplete && ( <div className="date-range-text">
                 Estimates are based on data from {dateRange}
@@ -352,7 +351,8 @@ function App() {
                 />
               </div>
             )} 
-                
+            </div>
+            
             <div className="explainer-text">
               This website and its contents, including all data, figures and
               analysis (“Website”), is provided strictly for informational
