@@ -335,6 +335,7 @@ function App() {
                   <img src={Mediumicon} height={20} width={20} />
                 </a>
               </div>
+            </div>
 
              {promptComplete && ( <div className="date-range-text">
                 Estimates are based on data from {dateRange}
