@@ -336,11 +336,22 @@ function App() {
                 </a>
               </div>
 
-              <div className="date-range-text">
+             {promptComplete && ( <div className="date-range-text">
                 Estimates are based on data from {dateRange}
               </div>
             </div>
-
+            )}
+              
+            {promptComplete && (
+              <div className="share-buttons">
+                <p className="hide-small">Share this trip</p>
+                <ShareButtons
+                  startStation={startStation?.id}
+                  endStation={endStation?.id}
+                  line={line?.id}
+                />
+            )} 
+                
             <div className="explainer-text">
               This website and its contents, including all data, figures and
               analysis (“Website”), is provided strictly for informational
