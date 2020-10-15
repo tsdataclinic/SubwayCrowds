@@ -286,7 +286,7 @@ function App() {
                         width: "100%",
                       },
                       active: {
-                        backgroundColor: "#ffbb31",
+                        backgroundColor: "#27a3aa",
                       },
                     }}
                   />
