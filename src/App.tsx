@@ -237,7 +237,7 @@ function App() {
                     style={{ cursor: "pointer", marginRight: "5px" }}
                     icon={faTimesCircle}
                     aria-label="Reset"
-                    color="#e27327"
+                    color="#27a3aa"
                   />
                   reset
                 </Styles.ResetButton>
@@ -247,7 +247,7 @@ function App() {
                     style={{ cursor: "pointer", marginRight: "5px" }}
                     icon={faExchangeAlt}
                     aria-label="Reverse Trip"
-                    color="#e27327"
+                    color="#27a3aa"
                   />
                   reverse
                 </Styles.ResetButton>
