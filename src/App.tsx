@@ -349,6 +349,7 @@ function App() {
                   endStation={endStation?.id}
                   line={line?.id}
                 />
+              </div>
             )} 
                 
             <div className="explainer-text">
