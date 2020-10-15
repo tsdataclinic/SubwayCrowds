@@ -339,7 +339,6 @@ function App() {
              {promptComplete && ( <div className="date-range-text">
                 Estimates are based on data from {dateRange}
               </div>
-            </div>
             )}
               
             {promptComplete && (
