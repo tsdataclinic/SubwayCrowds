@@ -16,10 +16,3 @@ code {
     monospace;
 }
 
-input[type="radio"]:checked:before {
-        background: #27a3aa;
-}
-
-input[type="radio"]:checked {
-      border-color: #27a3aa;
-}
