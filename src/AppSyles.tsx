@@ -18,9 +18,9 @@ const ControlBar = styled.div`
 `;
 
 const ResetButton = styled.button`
-  color: #e27327;
+  color: #27a3aa;
   background-color: white;
-  border: none; // solid 2px #e27327;
+  border: none; // solid 2px #27a3aa;
 
   font-weight: bold;
   padding: 0px 5px 0px 5px;
