@@ -8,7 +8,7 @@ const Container =styled.div`
     margin:5px 0px;
     box-sizing:border-box;
     padding:10px 0px;
-    color:#e27327;
+    color:#27a3aa;
     font-weight:bold;
     @media only screen and (min-width:900px){
         margin: 1px 0px;
