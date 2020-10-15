@@ -22,11 +22,6 @@ export function TopBar({onShowFeedback,onShowAbout, startStation, endStation,lin
             <Styles.Links>
                 <span className='feedback'><Styles.ModalButton type={'button'} onClick={onShowFeedback}>Give us feedback</Styles.ModalButton></span>
                 <span className='about'><Styles.ModalButton type={'button'} onClick={onShowAbout}>About</Styles.ModalButton></span>
-                  <ShareButtons
-                    startStation={startStation?.id}
-                    endStation={endStation?.id}
-                    line={line?.id}
-                  />
             </Styles.Links>
         </Styles.TopBar>
     )
