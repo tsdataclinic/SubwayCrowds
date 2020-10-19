@@ -17,6 +17,7 @@ import {
   faExchangeAlt,
   faArrowRight,
   faTimesCircle,
+  faInfoCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import { HourlyChart } from "./components/HourlyChart/HourlyChart";
 import { TopBar } from "./components/TopBar/TopBar";
@@ -32,6 +33,8 @@ import "typeface-lato";
 import { SimplePassword } from "./components/SimplePassword/SimplePassword";
 import { AboutModal } from "./components/AboutModal/AboutModal";
 import { FeedbackModal } from "./components/FeedbackModal/FeedbackModal";
+import { HourlyInfoModal } from "./components/HourlyInfoModal/HourlyInfoModal";
+import { StopInfoModal } from "./components/StopInfoModal/StopInfoModal";
 
 import { DCThemeProvider } from "@dataclinic/theme";
 import { Styles } from "./AppSyles";
@@ -43,6 +46,8 @@ function App() {
   // Modals
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
+  const [showHourlyInfoModal, setShowHourlyInfoModal] = useState(false);
+  const [showStopInfoModal, setShowStopInfoModal] = useState(false);
 
   // Grab the required data from the data context
   const { stations, lines, dataLoaded, dateRange } = useContext(DataContext);
@@ -170,6 +175,14 @@ function App() {
           isOpen={showFeedbackModal}
           onClose={() => setShowFeedbackModal(false)}
         />
+        <HourlyInfoModal
+          isOpen={showHourlyInfoModal}
+          onClose={() => setShowHourlyInfoModal(false)}
+        />
+        <StopInfoModal
+          isOpen={showStopInfoModal}
+          onClose={() => setShowStopInfoModal(false)}
+        />
         <div className="app-inner">
           <TopBar
             onShowAbout={() => setShowAboutModal(true)}
@@ -259,6 +272,15 @@ function App() {
           {promptComplete && (
             <div className="graph">
               <div style={{ display: "flex", flexDirection: "column" }}>
+                <h2>
+                  Average max people per subway car for this trip during the
+                  past few weeks.{" "}
+                  <FontAwesomeIcon
+                    onClick={() => setShowHourlyInfoModal(true)}
+                    icon={faInfoCircle}
+                    className="info-button"
+                  />
+                </h2>
                 <HourlyChart
                   hourlyData={maxHourlyCrowdingData}
                   hour={hour}
@@ -306,12 +328,16 @@ function App() {
                 {crowdingDataByStop && (
                   <>
                     <h2>
-                      Estimated average number of people per car on the train
-                      after each stop for a trip starting at{" "}
+                      Average people per subway car by stop at{" "}
                       <span style={{ fontWeight: "bold" }}>
                         {am_pm_from_24(hour)}
-                      </span>
-                      .
+                      </span>{" "}
+                      during the past 2 weeks.
+                      <FontAwesomeIcon
+                        className="info-button"
+                        onClick={() => setShowStopInfoModal(true)}
+                        icon={faInfoCircle}
+                      />
                     </h2>
 
                     <StopsChart
@@ -336,23 +362,24 @@ function App() {
                 </a>
               </div>
 
-             {promptComplete && ( <div className="date-range-text">
-                Estimates are based on data from {dateRange}
-              </div>
-            )}
-              
-            {promptComplete && (
-              <div className="share-buttons">
-                <p className="hide-small">Share this trip</p>
-                <ShareButtons
-                  startStation={startStation?.id}
-                  endStation={endStation?.id}
-                  line={line?.id}
-                />
-              </div>
-            )} 
+              {promptComplete && (
+                <div className="date-range-text">
+                  Estimates are based on data from {dateRange}
+                </div>
+              )}
+
+              {promptComplete && (
+                <div className="share-buttons">
+                  <p className="hide-small">Share this trip</p>
+                  <ShareButtons
+                    startStation={startStation?.id}
+                    endStation={endStation?.id}
+                    line={line?.id}
+                  />
+                </div>
+              )}
             </div>
-            
+
             <div className="explainer-text">
               This website and its contents, including all data, figures and
               analysis (“Website”), is provided strictly for informational
