@@ -278,7 +278,7 @@ function App() {
               </Styles.ControlBar>
             )}
           </div>
-          {shouldUseTabs && (
+          {shouldUseTabs && promptComplete && (
             <MetricSelector metric={metric} onSetMetric={setMetric} />
           )}
           {promptComplete && (
