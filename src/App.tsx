@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import SentanceDropDown from "./components/SentanceDropDown/SentanceDropDown";
 import { DataContext } from "./Contexts/DataContext";
+import useMedia from "use-media";
 import {
   useMaxCrowdingByHourForTrip,
   useCrowdingDataByStops,
@@ -12,6 +13,10 @@ import { useStopsBetween } from "./Hooks/useStopsBetween";
 import { StopChartType, StopsChart } from "./components/StopsChart/StopsChart";
 import { ShareButtons } from "./components/ShareButtons/ShareButtons";
 import { DayOfWeekSelector } from "./components/DayOfWeekSelector/DayOfWeekSelector";
+import {
+  MetricSelector,
+  MetricType,
+} from "./components/MetricSelector/MetricSelector";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faExchangeAlt,
@@ -23,7 +28,6 @@ import { HourlyChart } from "./components/HourlyChart/HourlyChart";
 import { TopBar } from "./components/TopBar/TopBar";
 
 import { am_pm_from_24 } from "./utils";
-import Slider from "react-input-slider";
 import Giticon from "./icons/giticon.png";
 import queryString from "query-string";
 import Mediumicon from "./icons/mediumicon.png";
@@ -35,6 +39,7 @@ import { AboutModal } from "./components/AboutModal/AboutModal";
 import { FeedbackModal } from "./components/FeedbackModal/FeedbackModal";
 import { HourlyInfoModal } from "./components/HourlyInfoModal/HourlyInfoModal";
 import { StopInfoModal } from "./components/StopInfoModal/StopInfoModal";
+import { HourSlider } from "./components/HourSlider/HourSlider";
 
 import { DCThemeProvider } from "@dataclinic/theme";
 import { Styles } from "./AppSyles";
@@ -42,6 +47,10 @@ import { Styles } from "./AppSyles";
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
   const [passwordPassed, setPasswordPassed] = useState(false);
+
+  // Media queries for custom mobile layout
+  const shouldUseTabs = useMedia("(max-width: 480px)");
+  const [metric, setMetric] = useState<MetricType>(MetricType.Hour);
 
   // Modals
   const [showAboutModal, setShowAboutModal] = useState(false);
@@ -269,86 +278,65 @@ function App() {
               </Styles.ControlBar>
             )}
           </div>
+          {shouldUseTabs && (
+            <MetricSelector metric={metric} onSetMetric={setMetric} />
+          )}
           {promptComplete && (
             <div className="graph">
-              <div style={{ display: "flex", flexDirection: "column" }}>
-                <h2>
-                  Average max people per subway car for this trip during the
-                  past few weeks.{" "}
-                  <FontAwesomeIcon
-                    onClick={() => setShowHourlyInfoModal(true)}
-                    icon={faInfoCircle}
-                    className="info-button"
-                  />
-                </h2>
-                <HourlyChart
-                  hourlyData={maxHourlyCrowdingData}
-                  hour={hour}
-                ></HourlyChart>
+              {(!shouldUseTabs || metric === MetricType.Hour) && (
                 <div
-                  style={{
-                    marginTop: "5px",
-                    display: "flex",
-                    flexDirection: "column",
-                    width: "95%",
-                    paddingLeft: "70px",
-                    height: "50px",
-                    boxSizing: "border-box",
-                  }}
+                  style={{ display: "flex", flexDirection: "column", flex: 1 }}
                 >
-                  <Slider
-                    axis="x"
-                    x={hour}
-                    onChange={({ x }) => setSelectedHour(x)}
-                    xmax={23}
-                    xmin={0}
-                    xstep={1}
-                    styles={{
-                      track: {
-                        width: "100%",
-                      },
-                      active: {
-                        backgroundColor: "#27a3aa",
-                      },
-                    }}
-                  />
-
-                  <span
-                    style={{
-                      marginTop: "5px",
-                      color: "grey",
-                      fontSize: "12px",
-                    }}
-                  >
-                    Use slider to change the start time of the trip
-                  </span>
-                </div>
-              </div>
-              <div className="stops-chart-container">
-                {crowdingDataByStop && (
                   <>
                     <h2>
-                      Average people per subway car by stop at{" "}
-                      <span style={{ fontWeight: "bold" }}>
-                        {am_pm_from_24(hour)}
-                      </span>{" "}
-                      during the past 2 weeks.
+                      Average max people per subway car for this trip during the
+                      past few weeks.{" "}
                       <FontAwesomeIcon
-                        className="info-button"
-                        onClick={() => setShowStopInfoModal(true)}
+                        onClick={() => setShowHourlyInfoModal(true)}
                         icon={faInfoCircle}
+                        className="info-button"
                       />
                     </h2>
-
-                    <StopsChart
-                      stops={stops}
-                      stopCount={crowdingDataByStop}
-                      maxCounts={maxCounts}
-                      variant={StopChartType.Discrete}
-                    />
+                    <HourlyChart
+                      hourlyData={maxHourlyCrowdingData}
+                      hour={hour}
+                    ></HourlyChart>
                   </>
-                )}
-              </div>
+                  {!shouldUseTabs && (
+                    <HourSlider hour={hour} onSetHour={setSelectedHour} />
+                  )}
+                </div>
+              )}
+              {(!shouldUseTabs || metric === MetricType.Stops) && (
+                <div className="stops-chart-container">
+                  {crowdingDataByStop && (
+                    <>
+                      <h2>
+                        Average people per subway car by stop at{" "}
+                        <span style={{ fontWeight: "bold" }}>
+                          {am_pm_from_24(hour)}
+                        </span>{" "}
+                        during the past 2 weeks.
+                        <FontAwesomeIcon
+                          className="info-button"
+                          onClick={() => setShowStopInfoModal(true)}
+                          icon={faInfoCircle}
+                        />
+                      </h2>
+                      {shouldUseTabs && (
+                        <HourSlider hour={hour} onSetHour={setSelectedHour} />
+                      )}
+
+                      <StopsChart
+                        stops={stops}
+                        stopCount={crowdingDataByStop}
+                        maxCounts={maxCounts}
+                        variant={StopChartType.Discrete}
+                      />
+                    </>
+                  )}
+                </div>
+              )}
             </div>
           )}
           <footer>
