@@ -1,78 +1,77 @@
 .App {
   text-align: center;
-  width:100vw;
-  height:100vh;
-  display:flex;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: lato;
   box-sizing: border-box;
-  padding:20px 20px 0px 20px;
-  display:flex;
+  padding: 20px 20px 0px 20px;
+  display: flex;
 }
 
-.app-inner{
-  display:flex;
-  flex-direction:column;
-  width: 100vw;
-  height: 100vh;
+.app-inner {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   justify-content: center;
 
-  @media only screen and (min-width:900px){
+  @media only screen and (min-width: 900px) {
     max-width: 1024px;
     max-height: 900px;
   }
 }
 
-.explainer-text{
-  font-size:0.5em;
+.explainer-text {
+  font-size: 0.5em;
   color: grey;
-  @media only screen and (min-width:900px){
-    font-size:0.7rem;
+  @media only screen and (min-width: 900px) {
+    font-size: 0.7rem;
   }
 }
 
-.header{
+.header {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex:1;
-  &.header-prompt-complete{
-    flex:none ;
+  flex: 1;
+  &.header-prompt-complete {
+    flex: none;
   }
 }
-.hide-small{
-  display:none
+.hide-small {
+  display: none;
 }
 
 @media only screen and (min-width: 900px) {
-  .show-small{
-    display:none;
+  .show-small {
+    display: none;
   }
-  .hide-small{
-    display:block;
-  }
-} 
-
-.prompt-incomplete{
-  .show-small{
-    display:none;
-  }
-  .hide-small{
-    display:block;
+  .hide-small {
+    display: block;
   }
 }
 
-.prompt-incomplete > div{
+.prompt-incomplete {
+  .show-small {
+    display: none;
+  }
+  .hide-small {
+    display: block;
+  }
+}
+
+.prompt-incomplete > div {
   margin-bottom: 20px;
 }
 
-
-.line-select{
+.line-select {
   flex-direction: row;
-  display:flex
+  display: flex;
 }
 
 .App-logo {
@@ -80,24 +79,24 @@
   pointer-events: none;
 }
 
-.prompt{
-   display: flex;
-   align-items: center;
-   justify-content: normal;
-   flex-direction: column;
+.prompt {
+  display: flex;
+  align-items: center;
+  justify-content: normal;
+  flex-direction: column;
 }
 
-.prompt-complete{
-  flex-direction:row;
+.prompt-complete {
+  flex-direction: row;
 }
 
-h2{
+h2 {
   font-weight: normal;
-  font-size:0.8rem;
-  padding:0px;
-  @media only screen and (min-width:900px){
-    padding:13px;
-    font-size:1rem;
+  font-size: 0.8rem;
+  padding: 0px;
+  @media only screen and (min-width: 900px) {
+    padding: 13px;
+    font-size: 1rem;
   }
 }
 
@@ -112,7 +111,7 @@ h2{
   color: white;
 }
 
-.line-specification{
+.line-specification {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -131,144 +130,151 @@ h2{
   }
 }
 
-
 .fade-in {
-	opacity: 1;
-	animation-name: fadeInOpacity;
-	animation-iteration-count: 1;
-	animation-timing-function: ease-in;
-	animation-duration: 1s;
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 1s;
 }
 
 @keyframes fadeInOpacity {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-footer{
+footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width:100%; 
-  margin-top:10px;
-  .info-share, .disclaimer{
-    display:flex;
+  width: 100%;
+  margin-top: 10px;
+  .info-share,
+  .disclaimer {
+    display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width:100%;
+    width: 100%;
   }
-  .info, .share-buttons{
-    > *{
-      margin-right:10px;
+  .info,
+  .share-buttons {
+    > * {
+      margin-right: 10px;
     }
   }
 
-  .disclaimer{
+  .disclaimer {
     justify-content: center;
     box-sizing: border-box;
     padding: 5px;
-    >a,span{
-      margin-right:20px;
+    > a,
+    span {
+      margin-right: 20px;
       color: grey;
       font-size: 0.5em;
-      @media only screen and (min-width:900px){
-        font-size:0.7rem;
+      @media only screen and (min-width: 900px) {
+        font-size: 0.7rem;
       }
       text-decoration: none;
     }
   }
 }
 
-.date-range-text{
+.date-range-text {
   font-size: 12px;
 }
 
-.graph{
+.graph {
   display: flex;
   flex-direction: column;
-  width:100%;
-  overflow-y:auto;
+  width: 100%;
+  overflow-y: auto;
   box-sizing: border-box;
-  padding:0px 20px 0px 20px;
+  padding: 0px 20px 0px 20px;
   display: flex;
   flex-direction: column;
-  flex:1;
-  h2{
-    margin-bottom:0px;
-    margin-top:0px;
+  flex: 1;
+  h2 {
+    margin-bottom: 0px;
+    margin-top: 0px;
   }
 }
 
-.graph > div{
-  width:100%;
+.graph > div {
+  width: 100%;
   // height:50%;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
-.hourly-chart{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  flex:1;
-  padding:0px;
-  margin:0px;
-  max-height:30vh;
+.hourly-chart {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0px;
+  margin: 0px;
+  max-height: 30vh;
+  @media only screen and (max-width: 480px) {
+    max-height: none;
+  }
   @media only screen and (min-width: 900px) {
-    padding:0px 20px 0px 20px;
+    padding: 0px 20px 0px 20px;
     max-height: none;
   }
 }
 
 @media only screen and (min-width: 900px) {
-  .graph{  
-    flex-direction:row;
+  .graph {
+    flex-direction: row;
   }
-  .graph > div{
-    height:100%;
-    width:50%;
+  .graph > div {
+    height: 100%;
+    width: 50%;
   }
 
-  .prompt{
+  .prompt {
     flex-direction: row;
   }
 }
 
-.info{
-  display:flex;
+.info {
+  display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
 
-
-.share-buttons{
-  display:flex;
+.share-buttons {
+  display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-.stops-chart-container{
-  display:flex;
+.stops-chart-container {
+  display: flex;
   flex-direction: column;
   overflow: hidden;
-  flex:1;
+  flex: 1;
   @media only screen and (min-width: 900px) {
-    padding:0px 20px ;
+    padding: 0px 20px;
   }
-  
 }
 
-#root{
-  width:100%;
-  height:100%;
-  display:flex;
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.info-button {
+  cursor: pointer;
 }
