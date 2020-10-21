@@ -21,7 +21,6 @@ const TopBar = styled.div`
 const ModalButton = styled.button`
   background: none;
   border: none;
-  text-decoration: underline;
   cursor: pointer;
 `;
 const Links = styled.div`
