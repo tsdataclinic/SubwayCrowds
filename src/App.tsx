@@ -283,10 +283,10 @@ function App() {
                   <>
                     <h2>
                       Average max people per subway car for this trip during the
-                      past two weeks.{" "}
+                      past two weeks{" "}
                       <a
-                        data-tip="This graph shows an estimated of the maximum number of people <br />
-                         you will encounter at any given time on this trip for each hour."
+                        data-tip="This graph shows an estimate of the maximum number of people <br />
+                         you will encounter at any given time on this trip for each hour"
                         data-iscapture="true"
                       >
                         <FontAwesomeIcon
@@ -294,7 +294,7 @@ function App() {
                           className="info-button"
                         />
                       </a>
-                      <ReactTooltip place={"top"} multiline={true} />
+                      <ReactTooltip place={"bottom"} multiline={true} />
                     </h2>
                     <HourlyChart
                       hourlyData={maxHourlyCrowdingData}
@@ -315,18 +315,17 @@ function App() {
                         <span style={{ fontWeight: "bold" }}>
                           {am_pm_from_24(hour)}
                         </span>{" "}
-                        during the past two weeks.
+                        during the past two weeks{" "}
                         <a
-                          data-tip="This graph shows an estimated average of the number of people <br /> in each subway car after <br /> each stop for a trip starting at the specified time"
+                          data-tip="This graph shows an estimated average of the number of people <br /> in each subway car after each stop for a trip starting at the specified time"
                           data-iscapture="true"
                         >
                           <FontAwesomeIcon
                             className="info-button"
-                            onClick={() => setShowStopInfoModal(true)}
                             icon={faInfoCircle}
                           />
                         </a>
-                        <ReactTooltip place={"top"} multiline={true} />
+                        <ReactTooltip place={"bottom"} multiline={true} />
                       </h2>
                       {shouldUseTabs && (
                         <HourSlider hour={hour} onSetHour={setSelectedHour} />
