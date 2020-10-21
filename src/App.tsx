@@ -290,7 +290,7 @@ function App() {
                   <>
                     <h2>
                       Average max people per subway car for this trip during the
-                      past few weeks.{" "}
+                      past two weeks.{" "}
                       <FontAwesomeIcon
                         onClick={() => setShowHourlyInfoModal(true)}
                         icon={faInfoCircle}
@@ -316,7 +316,7 @@ function App() {
                         <span style={{ fontWeight: "bold" }}>
                           {am_pm_from_24(hour)}
                         </span>{" "}
-                        during the past 2 weeks.
+                        during the past two weeks.
                         <FontAwesomeIcon
                           className="info-button"
                           onClick={() => setShowStopInfoModal(true)}
@@ -372,10 +372,10 @@ function App() {
               This website and its contents, including all data, figures and
               analysis (“Website”), is provided strictly for informational
               purposes. The Website relies upon publicly available data from the
-              MTA and on the results of mathematical models designed by the Two
-              Sigma Investments, LP acting through the Two Sigma Data Clinic
-              (“Data Clinic”). Data Clinic disclaims any and all representations
-              and warranties with respect to the Website, including accuracy,
+              MTA and on the results of mathematical models designed by Two
+              Sigma Investments, LP acting through Two Sigma Data Clinic (“Data
+              Clinic”). Data Clinic disclaims any and all representations and
+              warranties with respect to the Website, including accuracy,
               fitness for use, reliability, and non-infringement.
             </div>
             <div className="disclaimer">

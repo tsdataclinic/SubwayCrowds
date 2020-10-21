@@ -12,14 +12,15 @@ const TopBar = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  font-size: 25px;
   button {
     margin-right: 5px;
+    font-size: 20px;
   }
 `;
 const ModalButton = styled.button`
   background: none;
   border: none;
-  text-decoration: underline;
   cursor: pointer;
 `;
 const Links = styled.div`
