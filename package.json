@@ -32,6 +32,7 @@
     "react-modal": "^3.11.2",
     "react-scripts": "3.4.1",
     "react-share": "^4.2.1",
+    "react-tooltip": "^4.2.10",
     "react-use-dimensions": "^1.2.1",
     "styled-components": "^5.1.1",
     "typeface-lato": "^0.0.75",
