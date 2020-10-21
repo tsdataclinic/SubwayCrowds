@@ -35,7 +35,8 @@
     "react-use-dimensions": "^1.2.1",
     "styled-components": "^5.1.1",
     "typeface-lato": "^0.0.75",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "use-media": "^1.4.0"
   },
   "husky": {
     "hooks": {
