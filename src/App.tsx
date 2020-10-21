@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import SentanceDropDown from "./components/SentanceDropDown/SentanceDropDown";
 import { DataContext } from "./Contexts/DataContext";
+import ReactTooltip from "react-tooltip";
+
 import useMedia from "use-media";
 import {
   useMaxCrowdingByHourForTrip,
@@ -37,8 +39,6 @@ import "typeface-lato";
 import { SimplePassword } from "./components/SimplePassword/SimplePassword";
 import { AboutModal } from "./components/AboutModal/AboutModal";
 import { FeedbackModal } from "./components/FeedbackModal/FeedbackModal";
-import { HourlyInfoModal } from "./components/HourlyInfoModal/HourlyInfoModal";
-import { StopInfoModal } from "./components/StopInfoModal/StopInfoModal";
 import { HourSlider } from "./components/HourSlider/HourSlider";
 
 import { DCThemeProvider } from "@dataclinic/theme";
@@ -55,8 +55,6 @@ function App() {
   // Modals
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
-  const [showHourlyInfoModal, setShowHourlyInfoModal] = useState(false);
-  const [showStopInfoModal, setShowStopInfoModal] = useState(false);
 
   // Grab the required data from the data context
   const { stations, lines, dataLoaded, dateRange } = useContext(DataContext);
@@ -176,6 +174,8 @@ function App() {
   return (
     <DCThemeProvider>
       <div className="App">
+        <ReactTooltip />
+
         <AboutModal
           isOpen={showAboutModal}
           onClose={() => setShowAboutModal(false)}
@@ -184,14 +184,7 @@ function App() {
           isOpen={showFeedbackModal}
           onClose={() => setShowFeedbackModal(false)}
         />
-        <HourlyInfoModal
-          isOpen={showHourlyInfoModal}
-          onClose={() => setShowHourlyInfoModal(false)}
-        />
-        <StopInfoModal
-          isOpen={showStopInfoModal}
-          onClose={() => setShowStopInfoModal(false)}
-        />
+
         <div className="app-inner">
           <TopBar
             onShowAbout={() => setShowAboutModal(true)}
@@ -290,12 +283,18 @@ function App() {
                   <>
                     <h2>
                       Average max people per subway car for this trip during the
-                      past two weeks.{" "}
-                      <FontAwesomeIcon
-                        onClick={() => setShowHourlyInfoModal(true)}
-                        icon={faInfoCircle}
-                        className="info-button"
-                      />
+                      past two weeks{" "}
+                      <a
+                        data-tip="This graph shows an estimate of the maximum number of people <br />
+                         you will encounter at any given time on this trip for each hour"
+                        data-iscapture="true"
+                      >
+                        <FontAwesomeIcon
+                          icon={faInfoCircle}
+                          className="info-button"
+                        />
+                      </a>
+                      <ReactTooltip place={"bottom"} multiline={true} />
                     </h2>
                     <HourlyChart
                       hourlyData={maxHourlyCrowdingData}
@@ -316,12 +315,17 @@ function App() {
                         <span style={{ fontWeight: "bold" }}>
                           {am_pm_from_24(hour)}
                         </span>{" "}
-                        during the past two weeks.
-                        <FontAwesomeIcon
-                          className="info-button"
-                          onClick={() => setShowStopInfoModal(true)}
-                          icon={faInfoCircle}
-                        />
+                        during the past two weeks{" "}
+                        <a
+                          data-tip="This graph shows an estimated average of the number of people <br /> in each subway car after each stop for a trip starting at the specified time"
+                          data-iscapture="true"
+                        >
+                          <FontAwesomeIcon
+                            className="info-button"
+                            icon={faInfoCircle}
+                          />
+                        </a>
+                        <ReactTooltip place={"bottom"} multiline={true} />
                       </h2>
                       {shouldUseTabs && (
                         <HourSlider hour={hour} onSetHour={setSelectedHour} />

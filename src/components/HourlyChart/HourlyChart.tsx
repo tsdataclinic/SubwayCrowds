@@ -87,7 +87,7 @@ export function HourlyChart({ hourlyData, hour }: Props) {
                     {
                       scaleLabel: {
                         display: true,
-                        labelString: "Hour of Day",
+                        labelString: "Hour of day",
                       },
                       ticks: {
                         callback: (hour: number) => am_pm_from_24(hour),
@@ -102,8 +102,8 @@ export function HourlyChart({ hourlyData, hour }: Props) {
                       mode: "vertical",
                       scaleID: "x-axis-0",
                       value: hour,
-                      borderColor: "black",
-                      borderWidth: 1,
+                      borderColor: "#27a3aa",
+                      borderWidth: 2,
                     },
                   ],
                 },
