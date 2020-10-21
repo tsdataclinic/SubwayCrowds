@@ -7,10 +7,10 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons'
 const customStyles = {
     overlay: { zIndex: 1000 },
     content: {
-        maxWidth: "50vw",
-        left: "25vw",
-        maxHeight: "50vh",
-        top: "25vh"
+        maxWidth: "60vw",
+        left: "20vw",
+        maxHeight: "80vh",
+        top: "10vh"
     }
 }
 
