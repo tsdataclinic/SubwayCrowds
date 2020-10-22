@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import SentanceDropDown from "./components/SentanceDropDown/SentanceDropDown";
 import { DataContext } from "./Contexts/DataContext";
 import ReactTooltip from "react-tooltip";
-
+import * as Fathom from "fathom-client";
 import useMedia from "use-media";
 import {
   useMaxCrowdingByHourForTrip,
@@ -47,6 +47,12 @@ import { Styles } from "./AppSyles";
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
   const [passwordPassed, setPasswordPassed] = useState(false);
+
+  // Track initial visit
+  useEffect(() => {
+    Fathom.load("PELBVLNP");
+    // Fathom.trackPageview();
+  }, []);
 
   // Media queries for custom mobile layout
   const shouldUseTabs = useMedia("(max-width: 480px)");
@@ -120,6 +126,15 @@ function App() {
     setStartStationID(endStationID);
     setEndStationID(startStationID);
   };
+
+  //Track when we have a valid route.
+  useEffect(() => {
+    if (promptComplete) {
+      Fathom.trackPageview({
+        url: `trip/${selectedLineID}/${startStationID}/${endStationID}`,
+      });
+    }
+  }, [promptComplete, selectedLineID, startStationID, endStationID]);
 
   // Parses the url params to get the start and end station ids and the line.
   // If it finds them sets the appropriate state. Will not run untill the data

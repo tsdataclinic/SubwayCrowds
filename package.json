@@ -21,6 +21,7 @@
     "@types/react-modal": "^3.10.6",
     "chart.js": "^2.9.3",
     "chartjs-plugin-annotation": "^0.5.7",
+    "fathom-client": "^3.0.0",
     "gh-pages": "^2.2.0",
     "md5": "^2.3.0",
     "papaparse": "^5.2.0",
