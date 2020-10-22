@@ -44,7 +44,7 @@ This site shows an estimate for how crowded an avergae subway car is across diff
    - *Entry weight = 1 - cumulative exits along route **after this station** at this hour / total exits along the route **in either direction** at this hour*
    - *Exit weight = 1 - entry weight*
   - Normalize weights as a proportion of all the lines in the station
-  - Find service changes in the schedule and impute weights for these as the average for that station (to handle cases like C train suddenly running along F line)
+  - Find service changes in the schedule and impute weights for these as the average for that station (to handle cases like C train running along F line)
 
 
 **4. Crowding Estimation**
