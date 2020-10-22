@@ -12,6 +12,7 @@
 /build
 
 # misc
+.ipynb_checkpoints/
 .DS_Store
 .env.local
 .env.development.local
