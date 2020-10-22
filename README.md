@@ -67,7 +67,7 @@ yarn
 yarn start 
 ```
 
-To generate crowd estimates, run
+To generate crowd estimates, edit global variables at the top and run
 
 ```bash
 python crowding.py
