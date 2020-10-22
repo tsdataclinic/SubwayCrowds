@@ -1,7 +1,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6abecf5a-8e9f-4b9e-818d-ed47c21ef863/deploy-status)](https://app.netlify.com/sites/howbusyismytrain/deploys)
 
 <p align="center">
-  <img src="site-logo.png" width="250"/>
+  <img src="public/DataClinicLogo.png" width="250"/>
 </p>
 
 # Subway Crowds
@@ -13,6 +13,11 @@
 This site shows an estimate for how crowded an avergae subway car is across different routes over the last 2 weeks, last month, and last year. 
 
 ### Methodology 
+
+<p align="center">
+  <img src="public/crowding_methodology.png" width="500"/>
+</p>
+
 
 1. Cleaning Schedule Data
 - Concatenate GTFS data pulled every minute for a given time range
@@ -34,7 +39,7 @@ This site shows an estimate for how crowded an avergae subway car is across diff
 - For each train arrival, calculate total entries and exits since the last train at the station
 
 
-3. Routing heuristics
+3. Trip assignment & heuristics
 - For a given line and direction at station for an hour to approximate which direction a person goes when entering a station we use: 
    - Entry weight = 1 - cumulative exits along route after this station at this hour / total exits along the route in either direction at this hour
    - Exit weight = 1 - entry weight
