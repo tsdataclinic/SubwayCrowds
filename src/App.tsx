@@ -356,7 +356,17 @@ function App() {
 
               {promptComplete && (
                 <div className="date-range-text">
-                  Estimates are based on data from {dateRange}
+                  Estimates are based on data from {dateRange}{" "}
+                  <a
+                    data-tip="Estimates are not realtime because the data about Turnstile <br /> entries and exists are only released on a weekly/bi-weekly basis"
+                    data-iscapture="true"
+                  >
+                    <FontAwesomeIcon
+                      icon={faInfoCircle}
+                      className="info-button"
+                    />
+                  </a>
+                  <ReactTooltip place={"bottom"} multiline={true} />
                 </div>
               )}
 
