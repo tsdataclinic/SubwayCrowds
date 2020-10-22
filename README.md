@@ -70,7 +70,7 @@ yarn start
 To generate crowd estimates, run
 
 ```bash
-///
+python crowding.py
 ```
 
 ### Directory Structure
