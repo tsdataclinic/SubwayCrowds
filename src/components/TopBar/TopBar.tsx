@@ -35,9 +35,9 @@ export function TopBar({
           </Styles.ModalButton>
         </span>
         <span className="about">
-          <Styles.ModalButton type={"button"} onClick={onShowAbout}>
+          <Styles.AboutModalButton type={"button"} onClick={onShowAbout}>
             About
-          </Styles.ModalButton>
+          </Styles.AboutModalButton>
         </span>
       </Styles.Links>
     </Styles.TopBar>
