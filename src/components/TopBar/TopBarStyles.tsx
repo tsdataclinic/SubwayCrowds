@@ -23,11 +23,20 @@ const ModalButton = styled.button`
   border: none;
   cursor: pointer;
 `;
+
+const AboutModalButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #27a3aa
+`;
+
 const Links = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
+
 const DataClinicLink = styled.a`
   display: flex;
   color: black;
@@ -40,6 +49,7 @@ const DataClinicLink = styled.a`
 export const Styles = {
   TopBar,
   ModalButton,
+  AboutModalButton,
   DataClinicLink,
   Links,
 };

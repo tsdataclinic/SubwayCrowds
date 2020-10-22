@@ -285,8 +285,9 @@ function App() {
                       Average max people per subway car for this trip during the
                       past two weeks{" "}
                       <a
-                        data-tip="This graph shows an estimate of the maximum number of people <br />
-                         you will encounter at any given time on this trip for each hour"
+                        data-tip="This graph shows an estimate of the maximum number <br /> 
+                        of people you will likely encounter in the average subway car <br /> 
+                        on this trip for any given hour of the day."
                         data-iscapture="true"
                       >
                         <FontAwesomeIcon
@@ -317,7 +318,9 @@ function App() {
                         </span>{" "}
                         during the past two weeks{" "}
                         <a
-                          data-tip="This graph shows an estimated average of the number of people <br /> in each subway car after each stop for a trip starting at the specified time"
+                          data-tip="This graph shows an estimate of the average of the number of people <br />
+                           you will likely encounter in the average subway car after each stop <br /> 
+                           of this trip starting at the specified hour."
                           data-iscapture="true"
                         >
                           <FontAwesomeIcon
@@ -358,7 +361,8 @@ function App() {
                 <div className="date-range-text">
                   Estimates are based on data from {dateRange}{" "}
                   <a
-                    data-tip="Estimates are not realtime because the data about Turnstile <br /> entries and exists are only released on a weekly/bi-weekly basis"
+                    data-tip="Estimates are representative of the past two weeks and are not real-time <br />
+                    due to the weekly/bi-weekly publication schedule for the turnstile usage data."
                     data-iscapture="true"
                   >
                     <FontAwesomeIcon
