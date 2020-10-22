@@ -1,13 +1,13 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6abecf5a-8e9f-4b9e-818d-ed47c21ef863/deploy-status)](https://app.netlify.com/sites/howbusyismytrain/deploys)
 
 <p align="center">
-  <img src="public/DataClinicLogo.png" width="250"/>
+  <img src="public/site-logo.png" width="400"/>
 </p>
 
 # Subway Crowds
 
 <p align="center">
-  <img src="public/SubwayCrowds.png" width="500"/>
+  <img src="public/SubwayCrowds.png" width="600"/>
 </p>
 
 This site shows an estimate for how crowded an avergae subway car is across different routes over the last 2 weeks, last month, and last year. 
