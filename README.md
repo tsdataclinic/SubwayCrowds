@@ -53,25 +53,30 @@ This site shows an estimate for how crowded an avergae subway car is across diff
 - Aggregate estimates for each hour for each line and station
 
 
-
 ### Developing 
 
-To develop the web-app locally run 
+To develop the web-app locally, run 
 
 ```bash
 yarn
 yarn start 
 ```
 
-Submit PR's to the develop branch.
+To generate crowd estimates, run
+
+```bash
+///
+```
 
 ### Directory Structure
+
     subway-crowds/
     ├── LICENSE
     ├── README.md               <- The top-level README for developers using this project
     │
     ├── scripts
     │   ├── data                <- Crosswalks between different MTA data sets
+    │   ├── gcs_utils.py        <- Utility functions for accessing data from Google Stoarage bucket 
     │   ├── gtfs.py             <- Processing real-time gtfs data
     │   ├── tunrstile.py        <- Cleaning and interpolating turnstile data
     │   ├── heuristics.py       <- Logic for trip assignment and crowd estimation
