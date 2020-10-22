@@ -7,7 +7,7 @@
 # Subway Crowds
 
 <p align="center">
-  <img src="public/SubwayCrowding.png" width="500"/>
+  <img src="public/SubwayCrowds.png" width="500"/>
 </p>
 
 This site shows an estimate for how crowded an avergae subway car is across different routes over the last 2 weeks, last month, and last year. 
@@ -66,7 +66,7 @@ yarn start
 Submit PR's to the develop branch.
 
 ### Directory Structure
-    subway-crowding/
+    subway-crowds/
     ├── LICENSE
     ├── README.md               <- The top-level README for developers using this project
     │
