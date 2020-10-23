@@ -9,12 +9,45 @@ const HSlider = withStyles({
     color: "#27a3aa",
     height: 8,
   },
+  markLabel: {
+    fontFamily: 'lato',
+    fontSize: '12px',
+    color: 'grey'
+  }
 })(Slider);
 
 type HourSliderProps = {
   hour: number;
   onSetHour: (hour: number) => void;
 };
+
+const marks = [
+  {
+    value: 2,
+    label: '2 am',
+  },
+  {
+    value: 6,
+    label: '6 am',
+  },
+  {
+    value: 10,
+    label: '10 am',
+  },
+  {
+    value: 14,
+    label: '2 pm',
+  },
+  {
+    value: 18,
+    label: '6 pm',
+  },
+  {
+    value: 22,
+    label: '10 pm',
+  },
+];
+
 export function HourSlider({ hour, onSetHour }: HourSliderProps) {
   const formatValue = (hour: number) => am_pm_from_24(hour);
   return (
@@ -23,7 +56,7 @@ export function HourSlider({ hour, onSetHour }: HourSliderProps) {
         step={1}
         min={0}
         max={24}
-        marks={true}
+        marks={marks}
         getAriaValueText={formatValue}
         valueLabelFormat={formatValue}
         value={hour}

@@ -298,10 +298,10 @@ function App() {
                   <>
                     <h2>
                       Average max people per subway car for this trip during the
-                      past two weeks{" "}
+                      previous two weeks{" "}
                       <a
-                        data-tip="This graph shows an estimate of the maximum number <br /> 
-                        of people you will likely encounter in the average subway car <br /> 
+                        data-tip="This graph shows an estimate of the maximum number of people <br /> 
+                        you will likely encounter at any one time in the average subway car <br /> 
                         on this trip for any given hour of the day."
                         data-iscapture="true"
                       >
@@ -331,7 +331,7 @@ function App() {
                         <span style={{ fontWeight: "bold" }}>
                           {am_pm_from_24(hour)}
                         </span>{" "}
-                        during the past two weeks{" "}
+                        during the previous two weeks{" "}
                         <a
                           data-tip="This graph shows an estimate of the average of the number of people <br />
                            you will likely encounter in the average subway car after each stop <br /> 
@@ -376,7 +376,7 @@ function App() {
                 <div className="date-range-text">
                   Estimates are based on data from {dateRange}{" "}
                   <a
-                    data-tip="Estimates are representative of the past two weeks and are not real-time <br />
+                    data-tip="Estimates are representative of the previous two weeks and are not real-time <br />
                     due to the weekly/bi-weekly publication schedule for the turnstile usage data."
                     data-iscapture="true"
                   >
