@@ -51,7 +51,7 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
           </Styles.CloseButton>
         </Styles.Header>
         <Styles.Content>
-          <Styles.Form src="https://forms.gle/NGaRNuJcAtZ59G346" />
+          <Styles.Form src="https://forms.gle/T4wFtPcNgd8DhFBc7" />
         </Styles.Content>
       </Styles.Container>
     </Modal>
