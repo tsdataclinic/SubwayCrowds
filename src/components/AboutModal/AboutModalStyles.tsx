@@ -35,7 +35,38 @@ const TextColumn=styled.div`
         padding-bottom:0px;
     }
 `
+type AboutPageSegmentProps={
+    color?:string
+}
 
+export const AboutPageSegment = styled.div<AboutPageSegmentProps>`
+   width:100%;
+   box-sizing:border-box;
+   display:flex;
+   padding:20px;
+   flex-direction:column!important;
+   justify-content:center;
+   background-color: ${({color})=> color};
+   ${Header}{
+       color:white;
+   }
+   ${({color,theme})=> !color &&
+        `
+            :nth-child(3n){
+                background-color:${theme.colors.reds.light};
+            }
+            :nth-child(3n+1){
+                background-color:${theme.colors.oranges.normal};
+            }
+            :nth-child(3n+2){
+                background-color:${theme.colors.greens.light};
+            }
+   `}}
+   @media ${({ theme }) => theme.devices.tablet}{
+       flex-direction:row;
+       padding: 87px 60px 40px 60px
+    }
+`
 export const Styles={
     CloseButton,
     Container,
