@@ -1,31 +1,36 @@
 import React from "react";
 import { Styles } from "./HourSliderStyles";
-import Slider from "react-input-slider";
+import Slider from "@material-ui/core/Slider";
+import { withStyles } from "@material-ui/core/styles";
+import { am_pm_from_24 } from "../../utils";
+
+const HSlider = withStyles({
+  root: {
+    color: "#27a3aa",
+    height: 8,
+  },
+})(Slider);
 
 type HourSliderProps = {
   hour: number;
   onSetHour: (hour: number) => void;
 };
 export function HourSlider({ hour, onSetHour }: HourSliderProps) {
+  const formatValue = (hour: number) => am_pm_from_24(hour);
   return (
     <Styles.HourSliderContainer>
-      <Slider
-        axis="x"
-        x={hour}
-        onChange={({ x }) => onSetHour(x)}
-        xmax={23}
-        xmin={0}
-        xstep={1}
-        styles={{
-          track: {
-            width: "100%",
-          },
-          active: {
-            backgroundColor: "#27a3aa",
-          },
-        }}
+      <HSlider
+        step={1}
+        min={0}
+        max={24}
+        marks={true}
+        getAriaValueText={formatValue}
+        valueLabelFormat={formatValue}
+        value={hour}
+        onChange={(e: React.ChangeEvent<{}>, hour: number | number[]) =>
+          onSetHour(hour as number)
+        }
       />
-
       <Styles.Caption>
         Use slider to change the start time of the trip
       </Styles.Caption>
