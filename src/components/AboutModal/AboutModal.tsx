@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Modal from "react-modal";
 import {
   AboutPage,
@@ -44,6 +44,11 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
         content: contnetStyle,
         overlay: { zIndex: 1000 },
     };
+  useEffect(() => {
+    if (isOpen) {
+      Fathom.trackPageview({ url: "/feedback" });
+    }
+  }, [isOpen]);
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
