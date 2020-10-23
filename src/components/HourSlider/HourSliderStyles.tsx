@@ -8,7 +8,7 @@ const HourSliderContainer = styled.div`
   @media only screen and (min-width: 900px) {
     padding-left: 70px;
   }
-  height: 50px;
+  height: 65px;
   box-sizing: border-box;
 `;
 
