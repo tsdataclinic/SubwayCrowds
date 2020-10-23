@@ -178,11 +178,7 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
-<<<<<<< HEAD
-  const requirePassword = false;
-=======
   const requirePassword = !window.location.href.includes("localhost");
->>>>>>> c832ac6... adding styles and text for about modal
   if (passwordPassed === false && requirePassword) {
     return (
       <div className="App">
