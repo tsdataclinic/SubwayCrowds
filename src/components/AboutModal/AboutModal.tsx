@@ -112,11 +112,11 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
               </Body>
               <img
                 style={{
-                  width: "80%",
-                  maxWidth: "600px",
+                  width: "100%",
+                  maxWidth: "800px",
                   alignSelf: "center",
                 }}
-                src="/crowding_methodology.png"
+                src="/crowding_methodology.svg"
               />
               <Body>
                 We've open sourced the methodology and welcome the opportunity to make improvements. To learn more,
