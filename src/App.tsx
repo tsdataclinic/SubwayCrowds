@@ -178,7 +178,7 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
-  const requirePassword = false;
+  const requirePassword = !window.location.href.includes("localhost");
   if (passwordPassed === false && requirePassword) {
     return (
       <div className="App">

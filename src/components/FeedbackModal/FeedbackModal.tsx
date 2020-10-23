@@ -3,6 +3,7 @@ import Modal from "react-modal";
 import { Styles } from "./FeedbackModalStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import {useMedia} from 'use-media'
 import * as Fathom from "fathom-client";
 
 const customStyles = {
@@ -26,6 +27,19 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
       Fathom.trackPageview({ url: "/feedback" });
     }
   }, [isOpen]);
+
+  const smallScreen = useMedia("(max-width: 480px)");
+  const contnetStyle = smallScreen ? {} : 
+     {
+        maxWidth: "60vw",
+        left: "20vw",
+        maxHeight: "80vh",
+        top: "10vh",
+    }
+    const customStyles = {
+        content: contnetStyle,
+        overlay: { zIndex: 1000 },
+    };
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
