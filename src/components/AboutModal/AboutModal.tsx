@@ -82,7 +82,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
           <AboutPage>
             <ProjectInfoSection
               appName={"Subway Crowds"}
-              appDescription="We built subwaycrowds to estimate how crowded your subway trip is likely to be."
+              appDescription="We built SubwayCrowds to estimate how crowded your subway trip is likely to be."
               appSubHeading="Plan your commute better"
             >
               <Body>
@@ -92,12 +92,18 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 transportation. Is it possible to move so many people while
                 maintaining social distancing?
               </Body>
+              <Body>
+                To help inform this question, SubwayCrowds is designed to
+                identify for specific trips when subway cars are likely to be
+                most crowded so that individuals might alter their travel time
+                or route.
+              </Body>
             </ProjectInfoSection>
             <AboutPageSegment color="white">
               <TextColumn>
                 <img
                   style={{
-                    width: "100%",
+                    width: "80%",
                     maxWidth: "600px",
                     alignSelf: "center",
                   }}
@@ -105,16 +111,20 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 />
               </TextColumn>
               <TextColumn>
+              <h1 style={{color: "#70d6e3", fontWeight: "normal"}}>A multi-step heuristic approach</h1>
                 <Body>
-                  To help inform this question, subwaycrowds is designed to
-                  identify for specific trips when subway cars are likely to be
-                  most crowded so that individuals might alter their travel time
-                  or route.
+                  The task of estimating the crowdedness of a train sounds straightforward yet it is anything but, 
+                  especially given the limitations of publicly available data. The methodology we adopted is our 
+                  best guess approximation and can be broken down into the four steps on the left. 
+                </Body>
+                <Body>
+                  We've open sourced the methodology and welcome the opportunity to make improvements. To learn more,
+                  check out our <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">repo</a> for more details and source code.
                 </Body>
               </TextColumn>
             </AboutPageSegment>
             <DataClinicSection />
-            <ContributeSection appName="Subway Crowds" />
+            <ContributeSection appName="SubwayCrowds" />
           </AboutPage>
         </Styles.Content>
       </Styles.Container>
