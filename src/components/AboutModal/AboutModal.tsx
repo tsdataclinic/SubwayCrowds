@@ -3,7 +3,6 @@ import styled from "styled-components";
 import Modal from "react-modal";
 import {
   AboutPage,
-  AboutPageSegment,
   ContributeSection,
   DataClinicSection,
   ProjectInfoSection,
@@ -12,7 +11,7 @@ import {
 import { Header, Body, SubHeader } from "@dataclinic/typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import { Styles } from "./AboutModalStyles";
+import { AboutPageSegment, Styles } from "./AboutModalStyles";
 import { useMedia } from "use-media";
 import * as Fathom from "fathom-client";
 
@@ -100,28 +99,24 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
               </Body>
             </ProjectInfoSection>
             <AboutPageSegment color="white">
-              <TextColumn>
-                <img
-                  style={{
-                    width: "80%",
-                    maxWidth: "600px",
-                    alignSelf: "center",
-                  }}
-                  src="/crowding_methodology.png"
-                />
-              </TextColumn>
-              <TextColumn>
               <h1 style={{color: "#70d6e3", fontWeight: "normal"}}>A multi-step heuristic approach</h1>
-                <Body>
-                  The task of estimating the crowdedness of a train sounds straightforward yet it is anything but, 
-                  especially given the limitations of publicly available data. The methodology we adopted is our 
-                  best guess approximation and can be broken down into the four steps on the left. 
-                </Body>
-                <Body>
-                  We've open sourced the methodology and welcome the opportunity to make improvements. To learn more,
-                  check out our <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">repo</a> for more details and source code.
-                </Body>
-              </TextColumn>
+              <Body>
+                The task of estimating the crowdedness of a train sounds straightforward yet it is anything but, 
+                especially given the limitations of publicly available data. The methodology we adopted is our 
+                best guess approximation and can be broken down into the four steps below. 
+              </Body>
+              <img
+                style={{
+                  width: "80%",
+                  maxWidth: "600px",
+                  alignSelf: "center",
+                }}
+                src="/crowding_methodology.png"
+              />
+              <Body>
+                We've open sourced the methodology and welcome the opportunity to make improvements. To learn more,
+                check out our <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">repo</a> for more details and source code.
+              </Body>
             </AboutPageSegment>
             <DataClinicSection />
             <ContributeSection appName="SubwayCrowds" />
