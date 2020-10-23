@@ -51,7 +51,12 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
   const smallScreen = useMedia("(max-width: 480px)");
   console.log("Small screen is ", smallScreen);
   const contnetStyle = smallScreen
-    ? {}
+    ? {
+      maxWidth: "100vw",
+      left: "10vw",
+      maxHeight: "80vh",
+      top: "10vh",
+    }
     : {
         maxWidth: "60vw",
         left: "20vw",

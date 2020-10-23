@@ -29,7 +29,12 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
   }, [isOpen]);
 
   const smallScreen = useMedia("(max-width: 480px)");
-  const contnetStyle = smallScreen ? {} : 
+  const contentStyle = smallScreen ? {
+    maxWidth: "100vw",
+    left: "10vw",
+    maxHeight: "80vh",
+    top: "10vh",
+} : 
      {
         maxWidth: "60vw",
         left: "20vw",
@@ -37,7 +42,7 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
         top: "10vh",
     }
     const customStyles = {
-        content: contnetStyle,
+        content: contentStyle,
         overlay: { zIndex: 1000 },
     };
 
