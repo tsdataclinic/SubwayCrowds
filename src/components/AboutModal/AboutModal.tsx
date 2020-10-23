@@ -1,16 +1,19 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
+import styled from "styled-components";
 import Modal from "react-modal";
 import {
   AboutPage,
   AboutPageSegment,
   ContributeSection,
   DataClinicSection,
+  ProjectInfoSection,
+  TextColumn,
 } from "@dataclinic/about-page";
 import { Header, Body, SubHeader } from "@dataclinic/typography";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Styles } from "./AboutModalStyles";
-import {useMedia} from 'use-media'
+import { useMedia } from "use-media";
 import * as Fathom from "fathom-client";
 
 const customStyles = {
@@ -30,20 +33,36 @@ type AboutModalProps = {
   onClose: () => void;
 };
 
+const BlackTextColumn = styled(TextColumn)`
+  p {
+    color: black !important;
+  }
+`;
+const BodyBlack = styled.p`
+  color: black !important;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.875rem;
+  font-family: "Lato", sans-serif;
+  padding: 10px 0px;
+`;
+
 export function AboutModal({ isOpen, onClose }: AboutModalProps) {
   const smallScreen = useMedia("(max-width: 480px)");
-  console.log("Small screen is ", smallScreen)
-  const contnetStyle = smallScreen ? {} : 
-     {
+  console.log("Small screen is ", smallScreen);
+  const contnetStyle = smallScreen
+    ? {}
+    : {
         maxWidth: "60vw",
         left: "20vw",
         maxHeight: "80vh",
         top: "10vh",
-    }
-    const customStyles = {
-        content: contnetStyle,
-        overlay: { zIndex: 1000 },
-    };
+      };
+  const customStyles = {
+    content: contnetStyle,
+    overlay: { zIndex: 1000 },
+  };
   useEffect(() => {
     if (isOpen) {
       Fathom.trackPageview({ url: "/feedback" });
@@ -61,63 +80,38 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
         </Styles.Header>
         <Styles.Content>
           <AboutPage>
-            <AboutPageSegment>
-              <Styles.TextColumn>
-                <Header>Subway Crowds</Header>
+            <ProjectInfoSection
+              appName={"Subway Crowds"}
+              appDescription="We built subwaycrowds to estimate how crowded your subway trip is likely to be."
+              appSubHeading="Plan your commute better"
+            >
+              <Body>
+                As the city continues to adjust to the new normal and people
+                begin heading back to work and school, a central question is how
+                will this work given NYC commuters reliance on public
+                transportation. Is it possible to move so many people while
+                maintaining social distancing?
+              </Body>
+            </ProjectInfoSection>
+            <AboutPageSegment color="white">
+              <TextColumn>
+                <img
+                  style={{
+                    width: "100%",
+                    maxWidth: "600px",
+                    alignSelf: "center",
+                  }}
+                  src="/crowding_methodology.png"
+                />
+              </TextColumn>
+              <TextColumn>
                 <Body>
-                  As the city continues to reopen, more people are heading back
-                  into work and students are attending colleges or schools
-                  in-person. A central question on many minds is how exactly
-                  this will all work given NYC commuters reliance on public
-                  transportation. Is it possible to safely and effectively move
-                  so many people while maintaining social distancing?
+                  To help inform this question, subwaycrowds is designed to
+                  identify for specific trips when subway cars are likely to be
+                  most crowded so that individuals might alter their travel time
+                  or route.
                 </Body>
-                <Body>
-                  To answer this question, we envisioned an app that provides
-                  the city and commuters some way of understanding how crowded
-                  their route might be from the perspective of an average subway
-                  car. The goal is to identify when train cars in a specific
-                  route are most crowded so that individuals might alter their
-                  travel time or specific trip if possible.
-                </Body>
-
-                <Header>Methodology</Header>
-                <Body>
-                  Estimating crowdedness of subway cars relies on data made
-                  public by the MTA, such as the turnstile usage data, and
-                  General Transit Feed Specification (GTFS) data. The
-                  methodology we adopted is our best guess approximation and can
-                  be broken down into four steps as illustrated below.
-                </Body>
-                <img style={{width:'100%',maxWidth:'600px', alignSelf:'center'}} src='/crowding_methodology.png' />
-
-                <SubHeader>Train schedules</SubHeader>
-
-                <Body>
-                  Process realtime GTFS data to get the trips taken by each
-                  train everyday
-                </Body>
-
-                <SubHeader>Commuters</SubHeader>
-
-                <Body>
-                  Clean and interpolate Turnstile usage data to get a sense of
-                  number of people at each station at every minute
-                </Body>
-
-                <SubHeader>Trip assignment</SubHeader>
-
-                <Body>
-                  Apply heuristics to assign people waiting at the station
-                  across different lines and directions
-                </Body>
-
-                <SubHeader>Crowding Estimation</SubHeader>
-                <Body>
-                  Add people waiting at a station to the trip, subtract exits at
-                  the station from the trip to estimate crowdedness
-                </Body>
-              </Styles.TextColumn>
+              </TextColumn>
             </AboutPageSegment>
             <DataClinicSection />
             <ContributeSection appName="Subway Crowds" />
