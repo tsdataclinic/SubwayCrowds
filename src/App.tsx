@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import SentanceDropDown from "./components/SentanceDropDown/SentanceDropDown";
 import { DataContext } from "./Contexts/DataContext";
 import ReactTooltip from "react-tooltip";
-
+import * as Fathom from "fathom-client";
 import useMedia from "use-media";
 import {
   useMaxCrowdingByHourForTrip,
@@ -47,6 +47,12 @@ import { Styles } from "./AppSyles";
 function App() {
   const [loadedParams, setLoadedParams] = useState(false);
   const [passwordPassed, setPasswordPassed] = useState(false);
+
+  // Track initial visit
+  useEffect(() => {
+    Fathom.load("PELBVLNP");
+    // Fathom.trackPageview();
+  }, []);
 
   // Media queries for custom mobile layout
   const shouldUseTabs = useMedia("(max-width: 480px)");
@@ -121,6 +127,15 @@ function App() {
     setEndStationID(startStationID);
   };
 
+  //Track when we have a valid route.
+  useEffect(() => {
+    if (promptComplete) {
+      Fathom.trackPageview({
+        url: `trip/${selectedLineID}/${startStationID}/${endStationID}`,
+      });
+    }
+  }, [promptComplete, selectedLineID, startStationID, endStationID]);
+
   // Parses the url params to get the start and end station ids and the line.
   // If it finds them sets the appropriate state. Will not run untill the data
   // is loaded in to prevent a race condition.
@@ -163,6 +178,7 @@ function App() {
     }
   }, [startStationID, endStationID, selectedLineID, loadedParams]);
 
+  // const requirePassword = !window.location.href.includes("localhost");
   const requirePassword = false;
   if (passwordPassed === false && requirePassword) {
     return (
@@ -283,10 +299,10 @@ function App() {
                   <>
                     <h2>
                       Average max people per subway car for this trip during the
-                      past two weeks{" "}
+                      previous two weeks{" "}
                       <a
-                        data-tip="This graph shows an estimate of the maximum number <br /> 
-                        of people you will likely encounter in the average subway car <br /> 
+                        data-tip="This graph shows an estimate of the maximum number of people <br /> 
+                        you will likely encounter at any one time in the average subway car <br /> 
                         on this trip for any given hour of the day."
                         data-iscapture="true"
                       >
@@ -316,7 +332,7 @@ function App() {
                         <span style={{ fontWeight: "bold" }}>
                           {am_pm_from_24(hour)}
                         </span>{" "}
-                        during the past two weeks{" "}
+                        during the previous two weeks{" "}
                         <a
                           data-tip="This graph shows an estimate of the average of the number of people <br />
                            you will likely encounter in the average subway car after each stop <br /> 
@@ -361,7 +377,7 @@ function App() {
                 <div className="date-range-text">
                   Estimates are based on data from {dateRange}{" "}
                   <a
-                    data-tip="Estimates are representative of the past two weeks and are not real-time <br />
+                    data-tip="Estimates are representative of the previous two weeks and are not real-time <br />
                     due to the weekly/bi-weekly publication schedule for the turnstile usage data."
                     data-iscapture="true"
                   >
