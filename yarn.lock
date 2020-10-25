@@ -1160,22 +1160,22 @@
   resolved "https://registry.yarnpkg.com/@csstools/normalize.css/-/normalize.css-10.1.0.tgz#f0950bba18819512d42f7197e56c518aa491cf18"
   integrity sha512-ij4wRiunFfaJxjB0BdrYHIH8FxBJpOwNPhhAcunlmPdXudL1WQV1qoP9un6JsEBAgQH+7UXyyjh0g7jTxXK6tg==
 
-"@dataclinic/about-page@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@dataclinic/about-page/-/about-page-0.3.3.tgz#446a383de3a2b3cd006ccf29661bf754ab0901cf"
-  integrity sha512-DBG7sGTHV2iSFHDpDLFQt02Z5PCsQyO9tm540Q+E7y7oK1oWrfQ+gUhODNKdTJOWnQv8wWdssSwziZa82vdotw==
+"@dataclinic/about-page@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@dataclinic/about-page/-/about-page-0.3.4.tgz#4f1177815cc429acbfe7185908cf55686b7b6bb5"
+  integrity sha512-UZo8W2VZfRl27b1ojxZ6hrLC+AgPvGQpPGidB+K5K7mEVP7od7u3vukCmjBPn6INwNRL5gAo/PSxH02xoAflIg==
   dependencies:
-    "@dataclinic/icons" "^0.3.3"
-    "@dataclinic/typography" "^0.3.3"
+    "@dataclinic/icons" "^0.3.4"
+    "@dataclinic/typography" "^0.3.4"
     "@types/react" "^16.9.33"
     "@types/styled-components" "^5.0.1"
     react "^16.8.6"
     styled-components "^5.1.0"
 
-"@dataclinic/icons@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@dataclinic/icons/-/icons-0.3.3.tgz#4952db4c6f5deb5311984377e157506c180a5877"
-  integrity sha512-Xp9HNERGVMfZkI4Gezn0wm9vVpE6rpo27N1BNuj3UOeXKQkGZqtyeNtmYhwWrhU2Qcnr06w/cmiU4q/DABhr1A==
+"@dataclinic/icons@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@dataclinic/icons/-/icons-0.3.4.tgz#afe531148d80a2028c48e4ac6647d9455e871cbe"
+  integrity sha512-qtOAPeCPBqmUZLXEoA1opW9M5EBpPxxL0jM6AS9EWWMnO0c7TaOTJoC/yuOWrUJcSU2qSGBfm9yIT+nMrxPSGQ==
   dependencies:
     "@fortawesome/fontawesome-svg-core" "^1.2.28"
     "@fortawesome/free-brands-svg-icons" "^5.13.0"
@@ -1187,10 +1187,10 @@
     react "^16.8.6"
     styled-components "^5.1.0"
 
-"@dataclinic/theme@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@dataclinic/theme/-/theme-0.3.3.tgz#3f1e7f9749f33c8569fe49542ae2fb7b83b2bc42"
-  integrity sha512-6YA60X9jac3Vpa/2jMiWbM6Xvvp/wMWMiur2DqdNbE4bA56ST1OrXPLmeLuid73RjxkueICw9YH7uun7fMOe4Q==
+"@dataclinic/theme@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@dataclinic/theme/-/theme-0.3.4.tgz#1b3dc1d5479aa6049fef17451a0c36ec2d5524dc"
+  integrity sha512-UBUVtN28euI0/OGUQ17nvAPVddcR9opOOlwfS57Xm4nm9fmVHvAsUWQIMcUzgOlw67yptriamtmrcvF8dj51Ug==
   dependencies:
     "@types/react" "^16.9.33"
     "@types/styled-components" "^5.0.1"
@@ -1198,12 +1198,12 @@
     styled-components "^5.1.0"
     typeface-lato "^0.0.75"
 
-"@dataclinic/typography@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@dataclinic/typography/-/typography-0.3.3.tgz#1a37ab741650eaeeea1a7cc8ba912812072f6391"
-  integrity sha512-NiyNbg/5aZFNl4LGnLEZ5O4aF5gQhCiS3R91a1fBnE1WKp10zkeztSayFSSQNg7hRj7a2REwMjIsdXeLsgJeIg==
+"@dataclinic/typography@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@dataclinic/typography/-/typography-0.3.4.tgz#a7e19488253e48a7ba6b0467deccb4ec3d98a27f"
+  integrity sha512-K6iX+UwEupo9An3O2ohnHBttP4JpmPeLAa1DDZuEpwEoMZXLMiNNOjl58i9tIMT+9h1p28OmOKiHnXdiT8WeeA==
   dependencies:
-    "@dataclinic/theme" "^0.3.3"
+    "@dataclinic/theme" "^0.3.4"
     "@types/react" "^16.9.33"
     "@types/styled-components" "^5.0.1"
     lato-font "^3.0.0"
