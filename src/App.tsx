@@ -365,7 +365,7 @@ function App() {
           <footer>
             <div className="info-share">
               <div className="info">
-                <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                <a href="https://github.com/tsdataclinic/SubwayCrowds">
                   <img src={Giticon} height={20} width={20} />
                 </a>
                 <a href="https://medium.com/dataclinic">
