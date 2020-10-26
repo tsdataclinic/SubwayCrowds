@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { Styles } from "./FeedbackModalStyles";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
-import {useMedia} from 'use-media'
+import { useMedia } from "use-media";
 import * as Fathom from "fathom-client";
 
 const customStyles = {
@@ -29,29 +29,40 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
   }, [isOpen]);
 
   const smallScreen = useMedia("(max-width: 480px)");
-  const contnetStyle = smallScreen ? {} : 
-     {
-        maxWidth: "60vw",
-        left: "20vw",
-        maxHeight: "80vh",
-        top: "10vh",
-    }
-    const customStyles = {
-        content: contnetStyle,
-        overlay: { zIndex: 1000 },
-    };
+  const contentStyle = smallScreen
+    ? {
+        overlay: {},
+        content: {
+          width: "100%",
+          left: "0px",
+          top: "0px",
+          padding: "0px",
+          margin: "0px",
+        },
+      }
+    : {
+        overlay: {},
+        content: {
+          maxWidth: "60vw",
+          left: "20vw",
+          maxHeight: "80vh",
+          top: "10vh",
+        },
+      };
+
+  const customStyles = {
+    content: contentStyle.content,
+    overlay: { zIndex: 1000, ...contentStyle.overlay },
+  };
 
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
       <Styles.Container>
-        <Styles.Header>
-          <h1>Feedback</h1>
-          <Styles.CloseButton onClick={onClose}>
-            <FontAwesomeIcon icon={faTimes} />
-          </Styles.CloseButton>
-        </Styles.Header>
+        <Styles.CloseButton onClick={onClose}>
+          <FontAwesomeIcon icon={faTimes} />
+        </Styles.CloseButton>
         <Styles.Content>
-          <Styles.Form src="https://forms.gle/T4wFtPcNgd8DhFBc7" />
+          <Styles.Form src="https://forms.gle/w5Qhz5aefCind7rQ7" />
         </Styles.Content>
       </Styles.Container>
     </Modal>

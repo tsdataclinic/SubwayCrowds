@@ -26,7 +26,10 @@ const BarsContainer = styled.ul`
     flex:1;
     height:100%;
     align-items:center;
-    margin-top:10px;
+    margin-top:15px;
+    @media only screen and (min-width:900px){
+        margin-top:10px;
+      }
 `
 
 const StopName = styled.li`
@@ -42,6 +45,10 @@ const StopName = styled.li`
     justify-content:center;
     color: grey;
     font-weight:bold;
+    font-size:13px;
+    @media only screen and (min-width:900px){
+        font-size:16px;
+      }
     span{
         overflow: hidden;
         white-space: nowrap;
@@ -120,7 +127,10 @@ const StopSquares = styled.div`
     align-items:center;
     span{
         font-size: 10px;
-        margin-left:10px;
+        margin-left:5px;
+        @media only screen and (min-width:900px){
+            margin-left: 10px;
+        }
     }
 
 `

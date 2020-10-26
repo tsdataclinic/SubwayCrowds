@@ -13,9 +13,14 @@ const HourSliderContainer = styled.div`
 `;
 
 const Caption = styled.div`
-  margin-top: 5px;
   color: grey;
   font-size: 12px;
+  padding-bottom: 10px;
+  @media only screen and (min-width: 900px) {
+    margin-top: 5px;
+    padding-left: 70px;
+    font-size: 12px;
+  }
 `;
 export const Styles = {
   HourSliderContainer,
