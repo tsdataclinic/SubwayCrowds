@@ -368,7 +368,7 @@ function App() {
                 <a href="https://github.com/tsdataclinic/SubwayCrowds">
                   <img src={Giticon} height={20} width={20} />
                 </a>
-                <a href="https://medium.com/dataclinic">
+                <a href="https://medium.com/dataclinic/commuting-during-covid-19-using-open-data-to-predict-nyc-subway-crowds-f1dcabc4fd99">
                   <img src={Mediumicon} height={20} width={20} />
                 </a>
               </div>
