@@ -373,6 +373,13 @@ function App() {
                 </a>
               </div>
 
+              {!promptComplete && (
+                <div className="date-range-text">
+                  Note: Estimates are not available for the L line due to
+                  reporting inconsistencies. We hope to be able to add it soon!{" "}
+                </div>
+              )}
+
               {promptComplete && (
                 <div className="date-range-text">
                   Estimates are based on data from {dateRange}{" "}
