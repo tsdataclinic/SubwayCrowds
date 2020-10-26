@@ -1,0 +1,538 @@
+equipment_id,line,direction,station
+EL122,6,manhattan,Pelham Bay Park
+EL124,A,north,175 St
+EL124,A,south,175 St
+EL126,5,south,125 St
+EL126,4,south,125 St
+EL126,6,north,125 St
+EL126,4,north,125 St
+EL126,5,north,125 St
+EL126,6,south,125 St
+EL127,5,bronx,Simpson St
+EL127,2,bronx,Simpson St
+EL128,5,manhattan,Simpson St
+EL128,2,manhattan,Simpson St
+EL129,5,bronx,149 St - 3 Av
+EL129,2,bronx,149 St - 3 Av
+EL130,2,manhattan,149 St - 3 Av
+EL130,5,manhattan,149 St - 3 Av
+EL132,4,woodlawn,161 St - Yankee Stadium
+EL133,4,manhattan,161 St - Yankee Stadium
+EL134,B,manhattan,161 St - Yankee Stadium
+EL134,D,manhattan,161 St - Yankee Stadium
+EL135,D,north,161 St - Yankee Stadium
+EL135,B,north,161 St - Yankee Stadium
+EL135,4,norwood 205 st,161 St - Yankee Stadium
+EL135,D,norwood 205 st,161 St - Yankee Stadium
+EL135,D,south,161 St - Yankee Stadium
+EL135,B,norwood 205 st,161 St - Yankee Stadium
+EL135,B,south,161 St - Yankee Stadium
+EL137,5,manhattan,Pelham Pkwy
+EL137,2,manhattan,Pelham Pkwy
+EL138,2,wakefield 241 st,Pelham Pkwy
+EL138,5,wakefield 241 st,Pelham Pkwy
+EL140,C,north,168 St
+EL140,A,north,168 St
+EL140,C,south,168 St
+EL141,A,south,168 St
+EL141,C,south,168 St
+EL143,D,south,125 St
+EL143,C,south,125 St
+EL143,A,south,125 St
+EL143,B,south,125 St
+EL144,B,north,125 St
+EL144,A,north,125 St
+EL144,C,north,125 St
+EL144,D,north,125 St
+EL145,2,south,96 St
+EL145,3,south,96 St
+EL145,1,south,96 St
+EL146,3,north,96 St
+EL146,2,north,96 St
+EL146,1,north,96 St
+EL149,A,south,207 St - Inwood
+EL159,5,bronx,East 180 St
+EL159,2,bronx,East 180 St
+EL160,5,manhattan,East 180 St
+EL160,2,manhattan,East 180 St
+EL178,1,south,Dyckman St
+EL180,3,bronx,135 St
+EL180,2,bronx,135 St
+EL181,3,south,135 St
+EL181,2,south,135 St
+EL182,2,wakefield 241 st,Gun Hill Rd
+EL182,5,wakefield 241 st,Gun Hill Rd
+EL183,5,manhattan,Gun Hill Rd
+EL183,2,manhattan,Gun Hill Rd
+EL184,1,manhattan,231 St
+EL185,1,van cortlandt park,231 St
+EL187,4,woodlawn,Fordham Rd
+EL188,4,manhattan,Fordham Rd
+EL190,B,south,Kingsbridge Road
+EL190,B,north,Kingsbridge Road
+EL190,D,south,Kingsbridge Road
+EL190,B,norwood 205 st,Kingsbridge Road
+EL190,D,north,Kingsbridge Road
+EL190,D,norwood 205 st,Kingsbridge Road
+EL191,D,manhattan,Kingsbridge Road
+EL191,B,manhattan,Kingsbridge Road
+EL193,5,wakefield 241 st,233 St
+EL193,2,wakefield 241 st,233 St
+EL194,5,manhattan,233 St
+EL194,2,manhattan,233 St
+EL196,6,pelham bay parkway,Hunts Point
+EL197,6,manhattan,Hunts Point
+EL202,6,south,51 St
+EL202,E,north,51 St
+EL202,M,north,51 St
+EL202,M,south,51 St
+EL202,E,south,51 St
+EL205,5,south,42 St - Grand Central
+EL205,6,south,42 St - Grand Central
+EL205,4,south,42 St - Grand Central
+EL206,5,north,42 St - Grand Central
+EL206,4,north,42 St - Grand Central
+EL206,6,north,42 St - Grand Central
+EL208X,C,south,50 St
+EL208X,E,south,50 St
+EL209,D,south,34 St - Herald Sq
+EL209,F,south,34 St - Herald Sq
+EL209,M,south,34 St - Herald Sq
+EL209,B,south,34 St - Herald Sq
+EL210,F,north,34 St - Herald Sq
+EL210,D,north,34 St - Herald Sq
+EL210,M,north,34 St - Herald Sq
+EL210,B,north,34 St - Herald Sq
+EL211,Q,south,34 St - Herald Sq
+EL211,W,south,34 St - Herald Sq
+EL211,N,south,34 St - Herald Sq
+EL211,R,south,34 St - Herald Sq
+EL212,Q,north,34 St - Herald Sq
+EL212,R,north,34 St - Herald Sq
+EL212,N,north,34 St - Herald Sq
+EL212,W,north,34 St - Herald Sq
+EL214,1,north,34 St - Penn
+EL215,3,south,34 St - Penn
+EL215,2,south,34 St - Penn
+EL215,3,north,34 St - Penn
+EL215,2,north,34 St - Penn
+EL216,1,south,34 St - Penn
+EL218,L,south,14 St - Union Sq
+EL218,L,north,14 St - Union Sq
+EL219,W,north,14 St - Union Sq
+EL219,N,north,14 St - Union Sq
+EL219,Q,north,14 St - Union Sq
+EL219,R,north,14 St - Union Sq
+EL220,N,south,14 St - Union Sq
+EL220,W,south,14 St - Union Sq
+EL220,R,south,14 St - Union Sq
+EL220,Q,south,14 St - Union Sq
+EL222,C,south,14 St - 8 Av
+EL222,E,south,14 St - 8 Av
+EL222,A,south,14 St - 8 Av
+EL223,C,north,14 St - 8 Av
+EL223,E,north,14 St - 8 Av
+EL223,A,north,14 St - 8 Av
+EL224,L,south,8 Av - 14 St
+EL224,L,north,8 Av - 14 St
+EL225,E,north,34 St - Penn
+EL225,C,north,34 St - Penn
+EL226,C,north,34 St - Penn
+EL226,E,north,34 St - Penn
+EL227,A,north,34 St - Penn
+EL227,A,south,34 St - Penn
+EL228,E,south,34 St - Penn
+EL228,C,south,34 St - Penn
+EL229,R,south,Times Sq - 42 St
+EL229,Q,south,Times Sq - 42 St
+EL229,N,south,Times Sq - 42 St
+EL229,W,south,Times Sq - 42 St
+EL230,N,north,Times Sq - 42 St
+EL230,R,north,Times Sq - 42 St
+EL230,W,north,Times Sq - 42 St
+EL230,Q,north,Times Sq - 42 St
+EL232,7,south,Times Sq - 42 St
+EL232,3,south,Times Sq - 42 St
+EL232,7,north,Times Sq - 42 St
+EL232,2,south,Times Sq - 42 St
+EL232,1,south,Times Sq - 42 St
+EL233,3,north,Times Sq - 42 St
+EL233,1,north,Times Sq - 42 St
+EL233,2,north,Times Sq - 42 St
+EL235,D,north,47-50 St - Rockefeller Ctr
+EL235,F,north,47-50 St - Rockefeller Ctr
+EL235,B,north,47-50 St - Rockefeller Ctr
+EL235,M,north,47-50 St - Rockefeller Ctr
+EL236,B,south,47-50 St - Rockefeller Ctr
+EL236,F,south,47-50 St - Rockefeller Ctr
+EL236,D,south,47-50 St - Rockefeller Ctr
+EL236,M,south,47-50 St - Rockefeller Ctr
+EL237,1,north,66 St - Lincoln Center
+EL238,1,south,66 St - Lincoln Center
+EL239,3,north,72 St
+EL239,2,north,72 St
+EL239,1,north,72 St
+EL240,2,south,72 St
+EL240,1,south,72 St
+EL240,3,south,72 St
+EL244,7,north,42 St - Grand Central
+EL244,7,south,42 St - Grand Central
+EL245,M,south,Lexington Av / 53 St
+EL245,E,south,Lexington Av / 53 St
+EL245,M,north,Lexington Av / 53 St
+EL245,E,north,Lexington Av / 53 St
+EL247,Q,south,96 St / 2 Av
+EL249,Q,north,86 St / 2 Av
+EL249,Q,south,86 St / 2 Av
+EL259,Q,north,72 St / 2 Av
+EL259,Q,south,72 St / 2 Av
+EL268X,W,north,49 St
+EL268X,R,north,49 St
+EL268X,N,north,49 St
+EL273,6,north,86 St
+EL277,1,south,59 St - Columbus Cir
+EL278,A,north,59 St - Columbus Cir
+EL278,C,north,59 St - Columbus Cir
+EL278,D,north,59 St - Columbus Cir
+EL278,B,north,59 St - Columbus Cir
+EL279,C,north,59 St - Columbus Cir
+EL279,B,north,59 St - Columbus Cir
+EL279,A,north,59 St - Columbus Cir
+EL279,D,north,59 St - Columbus Cir
+EL279,1,north,59 St - Columbus Cir
+EL279X,6,south,28 St
+EL280,C,south,59 St - Columbus Cir
+EL280,D,north,59 St - Columbus Cir
+EL280,A,north,59 St - Columbus Cir
+EL280,B,south,59 St - Columbus Cir
+EL280,B,north,59 St - Columbus Cir
+EL280,A,south,59 St - Columbus Cir
+EL280,C,north,59 St - Columbus Cir
+EL280,D,south,59 St - Columbus Cir
+EL280,1,north,59 St - Columbus Cir
+EL298,6,north,23 St
+EL299,6,south,23 St
+EL300X,2,manhattan,Atlantic Av-Barclays Ctr
+EL300X,3,manhattan,Atlantic Av-Barclays Ctr
+EL301,2,north,Atlantic Av-Barclays Ctr
+EL301,3,south,Atlantic Av-Barclays Ctr
+EL301,2,south,Atlantic Av-Barclays Ctr
+EL301,3,north,Atlantic Av-Barclays Ctr
+EL302,N,bay ridge,Atlantic Av-Barclays Ctr
+EL302,D,bay ridge,Atlantic Av-Barclays Ctr
+EL302,R,bay ridge,Atlantic Av-Barclays Ctr
+EL303,N,manhattan,Atlantic Av-Barclays Ctr
+EL303,R,manhattan,Atlantic Av-Barclays Ctr
+EL303,D,manhattan,Atlantic Av-Barclays Ctr
+EL304,2,brooklyn,Atlantic Av-Barclays Ctr
+EL304,3,brooklyn,Atlantic Av-Barclays Ctr
+EL305,5,south,Atlantic Av-Barclays Ctr
+EL305,4,north,Atlantic Av-Barclays Ctr
+EL305,4,south,Atlantic Av-Barclays Ctr
+EL305,5,north,Atlantic Av-Barclays Ctr
+EL306,2,manhattan,Atlantic Av-Barclays Ctr
+EL306,3,manhattan,Atlantic Av-Barclays Ctr
+EL307,Q,south,Atlantic Av-Barclays Ctr
+EL307,B,north,Atlantic Av-Barclays Ctr
+EL307,B,south,Atlantic Av-Barclays Ctr
+EL307,Q,north,Atlantic Av-Barclays Ctr
+EL315,5,south,Brooklyn Bridge - City Hall
+EL315,6,north,Brooklyn Bridge - City Hall
+EL315,4,south,Brooklyn Bridge - City Hall
+EL315,6,south,Brooklyn Bridge - City Hall
+EL316,4,north,Brooklyn Bridge - City Hall
+EL316,5,north,Brooklyn Bridge - City Hall
+EL316,6,north,Brooklyn Bridge - City Hall
+EL318,2,north,Borough Hall
+EL318,3,north,Borough Hall
+EL318,2,manhattan,Borough Hall
+EL318,2,south,Borough Hall
+EL318,3,south,Borough Hall
+EL318,4,manhattan,Borough Hall
+EL318,5,manhattan,Borough Hall
+EL318,3,manhattan,Borough Hall
+EL319,5,south,Flatbush Av Brooklyn College
+EL319,2,north,Flatbush Av Brooklyn College
+EL319,5,north,Flatbush Av Brooklyn College
+EL319,2,south,Flatbush Av Brooklyn College
+EL320,2,manhattan,Church Av
+EL320,5,manhattan,Church Av
+EL321,5,flatbush av brooklyn college,Church Av
+EL321,2,flatbush av brooklyn college,Church Av
+EL323,4,north,Crown Hts - Utica Av
+EL323,3,south,Crown Hts - Utica Av
+EL323,4,south,Crown Hts - Utica Av
+EL323,3,north,Crown Hts - Utica Av
+EL324,6,north,Canal St
+EL325,6,south,Canal St
+EL329,D,north,Broadway-Lafayette/Bleecker St
+EL329,M,north,Broadway-Lafayette/Bleecker St
+EL329,F,north,Broadway-Lafayette/Bleecker St
+EL329,B,north,Broadway-Lafayette/Bleecker St
+EL330,D,south,Broadway-Lafayette/Bleecker St
+EL330,M,south,Broadway-Lafayette/Bleecker St
+EL330,F,south,Broadway-Lafayette/Bleecker St
+EL330,B,south,Broadway-Lafayette/Bleecker St
+EL331,D,north,Broadway-Lafayette/Bleecker St
+EL331,B,north,Broadway-Lafayette/Bleecker St
+EL331,M,north,Broadway-Lafayette/Bleecker St
+EL331,F,north,Broadway-Lafayette/Bleecker St
+EL332,M,south,Broadway-Lafayette/Bleecker St
+EL332,D,south,Broadway-Lafayette/Bleecker St
+EL332,B,south,Broadway-Lafayette/Bleecker St
+EL332,F,south,Broadway-Lafayette/Bleecker St
+EL334,B,south,West 4 St - Washington Sq
+EL334,M,south,West 4 St - Washington Sq
+EL334,A,south,West 4 St - Washington Sq
+EL334,D,south,West 4 St - Washington Sq
+EL334,C,south,West 4 St - Washington Sq
+EL334,E,south,West 4 St - Washington Sq
+EL334,F,south,West 4 St - Washington Sq
+EL335,M,north,West 4 St - Washington Sq
+EL335,E,north,West 4 St - Washington Sq
+EL335,F,north,West 4 St - Washington Sq
+EL335,B,north,West 4 St - Washington Sq
+EL335,A,north,West 4 St - Washington Sq
+EL335,D,north,West 4 St - Washington Sq
+EL335,C,north,West 4 St - Washington Sq
+EL337,1,north,Chambers St
+EL337,3,north,Chambers St
+EL337,2,north,Chambers St
+EL338,2,south,Chambers St
+EL338,1,south,Chambers St
+EL338,3,south,Chambers St
+EL339,C,manhattan,Franklin Av
+EL339,C,euclid,Franklin Av
+EL339,S,euclid,Franklin Av
+EL340,C,manhattan,Franklin Av
+EL342,C,manhattan,Euclid Av
+EL342,A,manhattan,Euclid Av
+EL343,C,south,Euclid Av
+EL343,C,north,Euclid Av
+EL343,A,queens,Euclid Av
+EL345,A,manhattan,Utica Av
+EL345,C,manhattan,Utica Av
+EL346,C,euclid,Utica Av
+EL346,A,euclid,Utica Av
+EL346,A,queens,Utica Av
+EL371,Q,manhattan,Dekalb Av
+EL371,R,manhattan,Dekalb Av
+EL371,B,manhattan,Dekalb Av
+EL372,B,bay ridge,Dekalb Av
+EL372,Q,bay ridge,Dekalb Av
+EL372,R,bay ridge,Dekalb Av
+EL374,F,manhattan,Church Av
+EL374,G,queens,Church Av
+EL374,G,manhattan,Church Av
+EL375,F,coney island,Church Av
+EL375,G,north,Church Av
+EL375,G,south,Church Av
+EL377,D,manhattan,Bay Parkway
+EL378,D,coney island,Bay Parkway
+EL382,B,manhattan,Prospect Park
+EL382,Q,manhattan,Prospect Park
+EL383,Q,coney island,Prospect Park
+EL383,B,coney island,Prospect Park
+EL391,Z,manhattan,Marcy Av
+EL391,J,manhattan,Marcy Av
+EL391,M,manhattan,Marcy Av
+EL392,M,north,Marcy Av
+EL392,Z,south,Marcy Av
+EL392,M,south,Marcy Av
+EL392,J,north,Marcy Av
+EL392,Z,north,Marcy Av
+EL392,J,south,Marcy Av
+EL394,M,middle village,Flushing Av
+EL394,J,middle village,Flushing Av
+EL395,J,south,Flushing Av
+EL395,J,north,Flushing Av
+EL395,M,south,Flushing Av
+EL395,M,north,Flushing Av
+EL397,L,south,Myrtle Av / Wyckoff Av
+EL397,L,north,Myrtle Av / Wyckoff Av
+EL398,M,north,Myrtle Av / Wyckoff Av
+EL398,M,south,Myrtle Av / Wyckoff Av
+EL402,Q,north,Lexington Av / 63 St
+EL402,F,south,Lexington Av / 63 St
+EL402,F,north,Lexington Av / 63 St
+EL402,Q,south,Lexington Av / 63 St
+EL403,F,manhattan,Roosevelt Island
+EL404,F,jamaica,Roosevelt Island
+EL406,F,manhattan,21 St - Queensbridge
+EL407,F,jamaica,21 St - Queensbridge
+EL408,E,north,Jamaica - Van Wyck
+EL408,E,south,Jamaica - Van Wyck
+EL411,E,south,Sutphin Blvd - Archer Av - JFK Airport
+EL411,J,south,Sutphin Blvd - Archer Av - JFK Airport
+EL411,J,north,Sutphin Blvd - Archer Av - JFK Airport
+EL411,Z,north,Sutphin Blvd - Archer Av - JFK Airport
+EL411,E,north,Sutphin Blvd - Archer Av - JFK Airport
+EL411,Z,south,Sutphin Blvd - Archer Av - JFK Airport
+EL413,E,south,Jamaica Center Parsons/Archer
+EL413,Z,south,Jamaica Center Parsons/Archer
+EL413,E,north,Jamaica Center Parsons/Archer
+EL413,Z,north,Jamaica Center Parsons/Archer
+EL413,J,south,Jamaica Center Parsons/Archer
+EL413,J,north,Jamaica Center Parsons/Archer
+EL414,7,manhattan,Flushing Main St
+EL416X,7,manhattan,61 St - Woodside
+EL417X,7,flushing main st,61 St - Woodside
+EL420,E,north,Jackson Hts - Roosevelt Av
+EL420,M,north,Jackson Hts - Roosevelt Av
+EL420,F,north,Jackson Hts - Roosevelt Av
+EL420,M,south,Jackson Hts - Roosevelt Av
+EL420,R,north,Jackson Hts - Roosevelt Av
+EL420,E,south,Jackson Hts - Roosevelt Av
+EL420,F,south,Jackson Hts - Roosevelt Av
+EL420,R,south,Jackson Hts - Roosevelt Av
+EL421,E,queens,Jackson Hts - Roosevelt Av
+EL421,M,manhattan,Jackson Hts - Roosevelt Av
+EL421,F,queens,Jackson Hts - Roosevelt Av
+EL421,M,queens,Jackson Hts - Roosevelt Av
+EL421,E,manhattan,Jackson Hts - Roosevelt Av
+EL421,F,manhattan,Jackson Hts - Roosevelt Av
+EL421,R,queens,Jackson Hts - Roosevelt Av
+EL421,R,manhattan,Jackson Hts - Roosevelt Av
+EL422,F,jamaica,Jackson Hts - Roosevelt Av
+EL422,M,jamaica,Jackson Hts - Roosevelt Av
+EL422,E,jamaica,Jackson Hts - Roosevelt Av
+EL422,R,jamaica,Jackson Hts - Roosevelt Av
+EL423,7,manhattan,74 St - Broadway / Roosevelt Av
+EL426,7,manhattan,Junction Blvd
+EL427,7,flushing main st,Junction Blvd
+EL429,E,manhattan,Queens Plaza
+EL429,M,manhattan,Queens Plaza
+EL429,R,manhattan,Queens Plaza
+EL430,R,jamaica,Queens Plaza
+EL430,E,jamaica,Queens Plaza
+EL430,M,jamaica,Queens Plaza
+EL432,F,manhattan,179 St - Jamaica
+EL433,F,north,179 St - Jamaica
+EL433,F,south,179 St - Jamaica
+EL435,F,jamaica,Kew Gardens / Union Tpk
+EL435,E,jamaica,Kew Gardens / Union Tpk
+EL436,F,manhattan,Kew Gardens / Union Tpk
+EL436,E,manhattan,Kew Gardens / Union Tpk
+EL438,M,north,Forest Hills - 71 Av
+EL438,F,jamaica,Forest Hills - 71 Av
+EL438,E,jamaica,Forest Hills - 71 Av
+EL438,R,north,Forest Hills - 71 Av
+EL438,M,south,Forest Hills - 71 Av
+EL438,R,south,Forest Hills - 71 Av
+EL439,M,manhattan,Forest Hills - 71 Av
+EL439,F,manhattan,Forest Hills - 71 Av
+EL439,R,manhattan,Forest Hills - 71 Av
+EL439,E,manhattan,Forest Hills - 71 Av
+EL440,Q,north,Lexington Av / 63 St
+EL440,F,south,Lexington Av / 63 St
+EL440,F,north,Lexington Av / 63 St
+EL440,Q,south,Lexington Av / 63 St
+EL441,F,north,Lexington Av / 63 St
+EL441,Q,north,Lexington Av / 63 St
+EL441,F,south,Lexington Av / 63 St
+EL441,Q,south,Lexington Av / 63 St
+EL442,Q,north,Lexington Av / 63 St
+EL442,F,south,Lexington Av / 63 St
+EL442,Q,south,Lexington Av / 63 St
+EL442,F,north,Lexington Av / 63 St
+EL443,F,north,Lexington Av / 63 St
+EL443,Q,south,Lexington Av / 63 St
+EL443,Q,north,Lexington Av / 63 St
+EL443,F,south,Lexington Av / 63 St
+EL445X,7,flushing main st,Court Square
+EL447,7,manhattan,Court Square
+EL463,A,south,Ozone Park / Lefferts Blvd
+EL463,A,north,Ozone Park / Lefferts Blvd
+EL489X,A,manhattan,Aqueduct Racetrack
+EL492X,A,south,Howard Beach
+EL492X,A,north,Howard Beach
+EL492X,A,rockaway park - beach 116 st,Howard Beach
+EL493X,A,north,Howard Beach
+EL493X,A,south,Howard Beach
+EL493X,A,rockaway park - beach 116 st,Howard Beach
+EL494X,A,manhattan,Howard Beach
+EL495X,A,manhattan,Howard Beach
+EL497,A,manhattan,Far Rockaway - Mott Av
+EL498,A,manhattan,Far Rockaway - Mott Av
+EL600,7,flushing main st,34 St - Hudson Yards
+EL700X,3,manhattan,Atlantic Av-Barclays Ctr
+EL700X,2,manhattan,Atlantic Av-Barclays Ctr
+EL701,N,north,Coney Island Stillwell Av
+EL701,D,south,Coney Island Stillwell Av
+EL701,D,north,Coney Island Stillwell Av
+EL701,N,south,Coney Island Stillwell Av
+EL702,D,north,Coney Island Stillwell Av
+EL702,D,south,Coney Island Stillwell Av
+EL707,C,manhattan,Jay St - MetroTech
+EL707,F,manhattan,Jay St - MetroTech
+EL707,A,manhattan,Jay St - MetroTech
+EL708,R,coney island,Jay St - MetroTech
+EL708,A,queens,Jay St - MetroTech
+EL708,C,coney island,Jay St - MetroTech
+EL708,F,coney island,Jay St - MetroTech
+EL708,A,coney island,Jay St - MetroTech
+EL708,C,queens,Jay St - MetroTech
+EL709,R,south,Jay St - MetroTech
+EL709,R,north,Jay St - MetroTech
+EL710,4,north,Bowling Green
+EL710,5,north,Bowling Green
+EL711,4,brooklyn,Bowling Green
+EL711,5,brooklyn,Bowling Green
+EL712,1,north,WTC Cortlandt St
+EL713,1,south,WTC Cortlandt St
+EL716,J,brooklyn,Fulton St
+EL716,4,north,Fulton St
+EL716,5,north,Fulton St
+EL716,Z,brooklyn,Fulton St
+EL717X,4,north,Fulton St
+EL717X,5,north,Fulton St
+EL718X,5,north,Fulton St
+EL718X,4,north,Fulton St
+EL719,C,north,Fulton St
+EL719,A,south,Fulton St
+EL719,C,south,Fulton St
+EL719,A,north,Fulton St
+EL720,A,south,Fulton St
+EL720,A,north,Fulton St
+EL720,C,south,Fulton St
+EL720,C,north,Fulton St
+EL721,A,north,Fulton St
+EL721,C,south,Fulton St
+EL721,A,south,Fulton St
+EL721,C,north,Fulton St
+EL722,A,south,Fulton St
+EL722,A,north,Fulton St
+EL722,C,south,Fulton St
+EL722,C,north,Fulton St
+EL726X,W,south,Cortlandt St
+EL726X,R,south,Cortlandt St
+EL727X,W,north,Cortlandt St
+EL727X,R,north,Cortlandt St
+EL728X,5,south,Fulton St
+EL728X,4,south,Fulton St
+EL729X,5,south,Fulton St
+EL729X,4,north,Fulton St
+EL729X,5,north,Fulton St
+EL729X,4,south,Fulton St
+EL731,1,north,South Ferry
+EL732,3,north,Fulton St
+EL732,C,south,Fulton St
+EL732,C,north,Fulton St
+EL732,A,south,Fulton St
+EL732,3,south,Fulton St
+EL732,2,south,Fulton St
+EL732,A,north,Fulton St
+EL732,2,north,Fulton St
+EL736,1,south,WTC Cortlandt St
+EL736,1,north,WTC Cortlandt St
+EL737X,2,manhattan,Atlantic Av-Barclays Ctr
+EL737X,3,manhattan,Atlantic Av-Barclays Ctr
+EL738,N,manhattan,62 St / New Utrecht
+EL739,N,coney island,62 St / New Utrecht
+EL740,D,manhattan,62 St / New Utrecht
+EL741,D,coney island,62 St / New Utrecht
+EL753,N,manhattan,8 Av
+EL760,Q,manhattan,Kings Highway
+EL760,B,manhattan,Kings Highway
+EL761,Q,coney island,Kings Highway
+EL761,B,coney island,Kings Highway
