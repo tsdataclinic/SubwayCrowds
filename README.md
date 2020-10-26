@@ -15,7 +15,7 @@ This site shows an estimate for how crowded an avergae subway car is across diff
 ### Methodology 
 
 <p align="center">
-  <img src="public/crowding_methodology.png" width="800"/>
+  <img src="public/crowding_methodology.svg" width="800"/>
 </p>
 
 
