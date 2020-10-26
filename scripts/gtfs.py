@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import sys, logging
 from datetime import datetime, timedelta
-import seaborn as sns
 import matplotlib.pyplot as plt
 import re
 import os
@@ -225,7 +224,7 @@ def process_static_schedule(df, st, en):
     cols_to_remove = ['id','alert.header_text.translation','alert.informed_entity','stop_headsign','pickup_type','drop_off_type',
                       'shape_dist_traveled','departure_time','service_id', 'trip_headsign','block_id','shape_id', 'stop_code','stop_desc', 'stop_lat',
                       'stop_lon', 'zone_id', 'stop_url', 'location_type','parent_station']
-    cols_to_remove = list(set(static_schedule.columns).intersection(set(cols_to_remove)))
+    cols_to_remove = list(set(df.columns).intersection(set(cols_to_remove)))
     if len(cols_to_remove) > 0:
         df = df.drop(columns=cols_to_remove,axis=1)
     df = df.drop_duplicates()
@@ -233,7 +232,8 @@ def process_static_schedule(df, st, en):
     df.loc[df.time.isnull(),'time'] = df[df.time.isnull()].arrival_time.apply(fix_weird_times)
     df['trimmed_stop_id'] = [re.sub(r'(N|S)$','',x) for x in df.stop_id]
     
-    last_year_dates = [st + timedelta(days=i) for i in range(0,DAYS_RANGE-1)]
+    days_diff = (en-st).days
+    last_year_dates = [st + timedelta(days=i) for i in range(0,days_diff+1)]
     clean_static_schedule = []
     for d in last_year_dates:
         days_to_add = (d - datetime(year=1900,month=1,day=1)).days

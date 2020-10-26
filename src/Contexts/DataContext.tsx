@@ -120,7 +120,7 @@ function loadStops (){
 
 function loadCrowdingData(){
     return new Promise((resolve,reject)=>{
-        Papa.parse('crowding_by_weekday_direction_june.csv',{
+        Papa.parse('crowding_by_weekday_direction.csv',{
             download:true,
             complete: (data :any)=> resolve(parseCrowding(data.data)),
             header:true,

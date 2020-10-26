@@ -3,6 +3,7 @@ from typing import List
 import pandas as pd
 import os
 
+data_clinic_bucket = 'mta_crowding_data'
 
 class gcs_util:
     """
@@ -10,7 +11,7 @@ class gcs_util:
     Really more out of laziness than necessity.
     """
     def __init__(self, bucket_path: str = data_clinic_bucket):
-        self.client = storage.Client()
+        self.client = storage.Client.create_anonymous_client()
         self.bucket = self.client.bucket(bucket_path)
 
         

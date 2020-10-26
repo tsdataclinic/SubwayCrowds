@@ -66,12 +66,22 @@ To develop the web-app locally, run
 yarn
 yarn start 
 ```
+To set up the python environment, run
+
+```bash
+conda config --append channels conda-forge
+conda create -n {env_name} --file requirements.txt
+
+## to have the environment showup as a kernel on jupyter
+python -m ipykernel install --user --name {env_name} --display-name "Python ({env_name})"
+```
 
 To generate crowd estimates, edit global variables at the top and run
 
 ```bash
-python crowding.py
+python scripts/crowding.py
 ```
+
 
 ### Directory Structure
 
@@ -86,10 +96,11 @@ python crowding.py
     │   ├── tunrstile.py        <- Cleaning and interpolating turnstile data
     │   ├── heuristics.py       <- Logic for trip assignment and crowd estimation
     │   ├── crowding.py         <- Pipeline for generating subway crowd estimates
+    │   └── Crowding.ipynb      <- Notebook version of crowding.py 
     |
     ├── public                  <- Static files used by the application
     │
-    ├── requirements.txt
+    ├── requirements.txt        <- Packages to build the python environment
     │
     ├── src                     <- React front-end application structure
     │   ├── Context             

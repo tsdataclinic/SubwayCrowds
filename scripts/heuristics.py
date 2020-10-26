@@ -2,7 +2,6 @@ import pandas as pd
 import numpy as np
 import sys, logging
 from datetime import datetime, timedelta
-import seaborn as sns
 import matplotlib.pyplot as plt
 import re
 import os
@@ -45,8 +44,8 @@ def turnstile_weighted_entry_weights(ts,stop_order_merged):
     exit_weighted_stop_weights = exit_weighted_stop_weights.merge(min_exits,on=['route_id','hour']).merge(max_exits,on=['route_id','hour']).sort_values(['route_id','hour','order'])
     exit_weighted_stop_weights['exits_before'] = exit_weighted_stop_weights.total_exits - exit_weighted_stop_weights.min_exits 
     exit_weighted_stop_weights['exits_after'] = exit_weighted_stop_weights.max_exits - exit_weighted_stop_weights.total_exits
-    exit_weighted_stop_weights['north_bound_entry_weight'] = exit_weighted_stop_weights.exits_before/exit_weighted_stop_weights.max_exits
-    exit_weighted_stop_weights['south_bound_entry_weight'] = 1 - exit_weighted_stop_weights.exits_before/exit_weighted_stop_weights.max_exits
+    exit_weighted_stop_weights['north_bound_entry_weight'] = exit_weighted_stop_weights.exits_before/(exit_weighted_stop_weights.max_exits-exit_weighted_stop_weights.min_exits)
+    exit_weighted_stop_weights['south_bound_entry_weight'] = 1 - exit_weighted_stop_weights.exits_before/(exit_weighted_stop_weights.max_exits-exit_weighted_stop_weights.min_exits)
     exit_weighted_stop_weights['direction_id'] = 1
     exit_weighted_stop_weights['trimmed_stop_id'] = [re.sub(r'(N|S)$','',x) for x in exit_weighted_stop_weights.stop_id]
     exit_weighted_stop_weights_north = exit_weighted_stop_weights.copy()
