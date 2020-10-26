@@ -88,13 +88,13 @@ python scripts/crowding.py
 
 ### Directory Structure
 
-    subway-crowds/
+    SubwayCrowds/
     ├── LICENSE
     ├── README.md               <- The top-level README for developers using this project
     │
     ├── scripts
     │   ├── data                <- Other data used for crowding estimation such as crosswalks, GTFS static schedule, etc.
-    │   ├── gcs_utils.py        <- Utility functions for accessing data from Google Stoarage bucket 
+    │   ├── gcs_utils.py        <- Utility functions for accessing data from Google Cloud Storage bucket 
     │   ├── gtfs.py             <- Processing real-time gtfs data
     │   ├── tunrstile.py        <- Cleaning and interpolating turnstile data
     │   ├── heuristics.py       <- Logic for trip assignment and crowd estimation
