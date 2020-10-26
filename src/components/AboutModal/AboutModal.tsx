@@ -50,18 +50,32 @@ const BodyBlack = styled.p`
 export function AboutModal({ isOpen, onClose }: AboutModalProps) {
   const smallScreen = useMedia("(max-width: 480px)");
   console.log("Small screen is ", smallScreen);
-  const contnetStyle = smallScreen
-    ? {}
+  const contentStyle = smallScreen
+    ? {
+        overlay: {},
+        content: {
+          width: "100%",
+          left: "0px",
+          top: "0px",
+          padding: "0px",
+          margin: "0px",
+        },
+      }
     : {
-        maxWidth: "60vw",
-        left: "20vw",
-        maxHeight: "80vh",
-        top: "10vh",
+        overlay: {},
+        content: {
+          maxWidth: "60vw",
+          left: "20vw",
+          maxHeight: "80vh",
+          top: "10vh",
+        },
       };
+
   const customStyles = {
-    content: contnetStyle,
-    overlay: { zIndex: 1000 },
+    content: contentStyle.content,
+    overlay: { zIndex: 1000, ...contentStyle.overlay },
   };
+
   useEffect(() => {
     if (isOpen) {
       Fathom.trackPageview({ url: "/feedback" });
@@ -71,12 +85,9 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
   return (
     <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles}>
       <Styles.Container>
-        <Styles.Header>
-          <h1></h1>
-          <Styles.CloseButton onClick={onClose}>
-            <FontAwesomeIcon icon={faTimes} />
-          </Styles.CloseButton>
-        </Styles.Header>
+        <Styles.CloseButton onClick={onClose}>
+          <FontAwesomeIcon icon={faTimes} />
+        </Styles.CloseButton>
         <Styles.Content>
           <AboutPage>
             <ProjectInfoSection
@@ -99,23 +110,31 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
               </Body>
             </ProjectInfoSection>
             <AboutPageSegment color="white">
-              <h1 style={{color: "#70d6e3", fontWeight: "normal"}}>A multi-step heuristic approach</h1>
+              <h1 style={{ color: "#70d6e3", fontWeight: "normal" }}>
+                A multi-step heuristic approach
+              </h1>
               <Body>
-                The task of estimating the crowdedness of a train sounds straightforward yet it is anything but, 
-                especially given the limitations of publicly available data. The methodology we adopted is our 
-                best guess approximation and can be broken down into the four steps below. 
+                The task of estimating the crowdedness of a train sounds
+                straightforward yet it is anything but, especially given the
+                limitations of publicly available data. The methodology we
+                adopted is our best guess approximation and can be broken down
+                into the four steps below.
               </Body>
               <img
                 style={{
-                  width: "80%",
-                  maxWidth: "600px",
+                  width: "100%",
+                  maxWidth: "800px",
                   alignSelf: "center",
                 }}
-                src="/crowding_methodology.png"
+                src="/crowding_methodology.svg"
               />
               <Body>
-                We've open sourced the methodology and welcome the opportunity to make improvements. To learn more,
-                check out our <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">repo</a> for more details and source code.
+                We've open sourced the methodology and welcome the opportunity
+                to make improvements. To learn more, check out our{" "}
+                <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                  repo
+                </a>{" "}
+                for more details and source code.
               </Body>
             </AboutPageSegment>
             <DataClinicSection />

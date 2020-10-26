@@ -7,15 +7,19 @@ const TopBar = styled.div`
   padding: 0px 0px 20px 0px;
   @media only screen and (min-width: 900px) {
     padding: 20px 0px;
+    font-size: 20px;
   }
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  font-size: 25px;
+  font-size: 15px;
   button {
     margin-right: 5px;
-    font-size: 20px;
+    font-size: 15px;
+    @media only screen and (min-width: 900px) {
+      font-size: 20px;
+    }
   }
 `;
 const ModalButton = styled.button`
