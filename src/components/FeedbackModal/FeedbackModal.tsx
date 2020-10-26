@@ -62,7 +62,7 @@ export function FeedbackModal({ isOpen, onClose }: FeedbackModalProps) {
           <FontAwesomeIcon icon={faTimes} />
         </Styles.CloseButton>
         <Styles.Content>
-          <Styles.Form src="https://forms.gle/TxjaHpbibEbPMkDj9" />
+          <Styles.Form src="https://forms.gle/QhXDdiKkBDxMXP487" />
         </Styles.Content>
       </Styles.Container>
     </Modal>
