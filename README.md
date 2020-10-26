@@ -70,7 +70,7 @@ To set up the python environment, run
 
 ```bash
 conda config --append channels conda-forge
-conda create -n {env_name} --file requirements.txt
+conda create -n {env_name} --file scripts/requirements.txt
 
 ## to have the environment showup as a kernel on jupyter
 python -m ipykernel install --user --name {env_name} --display-name "Python ({env_name})"
