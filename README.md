@@ -90,7 +90,7 @@ python scripts/crowding.py
     ├── README.md               <- The top-level README for developers using this project
     │
     ├── scripts
-    │   ├── data                <- Crosswalks between different MTA data sets
+    │   ├── data                <- Other data used for crowding estimation such as crosswalks, GTFS static schedule, etc.
     │   ├── gcs_utils.py        <- Utility functions for accessing data from Google Stoarage bucket 
     │   ├── gtfs.py             <- Processing real-time gtfs data
     │   ├── tunrstile.py        <- Cleaning and interpolating turnstile data
