@@ -10,7 +10,11 @@
   <img src="public/SubwayCrowds.png" width="800"/>
 </p>
 
-This site shows an estimate for how crowded an avergae subway car is across different routes over the last 2 weeks, last month, and last year. 
+### Plan your commute better
+We built <a href="https://subwaycrowds.tsdataclinic.com">SubwayCrowds</a> to estimate how crowded your subway trip is likely to be.
+
+As the city continues to adjust to the new normal and people begin heading back to work and school, a central question is how will this work given NYC commuters reliance on public transportation. Is it possible to move so many people while maintaining social distancing? To help inform this question, SubwayCrowds is designed to identify for specific trips when subway cars are likely to be most crowded so that individuals might alter their travel time or route.
+
 
 ### Methodology 
 
@@ -82,7 +86,6 @@ To generate crowd estimates, edit global variables at the top and run
 python scripts/crowding.py
 ```
 
-
 ### Directory Structure
 
     subway-crowds/
@@ -107,4 +110,13 @@ python scripts/crowding.py
     │   ├── Hooks               
     │   └── components
            
+
+### Datasets used
+
+The links to the data used to generate crowd estimates are below:
+
+- <a href="https://api.mta.info/#/landing">GTFS Realtime Feed</a>
+- <a href="http://web.mta.info/developers/data/nyct/subway/google_transit.zip">GTFS Static Data</a>
+- <a href="http://web.mta.info/developers/turnstile.html">Turnstile Usage Data</a>
+- <a href="https://github.com/tsdataclinic/mta">Crosswalk to merge GTFS and Turnstile data, Standard stop order, etc. </a>
 
