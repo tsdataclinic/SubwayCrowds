@@ -16,7 +16,7 @@ cachetools=4.1.1=pypi_0
 certifi=2020.6.20=py38h5347e94_2
 cffi=1.14.3=py38hed5b41f_0
 chardet=3.0.4=py38h5347e94_1008
-cryptography=3.1.1=py38h52adbb4_0
+cryptography>=3.2
 cycler=0.10.0=pypi_0
 decorator=4.4.2=py_0
 defusedxml=0.6.0=py_0
