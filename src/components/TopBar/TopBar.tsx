@@ -21,7 +21,7 @@ export function TopBar({
 }: TopBarProps) {
   return (
     <Styles.TopBar>
-      <Styles.DataClinicLink href="https://twosigma.com/dataclinic">
+      <Styles.DataClinicLink href="https://www.twosigma.com/dataclinic">
         <img
           style={{ width: "25px", marginRight: "10px" }}
           src="/DataClinicLogo.png"
