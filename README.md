@@ -64,6 +64,8 @@ As the city continues to adjust to the new normal and people begin heading back 
 
 ### Developing 
 
+Thank you developing this tool with us! before you start, do checkout our [Roadmap](Roadmap.md) and [Contributing guidelines](Contributing.md).
+
 To develop the web-app locally, run 
 
 ```bash
