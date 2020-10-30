@@ -49,11 +49,11 @@ function App() {
   const [passwordPassed, setPasswordPassed] = useState(false);
 
   // Make sure we are on the right url
-  useEffect(() => {
-    if (window.location.origin !== "https://subwaycrowds.tsdataclinic.com/") {
-      window.location.href = `https://subwaycrowds.tsdataclinic.com/${window.location.search}`;
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.location.origin !== "https://subwaycrowds.tsdataclinic.com/") {
+  //     window.location.href = `https://subwaycrowds.tsdataclinic.com/${window.location.search}`;
+  //   }
+  // }, []);
 
   // Track initial visit
   useEffect(() => {
