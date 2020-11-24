@@ -18,7 +18,7 @@ type Props={
 export const ShareButtons = ({startStation,endStation,line}: Props)=>{
     const prompt = `Checkout this graph of crowding on the ${line} line between ${startStation} and ${endStation}`
     const hashtag = `#nyc` // Facebook share only allows one hashtag
-    const hashtagList = ['newyorktough', 'covid19', 'mta', 'dataforgood', 'opendata', 'nyc']
+    const hashtagList = ['newyorktough', 'covid19', 'mta', 'dataforgood', 'opendata', 'nyc', 'SubwayCrowds']
     
     return(
       <>
