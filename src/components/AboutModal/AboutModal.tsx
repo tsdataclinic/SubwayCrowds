@@ -131,7 +131,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
               <Body>
                 We've open sourced the methodology and welcome the opportunity
                 to make improvements. To learn more, check out our{" "}
-                <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                <a href="https://github.com/tsdataclinic/SubwayCrowds">
                   repo
                 </a>{" "}
                 for more details and source code.

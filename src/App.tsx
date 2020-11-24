@@ -48,6 +48,13 @@ function App() {
   const [loadedParams, setLoadedParams] = useState(false);
   const [passwordPassed, setPasswordPassed] = useState(false);
 
+  // Make sure we are on the right url
+  useEffect(() => {
+    if (window.location.origin !== "https://subwaycrowds.tsdataclinic.com") {
+      window.location.href = `https://subwaycrowds.tsdataclinic.com/${window.location.search}`;
+    }
+  }, []);
+
   // Track initial visit
   useEffect(() => {
     Fathom.load("PELBVLNP");
@@ -365,13 +372,20 @@ function App() {
           <footer>
             <div className="info-share">
               <div className="info">
-                <a href="https://github.com/tsdataclinic/MTACrowdingInteractive">
+                <a href="https://github.com/tsdataclinic/SubwayCrowds">
                   <img src={Giticon} height={20} width={20} />
                 </a>
-                <a href="https://medium.com/dataclinic">
+                <a href="https://medium.com/dataclinic/commuting-during-covid-19-using-open-data-to-predict-nyc-subway-crowds-f1dcabc4fd99">
                   <img src={Mediumicon} height={20} width={20} />
                 </a>
               </div>
+
+              {!promptComplete && (
+                <div className="date-range-text">
+                  Note: Estimates are not available for the L line due to
+                  reporting inconsistencies. We hope to be able to add it soon!{" "}
+                </div>
+              )}
 
               {promptComplete && (
                 <div className="date-range-text">
