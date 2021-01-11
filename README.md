@@ -10,7 +10,11 @@
   <img src="public/SubwayCrowds.png" width="800"/>
 </p>
 
-This site shows an estimate for how crowded an avergae subway car is across different routes over the last 2 weeks, last month, and last year. 
+### Plan your commute better
+We built <a href="https://subwaycrowds.tsdataclinic.com">SubwayCrowds</a> to estimate how crowded your subway trip is likely to be.
+
+As the city continues to adjust to the new normal and people begin heading back to work and school, a central question is how will this work given NYC commuters reliance on public transportation. Is it possible to move so many people while maintaining social distancing? To help inform this question, SubwayCrowds is designed to identify for specific trips when subway cars are likely to be most crowded so that individuals might alter their travel time or route.
+
 
 ### Methodology 
 
@@ -60,6 +64,8 @@ This site shows an estimate for how crowded an avergae subway car is across diff
 
 ### Developing 
 
+Thank you developing this tool with us! before you start, do checkout our [Roadmap](Roadmap.md) and [Contributing guidelines](Contributing.md).
+
 To develop the web-app locally, run 
 
 ```bash
@@ -70,7 +76,7 @@ To set up the python environment, run
 
 ```bash
 conda config --append channels conda-forge
-conda create -n {env_name} --file requirements.txt
+conda create -n {env_name} --file scripts/requirements.txt
 
 ## to have the environment showup as a kernel on jupyter
 python -m ipykernel install --user --name {env_name} --display-name "Python ({env_name})"
@@ -82,16 +88,15 @@ To generate crowd estimates, edit global variables at the top and run
 python scripts/crowding.py
 ```
 
-
 ### Directory Structure
 
-    subway-crowds/
+    SubwayCrowds/
     ├── LICENSE
     ├── README.md               <- The top-level README for developers using this project
     │
     ├── scripts
     │   ├── data                <- Other data used for crowding estimation such as crosswalks, GTFS static schedule, etc.
-    │   ├── gcs_utils.py        <- Utility functions for accessing data from Google Stoarage bucket 
+    │   ├── gcs_utils.py        <- Utility functions for accessing data from Google Cloud Storage bucket 
     │   ├── gtfs.py             <- Processing real-time gtfs data
     │   ├── tunrstile.py        <- Cleaning and interpolating turnstile data
     │   ├── heuristics.py       <- Logic for trip assignment and crowd estimation
@@ -107,4 +112,13 @@ python scripts/crowding.py
     │   ├── Hooks               
     │   └── components
            
+
+### Datasets used
+
+The links to the data used to generate crowd estimates are below:
+
+- <a href="https://api.mta.info/#/landing">GTFS Realtime Feed</a>
+- <a href="http://web.mta.info/developers/data/nyct/subway/google_transit.zip">GTFS Static Data</a>
+- <a href="http://web.mta.info/developers/turnstile.html">Turnstile Usage Data</a>
+- <a href="https://github.com/tsdataclinic/mta">Crosswalk to merge GTFS and Turnstile data, Standard stop order, etc. </a>
 
