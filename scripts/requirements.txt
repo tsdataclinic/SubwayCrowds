@@ -64,7 +64,7 @@ nbconvert=6.0.7=py38h32f6830_1
 nbformat=5.0.8=py_0
 ncurses=6.2=h0a44026_1
 nest-asyncio=1.4.1=py_0
-notebook=6.1.4=py38h32f6830_1
+notebook>=6.1.5
 numba=0.50.1=py38h9529b5f_1
 numpy=1.19.2=py38h456fd55_0
 numpy-base=1.19.2=py38hcfb5961_0
