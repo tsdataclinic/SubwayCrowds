@@ -48,10 +48,10 @@ export const DataProvider :React.FC = ({children})=>{
             .then(response => response.text())
             .then(data => {
                 const dates = data.split("-", 2);
-                const beginDate = new Date(parseInt(dates[0].slice(0, 4)), parseInt(dates[0].slice(4, 6)), parseInt(dates[0].slice(6, 8)));
-                const beginDateString = `${beginDate.getMonth()}-${beginDate.getDate()}-${beginDate.getFullYear()}`;
-                const endDate = new Date(parseInt(dates[1].slice(0, 4)), parseInt(dates[1].slice(4, 6)), parseInt(dates[1].slice(6, 8)));
-                const endDateString = `${endDate.getMonth()}-${endDate.getDate()}-${endDate.getFullYear()}`;
+                const beginDate = new Date(parseInt(dates[0].slice(0, 4)), parseInt(dates[0].slice(4, 6))-1, parseInt(dates[0].slice(6, 8)));
+                const beginDateString = `${beginDate.getMonth()+1}-${beginDate.getDate()}-${beginDate.getFullYear()}`;
+                const endDate = new Date(parseInt(dates[1].slice(0, 4)), parseInt(dates[1].slice(4, 6))-1, parseInt(dates[1].slice(6, 8)));
+                const endDateString = `${endDate.getMonth()+1}-${endDate.getDate()}-${endDate.getFullYear()}`;
                 const dateRangeString = `${beginDateString} - ${endDateString}`;
                 setDateRange(dateRangeString);
         })
