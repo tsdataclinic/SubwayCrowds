@@ -131,7 +131,7 @@ stop_id,station,order,line,id,route_id
 411S,Mt Eden Av,9,4,MT EDEN AV,4
 412S,170 St,10,4,170 ST,4
 413S,167 St,11,4,167 ST,4
-414S,161 St - Yankee Stadium,12,4,161/YANKEE STAD,4
+414S,161 St - Yankee Stadium,12,4,,4
 415S,149 St - Grand Concourse,13,4,149/GRAND CONC,4
 416S,138 St - Grand Concourse,14,4,138/GRAND CONC,4
 621S,125 St,15,4,125 ST,4
@@ -327,7 +327,7 @@ G05S,Jamaica Center - Parsons/Archer,1,E,JAMAICA CENTER,E
 G06S,Sutphin Blvd - Archer Av - JFK Airport,2,E,SUTPHIN-ARCHER,E
 G07S,Jamaica - Van Wyck,3,E,JAMAICA VAN WK,E
 F05S,Briarwood,4,E,BRIARWOOD,E
-F06S,Kew Gardens - Union Tpke,5,E,KEW GARDENS,E
+F06S,Kew Gardens - Union Tpke,5,E,,E
 F07S,75 Av,6,E,75 AV,E
 G08S,Forest Hills - 71 Av,7,E,FOREST HILLS 71,E
 G14S,Jackson Hts - Roosevelt Av,8,E,JKSN HT-ROOSVLT,E
@@ -381,7 +381,7 @@ D07S,Tremont Av,6,D,TREMONT AV,D
 D08S,174-175 Sts,7,D,174-175 STS,D
 D09S,170 St,8,D,170 ST,D
 D10S,167 St,9,D,167 ST,D
-D11S,161 St - Yankee Stadium,10,D,161/YANKEE STAD,D
+D11S,161 St - Yankee Stadium,10,D,,D
 D12S,155 St,11,D,155 ST,D
 D13S,145 St,12,D,145 ST,D
 A15S,125 St,13,D,125 ST,D
@@ -413,7 +413,7 @@ F02S,169 St,2,F,169 ST,F
 F03S,Parsons Blvd,3,F,PARSONS BLVD,F
 F04S,Sutphin Blvd,4,F,SUTPHIN BLVD,F
 F05S,Briarwood,5,F,BRIARWOOD,F
-F06S,Kew Gardens - Union Tpke,6,F,KEW GARDENS,F
+F06S,Kew Gardens - Union Tpke,6,F,,F
 F07S,75 Av,7,F,75 AV,F
 G08S,Forest Hills - 71 Av,8,F,FOREST HILLS 71,F
 G14S,Jackson Hts - Roosevelt Av,9,F,JKSN HT-ROOSVLT,F
@@ -439,7 +439,7 @@ F22S,Smith - 9 Sts,28,F,SMITH-9 ST,F
 F23S,4 Av - 9 St,29,F,4 AV-9 ST,F
 F23S,4 Av - 9 St,29,F,4AV-9 ST,F
 F24S,7 Av,30,F,7 AV,F
-F25S,15 St - Prospect Park,31,F,15 ST-PROSPECT,F
+F25S,15 St - Prospect Park,31,F,,F
 F26S,Fort Hamilton Pkwy,32,F,FT HAMILTON PKY,F
 F27S,Church Av,33,F,CHURCH AV,F
 F29S,Ditmas Av,34,F,DITMAS AV,F
@@ -509,7 +509,7 @@ F22S,Smith - 9 Sts,16,G,SMITH-9 ST,G
 F23S,4 Av - 9 St,17,G,4 AV-9 ST,G
 F23S,4 Av - 9 St,17,G,4AV-9 ST,G
 F24S,7 Av,18,G,7 AV,G
-F25S,15 St - Prospect Park,19,G,15 ST-PROSPECT,G
+F25S,15 St - Prospect Park,19,G,,G
 F26S,Fort Hamilton Pkwy,20,G,FT HAMILTON PKY,G
 F27S,Church Av,21,G,CHURCH AV,G
 G05S,Jamaica Center - Parsons/Archer,1,J,JAMAICA CENTER,J
@@ -563,6 +563,30 @@ M20S,Canal St,18,Z,CANAL ST,Z
 M21S,Chambers St,19,Z,CHAMBERS ST,Z
 M22S,Fulton St,20,Z,FULTON ST,Z
 M23S,Broad St,21,Z,BROAD ST,Z
+L01S,8 Av,1,L,8 AV,L
+L02S,6 Av,2,L,6 AV,L
+L03S,Union Sq - 14 St,3,L,14 ST-UNION SQ,L
+L05S,3 Av,4,L,3 AV,L
+L06S,1 Av,5,L,1 AV,L
+L08S,Bedford Av,6,L,BEDFORD AV,L
+L10S,Lorimer St,7,L,LORIMER ST,L
+L11S,Graham Av,8,L,GRAHAM AV,L
+L12S,Grand St,9,L,GRAND ST,L
+L13S,Montrose Av,10,L,MONTROSE AV,L
+L14S,Morgan Av,11,L,MORGAN AV,L
+L15S,Jefferson St,12,L,JEFFERSON ST,L
+L16S,DeKalb Av,13,L,DEKALB AV,L
+L17S,Myrtle - Wyckoff Avs,14,L,MYRTLE-WYCKOFF,L
+L19S,Halsey St,15,L,HALSEY ST,L
+L20S,Wilson Av,16,L,WILSON AV,L
+L21S,Bushwick Av - Aberdeen St,17,L,BUSHWICK AV,L
+L22S,Broadway Jct,18,L,BROADWAY JCT,L
+L24S,Atlantic Av,19,L,ATLANTIC AV,L
+L25S,Sutter Av,20,L,SUTTER AV,L
+L26S,Livonia Av,21,L,LIVONIA AV,L
+L27S,New Lots Av,22,L,NEW LOTS,L
+L28S,E 105 St,23,L,EAST 105 ST,L
+L29S,Canarsie - Rockaway Pkwy,24,L,CANARSIE-ROCKAW,L
 R01S,Astoria - Ditmars Blvd,1,N,ASTORIA DITMARS,N
 R03S,Astoria Blvd,2,N,ASTORIA BLVD,N
 R04S,30 Av,3,N,30 AV,N

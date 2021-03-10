@@ -57,7 +57,7 @@ export function HourlyChart({ hourlyData, hour }: Props) {
                       x: c.hour,
                       y: c.numPeopleLastYear,
                     })),
-                    label: "1 year ago",
+                    label: "2 years ago",
                     backgroundColor: "rgba(0,0,0,0)",
                     borderColor: DataTypeColor(MetricType.YEAR, 1.0),
                   },

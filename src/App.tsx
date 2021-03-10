@@ -49,11 +49,11 @@ function App() {
   const [passwordPassed, setPasswordPassed] = useState(false);
 
   // Make sure we are on the right url
-  useEffect(() => {
-    if (window.location.origin !== "https://subwaycrowds.tsdataclinic.com") {
-      window.location.href = `https://subwaycrowds.tsdataclinic.com/${window.location.search}`;
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (window.location.origin !== "https://subwaycrowds.tsdataclinic.com") {
+  //     window.location.href = `https://subwaycrowds.tsdataclinic.com/${window.location.search}`;
+  //   }
+  // }, []);
 
   // Track initial visit
   useEffect(() => {
@@ -382,8 +382,8 @@ function App() {
 
               {!promptComplete && (
                 <div className="date-range-text">
-                  Note: Estimates are not available for the L line due to
-                  reporting inconsistencies. We hope to be able to add it soon!{" "}
+                  {/* Note: Estimates are not available for the L line due to
+                  reporting inconsistencies. We hope to be able to add it soon!{" "} */}
                 </div>
               )}
 
