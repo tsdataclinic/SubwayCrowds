@@ -25,8 +25,8 @@ gcs = gcs_util(bucket_path='mta_crowding_data')
 ##################################################
 ## Global variables
 
-LAST_TURNSTILE_DATE = datetime(year=2020,month=10,day=18)
-DAYS_RANGE = 2
+LAST_TURNSTILE_DATE = datetime(year=2020,month=11,day=7)
+DAYS_RANGE = 14
 
 ##################################################
 
