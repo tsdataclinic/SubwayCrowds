@@ -37,7 +37,7 @@ ipykernel=5.3.4=py38h1cdfbd6_1
 ipython=7.18.1=py38h1cdfbd6_1
 ipython_genutils=0.2.0=py_1
 jedi=0.17.2=py38h32f6830_1
-jinja2=2.11.2=pyh9f0ad1d_0
+jinja2>=2.11.3
 json5=0.9.5=pyh9f0ad1d_0
 jsonschema=3.2.0=py_2
 jupyter_client=6.1.7=py_0
@@ -76,7 +76,7 @@ pandocfilters=1.4.2=py_1
 parso=0.7.1=pyh9f0ad1d_0
 pexpect=4.8.0=pyh9f0ad1d_2
 pickleshare=0.7.5=py_1003
-pillow=8.0.1=pypi_0
+pillow>=8.1.1
 pip=20.2.4=py38_0
 prometheus_client=0.8.0=pyh9f0ad1d_0
 prompt-toolkit=3.0.8=py_0
@@ -86,7 +86,7 @@ pyarrow=2.0.0=pypi_0
 pyasn1=0.4.8=pypi_0
 pyasn1-modules=0.2.8=pypi_0
 pycparser=2.20=pyh9f0ad1d_2
-pygments=2.7.2=py_0
+pygments>=2.7.4
 pyopenssl=19.1.0=py_1
 pyparsing=2.4.7=pyh9f0ad1d_0
 pyrsistent=0.17.3=py38h4d0b108_1
