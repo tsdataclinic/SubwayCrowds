@@ -60,7 +60,7 @@ export function HourSlider({ hour, onSetHour }: HourSliderProps) {
         getAriaValueText={formatValue}
         valueLabelFormat={formatValue}
         value={hour}
-        onChange={(e: React.ChangeEvent<{}>, hour: number | number[]) =>
+        onChange={(e: React.ChangeEvent<any>, hour: number | number[]) =>
           onSetHour(hour as number)
         }
       />

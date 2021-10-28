@@ -38,6 +38,7 @@ import "./App.scss";
 import "typeface-lato";
 import { SimplePassword } from "./components/SimplePassword/SimplePassword";
 import { AboutModal } from "./components/AboutModal/AboutModal";
+import { LegalModal } from "./components/Legal/Legal";
 import { FeedbackModal } from "./components/FeedbackModal/FeedbackModal";
 import { HourSlider } from "./components/HourSlider/HourSlider";
 
@@ -67,6 +68,8 @@ function App() {
 
   // Modals
   const [showAboutModal, setShowAboutModal] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false);
   const [showFeedbackModal, setShowFeedbackModal] = useState(false);
 
   // Grab the required data from the data context
@@ -202,6 +205,16 @@ function App() {
         <AboutModal
           isOpen={showAboutModal}
           onClose={() => setShowAboutModal(false)}
+        />
+        <LegalModal
+          isOpen={showPrivacyModal}
+          onClose={() => setShowPrivacyModal(false)}
+          content="privacy"
+        />
+        <LegalModal
+          isOpen={showTermsModal}
+          onClose={() => setShowTermsModal(false)}
+          content="legal"
         />
         <FeedbackModal
           isOpen={showFeedbackModal}
@@ -427,11 +440,17 @@ function App() {
               fitness for use, reliability, and non-infringement.
             </div>
             <div className="disclaimer">
-              <a href="https://www.twosigma.com/legal-disclosure/">
+              <a
+                onClick={() => setShowTermsModal(true)}
+                style={{ cursor: "pointer" }}
+              >
                 Legal Disclosure
               </a>
               <span>@ 2020 Two Sigma Investments, LP. All rights reserved</span>
-              <a href="https://www.twosigma.com/legal-disclosure/privacy-policy/">
+              <a
+                onClick={() => setShowPrivacyModal(true)}
+                style={{ cursor: "pointer" }}
+              >
                 Privacy Policy
               </a>
             </div>

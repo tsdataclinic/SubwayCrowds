@@ -129,7 +129,7 @@ export function AboutModal({ isOpen, onClose }: AboutModalProps) {
                 src="/crowding_methodology.svg"
               />
               <Body>
-                We've open sourced the methodology and welcome the opportunity
+                We&apos;ve open sourced the methodology and welcome the opportunity
                 to make improvements. To learn more, check out our{" "}
                 <a href="https://github.com/tsdataclinic/SubwayCrowds">
                   repo
