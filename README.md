@@ -1,3 +1,5 @@
+**This project and corresponding website are no longer maintained by Two Sigma. We continue to encourage independent development.**
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6abecf5a-8e9f-4b9e-818d-ed47c21ef863/deploy-status)](https://app.netlify.com/sites/howbusyismytrain/deploys)
 
 <p align="center">
